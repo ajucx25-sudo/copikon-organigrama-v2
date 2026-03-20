@@ -7,6 +7,19 @@ import os from "os";
 import { execFile } from "child_process";
 
 const DATA_FILE = path.join(process.cwd(), "org-data.json");
+const EMPLOYEES_FILE = path.join(process.cwd(), "employees.json");
+
+// Employee record shape:
+// { id: string, cargo: string, gerencia: string, nombre: string, cedula: string, fechaIngreso: string, telefono?: string, email?: string, notas?: string }
+
+function loadEmployees(): Record<string, any> {
+  if (!fs.existsSync(EMPLOYEES_FILE)) return {};
+  try { return JSON.parse(fs.readFileSync(EMPLOYEES_FILE, "utf-8")); } catch { return {}; }
+}
+
+function saveEmployees(data: Record<string, any>) {
+  fs.writeFileSync(EMPLOYEES_FILE, JSON.stringify(data, null, 2), "utf-8");
+}
 
 // Default org data
 const DEFAULT_DATA = {
@@ -411,6 +424,39 @@ export async function registerRoutes(server: Server, app: Express): Promise<Serv
       console.error("Share error:", e);
       res.status(500).json({ error: "Error al compartir: " + e.message });
     }
+  });
+
+  // ===== EMPLOYEES API =====
+
+  // GET /api/employees — all employee records (keyed by cargo ID)
+  app.get("/api/employees", (_req, res) => {
+    res.json(loadEmployees());
+  });
+
+  // GET /api/employees/:id — single employee record
+  app.get("/api/employees/:id", (req, res) => {
+    const employees = loadEmployees();
+    const record = employees[req.params.id];
+    if (!record) return res.status(404).json({ error: "No encontrado" });
+    res.json(record);
+  });
+
+  // PUT /api/employees/:id — create or update employee record
+  app.put("/api/employees/:id", (req, res) => {
+    const employees = loadEmployees();
+    const id = req.params.id;
+    const existing = employees[id] || {};
+    employees[id] = { ...existing, ...req.body, id };
+    saveEmployees(employees);
+    res.json({ ok: true, record: employees[id] });
+  });
+
+  // DELETE /api/employees/:id — clear employee data for a cargo
+  app.delete("/api/employees/:id", (req, res) => {
+    const employees = loadEmployees();
+    delete employees[req.params.id];
+    saveEmployees(employees);
+    res.json({ ok: true });
   });
 
   // GET /api/share/:id — serve saved snapshot HTML

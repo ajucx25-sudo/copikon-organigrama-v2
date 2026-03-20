@@ -507,6 +507,49 @@ footer a:hover { color: var(--color-accent); }
   @page { size: landscape; margin: 12mm; }
 }
 .print-title, .print-date { display: none; }
+
+/* ===== DIRECTORIO ===== */
+.dir-tab {
+  padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);
+  background:var(--bg-card);color:var(--text-muted, #7a8399);font-size:0.75rem;
+  cursor:pointer;transition:all .15s;margin-bottom:8px;white-space:nowrap;
+  font-weight:500;
+}
+.dir-tab:hover { background:var(--bg);color:var(--text-primary,#1a2238); border-color:#aab; }
+.dir-tab.active {
+  background:var(--tc,#1a3a6b);color:#fff;border-color:var(--tc,#1a3a6b);font-weight:600;
+}
+.dir-card {
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:10px;margin-bottom:6px;
+  background:var(--bg-card);border:1.5px solid var(--border);
+  cursor:pointer;transition:box-shadow .18s,border-color .18s,transform .12s;
+}
+.dir-card:hover {
+  box-shadow:0 3px 12px rgba(0,0,0,0.12);
+  border-color:var(--color-accent,#e8a020);
+  transform:translateX(-2px);
+}
+.dir-card-avatar {
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:0.88rem;font-weight:800;flex-shrink:0;
+}
+.dir-card-info { flex:1;min-width:0; }
+.dir-card-cargo {
+  font-size:0.83rem;font-weight:700;color:var(--text-primary,#1a2238);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.dir-card-nombre { font-size:0.74rem;color:var(--text-muted,#7a8399);margin-top:1px; }
+.dir-card-badge {
+  font-size:0.67rem;padding:3px 8px;border-radius:20px;
+  font-weight:600;white-space:nowrap;flex-shrink:0;
+}
+.dir-section-header {
+  font-size:0.68rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.08em;
+  padding:10px 0 5px;border-bottom:2px solid var(--border);margin-bottom:8px;
+  margin-top:6px;
+}
 </style>
 </head>
 <body>
@@ -537,11 +580,111 @@ footer a:hover { color: var(--color-accent); }
     <input type="file" id="load-file-input" accept=".json" style="display:none">
     <!-- Export HTML -->
     <button class="header-btn" id="export-html-btn" title="Compartir como link">🔗</button>
+    <!-- Directorio -->
+    <button class="header-btn" id="directorio-btn" title="Directorio de empleados">👥</button>
     <!-- Print -->
     <button class="header-btn header-btn-print" id="print-btn" title="Imprimir organigrama">🖨️</button>
     <!-- Dark mode -->
     <button class="header-btn" data-theme-toggle title="Cambiar tema">🌙</button>
   </header>
+
+  <!-- ===== PANEL DIRECTORIO ===== -->
+  <div id="directorio-panel" style="
+    display:none;
+    position:fixed;top:0;right:0;bottom:0;
+    width:400px;max-width:96vw;
+    background:var(--bg-card);
+    border-left:2px solid var(--border);
+    box-shadow:-6px 0 32px rgba(0,0,0,0.18);
+    z-index:300;
+    flex-direction:column;
+    font-family:var(--font-body);
+  ">
+    <!-- Header del panel -->
+    <div style="display:flex;align-items:center;gap:12px;padding:16px 18px 14px;border-bottom:2px solid var(--border);background:var(--bg-header);">
+      <div style="width:36px;height:36px;border-radius:10px;background:#1a3a6b;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">👥</div>
+      <div style="flex:1;">
+        <div style="font-weight:800;font-size:1rem;color:var(--text-primary,#1a2238);">Directorio</div>
+        <div style="font-size:0.72rem;color:var(--text-muted,#7a8399);" id="dir-subtitle">Cargos y datos del personal</div>
+      </div>
+      <button id="directorio-close" style="width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;color:var(--text-muted,#7a8399);font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all .15s;">✕</button>
+    </div>
+
+    <!-- Tabs de gerencias -->
+    <div style="padding:10px 14px 2px;border-bottom:1.5px solid var(--border);background:var(--bg);">
+      <div style="display:flex;gap:5px;flex-wrap:wrap;">
+        <button class="dir-tab active" data-gerencia="all" style="--tc:#1a3a6b">Todos</button>
+        <button class="dir-tab" data-gerencia="comercializacion" style="--tc:#4a7fd4">Comercialización</button>
+        <button class="dir-tab" data-gerencia="operaciones" style="--tc:#e8a020">Operaciones</button>
+        <button class="dir-tab" data-gerencia="finanzas" style="--tc:#3cb371">Finanzas</button>
+        <button class="dir-tab" data-gerencia="compras" style="--tc:#f0a050">Compras</button>
+        <button class="dir-tab" data-gerencia="retail" style="--tc:#a06ad4">Retail</button>
+        <button class="dir-tab" data-gerencia="it" style="--tc:#5b8ff9">IT</button>
+        <button class="dir-tab" data-gerencia="proyectos" style="--tc:#dd6874">Proyectos</button>
+      </div>
+    </div>
+
+    <!-- Búsqueda -->
+    <div style="padding:10px 14px 6px;background:var(--bg);border-bottom:1px solid var(--border);">
+      <div style="position:relative;">
+        <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-muted,#7a8399);font-size:0.85rem;">🔍</span>
+        <input id="dir-search" type="search" placeholder="Buscar cargo o nombre..." autocomplete="off"
+          style="width:100%;padding:8px 12px 8px 32px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg-card);color:var(--text-primary,#1a2238);font-size:0.83rem;box-sizing:border-box;outline:none;">
+      </div>
+    </div>
+
+    <!-- Lista de cargos -->
+    <div id="dir-list" style="flex:1;overflow-y:auto;padding:10px 14px 16px;background:var(--bg);"></div>
+  </div>
+
+  <!-- Modal ficha de empleado -->
+  <div class="modal-overlay" id="modal-empleado">
+    <div class="modal" style="max-width:500px;">
+      <div class="modal-header">
+        <div class="modal-header-icon" style="background:#e8f0fe;">👤</div>
+        <h3 id="emp-modal-title">Ficha del Cargo</h3>
+        <button class="modal-close" data-close="modal-empleado">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="emp-id">
+        <input type="hidden" id="emp-cargo">
+        <input type="hidden" id="emp-gerencia">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="grid-column:1/-1;">
+            <label class="form-label">Nombre completo</label>
+            <input id="emp-nombre" type="text" class="form-input" placeholder="Ej: Juan Pérez González">
+          </div>
+          <div>
+            <label class="form-label">Cédula de identidad</label>
+            <input id="emp-cedula" type="text" class="form-input" placeholder="V-12.345.678">
+          </div>
+          <div>
+            <label class="form-label">Fecha de ingreso</label>
+            <input id="emp-fecha" type="date" class="form-input">
+          </div>
+          <div>
+            <label class="form-label">Teléfono</label>
+            <input id="emp-telefono" type="text" class="form-input" placeholder="0412-000-0000">
+          </div>
+          <div>
+            <label class="form-label">Email</label>
+            <input id="emp-email" type="email" class="form-input" placeholder="correo@copikon.com">
+          </div>
+          <div style="grid-column:1/-1;">
+            <label class="form-label">Notas</label>
+            <textarea id="emp-notas" class="form-input" rows="2" placeholder="Observaciones adicionales..."
+              style="resize:vertical;"></textarea>
+          </div>
+        </div>
+        <div id="emp-saved-msg" style="display:none;font-size:0.8rem;color:#2bbfae;margin-top:8px;">✓ Guardado correctamente</div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" data-close="modal-empleado">Cerrar</button>
+        <button class="btn-primary" id="emp-save-btn">💾 Guardar</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Edit mode banner -->
   <div class="edit-banner" id="edit-banner">
@@ -609,6 +752,30 @@ footer a:hover { color: var(--color-accent); }
     <div class="detail-field">
       <div class="detail-label">Total bajo su cargo</div>
       <div class="detail-value" id="detail-total" style="font-size:22px;font-family:var(--font-display);font-weight:800;"></div>
+    </div>
+
+    <!-- Sección datos del empleado -->
+    <div id="detail-empleado-section" style="margin-top:14px;border-top:1px solid var(--color-border);padding-top:12px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <div style="font-size:0.75rem;font-weight:700;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.04em;">Titular del cargo</div>
+        <button id="detail-emp-edit-btn" style="font-size:0.75rem;padding:3px 10px;border:1px solid var(--color-border);border-radius:6px;background:var(--color-surface);color:var(--color-accent);cursor:pointer;font-weight:600;">✏️ Editar</button>
+      </div>
+      <div id="detail-emp-empty" style="font-size:0.82rem;color:var(--color-text-muted);font-style:italic;padding:4px 0;">Sin titular asignado</div>
+      <div id="detail-emp-data" style="display:none;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div id="detail-emp-avatar" style="width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.95rem;flex-shrink:0;"></div>
+          <div>
+            <div id="detail-emp-nombre" style="font-weight:700;font-size:0.9rem;color:var(--color-text);"></div>
+            <div id="detail-emp-cedula" style="font-size:0.75rem;color:var(--color-text-muted);"></div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:0.78rem;">
+          <div><span style="color:var(--color-text-muted);">📅 Ingreso</span><br><span id="detail-emp-fecha" style="color:var(--color-text);font-weight:600;"></span></div>
+          <div><span style="color:var(--color-text-muted);">📱 Teléfono</span><br><span id="detail-emp-tel" style="color:var(--color-text);font-weight:600;"></span></div>
+          <div style="grid-column:1/-1;"><span style="color:var(--color-text-muted);">✉️ Email</span><br><span id="detail-emp-email" style="color:var(--color-text);font-weight:600;"></span></div>
+          <div id="detail-emp-notas-row" style="grid-column:1/-1;display:none;"><span style="color:var(--color-text-muted);">📝 Notas</span><br><span id="detail-emp-notas" style="color:var(--color-text);"></span></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="detail-actions" id="detail-actions">
@@ -763,6 +930,8 @@ footer a:hover { color: var(--color-accent); }
 
 <!-- Context Menu -->
 <div class="ctx-menu" id="ctx-menu" style="display:none;">
+  <div class="ctx-item" id="ctx-ficha"><span class="ctx-icon">👤</span> Ver / editar ficha</div>
+  <div class="ctx-sep"></div>
   <div class="ctx-item" id="ctx-edit"><span class="ctx-icon">✏️</span> Renombrar cargo</div>
   <div class="ctx-item" id="ctx-add"><span class="ctx-icon">➕</span> Agregar subordinado</div>
   <div class="ctx-sep"></div>
@@ -1141,6 +1310,21 @@ function update(source) {
       showDetail(d);
       update(d);
     })
+    .on('dblclick', function(event, d) {
+      event.stopPropagation();
+      if (editMode) return;
+      // Doble clic: abrir ficha del empleado para este nodo
+      const cargo = d.data ? d.data.name : (d.name || '');
+      const id = generateNodeId(cargo);
+      // Inferir gerencia del nodo usando collectAllNodes desde la raíz
+      let gerencia = 'staff';
+      if (typeof root !== 'undefined' && root.data) {
+        const all = collectAllNodes(root.data) || [];
+        const found = all.find(n => n.id === id);
+        if (found) gerencia = found.gerencia;
+      }
+      openEmpleadoModal(id, cargo, gerencia);
+    })
     .on('contextmenu', function(event, d) {
       event.preventDefault();
       event.stopPropagation();
@@ -1259,6 +1443,16 @@ fetch((window.API_BASE||'') + '/api/org')
     setTimeout(centerTree, 600);
   });
 
+// Precarga de empleados al inicio (para que el panel lateral tenga los datos)
+// Se ejecuta de forma asíncrona — directorioState ya estará definido cuando resuelva
+window._initEmployees = fetch((window.API_BASE||'') + '/api/employees')
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(data => { window.__EMPLOYEES_DATA__ = data || {}; if (typeof directorioState !== 'undefined') directorioState.employees = data || {}; })
+  .catch(() => {
+    const d = (typeof window.__EMPLOYEES_DATA__ !== 'undefined') ? window.__EMPLOYEES_DATA__ : {};
+    if (typeof directorioState !== 'undefined') directorioState.employees = d;
+  });
+
 function centerTree() {
   const bounds = g.node().getBBox();
   const rect = container.getBoundingClientRect();
@@ -1286,7 +1480,52 @@ function showDetail(d) {
   // Show/hide edit actions
   const isRoot = d.depth === 0;
   document.getElementById('detail-delete-btn').style.display = isRoot ? 'none' : 'flex';
+  // Mostrar datos del empleado en el panel
+  showDetailEmpleado(d.data.name, d.data.gerencia, color);
   update(d);
+}
+
+function showDetailEmpleado(cargo, gerencia, color) {
+  const id = (typeof generateNodeId === 'function') ? generateNodeId(cargo) : cargo.toLowerCase().replace(/[^a-z0-9]/g,'-').replace(/-+/g,'-');
+  const emp = (directorioState && directorioState.employees) ? (directorioState.employees[id] || {}) : {};
+  const hasData = !!(emp.nombre);
+
+  // Actualizar botón editar
+  const editBtn = document.getElementById('detail-emp-edit-btn');
+  editBtn.style.borderColor = color;
+  editBtn.style.color = color;
+  editBtn.onclick = () => openEmpleadoModal(id, cargo, gerencia || 'staff');
+
+  if (hasData) {
+    document.getElementById('detail-emp-empty').style.display = 'none';
+    document.getElementById('detail-emp-data').style.display = 'block';
+    // Avatar
+    const initials = emp.nombre.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase();
+    const av = document.getElementById('detail-emp-avatar');
+    av.textContent = initials;
+    av.style.background = (color||'#1a3a6b') + '22';
+    av.style.color = color || '#1a3a6b';
+    document.getElementById('detail-emp-nombre').textContent = emp.nombre;
+    document.getElementById('detail-emp-cedula').textContent = emp.cedula ? '🇮🇩 ' + emp.cedula : '';
+    // Fecha formateada
+    let fechaDisplay = emp.fechaIngreso || '';
+    if (fechaDisplay) {
+      try { const p=fechaDisplay.split('-'); fechaDisplay = p[2]+'/'+p[1]+'/'+p[0]; } catch(e){}
+    }
+    document.getElementById('detail-emp-fecha').textContent = fechaDisplay || '—';
+    document.getElementById('detail-emp-tel').textContent = emp.telefono || '—';
+    document.getElementById('detail-emp-email').textContent = emp.email || '—';
+    const notasRow = document.getElementById('detail-emp-notas-row');
+    if (emp.notas) {
+      notasRow.style.display = 'block';
+      document.getElementById('detail-emp-notas').textContent = emp.notas;
+    } else {
+      notasRow.style.display = 'none';
+    }
+  } else {
+    document.getElementById('detail-emp-empty').style.display = 'block';
+    document.getElementById('detail-emp-data').style.display = 'none';
+  }
 }
 document.getElementById('detail-close').addEventListener('click', () => {
   document.getElementById('detail-panel').classList.remove('open');
@@ -1325,6 +1564,13 @@ function openCtxMenu(event, d) {
 document.addEventListener('click', () => { document.getElementById('ctx-menu').style.display = 'none'; });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeAllModals(); document.getElementById('ctx-menu').style.display = 'none'; } });
 
+document.getElementById('ctx-ficha').addEventListener('click', () => {
+  if (!ctxNode) return;
+  const cargo = ctxNode.data.name;
+  const gerencia = ctxNode.data.gerencia || 'staff';
+  const id = generateNodeId(cargo);
+  openEmpleadoModal(id, cargo, gerencia);
+});
 document.getElementById('ctx-edit').addEventListener('click', () => { if (ctxNode) openEditModal(ctxNode); });
 document.getElementById('ctx-add').addEventListener('click', () => { if (ctxNode) openAddModal(ctxNode); });
 document.getElementById('ctx-delete').addEventListener('click', () => { if (ctxNode) openDeleteModal(ctxNode); });
@@ -1758,6 +2004,296 @@ function doShare() {
 
 document.getElementById('export-html-btn').addEventListener('click', doShare);
 document.getElementById('share-retry-btn').addEventListener('click', doShare);
+
+// ===== DIRECTORIO DE EMPLEADOS =====
+// Los datos vienen de window.__EMPLOYEES_DATA__ (inyectado en el HTML)
+// o se cargan de la API cuando el servidor está disponible
+const directorioState = {
+  open: false,
+  activeTab: 'comercializacion',
+  employees: {},
+  nodes: [],
+  hasServer: !!(window.API_BASE || '')
+};
+
+// Generar un ID estable (slug) a partir del nombre del cargo
+function generateNodeId(cargo) {
+  return (cargo || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+// Aplanar el árbol org en array de nodos con gerencia inferida
+function collectAllNodes(node, gerenciaHint, result) {
+  if (!node) return result || [];
+  result = result || [];
+  const nameLower = (node.name || '').toLowerCase();
+  let g = gerenciaHint;
+  if (!g || (node.gerencia && node.gerencia !== 'root' && node.gerencia !== 'staff')) {
+    g = node.gerencia || gerenciaHint;
+  }
+  if (!g || g === 'root' || g === 'staff') {
+    if (nameLower.includes('comercializ')) g = 'comercializacion';
+    else if (nameLower.includes('operac')) g = 'operaciones';
+    else if (nameLower.includes('finanz') || nameLower.includes('administrac')) g = 'finanzas';
+    else if (nameLower.includes('compras')) g = 'compras';
+    else if (nameLower.includes('retail')) g = 'retail';
+    else if (nameLower.includes(' it') || nameLower.includes('tecnolog') || nameLower.includes('sistemas')) g = 'it';
+    else if (nameLower.includes('proyecto')) g = 'proyectos';
+    else g = gerenciaHint || 'staff';
+  }
+  const id = generateNodeId(node.name);
+  if (node.name) result.push({ id, name: node.name, gerencia: g });
+  const children = node.children || node._children || [];
+  children.forEach(child => collectAllNodes(child, g, result));
+  return result;
+}
+
+// Cargar empleados (API si hay servidor, inline si no)
+async function loadAndRenderDir() {
+  try {
+    const apiBase = window.API_BASE || '';
+    // Intentar API
+    const res = await fetch(apiBase + '/api/employees');
+    if (res.ok) {
+      directorioState.employees = await res.json();
+      directorioState.hasServer = true;
+    } else {
+      throw new Error('no server');
+    }
+  } catch(e) {
+    // Fallback: datos incrustados en el HTML
+    directorioState.employees = (typeof window.__EMPLOYEES_DATA__ !== 'undefined') ? window.__EMPLOYEES_DATA__ : {};
+    directorioState.hasServer = false;
+  }
+  if (typeof orgData !== 'undefined') {
+    directorioState.nodes = collectAllNodes(orgData) || [];
+  } else if (typeof root !== 'undefined' && root.data) {
+    directorioState.nodes = collectAllNodes(root.data) || [];
+  } else {
+    directorioState.nodes = [];
+  }
+  const searchEl = document.getElementById('dir-search');
+  renderDirList(directorioState.activeTab, searchEl ? searchEl.value : '');
+}
+
+// Renderizar la lista de tarjetas
+function renderDirList(gerenciaFilter, search) {
+  const list = document.getElementById('dir-list');
+  if (!list) return;
+
+  const q = (search || '').toLowerCase().trim();
+  let nodes = directorioState.nodes;
+
+  // Filtrar por gerencia
+  if (gerenciaFilter && gerenciaFilter !== 'all') {
+    nodes = nodes.filter(n => n.gerencia === gerenciaFilter);
+  }
+
+  // Filtrar por búsqueda
+  if (q) {
+    nodes = nodes.filter(n => {
+      const emp = directorioState.employees[n.id] || {};
+      return n.name.toLowerCase().includes(q) ||
+             (emp.nombre||'').toLowerCase().includes(q) ||
+             (emp.cedula||'').toLowerCase().includes(q);
+    });
+  }
+
+  if (nodes.length === 0) {
+    list.innerHTML = '<div style="text-align:center;color:var(--color-text-muted);padding:40px 20px;font-size:0.88rem;">No se encontraron cargos</div>';
+    return;
+  }
+
+  const GERENCIA_COLORS = {
+    comercializacion: '#4a7fd4', operaciones: '#e8a020', finanzas: '#3cb371',
+    compras: '#f0a050', retail: '#a06ad4', it: '#5b8ff9', proyectos: '#dd6874',
+    staff: '#6b7a99'
+  };
+  const GERENCIA_LABELS = {
+    comercializacion: 'Comercialización', operaciones: 'Operaciones', finanzas: 'Finanzas',
+    compras: 'Compras', retail: 'Retail', it: 'IT', proyectos: 'Proyectos', staff: 'Staff'
+  };
+
+  let html = '';
+
+  if (gerenciaFilter === 'all') {
+    // Agrupar por gerencia
+    const groups = {};
+    nodes.forEach(n => {
+      if (!groups[n.gerencia]) groups[n.gerencia] = [];
+      groups[n.gerencia].push(n);
+    });
+    Object.keys(groups).forEach(g => {
+      const color = GERENCIA_COLORS[g] || '#6b7a99';
+      const label = GERENCIA_LABELS[g] || g;
+      html += `<div class="dir-section-header" style="color:${color};">${label} <span style="font-weight:400;font-size:0.75rem;opacity:0.8;">(${groups[g].length})</span></div>`;
+      groups[g].forEach(n => html += buildDirCard(n));
+    });
+  } else {
+    nodes.forEach(n => html += buildDirCard(n));
+  }
+
+  list.innerHTML = html;
+
+  // Agregar event listeners a las tarjetas
+  list.querySelectorAll('.dir-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const nid = card.dataset.id;
+      const nname = card.dataset.name;
+      const ngerencia = card.dataset.gerencia;
+      openEmpleadoModal(nid, nname, ngerencia);
+    });
+  });
+}
+
+function buildDirCard(node) {
+  const emp = directorioState.employees[node.id] || {};
+  const hasData = !!(emp.nombre || emp.cedula);
+  const words = node.name.split(' ').filter(Boolean);
+  const initials = (words.slice(0,2).map(w => w[0]).join('')).toUpperCase() || '?';
+  const GERENCIA_COLORS = {
+    comercializacion: '#4a7fd4', operaciones: '#e8a020', finanzas: '#3cb371',
+    compras: '#f0a050', retail: '#a06ad4', it: '#5b8ff9', proyectos: '#dd6874', staff: '#6b7a99'
+  };
+  const color = GERENCIA_COLORS[node.gerencia] || '#6b7a99';
+  const nombreDisplay = emp.nombre
+    ? `<span style="color:#1a2238;font-weight:600;">${emp.nombre}</span>`
+    : `<span style="color:#aab0c0;font-style:italic;">Sin asignar</span>`;
+  const badge = hasData
+    ? `<span class="dir-card-badge" style="background:${color};color:#fff;">&#10003; Registrado</span>`
+    : `<span class="dir-card-badge" style="background:#e8eaf2;color:#8892aa;">Pendiente</span>`;
+
+  return `<div class="dir-card" data-id="${node.id}" data-name="${node.name.replace(/"/g,'&quot;')}" data-gerencia="${node.gerencia}">
+    <div class="dir-card-avatar" style="background:${color};color:#fff;">${initials}</div>
+    <div class="dir-card-info">
+      <div class="dir-card-cargo">${node.name}</div>
+      <div class="dir-card-nombre">${nombreDisplay}</div>
+    </div>
+    ${badge}
+  </div>`;
+}
+
+// Abrir panel del directorio
+function openDirectorio(gerenciaFilter) {
+  directorioState.open = true;
+  if (gerenciaFilter) directorioState.activeTab = gerenciaFilter;
+  const panel = document.getElementById('directorio-panel');
+  panel.style.display = 'flex';
+  // Activar tab correcto
+  document.querySelectorAll('.dir-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.gerencia === directorioState.activeTab);
+  });
+  loadAndRenderDir();
+}
+
+// Cerrar panel del directorio
+function closeDirectorio() {
+  directorioState.open = false;
+  const panel = document.getElementById('directorio-panel');
+  panel.style.display = 'none';
+}
+
+// Abrir modal de ficha de empleado
+function openEmpleadoModal(nodeId, cargo, gerencia) {
+  const emp = directorioState.employees[nodeId] || {};
+  document.getElementById('emp-id').value = nodeId;
+  document.getElementById('emp-cargo').value = cargo;
+  document.getElementById('emp-gerencia').value = gerencia;
+  document.getElementById('emp-modal-title').textContent = cargo;
+  document.getElementById('emp-nombre').value = emp.nombre || '';
+  document.getElementById('emp-cedula').value = emp.cedula || '';
+  document.getElementById('emp-fecha').value = emp.fechaIngreso || '';
+  document.getElementById('emp-telefono').value = emp.telefono || '';
+  document.getElementById('emp-email').value = emp.email || '';
+  document.getElementById('emp-notas').value = emp.notas || '';
+  document.getElementById('emp-saved-msg').style.display = 'none';
+  openModal('modal-empleado');
+}
+
+// Guardar ficha de empleado
+async function saveEmpleado() {
+  const id = document.getElementById('emp-id').value;
+  const cargo = document.getElementById('emp-cargo').value;
+  const gerencia = document.getElementById('emp-gerencia').value;
+  const data = {
+    id, cargo, gerencia,
+    nombre: document.getElementById('emp-nombre').value.trim(),
+    cedula: document.getElementById('emp-cedula').value.trim(),
+    fechaIngreso: document.getElementById('emp-fecha').value,
+    telefono: document.getElementById('emp-telefono').value.trim(),
+    email: document.getElementById('emp-email').value.trim(),
+    notas: document.getElementById('emp-notas').value.trim()
+  };
+  const btn = document.getElementById('emp-save-btn');
+  btn.textContent = '⏳ Guardando...';
+  btn.disabled = true;
+  try {
+    const apiBase = window.API_BASE || '';
+    const res = await fetch(apiBase + '/api/employees/' + id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('no server');
+    const result = await res.json();
+    directorioState.employees[id] = result.record;
+  } catch(e) {
+    // Sin servidor: solo en memoria (modo lectura en sitio compartido)
+    directorioState.employees[id] = data;
+    showToast('⚠ Sin conexión al servidor. Datos no guardados.', '#f0a050');
+    btn.textContent = '💾 Guardar';
+    btn.disabled = false;
+    return;
+  }
+  document.getElementById('emp-saved-msg').style.display = 'block';
+  showToast('✓ Datos guardados', '#2bbfae');
+  if (directorioState.open) {
+    renderDirList(directorioState.activeTab, document.getElementById('dir-search').value);
+  }
+  // Refrescar panel lateral si está abierto con este mismo cargo
+  if (selectedNode && generateNodeId(selectedNode.data.name) === id) {
+    const color = colorMap[selectedNode.data.gerencia] || '#1a3a6b';
+    showDetailEmpleado(selectedNode.data.name, selectedNode.data.gerencia, color);
+  }
+  setTimeout(() => { document.getElementById('emp-saved-msg').style.display = 'none'; }, 3000);
+  btn.textContent = '💾 Guardar';
+  btn.disabled = false;
+}
+
+// === WIRING DE EVENTOS DEL DIRECTORIO ===
+document.getElementById('directorio-btn').addEventListener('click', () => openDirectorio('comercializacion'));
+document.getElementById('directorio-close').addEventListener('click', closeDirectorio);
+document.getElementById('emp-save-btn').addEventListener('click', saveEmpleado);
+
+// Tabs de gerencias
+document.querySelectorAll('.dir-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const g = tab.dataset.gerencia;
+    directorioState.activeTab = g;
+    document.querySelectorAll('.dir-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderDirList(g, document.getElementById('dir-search').value);
+  });
+});
+
+// Búsqueda
+document.getElementById('dir-search').addEventListener('input', function() {
+  renderDirList(directorioState.activeTab, this.value);
+});
+
+// Tecla Escape cierra el panel si está abierto
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && directorioState.open) closeDirectorio();
+});
+
+// Exponer función globalmente para que los nodos D3 puedan llamarla
+window.openEmpleadoModalFromNode = function(cargo, gerencia) {
+  const id = generateNodeId(cargo);
+  openEmpleadoModal(id, cargo, gerencia);
+};
 
 </script>
 </body>

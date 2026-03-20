@@ -1,6 +1,6 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
+import { rm, readFile, writeFile, access } from "fs/promises";
 
 // server deps to bundle to reduce openat(2) syscalls
 // which helps cold start times
@@ -37,6 +37,22 @@ async function buildAll() {
 
   console.log("building client...");
   await viteBuild();
+
+  // Inyectar datos de empleados en el HTML generado
+  console.log("injecting employees data...");
+  const htmlPath = "dist/public/index.html";
+  let employeesData = {};
+  try {
+    await access("employees.json");
+    employeesData = JSON.parse(await readFile("employees.json", "utf-8"));
+  } catch(e) {
+    employeesData = {};
+  }
+  let htmlContent = await readFile(htmlPath, "utf-8");
+  const injection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(employeesData)};</script>`;
+  htmlContent = htmlContent.replace('</head>', injection + '</head>');
+  await writeFile(htmlPath, htmlContent, "utf-8");
+  console.log(`injected ${Object.keys(employeesData).length} employee records`);
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
