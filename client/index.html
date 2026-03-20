@@ -2522,7 +2522,7 @@ document.getElementById('share-retry-btn').addEventListener('click', doShare);
 // o se cargan de la API cuando el servidor está disponible
 const directorioState = {
   open: false,
-  activeTab: 'comercializacion',
+  activeTab: 'all',
   employees: {},
   nodes: [],
   hasServer: !!(window.API_BASE || '')
@@ -2777,7 +2777,7 @@ async function saveEmpleado() {
 }
 
 // === WIRING DE EVENTOS DEL DIRECTORIO ===
-document.getElementById('directorio-btn').addEventListener('click', () => openDirectorio('comercializacion'));
+document.getElementById('directorio-btn').addEventListener('click', () => openDirectorio('all'));
 document.getElementById('directorio-close').addEventListener('click', closeDirectorio);
 document.getElementById('emp-save-btn').addEventListener('click', saveEmpleado);
 
