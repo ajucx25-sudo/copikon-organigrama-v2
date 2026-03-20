@@ -1249,14 +1249,15 @@ footer a:hover { color: var(--color-accent); }
         <div style="display:flex;gap:8px;align-items:center;margin:0 0 8px;">
           <input id="share-url-input" type="text" class="form-input" readonly
             style="flex:1;font-size:0.75rem;cursor:pointer;" onclick="this.select()"
-            value="https://drive.google.com/file/d/1nEc70MylyqmbxhspFZFXohM3b-NPtC_3/view?usp=sharing">
+            value="https://htmlpreview.github.io/?https://gist.githubusercontent.com/ajucx25-sudo/6c4a55a7e9ced64234037f25b8b2aaad/raw/organigrama-copikon.html">
           <button id="share-copy-btn" class="btn-primary"
             style="white-space:nowrap;padding:8px 14px;font-size:0.82rem;">Copiar</button>
         </div>
         <div id="share-copied-msg" style="display:none;font-size:0.8rem;color:#2bbfae;margin-bottom:8px;">✓ Link copiado al portapapeles</div>
+        <div id="share-updating-note" style="display:none;font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;">⏳ Actualizando con datos más recientes...</div>
         <a href="https://htmlpreview.github.io/?https://gist.githubusercontent.com/ajucx25-sudo/6c4a55a7e9ced64234037f25b8b2aaad/raw/organigrama-copikon.html" target="_blank"
           style="font-size:0.8rem;color:var(--color-accent);">Abrir organigrama ↗</a>
-        <p style="font-size:0.75rem;color:var(--color-text-muted);margin:10px 0 0;">Abre en cualquier navegador — WhatsApp, móvil, PC — sin necesidad de cuenta.</p>
+        <p style="font-size:0.75rem;color:var(--text-muted);margin:10px 0 0;">Abre en cualquier navegador — WhatsApp, móvil, PC — sin necesidad de cuenta.</p>
       </div>
 
       <!-- Error state -->
@@ -2357,6 +2358,27 @@ document.getElementById('load-file-input').addEventListener('change', function()
 });
 
 // ===== COMPARTIR (SHARE MODAL) =====
+const GIST_SHARE_URL = 'https://htmlpreview.github.io/?https://gist.githubusercontent.com/ajucx25-sudo/6c4a55a7e9ced64234037f25b8b2aaad/raw/organigrama-copikon.html';
+
+function showShareResult(url, updating) {
+  document.getElementById('share-loading').style.display = 'none';
+  document.getElementById('share-result').style.display = 'block';
+  document.getElementById('share-url-input').value = url;
+  const openLink = document.querySelector('#modal-share a[target="_blank"]');
+  if (openLink) openLink.href = url;
+  // Mostrar nota si está actualizando en segundo plano
+  const noteEl = document.getElementById('share-updating-note');
+  if (noteEl) noteEl.style.display = updating ? 'block' : 'none';
+  document.getElementById('share-copy-btn').onclick = async () => {
+    try { await navigator.clipboard.writeText(url); }
+    catch { const i = document.getElementById('share-url-input'); i.select(); document.execCommand('copy'); }
+    document.getElementById('share-copied-msg').style.display = 'block';
+    const btn = document.getElementById('share-copy-btn');
+    btn.textContent = '✓ Copiado';
+    setTimeout(() => { btn.textContent = 'Copiar'; }, 2500);
+  };
+}
+
 async function doShare() {
   openModal('modal-share');
   document.getElementById('share-loading').style.display = 'block';
@@ -2364,36 +2386,25 @@ async function doShare() {
   document.getElementById('share-error').style.display = 'none';
   document.getElementById('share-copied-msg').style.display = 'none';
 
-  try {
-    const apiBase = window.API_BASE || '';
-    // Llama al endpoint que actualiza el Gist con los datos actuales
-    const res = await fetch(apiBase + '/api/share-gist', { method: 'POST' });
-    if (!res.ok) {
-      const data = await res.json().catch(() => ({}));
-      throw new Error(data.error || 'Error del servidor');
+  const apiBase = window.API_BASE || '';
+
+  // Mostrar el link inmediatamente (siempre funciona para WhatsApp)
+  showShareResult(GIST_SHARE_URL, !!apiBase);
+
+  // Si hay servidor disponible, actualizar el Gist en segundo plano
+  if (apiBase) {
+    try {
+      const res = await fetch(apiBase + '/api/share-gist', { method: 'POST' });
+      if (res.ok) {
+        const { url } = await res.json();
+        // Actualizar el link con la URL retornada (puede ser la misma)
+        showShareResult(url || GIST_SHARE_URL, false);
+        showToast('Organigrama actualizado en el link ✓', '#2bbfae');
+      }
+    } catch(e) {
+      // Silencioso — el link del Gist ya está mostrado y funciona
+      console.warn('No se pudo actualizar el Gist:', e.message);
     }
-    const { url: SHARE_URL } = await res.json();
-
-    document.getElementById('share-loading').style.display = 'none';
-    document.getElementById('share-result').style.display = 'block';
-    document.getElementById('share-url-input').value = SHARE_URL;
-
-    // Actualizar link "Abrir organigrama"
-    const openLink = document.querySelector('#modal-share a[target="_blank"]');
-    if (openLink) openLink.href = SHARE_URL;
-
-    document.getElementById('share-copy-btn').onclick = async () => {
-      try { await navigator.clipboard.writeText(SHARE_URL); }
-      catch { const i = document.getElementById('share-url-input'); i.select(); document.execCommand('copy'); }
-      document.getElementById('share-copied-msg').style.display = 'block';
-      const btn = document.getElementById('share-copy-btn');
-      btn.textContent = '✓ Copiado';
-      setTimeout(() => { btn.textContent = 'Copiar'; }, 2500);
-    };
-  } catch(e) {
-    document.getElementById('share-loading').style.display = 'none';
-    document.getElementById('share-error').style.display = 'block';
-    document.getElementById('share-error-msg').textContent = 'Error al generar el link: ' + (e.message || 'intenta de nuevo');
   }
 }
 
