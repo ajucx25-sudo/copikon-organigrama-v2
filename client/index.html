@@ -726,6 +726,17 @@ footer a:hover { color: var(--color-accent); }
           </div>
 
         </div>
+
+        <!-- Descripción del cargo -->
+        <div style="margin-top:16px;padding-top:14px;border-top:1.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--text-muted,#7a8399);text-transform:uppercase;letter-spacing:0.05em;">💼 Descripción del cargo</span>
+            <span style="font-size:0.7rem;color:var(--text-muted,#aab0c0);font-style:italic;">¿Qué hace este rol?</span>
+          </div>
+          <textarea id="emp-descripcion" class="form-input" rows="4"
+            placeholder="Describe las responsabilidades principales, objetivo y funciones clave del cargo..."
+            style="resize:vertical;font-size:0.83rem;line-height:1.5;"></textarea>
+        </div>
         <div id="emp-saved-msg" style="display:none;font-size:0.8rem;color:#2bbfae;margin-top:8px;">✓ Guardado correctamente</div>
       </div>
       <div class="modal-footer">
@@ -826,6 +837,11 @@ footer a:hover { color: var(--color-accent); }
           <div id="detail-emp-nivelacad-row"><span style="color:var(--text-muted,#7a8399);">🎓 Nivel acad.</span><br><span id="detail-emp-nivelacad" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
           <div id="detail-emp-hijos-row" style="grid-column:1/-1;"><span style="color:var(--text-muted,#7a8399);">👶 Hijos</span><br><span id="detail-emp-hijos" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
           <div id="detail-emp-notas-row" style="grid-column:1/-1;display:none;"><span style="color:var(--text-muted,#7a8399);">📝 Notas</span><br><span id="detail-emp-notas" style="color:var(--text-primary,#1a2238);"></span></div>
+        </div>
+        <!-- Descripción del cargo -->
+        <div id="detail-emp-desc-row" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:none;">
+          <div style="font-size:0.7rem;font-weight:700;color:var(--text-muted,#7a8399);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px;">💼 Descripción del cargo</div>
+          <div id="detail-emp-desc" style="font-size:0.8rem;color:var(--text-primary,#1a2238);line-height:1.55;"></div>
         </div>
       </div>
     </div>
@@ -1586,9 +1602,28 @@ function showDetailEmpleado(cargo, gerencia, color) {
     } else {
       notasRow.style.display = 'none';
     }
+    // Descripción del cargo
+    const descRow = document.getElementById('detail-emp-desc-row');
+    const descText = emp.descripcionCargo ||
+      ((typeof window.__CARGO_DESCRIPTIONS__ !== 'undefined') ? (window.__CARGO_DESCRIPTIONS__[id] || '') : '');
+    if (descText) {
+      descRow.style.display = 'block';
+      document.getElementById('detail-emp-desc').textContent = descText;
+    } else {
+      descRow.style.display = 'none';
+    }
   } else {
+    // Sin titular pero puede tener descripción de cargo
     document.getElementById('detail-emp-empty').style.display = 'block';
     document.getElementById('detail-emp-data').style.display = 'none';
+    const descRow = document.getElementById('detail-emp-desc-row');
+    const descText = (typeof window.__CARGO_DESCRIPTIONS__ !== 'undefined') ? (window.__CARGO_DESCRIPTIONS__[id] || '') : '';
+    if (descText) {
+      descRow.style.display = 'block';
+      document.getElementById('detail-emp-desc').textContent = descText;
+    } else {
+      descRow.style.display = 'none';
+    }
   }
 }
 document.getElementById('detail-close').addEventListener('click', () => {
@@ -2280,6 +2315,10 @@ function openEmpleadoModal(nodeId, cargo, gerencia) {
   cantWrap.style.display = tieneHijos === 'si' ? 'block' : 'none';
   document.getElementById('emp-cantidadhijos').value = emp.cantidadHijos || '';
   document.getElementById('emp-notas').value = emp.notas || '';
+  // Descripción del cargo: primero lo guardado, luego la descripción generada por IA como fallback
+  const descGuardada = emp.descripcionCargo || '';
+  const descIA = (typeof window.__CARGO_DESCRIPTIONS__ !== 'undefined') ? (window.__CARGO_DESCRIPTIONS__[nodeId] || '') : '';
+  document.getElementById('emp-descripcion').value = descGuardada || descIA;
   document.getElementById('emp-saved-msg').style.display = 'none';
   openModal('modal-empleado');
 }
@@ -2301,7 +2340,8 @@ async function saveEmpleado() {
     nivelAcademico: document.getElementById('emp-nivelacademico').value,
     tieneHijos: tieneHijosVal,
     cantidadHijos: tieneHijosVal === 'si' ? (document.getElementById('emp-cantidadhijos').value || '') : '',
-    notas: document.getElementById('emp-notas').value.trim()
+    notas: document.getElementById('emp-notas').value.trim(),
+    descripcionCargo: document.getElementById('emp-descripcion').value.trim()
   };
   const btn = document.getElementById('emp-save-btn');
   btn.textContent = '⏳ Guardando...';

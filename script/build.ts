@@ -48,11 +48,18 @@ async function buildAll() {
   } catch(e) {
     employeesData = {};
   }
+  let cargoDescriptions = {};
+  try {
+    await access("cargo-descriptions.json");
+    cargoDescriptions = JSON.parse(await readFile("cargo-descriptions.json", "utf-8"));
+  } catch(e) {
+    cargoDescriptions = {};
+  }
   let htmlContent = await readFile(htmlPath, "utf-8");
-  const injection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(employeesData)};</script>`;
+  const injection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(employeesData)};window.__CARGO_DESCRIPTIONS__ = ${JSON.stringify(cargoDescriptions)};</script>`;
   htmlContent = htmlContent.replace('</head>', injection + '</head>');
   await writeFile(htmlPath, htmlContent, "utf-8");
-  console.log(`injected ${Object.keys(employeesData).length} employee records`);
+  console.log(`injected ${Object.keys(employeesData).length} employee records, ${Object.keys(cargoDescriptions).length} cargo descriptions`);
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
