@@ -651,10 +651,14 @@ footer a:hover { color: var(--color-accent); }
         <input type="hidden" id="emp-gerencia">
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+
+          <!-- Fila 1: Nombre -->
           <div style="grid-column:1/-1;">
             <label class="form-label">Nombre completo</label>
             <input id="emp-nombre" type="text" class="form-input" placeholder="Ej: Juan Pérez González">
           </div>
+
+          <!-- Fila 2: Cédula + Fecha -->
           <div>
             <label class="form-label">Cédula de identidad</label>
             <input id="emp-cedula" type="text" class="form-input" placeholder="V-12.345.678">
@@ -663,6 +667,8 @@ footer a:hover { color: var(--color-accent); }
             <label class="form-label">Fecha de ingreso</label>
             <input id="emp-fecha" type="date" class="form-input">
           </div>
+
+          <!-- Fila 3: Teléfono + Email -->
           <div>
             <label class="form-label">Teléfono</label>
             <input id="emp-telefono" type="text" class="form-input" placeholder="0412-000-0000">
@@ -671,11 +677,54 @@ footer a:hover { color: var(--color-accent); }
             <label class="form-label">Email</label>
             <input id="emp-email" type="email" class="form-input" placeholder="correo@copikon.com">
           </div>
+
+          <!-- Fila 4: Estado civil + Nivel académico -->
+          <div>
+            <label class="form-label">Estado civil</label>
+            <select id="emp-estadocivil" class="form-input form-select">
+              <option value="">— Seleccionar —</option>
+              <option value="Soltero/a">Soltero/a</option>
+              <option value="Casado/a">Casado/a</option>
+              <option value="Unión estable">Unión estable</option>
+              <option value="Divorciado/a">Divorciado/a</option>
+              <option value="Viudo/a">Viudo/a</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Nivel académico</label>
+            <select id="emp-nivelacademico" class="form-input form-select">
+              <option value="">— Seleccionar —</option>
+              <option value="Primaria">Primaria</option>
+              <option value="Secundaria">Secundaria</option>
+              <option value="T.S.U.">T.S.U.</option>
+              <option value="Universitario">Universitario</option>
+              <option value="Postgrado">Postgrado</option>
+              <option value="Maestría">Maestría</option>
+              <option value="Doctorado">Doctorado</option>
+            </select>
+          </div>
+
+          <!-- Fila 5: Hijos (sí/no + cantidad) -->
+          <div>
+            <label class="form-label">¿Tiene hijos?</label>
+            <select id="emp-tienehijos" class="form-input form-select" onchange="document.getElementById('emp-cantidadhijos-wrap').style.display=this.value==='si'?'block':'none'">
+              <option value="">— Seleccionar —</option>
+              <option value="no">No</option>
+              <option value="si">Sí</option>
+            </select>
+          </div>
+          <div id="emp-cantidadhijos-wrap" style="display:none;">
+            <label class="form-label">Cantidad de hijos</label>
+            <input id="emp-cantidadhijos" type="number" min="1" max="20" class="form-input" placeholder="Ej: 2">
+          </div>
+
+          <!-- Fila 6: Notas -->
           <div style="grid-column:1/-1;">
             <label class="form-label">Notas</label>
             <textarea id="emp-notas" class="form-input" rows="2" placeholder="Observaciones adicionales..."
               style="resize:vertical;"></textarea>
           </div>
+
         </div>
         <div id="emp-saved-msg" style="display:none;font-size:0.8rem;color:#2bbfae;margin-top:8px;">✓ Guardado correctamente</div>
       </div>
@@ -769,11 +818,14 @@ footer a:hover { color: var(--color-accent); }
             <div id="detail-emp-cedula" style="font-size:0.75rem;color:var(--color-text-muted);"></div>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:0.78rem;">
-          <div><span style="color:var(--color-text-muted);">📅 Ingreso</span><br><span id="detail-emp-fecha" style="color:var(--color-text);font-weight:600;"></span></div>
-          <div><span style="color:var(--color-text-muted);">📱 Teléfono</span><br><span id="detail-emp-tel" style="color:var(--color-text);font-weight:600;"></span></div>
-          <div style="grid-column:1/-1;"><span style="color:var(--color-text-muted);">✉️ Email</span><br><span id="detail-emp-email" style="color:var(--color-text);font-weight:600;"></span></div>
-          <div id="detail-emp-notas-row" style="grid-column:1/-1;display:none;"><span style="color:var(--color-text-muted);">📝 Notas</span><br><span id="detail-emp-notas" style="color:var(--color-text);"></span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;font-size:0.78rem;">
+          <div><span style="color:var(--text-muted,#7a8399);">📅 Ingreso</span><br><span id="detail-emp-fecha" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
+          <div><span style="color:var(--text-muted,#7a8399);">📱 Teléfono</span><br><span id="detail-emp-tel" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
+          <div style="grid-column:1/-1;"><span style="color:var(--text-muted,#7a8399);">✉️ Email</span><br><span id="detail-emp-email" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
+          <div id="detail-emp-estadocivil-row"><span style="color:var(--text-muted,#7a8399);">💍 Estado civil</span><br><span id="detail-emp-estadocivil" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
+          <div id="detail-emp-nivelacad-row"><span style="color:var(--text-muted,#7a8399);">🎓 Nivel acad.</span><br><span id="detail-emp-nivelacad" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
+          <div id="detail-emp-hijos-row" style="grid-column:1/-1;"><span style="color:var(--text-muted,#7a8399);">👶 Hijos</span><br><span id="detail-emp-hijos" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
+          <div id="detail-emp-notas-row" style="grid-column:1/-1;display:none;"><span style="color:var(--text-muted,#7a8399);">📝 Notas</span><br><span id="detail-emp-notas" style="color:var(--text-primary,#1a2238);"></span></div>
         </div>
       </div>
     </div>
@@ -1515,6 +1567,18 @@ function showDetailEmpleado(cargo, gerencia, color) {
     document.getElementById('detail-emp-fecha').textContent = fechaDisplay || '—';
     document.getElementById('detail-emp-tel').textContent = emp.telefono || '—';
     document.getElementById('detail-emp-email').textContent = emp.email || '—';
+    // Estado civil
+    document.getElementById('detail-emp-estadocivil').textContent = emp.estadoCivil || '—';
+    // Nivel académico
+    document.getElementById('detail-emp-nivelacad').textContent = emp.nivelAcademico || '—';
+    // Hijos
+    let hijosText = '—';
+    if (emp.tieneHijos === 'no') hijosText = 'No tiene';
+    else if (emp.tieneHijos === 'si') {
+      hijosText = emp.cantidadHijos ? emp.cantidadHijos + (emp.cantidadHijos === '1' ? ' hijo' : ' hijos') : 'Sí';
+    }
+    document.getElementById('detail-emp-hijos').textContent = hijosText;
+    // Notas
     const notasRow = document.getElementById('detail-emp-notas-row');
     if (emp.notas) {
       notasRow.style.display = 'block';
@@ -2208,6 +2272,13 @@ function openEmpleadoModal(nodeId, cargo, gerencia) {
   document.getElementById('emp-fecha').value = emp.fechaIngreso || '';
   document.getElementById('emp-telefono').value = emp.telefono || '';
   document.getElementById('emp-email').value = emp.email || '';
+  document.getElementById('emp-estadocivil').value = emp.estadoCivil || '';
+  document.getElementById('emp-nivelacademico').value = emp.nivelAcademico || '';
+  const tieneHijos = emp.tieneHijos || '';
+  document.getElementById('emp-tienehijos').value = tieneHijos;
+  const cantWrap = document.getElementById('emp-cantidadhijos-wrap');
+  cantWrap.style.display = tieneHijos === 'si' ? 'block' : 'none';
+  document.getElementById('emp-cantidadhijos').value = emp.cantidadHijos || '';
   document.getElementById('emp-notas').value = emp.notas || '';
   document.getElementById('emp-saved-msg').style.display = 'none';
   openModal('modal-empleado');
@@ -2218,6 +2289,7 @@ async function saveEmpleado() {
   const id = document.getElementById('emp-id').value;
   const cargo = document.getElementById('emp-cargo').value;
   const gerencia = document.getElementById('emp-gerencia').value;
+  const tieneHijosVal = document.getElementById('emp-tienehijos').value;
   const data = {
     id, cargo, gerencia,
     nombre: document.getElementById('emp-nombre').value.trim(),
@@ -2225,6 +2297,10 @@ async function saveEmpleado() {
     fechaIngreso: document.getElementById('emp-fecha').value,
     telefono: document.getElementById('emp-telefono').value.trim(),
     email: document.getElementById('emp-email').value.trim(),
+    estadoCivil: document.getElementById('emp-estadocivil').value,
+    nivelAcademico: document.getElementById('emp-nivelacademico').value,
+    tieneHijos: tieneHijosVal,
+    cantidadHijos: tieneHijosVal === 'si' ? (document.getElementById('emp-cantidadhijos').value || '') : '',
     notas: document.getElementById('emp-notas').value.trim()
   };
   const btn = document.getElementById('emp-save-btn');
