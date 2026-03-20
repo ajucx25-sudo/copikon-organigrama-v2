@@ -401,6 +401,73 @@ export async function registerRoutes(server: Server, app: Express): Promise<Serv
     }
   }
 
+  // POST /api/share-gist — actualiza el Gist con los datos actuales y retorna el link de htmlpreview
+  const GIST_ID = "6c4a55a7e9ced64234037f25b8b2aaad";
+  const GIST_FILENAME = "organigrama-copikon.html";
+  const HTMLPREVIEW_URL = `https://htmlpreview.github.io/?https://gist.githubusercontent.com/ajucx25-sudo/${GIST_ID}/raw/${GIST_FILENAME}`;
+
+  app.post("/api/share-gist", async (_req, res) => {
+    try {
+      const html = await buildStandaloneHTML();
+
+      // Actualizar el Gist via curl + Python para construir el JSON correctamente
+      // Token leído de github-config.json (env vars no siempre disponibles en el proceso servidor)
+      const ghConfigPath = path.join(process.cwd(), "github-config.json");
+      let ghConfig: { token: string; host: string } = { token: "", host: "agent-proxy.perplexity.ai" };
+      try { ghConfig = JSON.parse(fs.readFileSync(ghConfigPath, "utf-8")); } catch {}
+      const host = ghConfig.host || process.env.GH_HOST || "agent-proxy.perplexity.ai";
+      const token = ghConfig.token || process.env.GH_ENTERPRISE_TOKEN || "";
+      const apiUrl = `https://${host}/api/v3/gists/${GIST_ID}`;
+      const tmpHtmlFile = path.join(os.tmpdir(), `gist-html-${Date.now()}.html`);
+      const tmpBodyFile = path.join(os.tmpdir(), `gist-body-${Date.now()}.json`);
+
+      fs.writeFileSync(tmpHtmlFile, html, "utf-8");
+
+      // Paso 1: construir JSON con Python (maneja escaping de HTML correctamente)
+      await new Promise<void>((resolve, reject) => {
+        const pyScript = `
+import json, sys
+with open(${JSON.stringify(tmpHtmlFile)}, 'r', encoding='utf-8') as f:
+    content = f.read()
+body = json.dumps({'files': {${JSON.stringify(GIST_FILENAME)}: {'content': content}}})
+with open(${JSON.stringify(tmpBodyFile)}, 'w', encoding='utf-8') as f:
+    f.write(body)
+print('ok')
+`.trim();
+        execFile("python3", ["-c", pyScript], (err, stdout, stderr) => {
+          try { fs.unlinkSync(tmpHtmlFile); } catch {}
+          if (err) return reject(new Error("Python JSON build error: " + (stderr || err.message)));
+          resolve();
+        });
+      });
+
+      // Paso 2: PATCH al Gist con curl
+      await new Promise<void>((resolve, reject) => {
+        const args = [
+          "-s", "-o", "/dev/null", "-w", "%{http_code}",
+          "-X", "PATCH",
+          "-H", `Authorization: Bearer ${token}`,
+          "-H", "Accept: application/vnd.github.v3+json",
+          "-H", "Content-Type: application/json",
+          "--data", `@${tmpBodyFile}`,
+          apiUrl
+        ];
+        execFile("curl", args, (err, stdout, stderr) => {
+          try { fs.unlinkSync(tmpBodyFile); } catch {}
+          if (err) return reject(new Error(stderr || err.message));
+          const code = parseInt(stdout.trim(), 10);
+          if (code < 200 || code >= 300) return reject(new Error(`GitHub API HTTP ${code}`));
+          resolve();
+        });
+      });
+
+      res.json({ ok: true, url: HTMLPREVIEW_URL });
+    } catch (e: any) {
+      console.error("Share-gist error:", e);
+      res.status(500).json({ error: "Error al actualizar el link: " + e.message });
+    }
+  });
+
   // GET /api/export-html — download as file
   app.get("/api/export-html", async (_req, res) => {
     try {

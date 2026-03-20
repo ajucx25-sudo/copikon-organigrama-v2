@@ -2366,16 +2366,21 @@ async function doShare() {
 
   try {
     const apiBase = window.API_BASE || '';
-    const res = await fetch(apiBase + '/api/share', { method: 'POST' });
-    if (!res.ok) throw new Error('Error del servidor');
-    const { url } = await res.json();
-
-    // Construir URL pública completa
-    const SHARE_URL = apiBase ? (apiBase + url) : (window.location.origin + url);
+    // Llama al endpoint que actualiza el Gist con los datos actuales
+    const res = await fetch(apiBase + '/api/share-gist', { method: 'POST' });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data.error || 'Error del servidor');
+    }
+    const { url: SHARE_URL } = await res.json();
 
     document.getElementById('share-loading').style.display = 'none';
     document.getElementById('share-result').style.display = 'block';
     document.getElementById('share-url-input').value = SHARE_URL;
+
+    // Actualizar link "Abrir organigrama"
+    const openLink = document.querySelector('#modal-share a[target="_blank"]');
+    if (openLink) openLink.href = SHARE_URL;
 
     document.getElementById('share-copy-btn').onclick = async () => {
       try { await navigator.clipboard.writeText(SHARE_URL); }

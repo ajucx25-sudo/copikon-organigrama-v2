@@ -5,3 +5,4 @@ server/public
 vite.config.ts.*
 *.tar.gz
 org-data.backup-*.json
+github-config.json
