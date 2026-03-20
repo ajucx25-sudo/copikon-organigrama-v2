@@ -366,6 +366,16 @@ export async function registerRoutes(server: Server, app: Express): Promise<Serv
       // 6. Remove __PORT_5000__ token (not needed in standalone)
       html = html.replace(/__PORT_5000__/g, "");
 
+      // 6c. Re-inyectar employees actuales (con perfilRol, cursos, gamificacion)
+      // Sobreescribir el window.__EMPLOYEES_DATA__ embebido en el build
+      const currentEmployees = loadEmployees();
+      const cargoDescPath = path.join(process.cwd(), 'cargo-descriptions.json');
+      let cargoDescs = {};
+      try { cargoDescs = JSON.parse(fs.readFileSync(cargoDescPath, 'utf-8')); } catch {}
+      const freshInjection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(currentEmployees)};window.__CARGO_DESCRIPTIONS__ = ${JSON.stringify(cargoDescs)};</script>`;
+      // Eliminar inyección previa y añadir una nueva actualizada
+      html = html.replace(/<script>window.__EMPLOYEES_DATA__[^<]*<\/script>/, freshInjection);
+
       // 6b. Remove external font <link> tags blocked by catbox.moe CSP
       // catbox CSP: default-src 'self' — blocks api.fontshare.com and fonts.googleapis.com
       // Fonts will fall back gracefully to system sans-serif

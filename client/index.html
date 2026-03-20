@@ -2357,24 +2357,39 @@ document.getElementById('load-file-input').addEventListener('change', function()
 });
 
 // ===== COMPARTIR (SHARE MODAL) =====
-function doShare() {
-  const SHARE_URL = 'https://htmlpreview.github.io/?https://gist.githubusercontent.com/ajucx25-sudo/6c4a55a7e9ced64234037f25b8b2aaad/raw/organigrama-copikon.html';
-
+async function doShare() {
   openModal('modal-share');
-  document.getElementById('share-loading').style.display = 'none';
-  document.getElementById('share-result').style.display = 'block';
+  document.getElementById('share-loading').style.display = 'block';
+  document.getElementById('share-result').style.display = 'none';
   document.getElementById('share-error').style.display = 'none';
   document.getElementById('share-copied-msg').style.display = 'none';
-  document.getElementById('share-url-input').value = SHARE_URL;
 
-  document.getElementById('share-copy-btn').onclick = async () => {
-    try { await navigator.clipboard.writeText(SHARE_URL); }
-    catch { const i = document.getElementById('share-url-input'); i.select(); document.execCommand('copy'); }
-    document.getElementById('share-copied-msg').style.display = 'block';
-    const btn = document.getElementById('share-copy-btn');
-    btn.textContent = '✓ Copiado';
-    setTimeout(() => { btn.textContent = 'Copiar'; }, 2500);
-  };
+  try {
+    const apiBase = window.API_BASE || '';
+    const res = await fetch(apiBase + '/api/share', { method: 'POST' });
+    if (!res.ok) throw new Error('Error del servidor');
+    const { url } = await res.json();
+
+    // Construir URL pública completa
+    const SHARE_URL = apiBase ? (apiBase + url) : (window.location.origin + url);
+
+    document.getElementById('share-loading').style.display = 'none';
+    document.getElementById('share-result').style.display = 'block';
+    document.getElementById('share-url-input').value = SHARE_URL;
+
+    document.getElementById('share-copy-btn').onclick = async () => {
+      try { await navigator.clipboard.writeText(SHARE_URL); }
+      catch { const i = document.getElementById('share-url-input'); i.select(); document.execCommand('copy'); }
+      document.getElementById('share-copied-msg').style.display = 'block';
+      const btn = document.getElementById('share-copy-btn');
+      btn.textContent = '✓ Copiado';
+      setTimeout(() => { btn.textContent = 'Copiar'; }, 2500);
+    };
+  } catch(e) {
+    document.getElementById('share-loading').style.display = 'none';
+    document.getElementById('share-error').style.display = 'block';
+    document.getElementById('share-error-msg').textContent = 'Error al generar el link: ' + (e.message || 'intenta de nuevo');
+  }
 }
 
 document.getElementById('export-html-btn').addEventListener('click', doShare);
