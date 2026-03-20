@@ -12,6 +12,15 @@
     "nivelAcademico": "",
     "tieneHijos": "",
     "cantidadHijos": "",
-    "notas": ""
+    "notas": "",
+    "perfilRol": {
+      "descripcion": "",
+      "gamificacion": {
+        "xp": 50,
+        "nivel": 1,
+        "cursosComp": 1,
+        "logros": []
+      }
+    }
   }
 }
