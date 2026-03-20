@@ -1,0 +1,429 @@
+import type { Express } from "express";
+import { createServer, type Server } from "http";
+import fs from "fs";
+import path from "path";
+import crypto from "crypto";
+import os from "os";
+import { execFile } from "child_process";
+
+const DATA_FILE = path.join(process.cwd(), "org-data.json");
+
+// Default org data
+const DEFAULT_DATA = {
+  name: "Junta Directiva",
+  gerencia: "root",
+  children: [
+    {
+      name: "CEO",
+      gerencia: "root",
+      children: [
+        { name: "Auditor Externo", gerencia: "staff" },
+        { name: "Asesor Externo", gerencia: "staff" },
+        {
+          name: "Gerencia de Comercialización",
+          gerencia: "comercializacion",
+          children: [
+            {
+              name: "Gerencia Comercial Mayor",
+              gerencia: "comercializacion",
+              children: [
+                { name: "Coord. Comercial Mayor Lara-Port-Yar", gerencia: "comercializacion", children: [{ name: "Vendedor Mayor Lara-Port-Yar", gerencia: "comercializacion" }] },
+                { name: "Coord. Comercial Mayor Aragua-Carabobo", gerencia: "comercializacion", children: [{ name: "Vendedor Mayor Aragua-Carabobo", gerencia: "comercializacion" }] },
+                { name: "Coord. Comercial Caracas", gerencia: "comercializacion", children: [{ name: "Vendedor Mayor Caracas", gerencia: "comercializacion" }] }
+              ]
+            },
+            {
+              name: "Gerencia Comercial Proyectos",
+              gerencia: "comercializacion",
+              children: [
+                { name: "Coord. Comercial Proy. Lara-Port-Yar", gerencia: "comercializacion", children: [{ name: "Vendedor Técnico Proy. Lara-Port-Yar", gerencia: "comercializacion" }] },
+                { name: "Coord. Comercial Aragua-Carabobo", gerencia: "comercializacion", children: [{ name: "Vendedor Técnico Proy. Aragua-Carabobo", gerencia: "comercializacion" }] }
+              ]
+            },
+            {
+              name: "Gerencia Comercial E-commerce",
+              gerencia: "comercializacion",
+              children: [{ name: "Coord. MercadoLibre/Web/IG/TikTok", gerencia: "comercializacion" }]
+            },
+            {
+              name: "Gerencia de Marketing",
+              gerencia: "comercializacion",
+              children: [
+                { name: "Coordinador de Marketing", gerencia: "comercializacion", children: [
+                    { name: "Analista Digital", gerencia: "comercializacion" },
+                    { name: "Analista de Contenidos", gerencia: "comercializacion" },
+                    { name: "Diseñador Gráfico", gerencia: "comercializacion" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Gerencia de Branding",
+              gerencia: "comercializacion",
+              children: [
+                { name: "Coord. Branding Lara-Port-Yar", gerencia: "comercializacion" },
+                { name: "Coord. Branding Aragua-Carabobo", gerencia: "comercializacion" },
+                { name: "Coord. Branding Caracas", gerencia: "comercializacion" }
+              ]
+            },
+            {
+              name: "Gerencia de Atención al Cliente",
+              gerencia: "comercializacion",
+              children: [
+                { name: "Coord. ATC Lara-Port-Yar", gerencia: "comercializacion", children: [{ name: "Analista ATC Lara-Port-Yar", gerencia: "comercializacion" }] },
+                { name: "Coord. ATC Aragua-Carabobo", gerencia: "comercializacion", children: [{ name: "Analista ATC Aragua-Carabobo", gerencia: "comercializacion" }] },
+                { name: "Coord. ATC Caracas", gerencia: "comercializacion", children: [{ name: "Analista ATC Caracas", gerencia: "comercializacion" }] }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Gerencia de Operaciones",
+          gerencia: "operaciones",
+          children: [
+            { name: "Coordinador de Logística", gerencia: "operaciones", children: [
+                { name: "Analista Logística Internacional", gerencia: "operaciones" },
+                { name: "Analista Logística Nacional", gerencia: "operaciones" },
+                { name: "Analista Logística Tiendas-Clientes", gerencia: "operaciones" },
+                { name: "Analista Gestión de Flotas y Equipos", gerencia: "operaciones" }
+              ]
+            },
+            { name: "Coord. Inventarios y Gestión de Almacén", gerencia: "operaciones", children: [
+                { name: "Analista Inventarios y Almacén Central", gerencia: "operaciones" }
+              ]
+            },
+            { name: "Coord. Estandarización y Gestión de Procesos", gerencia: "operaciones", children: [
+                { name: "Analista Estandarización Lara-Port-Yar", gerencia: "operaciones" },
+                { name: "Analista Estandarización Aragua-Carabobo", gerencia: "operaciones" },
+                { name: "Analista Estandarización Caracas", gerencia: "operaciones" }
+              ]
+            },
+            { name: "Coord. Infraestructura y Mantenimiento", gerencia: "operaciones", children: [
+                { name: "Analista Infraestructura Aragua-Carabobo", gerencia: "operaciones" },
+                { name: "Analista Infraestructura Lara-Port-Yar", gerencia: "operaciones" },
+                { name: "Analista Infraestructura Caracas", gerencia: "operaciones" }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Gerencia de Finanzas - CFO",
+          gerencia: "finanzas",
+          children: [
+            { name: "Gerencia de Contabilidad", gerencia: "finanzas", children: [
+                { name: "Coordinador de Contabilidad", gerencia: "finanzas", children: [
+                    { name: "Analista de Tributos", gerencia: "finanzas" },
+                    { name: "Analista de Cuentas por Cobrar", gerencia: "finanzas" },
+                    { name: "Analista de Cuentas por Pagar", gerencia: "finanzas" },
+                    { name: "Analista Nómina", gerencia: "finanzas" }
+                  ]
+                }
+              ]
+            },
+            { name: "Coord. Análisis y Planificación Financiera", gerencia: "finanzas", children: [
+                { name: "Analista Financiero", gerencia: "finanzas" }
+              ]
+            },
+            { name: "Gerencia de Tesorería", gerencia: "finanzas", children: [
+                { name: "Coordinador de Tesorería", gerencia: "finanzas", children: [
+                    { name: "Analista de Tesorería", gerencia: "finanzas" },
+                    { name: "Analista de Riesgo", gerencia: "finanzas" }
+                  ]
+                },
+                { name: "Coord. Especialista de Deuda", gerencia: "finanzas" }
+              ]
+            },
+          ]
+        },
+        {
+          name: "Gerencia de Compras",
+          gerencia: "compras",
+          children: [
+            { name: "Coord. de Compras Stock", gerencia: "compras", children: [
+                { name: "Analista Compras Nacionales", gerencia: "compras" },
+                { name: "Analista Compras Int. (Norte América)", gerencia: "compras" },
+                { name: "Analista Compras Int. (Asia)", gerencia: "compras" }
+              ]
+            },
+            { name: "Coord. Compras Proy/Serv/Mant", gerencia: "compras", children: [
+                { name: "Analista PSM", gerencia: "compras" }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Gerencia Tiendas Retail Copikon",
+          gerencia: "retail",
+          children: [
+            { name: "Gerencia Tienda Región 1 (Lara-Port-Yar)", gerencia: "retail", children: [
+                { name: "Gerente Tienda Copikon Zona 3 Lara", gerencia: "retail", children: [
+                    { name: "Auxiliar Administrativo (Z3)", gerencia: "retail" },
+                    { name: "Analista Caja (Z3)", gerencia: "retail" },
+                    { name: "Mantenimiento-Infraestructura (Z3)", gerencia: "retail" },
+                    { name: "Mensajero (Z3)", gerencia: "retail" },
+                    { name: "Analista Inventario Almacén Retail (Z3)", gerencia: "retail" },
+                    { name: "Coord. Comercial Tienda Retail (Z3)", gerencia: "retail" },
+                    { name: "Vendedores Integrales (Z3)", gerencia: "retail" }
+                  ]
+                },
+                { name: "Gerente Tienda Copikon Atrium Lara", gerencia: "retail", children: [
+                    { name: "Auxiliar Administrativo (Atrium)", gerencia: "retail" },
+                    { name: "Analista Caja (Atrium)", gerencia: "retail" },
+                    { name: "Mantenimiento-Infraestructura (Atrium)", gerencia: "retail" },
+                    { name: "Mensajero (Atrium)", gerencia: "retail" },
+                    { name: "Analista Inventario Almacén Retail (Atrium)", gerencia: "retail" },
+                    { name: "Coord. Comercial Tienda Retail (Atrium)", gerencia: "retail" },
+                    { name: "Vendedores Integrales (Atrium)", gerencia: "retail" }
+                  ]
+                }
+              ]
+            },
+            { name: "Gerente Tienda Copikon Av. Venezuela", gerencia: "retail", children: [
+                { name: "Auxiliar Administrativo (Av.Vzla)", gerencia: "retail" },
+                { name: "Analista Caja (Av.Vzla)", gerencia: "retail" },
+                { name: "Mantenimiento-Infraestructura (Av.Vzla)", gerencia: "retail" },
+                { name: "Mensajero (Av.Vzla)", gerencia: "retail" },
+                { name: "Analista Inventario Almacén Retail (Av.Vzla)", gerencia: "retail" },
+                { name: "Coord. Comercial Tienda Retail (Av.Vzla)", gerencia: "retail" },
+                { name: "Vendedores Integrales (Av.Vzla)", gerencia: "retail" }
+              ]
+            },
+            { name: "Gerencia Tienda Región 2 (Aragua-Carabobo)", gerencia: "retail", children: [
+                { name: "Auxiliar Administrativo (Aragua-Cab)", gerencia: "retail" },
+                { name: "Analista Caja (Aragua-Cab)", gerencia: "retail" },
+                { name: "Mantenimiento-Infraestructura (Aragua-Cab)", gerencia: "retail" },
+                { name: "Mensajero (Aragua-Cab)", gerencia: "retail" },
+                { name: "Analista Inventario Almacén Retail (Aragua-Cab)", gerencia: "retail" },
+                { name: "Coord. Comercial Tienda Retail (Aragua-Cab)", gerencia: "retail" },
+                { name: "Vendedores Integrales (Aragua-Cab)", gerencia: "retail" }
+              ]
+            },
+            { name: "Gerencia Tienda Región 3 (Caracas)", gerencia: "retail", children: [
+                { name: "Auxiliar Administrativo (Caracas)", gerencia: "retail" },
+                { name: "Analista Caja (Caracas)", gerencia: "retail" },
+                { name: "Mantenimiento-Infraestructura (Caracas)", gerencia: "retail" },
+                { name: "Mensajero (Caracas)", gerencia: "retail" },
+                { name: "Analista Inventario Almacén Retail (Caracas)", gerencia: "retail" },
+                { name: "Coord. Comercial Tienda Retail (Caracas)", gerencia: "retail" },
+                { name: "Vendedores Integrales (Caracas)", gerencia: "retail" }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Gerencia IT",
+          gerencia: "it",
+          children: [{ name: "Coordinador IT", gerencia: "it" }]
+        },
+        {
+          name: "Gerencia Técnica de Proyectos",
+          gerencia: "proyectos",
+          children: [
+            { name: "Coord. Técnico Proy. Generación Eléctrica", gerencia: "proyectos" },
+            { name: "Coord. Técnico Proy. (Pantallas/CCTV/Seg/Remod)", gerencia: "proyectos", children: [
+                { name: "INGENIERÍA", gerencia: "proyectos", children: [
+                    { name: "Ingeniero de Diseño (Cálc/Pres/Planos/BOM)", gerencia: "proyectos" }
+                  ]
+                },
+                { name: "Equipo de Campo", gerencia: "proyectos", children: [
+                    { name: "Supervisor de Instalaciones", gerencia: "proyectos", children: [
+                        { name: "Técnico Instaladores Senior", gerencia: "proyectos" },
+                        { name: "Técnico Instaladores Junior", gerencia: "proyectos" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+function loadData() {
+  try {
+    if (fs.existsSync(DATA_FILE)) {
+      return JSON.parse(fs.readFileSync(DATA_FILE, "utf-8"));
+    }
+  } catch (e) {}
+  return DEFAULT_DATA;
+}
+
+function saveData(data: any) {
+  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), "utf-8");
+}
+
+export async function registerRoutes(server: Server, app: Express): Promise<Server> {
+  // GET org data
+  app.get("/api/org", (_req, res) => {
+    res.json(loadData());
+  });
+
+  // POST save org data
+  app.post("/api/org", (req, res) => {
+    try {
+      const data = req.body;
+      if (!data || !data.name) {
+        return res.status(400).json({ error: "Datos inválidos" });
+      }
+      saveData(data);
+      res.json({ ok: true });
+    } catch (e) {
+      res.status(500).json({ error: "Error al guardar" });
+    }
+  });
+
+  // ── Shared helper: build a standalone HTML file ──────────────────────────
+  async function buildStandaloneHTML(): Promise<string> {
+    try {
+      // 1. Load current org data (from saved file or default)
+      const orgData = loadData();
+
+      // 2. Read the client HTML (use dist if built, else dev source)
+      const distHtmlPath = path.join(process.cwd(), "dist", "public", "index.html");
+      const clientHtmlPath = path.join(process.cwd(), "client", "index.html");
+      const htmlPath = fs.existsSync(distHtmlPath) ? distHtmlPath : clientHtmlPath;
+      let html = fs.readFileSync(htmlPath, "utf-8");
+
+      // 3. Load pre-downloaded D3.js (279KB, no CDN needed)
+      const d3Paths = [
+        path.join(process.cwd(), "..", "d3.min.js"),
+        path.join(process.cwd(), "d3.min.js"),
+        "/home/user/workspace/d3.min.js"
+      ];
+      let d3Content = "";
+      for (const p of d3Paths) {
+        if (fs.existsSync(p)) {
+          d3Content = fs.readFileSync(p, "utf-8");
+          break;
+        }
+      }
+
+      // 4. Replace D3 CDN script tag with inline D3 (base64 approach)
+      // We encode D3 as base64 and decode it at runtime.
+      // This completely avoids HTML parser issues with </script> inside JS strings.
+      if (d3Content) {
+        const D3_CDN_TAG = '<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>';
+        if (html.includes(D3_CDN_TAG)) {
+          const d3Base64 = Buffer.from(d3Content, 'utf-8').toString('base64');
+          // The loader: decodes base64 at runtime and evals D3.
+          // Using Function() instead of eval to avoid strict mode issues.
+          const d3Loader = `<script id="d3-loader">
+(function(){
+  var b64 = "${d3Base64}";
+  var src = typeof atob !== 'undefined' ? atob(b64) :
+    Buffer.from(b64,'base64').toString('utf-8');
+  var s = document.createElement('script');
+  s.textContent = src;
+  document.head.appendChild(s);
+})();
+</script>`;
+          html = html.replace(D3_CDN_TAG, d3Loader);
+        }
+      }
+
+      // 5. Replace the hardcoded orgData block with current saved data
+      // The client HTML has: const orgData = { ... };
+      // We find and replace that entire block
+      const orgDataStart = html.indexOf("const orgData = {");
+      if (orgDataStart !== -1) {
+        // Find the matching closing };
+        let depth = 0;
+        let orgDataEnd = -1;
+        for (let i = orgDataStart + "const orgData = ".length; i < html.length; i++) {
+          if (html[i] === "{") depth++;
+          else if (html[i] === "}") {
+            depth--;
+            if (depth === 0) {
+              orgDataEnd = i + 1; // include the closing }
+              // skip optional ;
+              if (html[orgDataEnd] === ";") orgDataEnd++;
+              break;
+            }
+          }
+        }
+        if (orgDataEnd !== -1) {
+          const newOrgDataBlock = `const orgData = ${JSON.stringify(orgData, null, 2)};`;
+          html = html.slice(0, orgDataStart) + newOrgDataBlock + html.slice(orgDataEnd);
+        }
+      }
+
+      // 6. Remove __PORT_5000__ token (not needed in standalone)
+      html = html.replace(/__PORT_5000__/g, "");
+
+      // 6b. Remove external font <link> tags blocked by catbox.moe CSP
+      // catbox CSP: default-src 'self' — blocks api.fontshare.com and fonts.googleapis.com
+      // Fonts will fall back gracefully to system sans-serif
+      html = html.replace(/<link[^>]*api\.fontshare\.com[^>]*>/g, '');
+      html = html.replace(/<link[^>]*fonts\.googleapis\.com[^>]*>/g, '');
+      html = html.replace(/<link[^>]*fonts\.gstatic\.com[^>]*>/g, '');
+
+      // 7. Remove or neutralize the fetch('/api/org') init call
+      // Since data is already embedded in orgData, just let the fetch fail silently
+      // The .catch() fallback in the client already handles this gracefully
+      // But to be cleaner, replace the fetch init block to skip the network call:
+      html = html.replace(
+        /\/\/ Cargar datos desde el servidor al iniciar, luego renderizar\nfetch\([^)]+\)\n\s*\.then\(r => r\.json\(\)\)\n\s*\.then\(data => \{[\s\S]*?\}\)\n\s*\.catch\([\s\S]*?\}\);/,
+        `// Standalone export: data already embedded above, render directly
+      root.x0 = 0; root.y0 = 0;
+      update(root);
+      setTimeout(centerTree, 600);`
+      );
+
+      return html;
+    } catch (e: any) {
+      throw e;
+    }
+  }
+
+  // GET /api/export-html — download as file
+  app.get("/api/export-html", async (_req, res) => {
+    try {
+      const html = await buildStandaloneHTML();
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      res.setHeader("Content-Disposition", 'attachment; filename="organigrama-copikon.html"');
+      res.send(html);
+    } catch (e: any) {
+      console.error("Export error:", e);
+      res.status(500).json({ error: "Error al exportar: " + e.message });
+    }
+  });
+
+  // POST /api/share — save snapshot locally, return served URL
+  // Snapshots are stored in <cwd>/shares/ and served via GET /api/share/:id
+  const SHARES_DIR = path.join(process.cwd(), "shares");
+  if (!fs.existsSync(SHARES_DIR)) fs.mkdirSync(SHARES_DIR, { recursive: true });
+
+  app.post("/api/share", async (req, res) => {
+    try {
+      const html = await buildStandaloneHTML();
+      const id = crypto.randomBytes(6).toString("hex");
+      const shareFile = path.join(SHARES_DIR, `${id}.html`);
+      fs.writeFileSync(shareFile, html, "utf-8");
+
+      // Return a relative path — the frontend prepends API_BASE automatically
+      // so the full URL becomes: https://.../port/5000/api/share/<id>
+      // This works both locally and deployed.
+      res.json({ ok: true, url: `/api/share/${id}` });
+    } catch (e: any) {
+      console.error("Share error:", e);
+      res.status(500).json({ error: "Error al compartir: " + e.message });
+    }
+  });
+
+  // GET /api/share/:id — serve saved snapshot HTML
+  app.get("/api/share/:id", (req, res) => {
+    const id = req.params.id.replace(/[^a-f0-9]/g, ""); // sanitize
+    const shareFile = path.join(SHARES_DIR, `${id}.html`);
+    if (!fs.existsSync(shareFile)) {
+      return res.status(404).send("<html><body><h2>Link no encontrado o expirado.</h2></body></html>");
+    }
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.setHeader("Cache-Control", "public, max-age=86400");
+    res.send(fs.readFileSync(shareFile, "utf-8"));
+  });
+
+  return server;
+}
