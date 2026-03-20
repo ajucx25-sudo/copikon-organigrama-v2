@@ -711,6 +711,115 @@ footer a:hover { color: var(--color-accent); }
 .edp-xp-btns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .edp-xp-btn { font-size: 11px; padding: 5px 10px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg); color: var(--text-primary); cursor: pointer; transition: all 0.15s; font-family: var(--font-body); font-weight: 600; }
 .edp-xp-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* ===== NUEVO: Vista perfil datos ===== */
+.edp-perfil-grid { display:flex;flex-direction:column;gap:0; }
+.edp-perfil-row {
+  display:flex;align-items:baseline;gap:8px;
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+  font-size:12.5px;
+}
+.edp-perfil-row:last-child { border-bottom:none; }
+.edp-perfil-label {
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;
+  color:var(--text-muted);min-width:110px;flex-shrink:0;
+}
+.edp-perfil-value { color:var(--text-primary);font-weight:600;flex:1; }
+.edp-perfil-value.empty { color:var(--text-muted);font-weight:400;font-style:italic; }
+.edp-perfil-edit-btn {
+  display:flex;align-items:center;gap:5px;margin-top:12px;
+  font-size:11px;font-weight:600;padding:5px 12px;
+  border-radius:6px;border:1px solid var(--border);
+  background:var(--bg);color:var(--text-muted);
+  cursor:pointer;transition:all 0.15s;
+}
+.edp-perfil-edit-btn:hover { border-color:var(--color-primary);color:var(--color-primary); }
+
+/* ===== NUEVO: XP header en pestaña Cursos ===== */
+.edp-xp-header {
+  background:linear-gradient(135deg,var(--color-primary) 0%,#2bbfae 100%);
+  border-radius:10px;padding:10px 14px;margin-bottom:12px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;
+  color:#fff;
+}
+.edp-xp-info { display:flex;flex-direction:column;gap:1px; }
+.edp-xp-nivel { font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;opacity:0.85; }
+.edp-xp-pts { font-size:20px;font-weight:800;line-height:1; }
+.edp-xp-bar-wrap { height:6px;background:rgba(255,255,255,0.25);border-radius:3px;overflow:hidden; }
+.edp-xp-bar-fill { height:100%;border-radius:3px;background:#fff;transition:width 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+.edp-xp-next { font-size:10px;font-weight:600;opacity:0.85;text-align:right;white-space:nowrap; }
+
+/* ===== NUEVO: Tarjeta de curso interactivo ===== */
+.edp-curso-inter {
+  background:var(--bg-card);border:1.5px solid var(--border);
+  border-radius:12px;margin-bottom:10px;overflow:hidden;
+  transition:border-color 0.15s,box-shadow 0.15s;
+}
+.edp-curso-inter:hover { border-color:var(--color-primary);box-shadow:0 2px 12px rgba(74,127,212,0.1); }
+.edp-curso-inter.completed {
+  border-color:#2bbfae;background:rgba(43,191,174,0.04);
+}
+.edp-curso-inter-header {
+  display:flex;align-items:flex-start;gap:10px;
+  padding:12px 14px;
+  cursor:pointer;
+}
+.edp-curso-tipo-badge {
+  font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;
+  padding:2px 7px;border-radius:20px;flex-shrink:0;margin-top:2px;
+}
+.tipo-obligatorio { background:#fde8e8;color:#c0392b; }
+.tipo-recomendado  { background:#fef9e7;color:#d4a017; }
+.tipo-certificacion { background:#e8f4fd;color:#1a6fbd; }
+.edp-curso-inter-title { font-size:13px;font-weight:700;color:var(--text-primary);flex:1;line-height:1.3; }
+.edp-curso-inter-meta { font-size:10.5px;color:var(--text-muted);margin-top:2px; }
+.edp-curso-check {
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;transition:all 0.2s;
+}
+.edp-curso-check.done { background:#2bbfae;color:#fff;border:none; }
+.edp-curso-check.pending { background:transparent;border:2px solid var(--border);color:transparent; }
+.edp-curso-check.pending:hover { border-color:#2bbfae;color:#2bbfae; }
+.edp-curso-video-wrap {
+  display:none;padding:0 14px 14px;
+}
+.edp-curso-video-wrap.open { display:block; }
+.edp-curso-iframe-wrap {
+  position:relative;padding-bottom:56.25%;height:0;overflow:hidden;
+  border-radius:8px;background:#000;
+}
+.edp-curso-iframe-wrap iframe {
+  position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:8px;
+}
+.edp-curso-no-video {
+  background:var(--bg);border-radius:8px;padding:28px 16px;
+  text-align:center;color:var(--text-muted);font-size:12px;
+  border:1.5px dashed var(--border);
+}
+.edp-curso-completar-btn {
+  width:100%;margin-top:10px;padding:8px;
+  border-radius:8px;border:none;
+  background:var(--color-primary);color:#fff;
+  font-family:var(--font-body);font-size:12.5px;font-weight:700;
+  cursor:pointer;transition:opacity 0.15s;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.edp-curso-completar-btn:hover { opacity:0.88; }
+.edp-curso-completar-btn:disabled { background:#2bbfae;cursor:default;opacity:1; }
+.edp-curso-del-row { display:flex;justify-content:flex-end;margin-top:4px; }
+.edp-curso-del-small {
+  background:none;border:none;color:var(--text-muted);cursor:pointer;
+  font-size:10.5px;padding:2px 4px;transition:color 0.15s;
+}
+.edp-curso-del-small:hover { color:#dd4444; }
+
+/* edit-only: elementos que solo se muestran en modo edición */
+.edp-edit-only { display:none; }
+body.edit-mode-active .edp-edit-only { display:block; }
+body.edit-mode-active .edp-perfil-edit-btn { display:flex; }
+body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
 </style>
 </head>
 <body>
@@ -828,70 +937,87 @@ footer a:hover { color: var(--color-accent); }
         <input type="hidden" id="emp-id">
         <input type="hidden" id="emp-cargo">
         <input type="hidden" id="emp-gerencia">
-        <div class="edp-datos-form">
-          <div class="full">
-            <label class="edp-field-label">Nombre completo</label>
-            <input id="emp-nombre" type="text" class="edp-input" placeholder="Ej: Juan Pérez González">
-          </div>
-          <div>
-            <label class="edp-field-label">Cédula de identidad</label>
-            <input id="emp-cedula" type="text" class="edp-input" placeholder="V-12.345.678">
-          </div>
-          <div>
-            <label class="edp-field-label">Fecha de ingreso</label>
-            <input id="emp-fecha" type="date" class="edp-input">
-          </div>
-          <div>
-            <label class="edp-field-label">Teléfono</label>
-            <input id="emp-telefono" type="text" class="edp-input" placeholder="0412-000-0000">
-          </div>
-          <div>
-            <label class="edp-field-label">Email</label>
-            <input id="emp-email" type="email" class="edp-input" placeholder="correo@copikon.com">
-          </div>
-          <div>
-            <label class="edp-field-label">Estado civil</label>
-            <select id="emp-estadocivil" class="edp-input edp-select">
-              <option value="">— Seleccionar —</option>
-              <option value="Soltero/a">Soltero/a</option>
-              <option value="Casado/a">Casado/a</option>
-              <option value="Unión estable">Unión estable</option>
-              <option value="Divorciado/a">Divorciado/a</option>
-              <option value="Viudo/a">Viudo/a</option>
-            </select>
-          </div>
-          <div>
-            <label class="edp-field-label">Nivel académico</label>
-            <select id="emp-nivelacademico" class="edp-input edp-select">
-              <option value="">— Seleccionar —</option>
-              <option value="Primaria">Primaria</option>
-              <option value="Secundaria">Secundaria</option>
-              <option value="T.S.U.">T.S.U.</option>
-              <option value="Universitario">Universitario</option>
-              <option value="Postgrado">Postgrado</option>
-              <option value="Maestría">Maestría</option>
-              <option value="Doctorado">Doctorado</option>
-            </select>
-          </div>
-          <div>
-            <label class="edp-field-label">¿Tiene hijos?</label>
-            <select id="emp-tienehijos" class="edp-input edp-select" onchange="document.getElementById('emp-cantidadhijos-wrap').style.display=this.value==='si'?'block':'none'">
-              <option value="">— Seleccionar —</option>
-              <option value="no">No</option>
-              <option value="si">Sí</option>
-            </select>
-          </div>
-          <div id="emp-cantidadhijos-wrap" style="display:none;">
-            <label class="edp-field-label">Cantidad de hijos</label>
-            <input id="emp-cantidadhijos" type="number" min="1" max="20" class="edp-input" placeholder="Ej: 2">
-          </div>
-          <div class="full">
-            <label class="edp-field-label">Notas</label>
-            <textarea id="emp-notas" class="edp-input" rows="2" placeholder="Observaciones adicionales..." style="resize:vertical;"></textarea>
+
+        <!-- MODO VISTA (por defecto) -->
+        <div id="edp-datos-view">
+          <div class="edp-perfil-grid" id="edp-perfil-grid"></div>
+          <div id="edp-perfil-empty" class="edp-empty-state" style="display:none;">
+            <span class="edp-empty-icon">👤</span>
+            <p style="font-size:12.5px;margin-bottom:4px;">Sin datos registrados aún.</p>
+            <p style="font-size:11px;color:var(--text-muted);">El administrador puede completar esta ficha.</p>
           </div>
         </div>
-        <button class="edp-save-btn" id="emp-save-btn">💾 Guardar datos</button>
-        <div id="emp-saved-msg" class="edp-saved-msg">✓ Guardado correctamente</div>
+
+        <!-- MODO EDICIÓN (oculto, solo visible en editMode) -->
+        <div id="edp-datos-edit" style="display:none;">
+          <div class="edp-datos-form">
+            <div class="full">
+              <label class="edp-field-label">Nombre completo</label>
+              <input id="emp-nombre" type="text" class="edp-input" placeholder="Ej: Juan Pérez González">
+            </div>
+            <div>
+              <label class="edp-field-label">Cédula de identidad</label>
+              <input id="emp-cedula" type="text" class="edp-input" placeholder="V-12.345.678">
+            </div>
+            <div>
+              <label class="edp-field-label">Fecha de ingreso</label>
+              <input id="emp-fecha" type="date" class="edp-input">
+            </div>
+            <div>
+              <label class="edp-field-label">Teléfono</label>
+              <input id="emp-telefono" type="text" class="edp-input" placeholder="0412-000-0000">
+            </div>
+            <div>
+              <label class="edp-field-label">Email</label>
+              <input id="emp-email" type="email" class="edp-input" placeholder="correo@copikon.com">
+            </div>
+            <div>
+              <label class="edp-field-label">Estado civil</label>
+              <select id="emp-estadocivil" class="edp-input edp-select">
+                <option value="">— Seleccionar —</option>
+                <option value="Soltero/a">Soltero/a</option>
+                <option value="Casado/a">Casado/a</option>
+                <option value="Unión estable">Unión estable</option>
+                <option value="Divorciado/a">Divorciado/a</option>
+                <option value="Viudo/a">Viudo/a</option>
+              </select>
+            </div>
+            <div>
+              <label class="edp-field-label">Nivel académico</label>
+              <select id="emp-nivelacademico" class="edp-input edp-select">
+                <option value="">— Seleccionar —</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Secundaria">Secundaria</option>
+                <option value="T.S.U.">T.S.U.</option>
+                <option value="Universitario">Universitario</option>
+                <option value="Postgrado">Postgrado</option>
+                <option value="Maestría">Maestría</option>
+                <option value="Doctorado">Doctorado</option>
+              </select>
+            </div>
+            <div>
+              <label class="edp-field-label">¿Tiene hijos?</label>
+              <select id="emp-tienehijos" class="edp-input edp-select" onchange="document.getElementById('emp-cantidadhijos-wrap').style.display=this.value==='si'?'block':'none'">
+                <option value="">— Seleccionar —</option>
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+              </select>
+            </div>
+            <div id="emp-cantidadhijos-wrap" style="display:none;">
+              <label class="edp-field-label">Cantidad de hijos</label>
+              <input id="emp-cantidadhijos" type="number" min="1" max="20" class="edp-input" placeholder="Ej: 2">
+            </div>
+            <div class="full">
+              <label class="edp-field-label">Notas</label>
+              <textarea id="emp-notas" class="edp-input" rows="2" placeholder="Observaciones adicionales..." style="resize:vertical;"></textarea>
+            </div>
+          </div>
+          <div style="display:flex;gap:7px;margin-top:8px;">
+            <button class="btn-secondary" style="font-size:12px;flex:1;" onclick="edpCancelarDatos()">Cancelar</button>
+            <button class="edp-save-btn" id="emp-save-btn" style="flex:2;">💾 Guardar datos</button>
+          </div>
+          <div id="emp-saved-msg" class="edp-saved-msg">✓ Guardado correctamente</div>
+        </div>
       </div>
 
       <!-- PESTAÑA: Descripción del cargo -->
@@ -954,15 +1080,37 @@ footer a:hover { color: var(--color-accent); }
         </div>
       </div>
 
-      <!-- PESTAÑA: Cursos -->
+      <!-- PESTAÑA: Cursos + Gamificación integrada -->
       <div class="edp-pane" id="edp-pane-cursos">
-        <div class="edp-section-label">Cursos Requeridos / Recomendados</div>
-        <div class="edp-cursos-grid" id="edp-cursos-grid"></div>
+        <!-- Mini panel de progreso XP arriba -->
+        <div class="edp-xp-header" id="edp-xp-header">
+          <div class="edp-xp-info">
+            <div class="edp-xp-nivel">Nivel <span id="edp-xp-nivel-num">1</span></div>
+            <div class="edp-xp-pts"><span id="edp-xp-pts-num">0</span> XP</div>
+          </div>
+          <div class="edp-xp-bar-wrap">
+            <div class="edp-xp-bar-fill" id="edp-xp-bar-fill" style="width:0%;"></div>
+          </div>
+          <div class="edp-xp-next"><span id="edp-xp-next-label">0 / 200 XP</span></div>
+        </div>
+
+        <!-- Lista de cursos interactivos -->
+        <div class="edp-section-label" style="margin-top:4px;">Cursos de Formación</div>
+        <div id="edp-cursos-interactivos"></div>
         <div id="edp-cursos-empty" class="edp-empty-state" style="display:none;">
           <span class="edp-empty-icon">🎓</span>
           <p style="font-size:12.5px;">Sin cursos asignados todavía.</p>
+          <p style="font-size:11px;color:var(--text-muted);">El administrador puede agregar cursos desde modo edición.</p>
         </div>
-        <div class="edp-add-form">
+
+        <!-- Logros -->
+        <div id="edp-logros-section" style="margin-top:14px;display:none;">
+          <div class="edp-section-label">Logros desbloqueados</div>
+          <div class="edp-logros-wrap" id="edp-gami-logros"></div>
+        </div>
+
+        <!-- Formulario agregar curso (solo editMode) -->
+        <div class="edp-add-form edp-edit-only" id="edp-cursos-add-form">
           <div class="edp-section-label" style="margin-bottom:8px;">Agregar Curso</div>
           <div class="edp-datos-form" style="grid-template-columns:1fr 1fr;gap:7px;">
             <div class="full">
@@ -978,11 +1126,13 @@ footer a:hover { color: var(--color-accent); }
               </select>
             </div>
             <div>
-              <label class="edp-field-label">Plataforma</label>
-              <input class="edp-input" id="edp-curso-plataforma" placeholder="Ej: Udemy, interno...">
+              <label class="edp-field-label">Plataforma / URL video</label>
+              <input class="edp-input" id="edp-curso-plataforma" placeholder="Ej: https://youtube.com/...">
             </div>
           </div>
-          <button class="edp-save-btn" style="margin-top:6px;" onclick="edpAddCurso()">➕ Agregar curso</button>
+          <div style="display:flex;gap:7px;margin-top:6px;">
+            <button class="edp-save-btn" onclick="edpAddCurso()">➕ Agregar curso</button>
+          </div>
         </div>
       </div>
 
@@ -1003,7 +1153,7 @@ footer a:hover { color: var(--color-accent); }
           <div class="edp-progress-bar" id="edp-gami-bar" style="width:0%;"></div>
         </div>
         <div class="edp-section-label" style="margin-top:4px;">Logros desbloqueados</div>
-        <div class="edp-logros-wrap" id="edp-gami-logros">
+        <div class="edp-logros-wrap" id="edp-gami-logros-full">
           <div style="font-size:11.5px;color:var(--text-muted);font-style:italic;">¡Comienza sumando XP!</div>
         </div>
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);">
@@ -2628,6 +2778,9 @@ async function saveEmpleado() {
     btn.disabled = false;
     return;
   }
+  // Volver a modo vista y refrescar perfil
+  edpCancelarDatos();
+  edpRenderPerfilView();
   document.getElementById('emp-saved-msg').style.display = 'block';
   showToast('✓ Datos guardados', '#2bbfae');
   if (directorioState.open) {
@@ -2728,6 +2881,11 @@ function openEdpPanel(nodeId, cargo, gerencia, color) {
 
   // Resetear a primera pestaña y cancelar ediciones
   edpSwitchTab('edp-pane-datos');
+  // Asegurar modo vista (no edición) en pestaña Datos
+  const datosView = document.getElementById('edp-datos-view');
+  const datosEdit = document.getElementById('edp-datos-edit');
+  if (datosView) datosView.style.display = 'block';
+  if (datosEdit) datosEdit.style.display = 'none';
   ['descripcion','manual','flujo'].forEach(f => {
     const ed = document.getElementById('edp-' + f + '-edit');
     const vw = document.getElementById('edp-' + f + '-view');
@@ -2737,6 +2895,7 @@ function openEdpPanel(nodeId, cargo, gerencia, color) {
 
   // Renderizar contenido
   edpRenderAll();
+  edpRenderPerfilView();
 
   // Abrir panel
   document.getElementById('emp-detail-panel').classList.add('open');
@@ -2809,24 +2968,148 @@ function edpSaveField(campo) {
 }
 
 function edpRenderCursos() {
-  const cursos = edpState.data.cursos || [];
-  const grid = document.getElementById('edp-cursos-grid');
-  const emp = document.getElementById('edp-cursos-empty');
-  if (cursos.length === 0) {
-    grid.innerHTML = ''; emp.style.display = 'block'; return;
+  // LEGACY: mantener por compatibilidad (ya no se usa el grid antiguo)
+  edpRenderCursosInteractivos();
+}
+
+function edpRenderPerfilView() {
+  const emp = (directorioState && directorioState.employees) ? (directorioState.employees[edpState.nodeId] || {}) : {};
+  const grid = document.getElementById('edp-perfil-grid');
+  const empty = document.getElementById('edp-perfil-empty');
+  const hasAnyData = !!(emp.nombre || emp.cedula || emp.telefono || emp.email || emp.fechaIngreso);
+  if (!hasAnyData) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    const v = (val, fallback) => val ? `<span class="edp-perfil-value">${val}</span>` : `<span class="edp-perfil-value empty">${fallback || 'Sin datos'}</span>`;
+    const rows = [
+      ['Nombre', emp.nombre],
+      ['Cédula', emp.cedula],
+      ['Ingreso', emp.fechaIngreso ? new Date(emp.fechaIngreso + 'T12:00:00').toLocaleDateString('es-VE', {year:'numeric',month:'long',day:'numeric'}) : ''],
+      ['Teléfono', emp.telefono],
+      ['Email', emp.email],
+      ['Estado civil', emp.estadoCivil],
+      ['Nivel académico', emp.nivelAcademico],
+      ['Hijos', emp.tieneHijos === 'si' ? 'Sí' + (emp.cantidadHijos ? ` (${emp.cantidadHijos})` : '') : emp.tieneHijos === 'no' ? 'No' : ''],
+    ].filter(([,val]) => val);
+    let html = rows.map(([label, val]) =>
+      `<div class="edp-perfil-row"><span class="edp-perfil-label">${label}</span>${v(val)}</div>`
+    ).join('');
+    if (emp.notas) html += `<div style="margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;color:var(--text-muted);line-height:1.5;border:1px solid var(--border);"><strong style="font-size:9.5px;text-transform:uppercase;letter-spacing:0.05em;">Notas</strong><br>${emp.notas}</div>`;
+    grid.innerHTML = html;
   }
-  emp.style.display = 'none';
-  const ICONS = { obligatorio: '📌', recomendado: '⭐', certificacion: '🏅' };
-  grid.innerHTML = cursos.map((c, i) => `
-    <div class="edp-curso-card">
-      <span class="edp-curso-icon">${ICONS[c.tipo] || '📚'}</span>
-      <div class="edp-curso-info">
-        <div class="edp-curso-nombre">${c.nombre}</div>
-        <div class="edp-curso-meta">${c.tipo || 'Curso'}${c.plataforma ? ' · ' + c.plataforma : ''}</div>
+  // Botón editar (solo visible en editMode via CSS)
+  const editBtnExisting = document.getElementById('edp-datos-edit-btn');
+  if (!editBtnExisting) {
+    const btn = document.createElement('button');
+    btn.id = 'edp-datos-edit-btn';
+    btn.className = 'edp-perfil-edit-btn edp-edit-only';
+    btn.innerHTML = '✏️ Editar datos del titular';
+    btn.onclick = edpAbrirDatosEdit;
+    document.getElementById('edp-datos-view').appendChild(btn);
+  }
+}
+
+function edpAbrirDatosEdit() {
+  document.getElementById('edp-datos-view').style.display = 'none';
+  document.getElementById('edp-datos-edit').style.display = 'block';
+}
+
+function edpCancelarDatos() {
+  document.getElementById('edp-datos-edit').style.display = 'none';
+  document.getElementById('edp-datos-view').style.display = 'block';
+}
+
+function edpRenderCursosInteractivos() {
+  const cursos = edpState.data.cursos || [];
+  const container = document.getElementById('edp-cursos-interactivos');
+  const empty = document.getElementById('edp-cursos-empty');
+  // XP header
+  const g = edpState.data.gamificacion || {};
+  const xp = g.xp || 0; const nivel = g.nivel || 1;
+  const xpBase = (nivel - 1) * 200; const xpNext = nivel * 200;
+  const pct = Math.min(100, Math.round(((xp - xpBase) / 200) * 100));
+  document.getElementById('edp-xp-nivel-num').textContent = nivel;
+  document.getElementById('edp-xp-pts-num').textContent = xp;
+  document.getElementById('edp-xp-bar-fill').style.width = pct + '%';
+  document.getElementById('edp-xp-next-label').textContent = (xp - xpBase) + ' / 200 XP';
+  // Logros
+  const logros = g.logros || [];
+  const loSection = document.getElementById('edp-logros-section');
+  const loWrap = document.getElementById('edp-gami-logros');
+  const EMOJIS = ['🏆','🥇','🎖️','⭐','🏅','🌟','💡','🎯','🔥','📎'];
+  if (logros.length > 0) {
+    loSection.style.display = 'block';
+    loWrap.innerHTML = logros.map((l,i) => `<div class="edp-logro">${EMOJIS[i%EMOJIS.length]} ${l}</div>`).join('');
+  } else {
+    loSection.style.display = 'none';
+  }
+  if (cursos.length === 0) {
+    container.innerHTML = ''; empty.style.display = 'block'; return;
+  }
+  empty.style.display = 'none';
+  const TYPE_BADGE = {
+    obligatorio: '<span class="edp-curso-tipo-badge tipo-obligatorio">Obligatorio</span>',
+    recomendado:  '<span class="edp-curso-tipo-badge tipo-recomendado">⭐ Recomendado</span>',
+    certificacion:'<span class="edp-curso-tipo-badge tipo-certificacion">🏅 Certificación</span>'
+  };
+  container.innerHTML = cursos.map((c, i) => {
+    const done = !!(c.completado);
+    const ytId = getYouTubeId(c.plataforma || '');
+    const hasVideo = !!(ytId || (c.plataforma && c.plataforma.startsWith('http')));
+    const badge = TYPE_BADGE[c.tipo] || `<span class="edp-curso-tipo-badge tipo-recomendado">${c.tipo || 'Curso'}</span>`;
+    const metaText = c.plataforma && !c.plataforma.startsWith('http') ? c.plataforma : (hasVideo ? '🎥 Video disponible' : '');
+    const videoSection = hasVideo ? `
+      <div class="edp-curso-video-wrap" id="edp-video-${i}">
+        ${ytId
+          ? `<div class="edp-curso-iframe-wrap"><iframe src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" allowfullscreen loading="lazy" title="${c.nombre}"></iframe></div>`
+          : `<div class="edp-curso-no-video">🎥 <a href="${c.plataforma}" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);font-weight:600;">Abrir recurso externo</a></div>`
+        }
+        <button class="edp-curso-completar-btn" id="edp-completar-btn-${i}" ${done ? 'disabled' : ''} onclick="edpCompletarCurso(${i})">
+          ${done ? '✅ Completado (+50 XP ganados)' : '✅ Marcar como completado — +50 XP'}
+        </button>
+        ${editMode ? `<div class="edp-curso-del-row"><button class="edp-curso-del-small" onclick="edpDelCurso(${i})">🗑 Eliminar curso</button></div>` : ''}
+      </div>` : `
+      <div class="edp-curso-video-wrap" id="edp-video-${i}">
+        <div class="edp-curso-no-video">📝 Sin video asignado. El administrador puede agregar una URL.</div>
+        <button class="edp-curso-completar-btn" id="edp-completar-btn-${i}" ${done ? 'disabled' : ''} onclick="edpCompletarCurso(${i})">
+          ${done ? '✅ Completado (+50 XP ganados)' : '✅ Marcar como completado — +50 XP'}
+        </button>
+        ${editMode ? `<div class="edp-curso-del-row"><button class="edp-curso-del-small" onclick="edpDelCurso(${i})">🗑 Eliminar curso</button></div>` : ''}
+      </div>`;
+    return `<div class="edp-curso-inter${done ? ' completed' : ''}" id="edp-curso-card-${i}">
+      <div class="edp-curso-inter-header" onclick="edpToggleVideo(${i})">
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">${badge}<div class="edp-curso-inter-title">${c.nombre}</div></div>
+          ${metaText ? `<div class="edp-curso-inter-meta">${metaText}</div>` : ''}
+        </div>
+        <div class="edp-curso-check ${done ? 'done' : 'pending'}">${done ? '✓' : ''}</div>
       </div>
-      <button class="edp-curso-del" onclick="edpDelCurso(${i})" title="Eliminar">🗑️</button>
-    </div>
-  `).join('');
+      ${videoSection}
+    </div>`;
+  }).join('');
+}
+
+function edpToggleVideo(idx) {
+  const wrap = document.getElementById('edp-video-' + idx);
+  if (!wrap) return;
+  wrap.classList.toggle('open');
+}
+
+function edpCompletarCurso(idx) {
+  if (!edpState.data.cursos || !edpState.data.cursos[idx]) return;
+  if (edpState.data.cursos[idx].completado) return;
+  edpState.data.cursos[idx].completado = true;
+  edpAddXP(50, 'Curso completado');
+  // edpAddXP ya llama edpRenderGami; refrescar lista de cursos también
+  edpRenderCursosInteractivos();
+}
+
+function getYouTubeId(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/);
+  return m ? m[1] : null;
 }
 
 function edpAddCurso() {
@@ -2863,9 +3146,9 @@ function edpRenderGami() {
   const pct = Math.min(100, Math.round(((xp - (nivel-1)*200) / 200) * 100));
   document.getElementById('edp-gami-pct').textContent = pct + '%';
   document.getElementById('edp-gami-bar').style.width = pct + '%';
-  const loEl = document.getElementById('edp-gami-logros');
+  const loEl = document.getElementById('edp-gami-logros-full');
   const EMOJIS = ['🏆','🥇','🎖️','⭐','🏅','🌟','💡','🎯','🔥','💎'];
-  loEl.innerHTML = logros.length === 0
+  if (loEl) loEl.innerHTML = logros.length === 0
     ? '<div style="font-size:11.5px;color:var(--text-muted);font-style:italic;">¡Comienza sumando XP!</div>'
     : logros.map((l,i) => `<div class="edp-logro">${EMOJIS[i%EMOJIS.length]} ${l}</div>`).join('');
 }
