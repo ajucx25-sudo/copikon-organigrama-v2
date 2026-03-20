@@ -550,6 +550,258 @@ footer a:hover { color: var(--color-accent); }
   padding:10px 0 5px;border-bottom:2px solid var(--border);margin-bottom:8px;
   margin-top:6px;
 }
+
+/* ===== MODAL PERFIL ROL ===== */
+.perfil-modal {
+  width: 720px;
+  max-width: 96vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.perfil-modal-header {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.perfil-modal-icon {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.perfil-modal-header h3 {
+  font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  color: var(--text-primary); flex: 1; line-height: 1.3;
+}
+.perfil-modal-header .perfil-subtitle {
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+/* Tabs */
+.perfil-tabs-bar {
+  display: flex;
+  gap: 2px;
+  padding: 10px 18px 0;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+.perfil-tab-btn {
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2.5px solid transparent;
+  transition: all 0.18s;
+  white-space: nowrap;
+  border-radius: 6px 6px 0 0;
+}
+.perfil-tab-btn:hover { color: var(--text-primary); background: var(--bg); }
+.perfil-tab-btn.active { color: var(--color-primary); border-bottom-color: var(--color-primary); background: var(--bg); }
+/* Tab content */
+.perfil-tab-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+.perfil-tab-pane {
+  display: none;
+  padding: 20px 22px;
+  animation: fadeTabIn 0.18s ease;
+}
+.perfil-tab-pane.active { display: block; }
+@keyframes fadeTabIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Secciones dentro de cada tab */
+.perfil-section-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1.5px solid var(--border);
+}
+.perfil-text-content {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+.perfil-empty-state {
+  text-align: center;
+  padding: 32px 20px;
+  color: var(--text-muted);
+}
+.perfil-empty-state .perfil-empty-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 10px;
+}
+.perfil-empty-state p {
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+/* Cursos cards */
+.perfil-cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.perfil-curso-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.18s;
+}
+.perfil-curso-card:hover { border-color: var(--color-primary); }
+.perfil-curso-card .curso-icon { font-size: 22px; }
+.perfil-curso-card .curso-nombre { font-size: 12.5px; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
+.perfil-curso-card .curso-tipo { font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.perfil-curso-card .curso-badge {
+  display: inline-block;
+  font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 20px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text-muted); margin-top: 2px;
+  align-self: flex-start;
+}
+/* Gamificación */
+.perfil-gami-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.perfil-gami-stat {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.perfil-gami-stat .gami-val {
+  font-size: 26px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.perfil-gami-stat .gami-lbl {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+.perfil-gami-logros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.perfil-gami-logro {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 5px 12px 5px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.perfil-gami-progreso {
+  margin-top: 14px;
+}
+.perfil-progreso-bar-wrap {
+  background: var(--bg);
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+.perfil-progreso-bar {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent,#2bbfae));
+  transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+/* Botón editar en tab */
+.perfil-tab-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.18s;
+  margin-bottom: 12px;
+}
+.perfil-tab-edit-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.perfil-edit-textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.65;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.perfil-edit-textarea:focus { border-color: var(--color-primary); }
+.perfil-save-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+/* Botón perfil en detail-actions */
+#detail-perfil-btn {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(74,127,212,0.06), rgba(74,127,212,0.12));
+}
+#detail-perfil-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -847,9 +1099,181 @@ footer a:hover { color: var(--color-accent); }
     </div>
   </div>
   <div class="detail-actions" id="detail-actions">
+    <button id="detail-perfil-btn">📋 &nbsp;Ver Perfil del Rol</button>
     <button id="detail-edit-btn">✏️ &nbsp;Editar este cargo</button>
     <button id="detail-add-btn">➕ &nbsp;Agregar subordinado</button>
     <button id="detail-delete-btn" class="btn-danger">🗑️ &nbsp;Eliminar cargo</button>
+  </div>
+</div>
+
+<!-- Modal Perfil del Rol -->
+<div class="modal-overlay" id="modal-perfil-rol">
+  <div class="modal perfil-modal">
+    <!-- Header -->
+    <div class="perfil-modal-header">
+      <div class="perfil-modal-icon" id="perfil-modal-icon" style="background:#e8f0ff;">📋</div>
+      <div style="flex:1;min-width:0;">
+        <h3 id="perfil-modal-titulo">Gerente de Comercialización</h3>
+        <div class="perfil-subtitle" id="perfil-modal-gerencia">Gerencia de Comercialización</div>
+      </div>
+      <button class="modal-close" data-close="modal-perfil-rol">✕</button>
+    </div>
+    <!-- Pestañas -->
+    <div class="perfil-tabs-bar">
+      <button class="perfil-tab-btn active" data-tab="tab-descripcion">💼 Descripción</button>
+      <button class="perfil-tab-btn" data-tab="tab-manual">📄 Manual de Procedimiento</button>
+      <button class="perfil-tab-btn" data-tab="tab-flujo">🔄 Flujo de Procesos</button>
+      <button class="perfil-tab-btn" data-tab="tab-cursos">🎓 Cursos</button>
+      <button class="perfil-tab-btn" data-tab="tab-gamificacion">🏆 Gamificación</button>
+    </div>
+    <!-- Cuerpo de pestañas -->
+    <div class="perfil-tab-body">
+
+      <!-- TAB: Descripción del Cargo -->
+      <div class="perfil-tab-pane active" id="tab-descripcion">
+        <div class="perfil-section-title">Descripción del Cargo</div>
+        <div id="perfil-desc-view">
+          <div id="perfil-desc-texto" class="perfil-text-content"></div>
+          <div id="perfil-desc-empty" class="perfil-empty-state" style="display:none;">
+            <span class="perfil-empty-icon">💼</span>
+            <p>No hay descripción redactada aún para este cargo.</p>
+            <button class="btn-primary" onclick="perfilStartEdit('descripcion')">✏️ Redactar descripción</button>
+          </div>
+        </div>
+        <div id="perfil-desc-edit" style="display:none;">
+          <textarea class="perfil-edit-textarea" id="perfil-desc-textarea" placeholder="Describe el objetivo, responsabilidades y alcance del cargo..."></textarea>
+          <div class="perfil-save-row">
+            <button class="btn-secondary" onclick="perfilCancelEdit('descripcion')">Cancelar</button>
+            <button class="btn-primary" onclick="perfilSaveField('descripcion')">💾 Guardar</button>
+          </div>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;" id="perfil-desc-actions">
+          <button class="perfil-tab-edit-btn" onclick="perfilStartEdit('descripcion')">✏️ Editar descripción</button>
+        </div>
+      </div>
+
+      <!-- TAB: Manual de Procedimiento -->
+      <div class="perfil-tab-pane" id="tab-manual">
+        <div class="perfil-section-title">Manual de Procedimiento</div>
+        <div id="perfil-manual-view">
+          <div id="perfil-manual-texto" class="perfil-text-content"></div>
+          <div id="perfil-manual-empty" class="perfil-empty-state" style="display:none;">
+            <span class="perfil-empty-icon">📄</span>
+            <p>No hay manual de procedimiento para este cargo todavía.</p>
+            <button class="btn-primary" onclick="perfilStartEdit('manual')">✏️ Crear manual</button>
+          </div>
+        </div>
+        <div id="perfil-manual-edit" style="display:none;">
+          <textarea class="perfil-edit-textarea" id="perfil-manual-textarea" placeholder="Describe los procedimientos, pasos y protocolos que debe seguir el titular del cargo..."></textarea>
+          <div class="perfil-save-row">
+            <button class="btn-secondary" onclick="perfilCancelEdit('manual')">Cancelar</button>
+            <button class="btn-primary" onclick="perfilSaveField('manual')">💾 Guardar</button>
+          </div>
+        </div>
+        <div style="margin-top:14px;" id="perfil-manual-actions">
+          <button class="perfil-tab-edit-btn" onclick="perfilStartEdit('manual')">✏️ Editar manual</button>
+        </div>
+      </div>
+
+      <!-- TAB: Flujo de Procesos -->
+      <div class="perfil-tab-pane" id="tab-flujo">
+        <div class="perfil-section-title">Flujo de Procesos</div>
+        <div id="perfil-flujo-view">
+          <div id="perfil-flujo-texto" class="perfil-text-content"></div>
+          <div id="perfil-flujo-empty" class="perfil-empty-state" style="display:none;">
+            <span class="perfil-empty-icon">🔄</span>
+            <p>No hay flujo de procesos definido para este cargo.</p>
+            <button class="btn-primary" onclick="perfilStartEdit('flujo')">✏️ Definir flujo</button>
+          </div>
+        </div>
+        <div id="perfil-flujo-edit" style="display:none;">
+          <textarea class="perfil-edit-textarea" id="perfil-flujo-textarea" placeholder="Describe el flujo paso a paso: recepción de tareas, ejecución, entregables, aprobaciones..."></textarea>
+          <div class="perfil-save-row">
+            <button class="btn-secondary" onclick="perfilCancelEdit('flujo')">Cancelar</button>
+            <button class="btn-primary" onclick="perfilSaveField('flujo')">💾 Guardar</button>
+          </div>
+        </div>
+        <div style="margin-top:14px;" id="perfil-flujo-actions">
+          <button class="perfil-tab-edit-btn" onclick="perfilStartEdit('flujo')">✏️ Editar flujo</button>
+        </div>
+      </div>
+
+      <!-- TAB: Cursos -->
+      <div class="perfil-tab-pane" id="tab-cursos">
+        <div class="perfil-section-title">Cursos Requeridos / Recomendados</div>
+        <div id="perfil-cursos-view">
+          <div class="perfil-cursos-grid" id="perfil-cursos-grid"></div>
+          <div id="perfil-cursos-empty" class="perfil-empty-state" style="display:none;">
+            <span class="perfil-empty-icon">🎓</span>
+            <p>No hay cursos asignados a este cargo todavía.</p>
+          </div>
+        </div>
+        <div style="margin-top:14px;" id="perfil-cursos-actions">
+          <div class="perfil-section-title" style="margin-top:12px;">Agregar Curso</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+            <input class="form-input" id="perfil-curso-nombre" placeholder="Nombre del curso" style="font-size:12px;">
+            <select class="form-select" id="perfil-curso-tipo" style="font-size:12px;">
+              <option value="obligatorio">Obligatorio</option>
+              <option value="recomendado">Recomendado</option>
+              <option value="certificacion">Certificación</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px;">
+            <input class="form-input" id="perfil-curso-plataforma" placeholder="Plataforma (ej: Udemy, interno...)" style="font-size:12px;flex:1;">
+            <button class="btn-primary" style="font-size:12px;padding:8px 14px;white-space:nowrap;" onclick="perfilAddCurso()">➕ Agregar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Gamificación -->
+      <div class="perfil-tab-pane" id="tab-gamificacion">
+        <div class="perfil-section-title">Progreso y Gamificación</div>
+        <div class="perfil-gami-grid">
+          <div class="perfil-gami-stat">
+            <div class="gami-val" id="gami-puntos">0</div>
+            <div class="gami-lbl">Puntos XP</div>
+          </div>
+          <div class="perfil-gami-stat">
+            <div class="gami-val" id="gami-nivel">1</div>
+            <div class="gami-lbl">Nivel</div>
+          </div>
+          <div class="perfil-gami-stat">
+            <div class="gami-val" id="gami-cursos">0</div>
+            <div class="gami-lbl">Cursos Completados</div>
+          </div>
+          <div class="perfil-gami-stat">
+            <div class="gami-val" id="gami-logros-cnt">0</div>
+            <div class="gami-lbl">Logros</div>
+          </div>
+        </div>
+        <!-- Barra de progreso al siguiente nivel -->
+        <div class="perfil-gami-progreso">
+          <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--text-muted);">
+            <span>Progreso al siguiente nivel</span>
+            <span id="gami-progreso-pct">0%</span>
+          </div>
+          <div class="perfil-progreso-bar-wrap">
+            <div class="perfil-progreso-bar" id="gami-progreso-bar" style="width:0%;"></div>
+          </div>
+        </div>
+        <!-- Logros -->
+        <div class="perfil-section-title" style="margin-top:4px;">Logros Desbloqueados</div>
+        <div class="perfil-gami-logros" id="gami-logros-list">
+          <div style="font-size:12px;color:var(--text-muted);font-style:italic;">Sin logros todavía. ¡Comienza asignando cursos!</div>
+        </div>
+        <!-- Sumar puntos -->
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+          <div class="perfil-section-title">Registrar Actividad</div>
+          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;">
+            <button class="btn-secondary" style="font-size:11px;" onclick="perfilAddXP(50, 'Curso completado')">🎓 +50 XP — Curso completado</button>
+            <button class="btn-secondary" style="font-size:11px;" onclick="perfilAddXP(100, 'Certificación obtenida')">🏅 +100 XP — Certificación</button>
+            <button class="btn-secondary" style="font-size:11px;" onclick="perfilAddXP(25, 'Evaluación aprobada')">✅ +25 XP — Evaluación</button>
+            <button class="btn-secondary" style="font-size:11px;" onclick="perfilAddXP(200, 'Meta trimestral cumplida')">🎯 +200 XP — Meta trimestral</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -2410,6 +2834,313 @@ window.openEmpleadoModalFromNode = function(cargo, gerencia) {
   const id = generateNodeId(cargo);
   openEmpleadoModal(id, cargo, gerencia);
 };
+
+// ===== MODAL PERFIL DEL ROL =====
+let perfilRolState = {
+  nodeId: null,
+  cargo: null,
+  gerencia: null,
+  color: null,
+  data: {} // { descripcion, manual, flujo, cursos:[], gamificacion:{xp,nivel,cursosComp,logros} }
+};
+
+// Clave para guardar en employees.json (campo perfilRol)
+function perfilGetEmp() {
+  const emp = (directorioState && directorioState.employees)
+    ? (directorioState.employees[perfilRolState.nodeId] || {})
+    : {};
+  return emp;
+}
+
+function openPerfilRolModal(nodeId, cargo, gerencia, color) {
+  perfilRolState.nodeId = nodeId;
+  perfilRolState.cargo = cargo;
+  perfilRolState.gerencia = gerencia;
+  perfilRolState.color = color || '#1a3a6b';
+
+  // Leer datos del empleado
+  const emp = perfilGetEmp();
+  const perfil = emp.perfilRol || {};
+
+  // Descripción: prioridad employee > cargo-descriptions
+  const descText = emp.descripcionCargo ||
+    (window.__CARGO_DESCRIPTIONS__ ? (window.__CARGO_DESCRIPTIONS__[nodeId] || '') : '');
+  perfil.descripcion = perfil.descripcion || descText;
+  perfilRolState.data = perfil;
+
+  // Actualizar header
+  const icon = document.getElementById('perfil-modal-icon');
+  icon.style.background = (color || '#1a3a6b') + '22';
+  icon.textContent = '📋';
+  document.getElementById('perfil-modal-titulo').textContent = cargo;
+  const gerBadge = gerencia ? gerencia.charAt(0).toUpperCase() + gerencia.slice(1) : 'Staff';
+  document.getElementById('perfil-modal-gerencia').textContent = gerBadge;
+
+  // Activar primera pestaña
+  perfilSwitchTab('tab-descripcion');
+
+  // Renderizar contenido
+  perfilRenderAll();
+
+  // Cancelar ediciones abiertas
+  ['descripcion','manual','flujo'].forEach(f => {
+    const editDiv = document.getElementById('perfil-' + f + '-edit');
+    if (editDiv) editDiv.style.display = 'none';
+    const viewDiv = document.getElementById('perfil-' + f + '-view');
+    if (viewDiv) viewDiv.style.display = 'block';
+  });
+
+  openModal('modal-perfil-rol');
+}
+
+function perfilRenderAll() {
+  const d = perfilRolState.data;
+  // --- Descripción ---
+  const descTexto = document.getElementById('perfil-desc-texto');
+  const descEmpty = document.getElementById('perfil-desc-empty');
+  const descActions = document.getElementById('perfil-desc-actions');
+  if (d.descripcion) {
+    descTexto.textContent = d.descripcion;
+    descTexto.style.display = 'block';
+    descEmpty.style.display = 'none';
+    descActions.style.display = 'flex';
+  } else {
+    descTexto.style.display = 'none';
+    descEmpty.style.display = 'block';
+    descActions.style.display = 'none';
+  }
+  // --- Manual ---
+  const manualTexto = document.getElementById('perfil-manual-texto');
+  const manualEmpty = document.getElementById('perfil-manual-empty');
+  const manualActions = document.getElementById('perfil-manual-actions');
+  if (d.manual) {
+    manualTexto.textContent = d.manual;
+    manualTexto.style.display = 'block';
+    manualEmpty.style.display = 'none';
+    manualActions.style.display = 'block';
+  } else {
+    manualTexto.style.display = 'none';
+    manualEmpty.style.display = 'block';
+    manualActions.style.display = 'none';
+  }
+  // --- Flujo ---
+  const flujoTexto = document.getElementById('perfil-flujo-texto');
+  const flujoEmpty = document.getElementById('perfil-flujo-empty');
+  const flujoActions = document.getElementById('perfil-flujo-actions');
+  if (d.flujo) {
+    flujoTexto.textContent = d.flujo;
+    flujoTexto.style.display = 'block';
+    flujoEmpty.style.display = 'none';
+    flujoActions.style.display = 'block';
+  } else {
+    flujoTexto.style.display = 'none';
+    flujoEmpty.style.display = 'block';
+    flujoActions.style.display = 'none';
+  }
+  // --- Cursos ---
+  perfilRenderCursos();
+  // --- Gamificación ---
+  perfilRenderGami();
+}
+
+function perfilRenderCursos() {
+  const cursos = perfilRolState.data.cursos || [];
+  const grid = document.getElementById('perfil-cursos-grid');
+  const empty = document.getElementById('perfil-cursos-empty');
+  if (cursos.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  const iconos = { obligatorio: '📌', recomendado: '⭐', certificacion: '🏅' };
+  const colores = { obligatorio: '#4a7fd4', recomendado: '#3cb371', certificacion: '#a06ad4' };
+  grid.innerHTML = cursos.map((c, i) => `
+    <div class="perfil-curso-card">
+      <span class="curso-icon">${iconos[c.tipo] || '📚'}</span>
+      <div class="curso-nombre">${c.nombre}</div>
+      <div class="curso-tipo">${c.tipo || 'Curso'}</div>
+      ${c.plataforma ? `<span class="curso-badge">🖥️ ${c.plataforma}</span>` : ''}
+      <button onclick="perfilDeleteCurso(${i})" style="margin-top:4px;font-size:10px;background:none;border:none;color:var(--text-muted);cursor:pointer;text-align:left;padding:0;">🗑️ Eliminar</button>
+    </div>
+  `).join('');
+}
+
+function perfilAddCurso() {
+  const nombre = document.getElementById('perfil-curso-nombre').value.trim();
+  const tipo = document.getElementById('perfil-curso-tipo').value;
+  const plataforma = document.getElementById('perfil-curso-plataforma').value.trim();
+  if (!nombre) { showToast('Ingresa el nombre del curso', '#dd6874'); return; }
+  if (!perfilRolState.data.cursos) perfilRolState.data.cursos = [];
+  perfilRolState.data.cursos.push({ nombre, tipo, plataforma });
+  document.getElementById('perfil-curso-nombre').value = '';
+  document.getElementById('perfil-curso-plataforma').value = '';
+  perfilRenderCursos();
+  perfilSaveToAPI();
+  showToast('Curso agregado', '#2bbfae');
+}
+
+function perfilDeleteCurso(idx) {
+  if (!perfilRolState.data.cursos) return;
+  perfilRolState.data.cursos.splice(idx, 1);
+  perfilRenderCursos();
+  perfilSaveToAPI();
+  showToast('Curso eliminado', '#dd6874');
+}
+
+function perfilRenderGami() {
+  const g = perfilRolState.data.gamificacion || { xp: 0, nivel: 1, cursosComp: 0, logros: [] };
+  const xp = g.xp || 0;
+  const nivel = g.nivel || 1;
+  const cursosComp = g.cursosComp || 0;
+  const logros = g.logros || [];
+
+  document.getElementById('gami-puntos').textContent = xp;
+  document.getElementById('gami-nivel').textContent = nivel;
+  document.getElementById('gami-cursos').textContent = cursosComp;
+  document.getElementById('gami-logros-cnt').textContent = logros.length;
+
+  // Progreso al siguiente nivel: cada nivel = 200 XP adicionales
+  const xpBase = (nivel - 1) * 200;
+  const xpNext = nivel * 200;
+  const pct = Math.min(100, Math.round(((xp - xpBase) / 200) * 100));
+  document.getElementById('gami-progreso-pct').textContent = pct + '%';
+  document.getElementById('gami-progreso-bar').style.width = pct + '%';
+
+  // Logros
+  const listaEl = document.getElementById('gami-logros-list');
+  if (logros.length === 0) {
+    listaEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);font-style:italic;">Sin logros todavía. ¡Comienza asignando cursos!</div>';
+  } else {
+    const emojis = ['🏆','🥇','🎖️','⭐','🏅','🌟','💡','🎯','🔥','💎'];
+    listaEl.innerHTML = logros.map((l, i) =>
+      `<div class="perfil-gami-logro">${emojis[i % emojis.length]} ${l}</div>`
+    ).join('');
+  }
+}
+
+function perfilAddXP(cantidad, motivo) {
+  if (!perfilRolState.data.gamificacion) {
+    perfilRolState.data.gamificacion = { xp: 0, nivel: 1, cursosComp: 0, logros: [] };
+  }
+  const g = perfilRolState.data.gamificacion;
+  g.xp = (g.xp || 0) + cantidad;
+  // Subir nivel si corresponde
+  const nuevoNivel = Math.floor(g.xp / 200) + 1;
+  if (nuevoNivel > (g.nivel || 1)) {
+    g.nivel = nuevoNivel;
+    g.logros = g.logros || [];
+    g.logros.push('Alcanzó el Nivel ' + nuevoNivel);
+    showToast('🎉 ¡Subiste al Nivel ' + nuevoNivel + '!', '#a06ad4');
+  } else {
+    showToast('+' + cantidad + ' XP — ' + motivo, '#2bbfae');
+  }
+  // Contar cursos si es el motivo
+  if (motivo === 'Curso completado') g.cursosComp = (g.cursosComp || 0) + 1;
+  // Agregar logro de hito
+  if (g.logros && !g.logros.includes(motivo) && (motivo.includes('Certificación') || motivo.includes('Meta'))) {
+    g.logros.push(motivo);
+  }
+  perfilRenderGami();
+  perfilSaveToAPI();
+}
+
+// Edición de campos de texto
+function perfilStartEdit(campo) {
+  const viewDiv = document.getElementById('perfil-' + campo + '-view');
+  const editDiv = document.getElementById('perfil-' + campo + '-edit');
+  const actionsDiv = document.getElementById('perfil-' + campo + '-actions');
+  const textarea = document.getElementById('perfil-' + campo + '-textarea');
+  textarea.value = perfilRolState.data[campo] || '';
+  if (viewDiv) viewDiv.style.display = 'none';
+  if (editDiv) editDiv.style.display = 'block';
+  if (actionsDiv) actionsDiv.style.display = 'none';
+  setTimeout(() => textarea.focus(), 50);
+}
+
+function perfilCancelEdit(campo) {
+  const viewDiv = document.getElementById('perfil-' + campo + '-view');
+  const editDiv = document.getElementById('perfil-' + campo + '-edit');
+  const actionsDiv = document.getElementById('perfil-' + campo + '-actions');
+  if (viewDiv) viewDiv.style.display = 'block';
+  if (editDiv) editDiv.style.display = 'none';
+  if (actionsDiv) actionsDiv.style.display = 'flex';
+  // Re-renderizar para mostrar estado correcto del botón de edición
+  perfilRenderAll();
+}
+
+function perfilSaveField(campo) {
+  const textarea = document.getElementById('perfil-' + campo + '-textarea');
+  const valor = textarea.value.trim();
+  perfilRolState.data[campo] = valor;
+  perfilSaveToAPI();
+  // Volver a vista
+  perfilCancelEdit(campo);
+  showToast('Guardado correctamente', '#2bbfae');
+}
+
+function perfilSaveToAPI() {
+  const id = perfilRolState.nodeId;
+  if (!id) return;
+  const emp = perfilGetEmp();
+  const updated = Object.assign({}, emp, {
+    id: id,
+    cargo: perfilRolState.cargo,
+    gerencia: perfilRolState.gerencia,
+    perfilRol: perfilRolState.data
+  });
+  const apiBase = (typeof window.API_BASE !== 'undefined') ? window.API_BASE : '';
+  fetch(apiBase + '/api/employees/' + id, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updated)
+  }).then(r => {
+    if (r.ok) {
+      // Actualizar estado local
+      if (directorioState && directorioState.employees) {
+        directorioState.employees[id] = updated;
+      }
+    } else {
+      showToast('Error al guardar', '#dd6874');
+    }
+  }).catch(() => showToast('Error de conexión', '#dd6874'));
+}
+
+// Navegación entre pestañas del perfil
+function perfilSwitchTab(tabId) {
+  document.querySelectorAll('.perfil-tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.perfil-tab-btn').forEach(b => b.classList.remove('active'));
+  const pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+  const btn = document.querySelector('[data-tab="' + tabId + '"]');
+  if (btn) btn.classList.add('active');
+}
+
+// Listeners de pestañas del perfil
+document.querySelectorAll('.perfil-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    perfilSwitchTab(btn.dataset.tab);
+  });
+});
+
+// Botón "Ver Perfil del Rol" en detail-panel
+document.getElementById('detail-perfil-btn').addEventListener('click', () => {
+  if (!selectedNode) return;
+  const d = selectedNode.data;
+  const color = selectedNode.__color__ || (window.colorMap ? (window.colorMap[d.gerencia] || '#1a3a6b') : '#1a3a6b');
+  const id = generateNodeId(d.name);
+  openPerfilRolModal(id, d.name, d.gerencia, color);
+});
+
+// Cerrar modal perfil con Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('modal-perfil-rol');
+    if (overlay && overlay.classList.contains('open')) {
+      closeModal('modal-perfil-rol');
+    }
+  }
+});
 
 </script>
 </body>
