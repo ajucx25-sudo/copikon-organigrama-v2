@@ -401,22 +401,23 @@ export async function registerRoutes(server: Server, app: Express): Promise<Serv
     }
   }
 
-  // POST /api/share-gist — actualiza el Gist con los datos actuales y retorna el link de htmlpreview
+  // POST /api/share-gist — actualiza gh-pages con los datos actuales y retorna el link directo
   const GIST_ID = "6c4a55a7e9ced64234037f25b8b2aaad";
   const GIST_FILENAME = "organigrama-copikon.html";
-  const HTMLPREVIEW_URL = `https://htmlpreview.github.io/?https://gist.githubusercontent.com/ajucx25-sudo/${GIST_ID}/raw/${GIST_FILENAME}`;
+  const PAGES_URL = "https://ajucx25-sudo.github.io/copikon-organigrama-v2/";
 
   app.post("/api/share-gist", async (_req, res) => {
     try {
       const html = await buildStandaloneHTML();
 
       // Actualizar el Gist via curl + Python para construir el JSON correctamente
-      // Token leído de github-config.json (env vars no siempre disponibles en el proceso servidor)
-      const ghConfigPath = path.join(process.cwd(), "github-config.json");
-      let ghConfig: { token: string; host: string } = { token: "", host: "agent-proxy.perplexity.ai" };
-      try { ghConfig = JSON.parse(fs.readFileSync(ghConfigPath, "utf-8")); } catch {}
-      const host = ghConfig.host || process.env.GH_HOST || "agent-proxy.perplexity.ai";
-      const token = ghConfig.token || process.env.GH_ENTERPRISE_TOKEN || "";
+      // Siempre usar process.env primero (token más fresco), fallback a github-config.json
+      const host = process.env.GH_HOST || (() => {
+        try { return JSON.parse(fs.readFileSync(path.join(process.cwd(), "github-config.json"), "utf-8")).host || ""; } catch { return ""; }
+      })() || "agent-proxy.perplexity.ai";
+      const token = process.env.GH_ENTERPRISE_TOKEN || (() => {
+        try { return JSON.parse(fs.readFileSync(path.join(process.cwd(), "github-config.json"), "utf-8")).token || ""; } catch { return ""; }
+      })();
       const apiUrl = `https://${host}/api/v3/gists/${GIST_ID}`;
       const tmpHtmlFile = path.join(os.tmpdir(), `gist-html-${Date.now()}.html`);
       const tmpBodyFile = path.join(os.tmpdir(), `gist-body-${Date.now()}.json`);
@@ -441,27 +442,100 @@ print('ok')
         });
       });
 
-      // Paso 2: PATCH al Gist con curl
-      await new Promise<void>((resolve, reject) => {
-        const args = [
-          "-s", "-o", "/dev/null", "-w", "%{http_code}",
-          "-X", "PATCH",
+      // Paso 2: Actualizar rama gh-pages en GitHub vía API (Contents API)
+      // Esto actualiza el index.html directamente en la rama gh-pages
+      const REPO = "ajucx25-sudo/copikon-organigrama-v2";
+      const ghPagesApiUrl = `https://${host}/api/v3/repos/${REPO}/contents/index.html`;
+
+      // Obtener el SHA actual del archivo (necesario para actualizar)
+      let fileSha = "";
+      await new Promise<void>((resolve) => {
+        execFile("curl", [
+          "-s",
           "-H", `Authorization: Bearer ${token}`,
           "-H", "Accept: application/vnd.github.v3+json",
-          "-H", "Content-Type: application/json",
-          "--data", `@${tmpBodyFile}`,
-          apiUrl
-        ];
-        execFile("curl", args, (err, stdout, stderr) => {
-          try { fs.unlinkSync(tmpBodyFile); } catch {}
-          if (err) return reject(new Error(stderr || err.message));
-          const code = parseInt(stdout.trim(), 10);
-          if (code < 200 || code >= 300) return reject(new Error(`GitHub API HTTP ${code}`));
+          "-G", "--data-urlencode", "ref=gh-pages",
+          ghPagesApiUrl
+        ], (err, stdout) => {
+          try {
+            const info = JSON.parse(stdout);
+            fileSha = info.sha || "";
+          } catch {}
           resolve();
         });
       });
 
-      res.json({ ok: true, url: HTMLPREVIEW_URL });
+      // Construir el body de actualización con Python (base64 del HTML)
+      const tmpUpdateFile = path.join(os.tmpdir(), `ghpages-update-${Date.now()}.json`);
+      await new Promise<void>((resolve, reject) => {
+        const pyScript = `
+import json, base64
+with open(${JSON.stringify(tmpBodyFile.replace('gist-body', 'gist-html').replace('.json', '.html'))}, 'r', encoding='utf-8') as f:
+    html_content = f.read()
+encoded = base64.b64encode(html_content.encode('utf-8')).decode('ascii')
+body = {
+    'message': 'chore: actualizar organigrama',
+    'content': encoded,
+    'branch': 'gh-pages'
+}
+sha = ${JSON.stringify(fileSha)}
+if sha:
+    body['sha'] = sha
+with open(${JSON.stringify(tmpUpdateFile)}, 'w') as f:
+    json.dump(body, f)
+print('ok')
+`.trim();
+
+        // Reconstruir el tmpHtmlFile para usarlo aquí
+        const tmpHtmlFile2 = path.join(os.tmpdir(), `gist-html-${Date.now()}.html`);
+        fs.writeFileSync(tmpHtmlFile2, html, "utf-8");
+
+        const pyScript2 = `
+import json, base64
+with open(${JSON.stringify(tmpHtmlFile2)}, 'r', encoding='utf-8') as f:
+    html_content = f.read()
+encoded = base64.b64encode(html_content.encode('utf-8')).decode('ascii')
+body = {
+    'message': 'chore: actualizar organigrama',
+    'content': encoded,
+    'branch': 'gh-pages'
+}
+sha = ${JSON.stringify(fileSha)}
+if sha:
+    body['sha'] = sha
+with open(${JSON.stringify(tmpUpdateFile)}, 'w') as f:
+    json.dump(body, f)
+print('ok')
+`.trim();
+        execFile("python3", ["-c", pyScript2], (err, stdout, stderr) => {
+          try { fs.unlinkSync(tmpHtmlFile2); } catch {}
+          try { fs.unlinkSync(tmpBodyFile); } catch {}
+          if (err) return reject(new Error("Python base64 error: " + (stderr || err.message)));
+          resolve();
+        });
+      });
+
+      // Paso 3: PUT al archivo en gh-pages
+      await new Promise<void>((resolve, reject) => {
+        const args = [
+          "-s", "-o", "/dev/null", "-w", "%{http_code}",
+          "-X", "PUT",
+          "-H", `Authorization: Bearer ${token}`,
+          "-H", "Accept: application/vnd.github.v3+json",
+          "-H", "Content-Type: application/json",
+          "--data", `@${tmpUpdateFile}`,
+          ghPagesApiUrl
+        ];
+        execFile("curl", args, (err, stdout, stderr) => {
+          try { fs.unlinkSync(tmpUpdateFile); } catch {}
+          if (err) return reject(new Error(stderr || err.message));
+          const code = parseInt(stdout.trim(), 10);
+          if (code < 200 || code >= 300) return reject(new Error(`GitHub Pages API HTTP ${code}`));
+          resolve();
+        });
+      });
+
+      res.json({ ok: true, url: PAGES_URL });
     } catch (e: any) {
       console.error("Share-gist error:", e);
       res.status(500).json({ error: "Error al actualizar el link: " + e.message });
