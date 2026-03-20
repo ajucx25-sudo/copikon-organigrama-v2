@@ -937,87 +937,70 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
         <input type="hidden" id="emp-id">
         <input type="hidden" id="emp-cargo">
         <input type="hidden" id="emp-gerencia">
-
-        <!-- MODO VISTA (por defecto) -->
-        <div id="edp-datos-view">
-          <div class="edp-perfil-grid" id="edp-perfil-grid"></div>
-          <div id="edp-perfil-empty" class="edp-empty-state" style="display:none;">
-            <span class="edp-empty-icon">👤</span>
-            <p style="font-size:12.5px;margin-bottom:4px;">Sin datos registrados aún.</p>
-            <p style="font-size:11px;color:var(--text-muted);">El administrador puede completar esta ficha.</p>
+        <div class="edp-datos-form">
+          <div class="full">
+            <label class="edp-field-label">Nombre completo</label>
+            <input id="emp-nombre" type="text" class="edp-input" placeholder="Ej: Juan Pérez González">
+          </div>
+          <div>
+            <label class="edp-field-label">Cédula de identidad</label>
+            <input id="emp-cedula" type="text" class="edp-input" placeholder="V-12.345.678">
+          </div>
+          <div>
+            <label class="edp-field-label">Fecha de ingreso</label>
+            <input id="emp-fecha" type="date" class="edp-input">
+          </div>
+          <div>
+            <label class="edp-field-label">Teléfono</label>
+            <input id="emp-telefono" type="text" class="edp-input" placeholder="0412-000-0000">
+          </div>
+          <div>
+            <label class="edp-field-label">Email</label>
+            <input id="emp-email" type="email" class="edp-input" placeholder="correo@copikon.com">
+          </div>
+          <div>
+            <label class="edp-field-label">Estado civil</label>
+            <select id="emp-estadocivil" class="edp-input edp-select">
+              <option value="">— Seleccionar —</option>
+              <option value="Soltero/a">Soltero/a</option>
+              <option value="Casado/a">Casado/a</option>
+              <option value="Unión estable">Unión estable</option>
+              <option value="Divorciado/a">Divorciado/a</option>
+              <option value="Viudo/a">Viudo/a</option>
+            </select>
+          </div>
+          <div>
+            <label class="edp-field-label">Nivel académico</label>
+            <select id="emp-nivelacademico" class="edp-input edp-select">
+              <option value="">— Seleccionar —</option>
+              <option value="Primaria">Primaria</option>
+              <option value="Secundaria">Secundaria</option>
+              <option value="T.S.U.">T.S.U.</option>
+              <option value="Universitario">Universitario</option>
+              <option value="Postgrado">Postgrado</option>
+              <option value="Maestría">Maestría</option>
+              <option value="Doctorado">Doctorado</option>
+            </select>
+          </div>
+          <div>
+            <label class="edp-field-label">¿Tiene hijos?</label>
+            <select id="emp-tienehijos" class="edp-input edp-select" onchange="document.getElementById('emp-cantidadhijos-wrap').style.display=this.value==='si'?'block':'none'">
+              <option value="">— Seleccionar —</option>
+              <option value="no">No</option>
+              <option value="si">Sí</option>
+            </select>
+          </div>
+          <div id="emp-cantidadhijos-wrap" style="display:none;">
+            <label class="edp-field-label">Cantidad de hijos</label>
+            <input id="emp-cantidadhijos" type="number" min="1" max="20" class="edp-input" placeholder="Ej: 2">
+          </div>
+          <div class="full">
+            <label class="edp-field-label">Notas</label>
+            <textarea id="emp-notas" class="edp-input" rows="2" placeholder="Observaciones adicionales..." style="resize:vertical;"></textarea>
           </div>
         </div>
-
-        <!-- MODO EDICIÓN (oculto, solo visible en editMode) -->
-        <div id="edp-datos-edit" style="display:none;">
-          <div class="edp-datos-form">
-            <div class="full">
-              <label class="edp-field-label">Nombre completo</label>
-              <input id="emp-nombre" type="text" class="edp-input" placeholder="Ej: Juan Pérez González">
-            </div>
-            <div>
-              <label class="edp-field-label">Cédula de identidad</label>
-              <input id="emp-cedula" type="text" class="edp-input" placeholder="V-12.345.678">
-            </div>
-            <div>
-              <label class="edp-field-label">Fecha de ingreso</label>
-              <input id="emp-fecha" type="date" class="edp-input">
-            </div>
-            <div>
-              <label class="edp-field-label">Teléfono</label>
-              <input id="emp-telefono" type="text" class="edp-input" placeholder="0412-000-0000">
-            </div>
-            <div>
-              <label class="edp-field-label">Email</label>
-              <input id="emp-email" type="email" class="edp-input" placeholder="correo@copikon.com">
-            </div>
-            <div>
-              <label class="edp-field-label">Estado civil</label>
-              <select id="emp-estadocivil" class="edp-input edp-select">
-                <option value="">— Seleccionar —</option>
-                <option value="Soltero/a">Soltero/a</option>
-                <option value="Casado/a">Casado/a</option>
-                <option value="Unión estable">Unión estable</option>
-                <option value="Divorciado/a">Divorciado/a</option>
-                <option value="Viudo/a">Viudo/a</option>
-              </select>
-            </div>
-            <div>
-              <label class="edp-field-label">Nivel académico</label>
-              <select id="emp-nivelacademico" class="edp-input edp-select">
-                <option value="">— Seleccionar —</option>
-                <option value="Primaria">Primaria</option>
-                <option value="Secundaria">Secundaria</option>
-                <option value="T.S.U.">T.S.U.</option>
-                <option value="Universitario">Universitario</option>
-                <option value="Postgrado">Postgrado</option>
-                <option value="Maestría">Maestría</option>
-                <option value="Doctorado">Doctorado</option>
-              </select>
-            </div>
-            <div>
-              <label class="edp-field-label">¿Tiene hijos?</label>
-              <select id="emp-tienehijos" class="edp-input edp-select" onchange="document.getElementById('emp-cantidadhijos-wrap').style.display=this.value==='si'?'block':'none'">
-                <option value="">— Seleccionar —</option>
-                <option value="no">No</option>
-                <option value="si">Sí</option>
-              </select>
-            </div>
-            <div id="emp-cantidadhijos-wrap" style="display:none;">
-              <label class="edp-field-label">Cantidad de hijos</label>
-              <input id="emp-cantidadhijos" type="number" min="1" max="20" class="edp-input" placeholder="Ej: 2">
-            </div>
-            <div class="full">
-              <label class="edp-field-label">Notas</label>
-              <textarea id="emp-notas" class="edp-input" rows="2" placeholder="Observaciones adicionales..." style="resize:vertical;"></textarea>
-            </div>
-          </div>
-          <div style="display:flex;gap:7px;margin-top:8px;">
-            <button class="btn-secondary" style="font-size:12px;flex:1;" onclick="edpCancelarDatos()">Cancelar</button>
-            <button class="edp-save-btn" id="emp-save-btn" style="flex:2;">💾 Guardar datos</button>
-          </div>
-          <div id="emp-saved-msg" class="edp-saved-msg">✓ Guardado correctamente</div>
-        </div>
+        <button class="edp-save-btn" id="emp-save-btn">💾 Guardar datos</button>
+        <div id="emp-saved-msg" class="edp-saved-msg">✓ Guardado correctamente</div>
       </div>
 
       <!-- PESTAÑA: Descripción del cargo -->
@@ -2778,9 +2761,6 @@ async function saveEmpleado() {
     btn.disabled = false;
     return;
   }
-  // Volver a modo vista y refrescar perfil
-  edpCancelarDatos();
-  edpRenderPerfilView();
   document.getElementById('emp-saved-msg').style.display = 'block';
   showToast('✓ Datos guardados', '#2bbfae');
   if (directorioState.open) {
@@ -2881,11 +2861,6 @@ function openEdpPanel(nodeId, cargo, gerencia, color) {
 
   // Resetear a primera pestaña y cancelar ediciones
   edpSwitchTab('edp-pane-datos');
-  // Asegurar modo vista (no edición) en pestaña Datos
-  const datosView = document.getElementById('edp-datos-view');
-  const datosEdit = document.getElementById('edp-datos-edit');
-  if (datosView) datosView.style.display = 'block';
-  if (datosEdit) datosEdit.style.display = 'none';
   ['descripcion','manual','flujo'].forEach(f => {
     const ed = document.getElementById('edp-' + f + '-edit');
     const vw = document.getElementById('edp-' + f + '-view');
@@ -2895,7 +2870,6 @@ function openEdpPanel(nodeId, cargo, gerencia, color) {
 
   // Renderizar contenido
   edpRenderAll();
-  edpRenderPerfilView();
 
   // Abrir panel
   document.getElementById('emp-detail-panel').classList.add('open');
