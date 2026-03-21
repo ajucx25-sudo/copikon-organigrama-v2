@@ -656,6 +656,45 @@ footer a:hover { color: var(--color-accent); }
   font-size: 13px; line-height: 1.65;
   color: var(--text-primary); white-space: pre-wrap;
 }
+.edp-flujo-texto { white-space: normal !important; }
+.flujo-step {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 12px; margin-bottom: 4px;
+  border-radius: 8px; background: var(--bg-card);
+  border-left: 3px solid var(--color-primary);
+}
+.flujo-step-num {
+  min-width: 24px; height: 24px; border-radius: 50%;
+  background: var(--color-primary); color: #fff;
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.flujo-step-body { flex: 1; }
+.flujo-step-title {
+  font-size: 12.5px; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 2px;
+}
+.flujo-step-desc {
+  font-size: 12px; color: var(--text-secondary); line-height: 1.55;
+}
+.flujo-arrow {
+  text-align: center; color: var(--text-muted);
+  font-size: 16px; margin: 1px 0; line-height: 1;
+}
+.flujo-section-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text-muted);
+  margin: 14px 0 6px;
+}
+.flujo-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10.5px; font-weight: 600; padding: 2px 8px;
+  border-radius: 20px; margin-right: 4px; margin-top: 4px;
+}
+.flujo-badge.responsable { background: rgba(74,127,212,0.15); color: #4a7fd4; }
+.flujo-badge.entregable  { background: rgba(60,179,113,0.15); color: #3cb371; }
+.flujo-badge.sistema     { background: rgba(232,160,32,0.15);  color: #c87d00; }
 .edp-empty-state {
   text-align: center; padding: 28px 16px; color: var(--text-muted);
 }
@@ -1047,7 +1086,7 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
       <div class="edp-pane" id="edp-pane-flujo">
         <div class="edp-section-label">Flujo de Procesos</div>
         <div id="edp-flujo-view">
-          <div id="edp-flujo-texto" class="edp-text-content"></div>
+          <div id="edp-flujo-texto" class="edp-text-content edp-flujo-texto"></div>
           <div id="edp-flujo-empty" class="edp-empty-state" style="display:none;">
             <span class="edp-empty-icon">🔄</span>
             <p style="font-size:12.5px;margin-bottom:12px;">Sin flujo definido todavía.</p>
@@ -2911,7 +2950,7 @@ function edpRenderAll() {
   const fluTxt = document.getElementById('edp-flujo-texto');
   const fluEmp = document.getElementById('edp-flujo-empty');
   if (d.flujo) {
-    fluTxt.textContent = d.flujo; fluTxt.style.display = 'block'; fluEmp.style.display = 'none';
+    fluTxt.innerHTML = d.flujo; fluTxt.style.display = 'block'; fluEmp.style.display = 'none';
   } else {
     fluTxt.style.display = 'none'; fluEmp.style.display = 'block';
   }
