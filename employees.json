@@ -40,7 +40,96 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Gerencia de Administración\n\n1. OBJETIVO\nDirigir, planificar y controlar todas las actividades financieras y administrativas de Copikon Venezuela, garantizando la salud económica de la empresa y el cumplimiento de las obligaciones legales y fiscales.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Aprobar el presupuesto anual consolidado de la empresa.\n• Revisar y firmar los estados financieros mensuales y anuales.\n• Supervisar las áreas de Contabilidad, Planificación Financiera y Tesorería.\n• Presentar informes financieros a la Junta Directiva y al CEO.\n• Autorizar pagos superiores al límite establecido por política interna.\n• Velar por el cumplimiento tributario ante el SENIAT y demás organismos.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Revisión de Estados Financieros (mensual)\n   Paso 1: Recibir el paquete de cierre contable del Coordinador de Contabilidad (día 5 hábil del mes siguiente).\n   Paso 2: Revisar balance general, estado de resultados y flujo de caja.\n   Paso 3: Identificar desviaciones versus presupuesto y solicitar justificación a los coordinadores.\n   Paso 4: Validar y firmar los estados financieros.\n   Paso 5: Enviar reporte ejecutivo al CEO y Junta Directiva.\n\n3.2 Aprobación del Presupuesto Anual\n   Paso 1: Solicitar a cada gerencia su proyección de ingresos y gastos (octubre).\n   Paso 2: Consolidar las proyecciones con el Coordinador de Planificación Financiera.\n   Paso 3: Revisar supuestos macroeconómicos (inflación, tipo de cambio, ventas estimadas).\n   Paso 4: Presentar borrador a la Junta Directiva para aprobación.\n   Paso 5: Comunicar presupuesto aprobado a todas las gerencias (diciembre).\n\n3.3 Autorización de Pagos Especiales\n   Paso 1: Recibir solicitud de pago con soporte documentado.\n   Paso 2: Verificar disponibilidad de fondos con el Coordinador de Tesorería.\n   Paso 3: Evaluar la pertinencia y urgencia del pago.\n   Paso 4: Aprobar o rechazar con observaciones escritas.\n   Paso 5: Notificar a Tesorería para ejecución.\n\n4. INDICADORES DE GESTIÓN\n• Días de retraso en cierre contable (meta: ≤5 días hábiles).\n• Variación presupuestaria mensual (meta: ≤5%).\n• Cumplimiento de declaraciones tributarias (meta: 100% a tiempo).\n• Liquidez corriente (meta: ≥1.2).",
-      "flujo": "<div class=\"flujo-section-title\">Ciclo de Gestión Administrativa</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Planificación y presupuesto</div><div class=\"flujo-step-desc\">Recibe lineamientos estratégicos de la Dirección General. Elabora y valida el presupuesto anual de las áreas Contabilidad, Finanzas y Tesorería.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Coordinación operativa</div><div class=\"flujo-step-desc\">Distribuye objetivos, asigna recursos y establece prioridades a los tres coordinadores subordinados (Contabilidad, Análisis Financiero y Tesorería).</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Seguimiento y control</div><div class=\"flujo-step-desc\">Revisa reportes de gestión semanales y mensuales. Detecta desviaciones y emite instrucciones correctivas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aprobación de pagos</div><div class=\"flujo-step-desc\">Autoriza pagos mayores, transferencias y compromisos contractuales fuera de la política estándar.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte a Dirección</div><div class=\"flujo-step-desc\">Consolida resultados financieros y administrativos. Presenta informes ejecutivos a la Dirección General.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Gerente de Administración</span><span class=\"flujo-badge entregable\">📊 Presupuesto anual</span><span class=\"flujo-badge entregable\">📋 Informe ejecutivo mensual</span><span class=\"flujo-badge sistema\">💻 ERP / Sistema contable</span>"
+      "flujo": "<div class=\"flujo-section-title\">Ciclo de Gestión Administrativa</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Planificación y presupuesto</div><div class=\"flujo-step-desc\">Recibe lineamientos estratégicos de la Dirección General. Elabora y valida el presupuesto anual de las áreas Contabilidad, Finanzas y Tesorería.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Coordinación operativa</div><div class=\"flujo-step-desc\">Distribuye objetivos, asigna recursos y establece prioridades a los tres coordinadores subordinados (Contabilidad, Análisis Financiero y Tesorería).</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Seguimiento y control</div><div class=\"flujo-step-desc\">Revisa reportes de gestión semanales y mensuales. Detecta desviaciones y emite instrucciones correctivas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aprobación de pagos</div><div class=\"flujo-step-desc\">Autoriza pagos mayores, transferencias y compromisos contractuales fuera de la política estándar.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte a Dirección</div><div class=\"flujo-step-desc\">Consolida resultados financieros y administrativos. Presenta informes ejecutivos a la Dirección General.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Gerente de Administración</span><span class=\"flujo-badge entregable\">📊 Presupuesto anual</span><span class=\"flujo-badge entregable\">📋 Informe ejecutivo mensual</span><span class=\"flujo-badge sistema\">💻 ERP / Sistema contable</span>",
+      "cursos": [
+        {
+          "nombre": "Gestión Estratégica de la Gerencia de Administración",
+          "tipo": "certificacion",
+          "xp": 200,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Planificación y Presupuesto",
+              "contenido": "La Gerencia de Administración recibe los lineamientos estratégicos de la Dirección General y elabora el presupuesto anual de las áreas de Contabilidad, Finanzas y Tesorería. Este presupuesto debe alinearse con los objetivos corporativos y ser validado antes de su aprobación.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿De dónde recibe los lineamientos estratégicos la Gerencia de Administración?",
+                "opciones": [
+                  "Del Coordinador de Contabilidad",
+                  "De la Dirección General",
+                  "Del Analista Financiero",
+                  "Del Coordinador de Tesorería"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. La Dirección General establece los lineamientos estratégicos.",
+                "feedbackErr": "La fuente es la Dirección General, no los coordinadores subordinados."
+              }
+            },
+            {
+              "titulo": "Coordinación Operativa",
+              "contenido": "El Gerente distribuye objetivos, asigna recursos y establece prioridades a los tres coordinadores subordinados: Coordinador de Contabilidad, Coordinador de Análisis y Planificación Financiera, y Coordinador de Tesorería. Cada coordinador es responsable de su área.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Cuántos coordinadores subordinados tiene directamente la Gerencia de Administración?",
+                "opciones": [
+                  "Dos",
+                  "Cuatro",
+                  "Tres",
+                  "Uno"
+                ],
+                "correcta": 2,
+                "feedbackOk": "Correcto. Son tres: Contabilidad, Análisis Financiero y Tesorería.",
+                "feedbackErr": "Son exactamente tres coordinadores directamente subordinados."
+              }
+            },
+            {
+              "titulo": "Seguimiento y Control",
+              "contenido": "El Gerente revisa reportes de gestión semanales y mensuales de cada coordinador. Ante desviaciones significativas, emite instrucciones correctivas y realiza seguimiento hasta la normalización. El control preventivo evita problemas mayores.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El Gerente de Administración revisa reportes de gestión solo una vez al mes.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. Los reportes son tanto semanales como mensuales.",
+                "feedbackErr": "El seguimiento es semanal Y mensual, no solo mensual."
+              }
+            },
+            {
+              "titulo": "Aprobación de Pagos",
+              "contenido": "El Gerente autoriza pagos mayores, transferencias y compromisos contractuales que excedan la política estándar de autorización. Esta función es clave para el control interno y la gestión de riesgos financieros de la organización.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué función cumple el Gerente respecto a pagos mayores?",
+                "opciones": [
+                  "Los procesa directamente en el banco",
+                  "Los delega siempre al Coordinador de Tesorería",
+                  "Los autoriza y aprueba como control interno",
+                  "Los registra en el sistema contable"
+                ],
+                "correcta": 2,
+                "feedbackOk": "Correcto. La autorización es su rol de control interno.",
+                "feedbackErr": "El Gerente autoriza los pagos; el procesamiento lo ejecuta Tesorería."
+              }
+            },
+            {
+              "titulo": "Reporte a Dirección",
+              "contenido": "El Gerente consolida los resultados financieros y administrativos de todas las áreas bajo su cargo y presenta informes ejecutivos a la Dirección General. También coordina la presentación ante entes regulatorios cuando aplique.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El Gerente de Administración consolida y presenta informes ejecutivos a la Dirección General.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. Esta es una responsabilidad clave del cargo.",
+                "feedbackErr": "Efectivamente, la rendición de cuentas a Dirección es parte esencial del rol gerencial."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "coordinador-de-contabilidad": {
@@ -60,7 +149,96 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Coordinador de Contabilidad\n\n1. OBJETIVO\nCoordinar y supervisar el registro contable de todas las operaciones de Copikon Venezuela, asegurando la exactitud de los libros y el cumplimiento de las normativas contables y fiscales vigentes.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Supervisar los registros de tributos, cuentas por cobrar, cuentas por pagar y nómina.\n• Ejecutar el cierre contable mensual y elaborar los estados financieros.\n• Garantizar la correcta aplicación de las NIIF y la legislación venezolana.\n• Coordinar con auditores externos la entrega de información requerida.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Cierre Contable Mensual\n   Paso 1: Solicitar a los analistas la conciliación de sus cuentas asignadas (día 1 hábil de cada mes).\n   Paso 2: Verificar que todos los asientos del mes anterior estén registrados y cuadrados.\n   Paso 3: Revisar conciliaciones bancarias, cuentas por cobrar y cuentas por pagar.\n   Paso 4: Registrar ajustes y depreciaciones correspondientes.\n   Paso 5: Generar balance de comprobación y estados financieros preliminares.\n   Paso 6: Presentar paquete de cierre a la Gerencia de Administración (día 5 hábil).\n\n3.2 Supervisión de Declaraciones Fiscales\n   Paso 1: Revisar el calendario tributario mensual con el Analista de Tributos.\n   Paso 2: Verificar la correcta determinación de IVA, retenciones e ISLR.\n   Paso 3: Validar y firmar las declaraciones antes de su envío al SENIAT.\n   Paso 4: Archivar comprobantes de pago y declaraciones.\n\n3.3 Coordinación con Auditoría Externa\n   Paso 1: Atender requerimientos de información del auditor externo.\n   Paso 2: Facilitar acceso a libros contables, soportes y estados financieros.\n   Paso 3: Responder observaciones y ajustar registros si aplica.\n   Paso 4: Recibir y revisar el informe de auditoría con la Gerencia.\n\n4. INDICADORES DE GESTIÓN\n• Días para entrega del cierre (meta: ≤5 días hábiles).\n• Número de ajustes post-cierre (meta: 0).\n• Declaraciones tributarias enviadas a tiempo (meta: 100%).",
-      "flujo": "<div class=\"flujo-section-title\">Ciclo Contable Mensual</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recepción de documentos</div><div class=\"flujo-step-desc\">Recibe comprobantes, facturas, notas de débito/crédito y soportes de las áreas de Tributos, Nómina, CxC y CxP.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro y clasificación</div><div class=\"flujo-step-desc\">Supervisa el registro de asientos contables. Verifica la correcta clasificación por centros de costo y cuentas contables.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliaciones</div><div class=\"flujo-step-desc\">Coordina conciliaciones bancarias, CxC, CxP y nómina antes del cierre mensual.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Cierre mensual</div><div class=\"flujo-step-desc\">Ejecuta el cierre contable: revisión de saldos, ajustes, depreciaciones y provisiones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Estados financieros</div><div class=\"flujo-step-desc\">Genera y valida Balance General, Estado de Resultados y flujo de caja. Presenta a Gerencia para aprobación.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Archivo y custodia</div><div class=\"flujo-step-desc\">Garantiza el archivo físico y digital de toda la documentación contable del período.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Coordinador de Contabilidad</span><span class=\"flujo-badge entregable\">📑 Estados financieros mensuales</span><span class=\"flujo-badge entregable\">✅ Conciliaciones validadas</span><span class=\"flujo-badge sistema\">💻 Sistema contable / ERP</span>"
+      "flujo": "<div class=\"flujo-section-title\">Ciclo Contable Mensual</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recepción de documentos</div><div class=\"flujo-step-desc\">Recibe comprobantes, facturas, notas de débito/crédito y soportes de las áreas de Tributos, Nómina, CxC y CxP.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro y clasificación</div><div class=\"flujo-step-desc\">Supervisa el registro de asientos contables. Verifica la correcta clasificación por centros de costo y cuentas contables.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliaciones</div><div class=\"flujo-step-desc\">Coordina conciliaciones bancarias, CxC, CxP y nómina antes del cierre mensual.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Cierre mensual</div><div class=\"flujo-step-desc\">Ejecuta el cierre contable: revisión de saldos, ajustes, depreciaciones y provisiones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Estados financieros</div><div class=\"flujo-step-desc\">Genera y valida Balance General, Estado de Resultados y flujo de caja. Presenta a Gerencia para aprobación.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Archivo y custodia</div><div class=\"flujo-step-desc\">Garantiza el archivo físico y digital de toda la documentación contable del período.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Coordinador de Contabilidad</span><span class=\"flujo-badge entregable\">📑 Estados financieros mensuales</span><span class=\"flujo-badge entregable\">✅ Conciliaciones validadas</span><span class=\"flujo-badge sistema\">💻 Sistema contable / ERP</span>",
+      "cursos": [
+        {
+          "nombre": "Ciclo Contable Mensual",
+          "tipo": "certificacion",
+          "xp": 120,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Recepción de Documentos",
+              "contenido": "El Coordinador recibe comprobantes, facturas, notas de débito/crédito y soportes provenientes de las áreas de Tributos, Nómina, Cuentas por Cobrar y Cuentas por Pagar. La revisión de la documentación es el primer control de calidad del ciclo contable.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿De cuáles áreas recibe documentos el Coordinador de Contabilidad?",
+                "opciones": [
+                  "Solo de Tesorería y Nómina",
+                  "De Tributos, Nómina, CxC y CxP",
+                  "De Gerencia y Operaciones",
+                  "Solo de proveedores externos"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Las cuatro áreas son fuente de documentación contable.",
+                "feedbackErr": "Las áreas fuente son Tributos, Nómina, Cuentas por Cobrar y Cuentas por Pagar."
+              }
+            },
+            {
+              "titulo": "Registro y Clasificación",
+              "contenido": "Supervisa el registro de asientos contables en el sistema, verificando que cada transacción esté correctamente clasificada por centro de costo y cuenta contable. Un registro incorrecto puede distorsionar los estados financieros.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "Clasificar incorrectamente una cuenta contable puede distorsionar los estados financieros.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. La clasificación precisa es fundamental para la integridad de los EEFF.",
+                "feedbackErr": "Una clasificación incorrecta siempre afecta la confiabilidad de los estados financieros."
+              }
+            },
+            {
+              "titulo": "Conciliaciones",
+              "contenido": "Antes del cierre mensual se realizan conciliaciones bancarias, de cuentas por cobrar, cuentas por pagar y nómina. Las conciliaciones garantizan que los registros contables coincidan con los saldos reales de cada cuenta.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Cuál es el objetivo principal de las conciliaciones previas al cierre mensual?",
+                "opciones": [
+                  "Aumentar el número de asientos contables",
+                  "Verificar que los registros coincidan con los saldos reales",
+                  "Calcular el impuesto sobre la renta",
+                  "Aprobar los pagos a proveedores"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Las conciliaciones garantizan la coherencia entre registros y saldos.",
+                "feedbackErr": "El propósito de las conciliaciones es validar que los registros coincidan con la realidad."
+              }
+            },
+            {
+              "titulo": "Cierre Mensual",
+              "contenido": "El cierre contable incluye la revisión de saldos, registro de ajustes, cálculo de depreciaciones y constitución de provisiones. Es el proceso final que asegura que todos los movimientos del período estén correctamente registrados.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Cuáles son elementos del cierre mensual?",
+                "opciones": [
+                  "Solo pago de nómina",
+                  "Ajustes, depreciaciones y provisiones",
+                  "Negociación con proveedores",
+                  "Apertura de cuentas bancarias"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Ajustes, depreciaciones y provisiones son parte del cierre.",
+                "feedbackErr": "El cierre incluye ajustes, depreciaciones y provisiones, entre otros elementos."
+              }
+            },
+            {
+              "titulo": "Estados Financieros",
+              "contenido": "Al finalizar el cierre, el Coordinador genera y valida el Balance General, el Estado de Resultados y el Flujo de Caja. Estos documentos son presentados a la Gerencia de Administración para su revisión y aprobación antes de su uso oficial.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El Coordinador de Contabilidad presenta los estados financieros directamente a los entes regulatorios sin pasar por la Gerencia.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. Primero se presentan a la Gerencia de Administración para aprobación.",
+                "feedbackErr": "Los estados financieros siempre pasan primero por la Gerencia de Administración."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-de-tributos": {
@@ -80,7 +258,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista de Tributos\n\n1. OBJETIVO\nGestionar el cumplimiento de todas las obligaciones tributarias de Copikon Venezuela, asegurando la declaración y pago oportuno de impuestos ante el SENIAT y demás organismos competentes.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Elaborar y presentar declaraciones de IVA, ISLR, retenciones y contribuciones.\n• Calcular y verificar retenciones a proveedores y clientes.\n• Llevar el libro de compras y ventas actualizado.\n• Alertar sobre cambios en la legislación tributaria.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Declaración y Pago de IVA (mensual)\n   Paso 1: Descargar del sistema contable el reporte de compras y ventas del mes.\n   Paso 2: Verificar que todas las facturas estén registradas con su alícuota correcta.\n   Paso 3: Calcular el IVA a pagar o el crédito fiscal a favor.\n   Paso 4: Completar la declaración en el portal del SENIAT (SIVIT).\n   Paso 5: Procesar el pago y obtener el comprobante.\n   Paso 6: Archivar declaración, pago y soportes en carpeta mensual.\n   Plazo: Antes del día 15 del mes siguiente.\n\n3.2 Retenciones de IVA e ISLR\n   Paso 1: Identificar proveedores sujetos a retención.\n   Paso 2: Calcular el monto a retener según la alícuota vigente.\n   Paso 3: Emitir los comprobantes de retención a los proveedores.\n   Paso 4: Enterar las retenciones al SENIAT dentro del plazo legal.\n   Paso 5: Registrar en el libro de retenciones.\n\n3.3 Declaración ISLR Anual\n   Paso 1: Recopilar la información financiera del ejercicio fiscal.\n   Paso 2: Calcular el enriquecimiento neto gravable.\n   Paso 3: Aplicar desgravámenes y rebajas permitidas por la ley.\n   Paso 4: Presentar la declaración definitiva antes del 31 de marzo.\n   Paso 5: Gestionar el pago o crédito fiscal resultante.\n\n4. INDICADORES DE GESTIÓN\n• Declaraciones presentadas en fecha (meta: 100%).\n• Multas o sanciones tributarias (meta: 0).\n• Tiempo de respuesta a requerimientos del SENIAT (meta: ≤3 días).",
-      "flujo": "<div class=\"flujo-section-title\">Gestión Tributaria Mensual</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Cálculo de obligaciones</div><div class=\"flujo-step-desc\">Calcula mensualmente el IVA, ISLR, municipales y demás impuestos aplicables según normativa vigente.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Preparación de declaraciones</div><div class=\"flujo-step-desc\">Elabora y valida las declaraciones tributarias en los portales del SENIAT y municipios.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aprobación y pago</div><div class=\"flujo-step-desc\">Somete la declaración al Coordinador de Contabilidad. Una vez aprobada, coordina el pago con Tesorería.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro contable</div><div class=\"flujo-step-desc\">Registra el asiento de la obligación tributaria pagada en el sistema contable.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Archivo y seguimiento</div><div class=\"flujo-step-desc\">Archiva comprobantes y declaraciones. Controla los vencimientos del período siguiente.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Tributos</span><span class=\"flujo-badge entregable\">📄 Declaraciones tributarias</span><span class=\"flujo-badge entregable\">🧾 Comprobantes de pago</span><span class=\"flujo-badge sistema\">💻 SENIAT / Portales municipales</span>"
+      "flujo": "<div class=\"flujo-section-title\">Gestión Tributaria Mensual</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Cálculo de obligaciones</div><div class=\"flujo-step-desc\">Calcula mensualmente el IVA, ISLR, municipales y demás impuestos aplicables según normativa vigente.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Preparación de declaraciones</div><div class=\"flujo-step-desc\">Elabora y valida las declaraciones tributarias en los portales del SENIAT y municipios.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aprobación y pago</div><div class=\"flujo-step-desc\">Somete la declaración al Coordinador de Contabilidad. Una vez aprobada, coordina el pago con Tesorería.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro contable</div><div class=\"flujo-step-desc\">Registra el asiento de la obligación tributaria pagada en el sistema contable.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Archivo y seguimiento</div><div class=\"flujo-step-desc\">Archiva comprobantes y declaraciones. Controla los vencimientos del período siguiente.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Tributos</span><span class=\"flujo-badge entregable\">📄 Declaraciones tributarias</span><span class=\"flujo-badge entregable\">🧾 Comprobantes de pago</span><span class=\"flujo-badge sistema\">💻 SENIAT / Portales municipales</span>",
+      "cursos": [
+        {
+          "nombre": "Gestión Tributaria: IVA, ISLR y Tributos Municipales",
+          "tipo": "obligatorio",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Cálculo de Obligaciones Tributarias",
+              "contenido": "El Analista calcula mensualmente el IVA (Impuesto al Valor Agregado), el ISLR (Impuesto Sobre la Renta) y los tributos municipales aplicables según la normativa vigente. Es fundamental mantenerse actualizado ante cambios legales.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Cuáles impuestos calcula principalmente el Analista de Tributos?",
+                "opciones": [
+                  "ISR e Impuesto Vehicular",
+                  "IVA, ISLR y tributos municipales",
+                  "Solo el IVA mensual",
+                  "Aranceles de importación"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. IVA, ISLR y tributos municipales son los principales.",
+                "feedbackErr": "Los principales son IVA, ISLR y los tributos municipales."
+              }
+            },
+            {
+              "titulo": "Preparación de Declaraciones",
+              "contenido": "Elabora las declaraciones tributarias en los portales oficiales del SENIAT y de las alcaldías correspondientes. Cada declaración debe ser validada antes de su presentación para evitar multas o reparos fiscales.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "Las declaraciones tributarias se presentan únicamente ante el SENIAT.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. También se presentan ante las alcaldías para tributos municipales.",
+                "feedbackErr": "Las declaraciones se presentan ante el SENIAT Y las alcaldías municipales."
+              }
+            },
+            {
+              "titulo": "Aprobación y Pago",
+              "contenido": "Una vez preparada la declaración, el Analista la somete al Coordinador de Contabilidad para revisión y aprobación. Solo después de aprobada coordina con Tesorería para ejecutar el pago en los plazos legales.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Quién debe aprobar la declaración antes de que se ejecute el pago?",
+                "opciones": [
+                  "El Gerente de Operaciones",
+                  "El propio Analista de Tributos",
+                  "El Coordinador de Contabilidad",
+                  "El Analista de Tesorería"
+                ],
+                "correcta": 2,
+                "feedbackOk": "Correcto. El Coordinador de Contabilidad revisa y aprueba la declaración.",
+                "feedbackErr": "La aprobación corresponde al Coordinador de Contabilidad."
+              }
+            },
+            {
+              "titulo": "Registro Contable y Archivo",
+              "contenido": "Después del pago, el Analista registra el asiento contable de la obligación tributaria en el sistema y archiva los comprobantes de pago y declaraciones. El archivo organizado es fundamental para auditorías futuras.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "Archivar los comprobantes de declaraciones y pagos es importante para facilitar auditorías futuras.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. El archivo ordenado es clave para la trazabilidad tributaria.",
+                "feedbackErr": "El archivo de soportes tributarios es esencial para cualquier proceso de auditoría."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-cuentas-por-cobrar": {
@@ -100,7 +350,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista Cuentas por Cobrar\n\n1. OBJETIVO\nAdministrar la cartera de clientes de Copikon Venezuela, garantizando el cobro oportuno de las facturas y el mantenimiento de saldos actualizados en los registros contables.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Emitir facturas y notas de crédito/débito.\n• Dar seguimiento a cuentas vencidas y gestionar cobranzas.\n• Conciliar saldos de clientes con el sistema contable.\n• Reportar antigüedad de saldos semanalmente.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Emisión de Facturas\n   Paso 1: Recibir la confirmación de despacho o prestación de servicio.\n   Paso 2: Verificar los datos del cliente (RIF, dirección, condición de pago).\n   Paso 3: Emitir la factura en el sistema con los productos/servicios y el IVA aplicable.\n   Paso 4: Enviar factura al cliente (física y/o digital) y registrar en el libro de ventas.\n   Paso 5: Archivar copia y actualizar el kardex del cliente.\n\n3.2 Gestión de Cobranzas\n   Paso 1: Generar reporte de antigüedad de saldos cada lunes.\n   Paso 2: Identificar facturas próximas a vencer (5 días antes) y notificar al cliente.\n   Paso 3: Para facturas vencidas, contactar al cliente el día siguiente al vencimiento.\n   Paso 4: Registrar cada gestión de cobro (fecha, canal, respuesta).\n   Paso 5: Escalar al Coordinador las cuentas con más de 30 días de mora.\n   Paso 6: Para cuentas >60 días, coordinar con el área comercial la suspensión del crédito.\n\n3.3 Conciliación de Saldos\n   Paso 1: Al cierre de mes, cruzar el estado de cuenta de cada cliente con los registros internos.\n   Paso 2: Identificar y resolver diferencias (pagos no aplicados, facturas duplicadas).\n   Paso 3: Emitir notas de crédito o débito cuando corresponda.\n   Paso 4: Presentar reporte de cartera conciliada al Coordinador de Contabilidad.\n\n4. INDICADORES DE GESTIÓN\n• Días promedio de cobro — DSO (meta: ≤30 días).\n• Cartera vencida >60 días sobre total cartera (meta: ≤5%).\n• Facturas emitidas con errores (meta: 0%).",
-      "flujo": "<div class=\"flujo-section-title\">Ciclo de Cuentas por Cobrar</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Emisión de facturas</div><div class=\"flujo-step-desc\">Genera y envía facturas a clientes una vez confirmada la operación de venta por Comercialización.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control de cartera</div><div class=\"flujo-step-desc\">Mantiene actualizado el registro de facturas emitidas, vencimientos y estado de cobro por cliente.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Gestión de cobro</div><div class=\"flujo-step-desc\">Realiza seguimiento a clientes con facturas próximas a vencer o vencidas. Escala casos con más de 30 días a la Coordinación.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aplicación de pagos</div><div class=\"flujo-step-desc\">Registra los pagos recibidos contra las facturas correspondientes en el sistema contable.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliación mensual</div><div class=\"flujo-step-desc\">Concilia el saldo de CxC con el mayor contable y presenta el informe de antigüedad de saldos.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista CxC</span><span class=\"flujo-badge entregable\">📊 Informe antigüedad de saldos</span><span class=\"flujo-badge entregable\">📋 Reporte de cartera mensual</span><span class=\"flujo-badge sistema\">💻 Sistema contable / ERP</span>"
+      "flujo": "<div class=\"flujo-section-title\">Ciclo de Cuentas por Cobrar</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Emisión de facturas</div><div class=\"flujo-step-desc\">Genera y envía facturas a clientes una vez confirmada la operación de venta por Comercialización.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control de cartera</div><div class=\"flujo-step-desc\">Mantiene actualizado el registro de facturas emitidas, vencimientos y estado de cobro por cliente.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Gestión de cobro</div><div class=\"flujo-step-desc\">Realiza seguimiento a clientes con facturas próximas a vencer o vencidas. Escala casos con más de 30 días a la Coordinación.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aplicación de pagos</div><div class=\"flujo-step-desc\">Registra los pagos recibidos contra las facturas correspondientes en el sistema contable.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliación mensual</div><div class=\"flujo-step-desc\">Concilia el saldo de CxC con el mayor contable y presenta el informe de antigüedad de saldos.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista CxC</span><span class=\"flujo-badge entregable\">📊 Informe antigüedad de saldos</span><span class=\"flujo-badge entregable\">📋 Reporte de cartera mensual</span><span class=\"flujo-badge sistema\">💻 Sistema contable / ERP</span>",
+      "cursos": [
+        {
+          "nombre": "Gestión de Cobranzas y Control de Cartera",
+          "tipo": "obligatorio",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Emisión de Facturas",
+              "contenido": "El Analista genera y envía facturas a los clientes una vez que Comercialización confirma la operación de venta. La factura es el documento legal que formaliza la deuda del cliente con la empresa.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El Analista de CxC emite las facturas antes de que Comercialización confirme la operación de venta.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. Primero debe existir la confirmación de la venta.",
+                "feedbackErr": "Las facturas se emiten DESPUÉS de que Comercialización confirma la operación."
+              }
+            },
+            {
+              "titulo": "Control de Cartera",
+              "contenido": "Mantiene actualizado el registro de todas las facturas emitidas, sus fechas de vencimiento y el estado de cobro de cada cliente. Un control de cartera preciso permite identificar rápidamente las cuentas en riesgo.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué información debe controlar el Analista de CxC por cada cliente?",
+                "opciones": [
+                  "Solo el monto total adeudado",
+                  "Facturas emitidas, vencimientos y estado de cobro",
+                  "El historial crediticio bancario",
+                  "Las órdenes de compra pendientes"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. La cartera incluye facturas, vencimientos y estado de cada cobro.",
+                "feedbackErr": "El control debe incluir facturas, fechas de vencimiento y estado de cobro."
+              }
+            },
+            {
+              "titulo": "Gestión de Cobro",
+              "contenido": "Realiza seguimiento telefónico y escrito a clientes con facturas próximas a vencer o ya vencidas. Cuando una factura supera los 30 días de vencida sin cobrar, el caso se escala a la Coordinación de Contabilidad.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Cuándo se escala un caso de cobro a la Coordinación?",
+                "opciones": [
+                  "Cuando el cliente llama a reclamar",
+                  "Cuando la factura supera 30 días vencida",
+                  "Al inicio del mes",
+                  "Cuando el cliente tiene más de 5 facturas"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. El escalamiento ocurre al superar los 30 días de vencimiento.",
+                "feedbackErr": "El criterio de escalamiento es superar los 30 días de vencimiento sin cobrar."
+              }
+            },
+            {
+              "titulo": "Conciliación Mensual",
+              "contenido": "Al cierre de cada mes, el Analista concilia el saldo de cuentas por cobrar con el mayor contable y prepara el informe de antigüedad de saldos. Este informe muestra el tiempo que lleva cada factura pendiente de cobro.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El informe de antigüedad de saldos muestra cuánto tiempo lleva pendiente de cobro cada factura.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. Es precisamente el propósito de ese informe.",
+                "feedbackErr": "El informe de antigüedad de saldos muestra exactamente el tiempo de mora de cada factura."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-cuentas-por-pagar": {
@@ -120,7 +442,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista Cuentas Por Pagar\n\n1. OBJETIVO\nControlar y procesar oportunamente los pagos a proveedores y acreedores de Copikon Venezuela, asegurando el cumplimiento de las condiciones pactadas y la correcta contabilización de cada egreso.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Registrar y verificar facturas de proveedores.\n• Programar y ejecutar pagos según política de plazos.\n• Conciliar saldos con proveedores.\n• Asegurar la correcta aplicación de retenciones.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Registro de Facturas de Proveedores\n   Paso 1: Recibir la factura con su orden de compra y nota de entrega asociada.\n   Paso 2: Verificar que los tres documentos coincidan (cantidad, precio, condiciones).\n   Paso 3: Validar que la factura cumpla con los requisitos fiscales.\n   Paso 4: Registrar en el sistema contable y en el libro de compras.\n   Paso 5: Calcular y registrar la retención de IVA e ISLR si aplica.\n\n3.2 Programación y Ejecución de Pagos\n   Paso 1: Cada viernes, generar el reporte de facturas a vencer la semana siguiente.\n   Paso 2: Preparar la programación de pagos y remitirla al Coordinador de Tesorería.\n   Paso 3: Una vez aprobados los fondos, procesar las transferencias o cheques.\n   Paso 4: Notificar al proveedor el pago realizado y enviar el comprobante.\n   Paso 5: Registrar el egreso en el sistema y marcar la factura como pagada.\n\n3.3 Conciliación con Proveedores\n   Paso 1: Al cierre de mes, solicitar estado de cuenta a los proveedores principales.\n   Paso 2: Cruzar los saldos con los registros internos.\n   Paso 3: Resolver diferencias (pagos no aplicados, notas de crédito pendientes).\n   Paso 4: Reportar el saldo conciliado al Coordinador de Contabilidad.\n\n4. INDICADORES DE GESTIÓN\n• Pagos realizados dentro del plazo pactado (meta: ≥95%).\n• Facturas rechazadas por errores (meta: ≤2%).\n• Días promedio de pago — DPO (dentro del rango negociado).",
-      "flujo": "<div class=\"flujo-section-title\">Ciclo de Cuentas por Pagar</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recepción de facturas</div><div class=\"flujo-step-desc\">Recibe, verifica y registra facturas de proveedores validando la orden de compra y recepción conforme.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro contable</div><div class=\"flujo-step-desc\">Registra el pasivo clasificado por proveedor, centro de costo y fecha de vencimiento.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Programación de pagos</div><div class=\"flujo-step-desc\">Elabora el programa semanal de pagos según vencimientos y disponibilidad de caja.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aprobación</div><div class=\"flujo-step-desc\">Presenta la programación al Coordinador y Gerencia para aprobación del desembolso.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Pago y comprobante</div><div class=\"flujo-step-desc\">Coordina con Tesorería la ejecución del pago. Archiva el comprobante emitido.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliación</div><div class=\"flujo-step-desc\">Concilia mensualmente los saldos con estados de cuenta de proveedores.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista CxP</span><span class=\"flujo-badge entregable\">📅 Programación semanal de pagos</span><span class=\"flujo-badge entregable\">✅ Conciliación de proveedores</span><span class=\"flujo-badge sistema\">💻 Sistema contable / ERP</span>"
+      "flujo": "<div class=\"flujo-section-title\">Ciclo de Cuentas por Pagar</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recepción de facturas</div><div class=\"flujo-step-desc\">Recibe, verifica y registra facturas de proveedores validando la orden de compra y recepción conforme.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro contable</div><div class=\"flujo-step-desc\">Registra el pasivo clasificado por proveedor, centro de costo y fecha de vencimiento.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Programación de pagos</div><div class=\"flujo-step-desc\">Elabora el programa semanal de pagos según vencimientos y disponibilidad de caja.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aprobación</div><div class=\"flujo-step-desc\">Presenta la programación al Coordinador y Gerencia para aprobación del desembolso.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Pago y comprobante</div><div class=\"flujo-step-desc\">Coordina con Tesorería la ejecución del pago. Archiva el comprobante emitido.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliación</div><div class=\"flujo-step-desc\">Concilia mensualmente los saldos con estados de cuenta de proveedores.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista CxP</span><span class=\"flujo-badge entregable\">📅 Programación semanal de pagos</span><span class=\"flujo-badge entregable\">✅ Conciliación de proveedores</span><span class=\"flujo-badge sistema\">💻 Sistema contable / ERP</span>",
+      "cursos": [
+        {
+          "nombre": "Control y Pago a Proveedores",
+          "tipo": "obligatorio",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Recepción y Validación de Facturas",
+              "contenido": "El Analista recibe las facturas de proveedores y las verifica contra la orden de compra y el documento de recepción conforme. Solo se procesan facturas que tengan estos tres documentos: factura, orden de compra y recepción.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué tres documentos deben coincidir para procesar una factura de proveedor?",
+                "opciones": [
+                  "Factura, presupuesto y correo electrónico",
+                  "Factura, orden de compra y recepción conforme",
+                  "Factura, contrato y cheque",
+                  "Cotización, factura y recibo"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Los tres documentos son la base del control de CxP.",
+                "feedbackErr": "Se requieren factura, orden de compra y documento de recepción conforme."
+              }
+            },
+            {
+              "titulo": "Registro y Programación de Pagos",
+              "contenido": "Registra el pasivo en el sistema contable y elabora el programa semanal de pagos según los vencimientos, la disponibilidad de caja y las prioridades definidas por la Coordinación.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "La programación de pagos se elabora tomando en cuenta solo los vencimientos de facturas.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. También considera la disponibilidad de caja y las prioridades de la Coordinación.",
+                "feedbackErr": "La programación considera vencimientos, disponibilidad de caja Y prioridades definidas."
+              }
+            },
+            {
+              "titulo": "Proceso de Aprobación",
+              "contenido": "La programación semanal de pagos debe ser aprobada por el Coordinador de Contabilidad y la Gerencia antes de ejecutar cualquier desembolso. Este paso es un control interno esencial para evitar pagos no autorizados.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Quiénes deben aprobar la programación de pagos antes de ejecutarla?",
+                "opciones": [
+                  "Solo el Analista de CxP",
+                  "El Coordinador de Contabilidad y la Gerencia",
+                  "Solo el Analista de Tesorería",
+                  "El proveedor y el Analista"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Tanto el Coordinador como la Gerencia deben aprobar.",
+                "feedbackErr": "La aprobación requiere al Coordinador de Contabilidad y a la Gerencia de Administración."
+              }
+            },
+            {
+              "titulo": "Pago, Archivo y Conciliación",
+              "contenido": "Aprobada la programación, coordina con Tesorería la ejecución del pago, archiva los comprobantes y mensualmente concilia los saldos con los estados de cuenta de los proveedores para detectar diferencias.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "La conciliación con proveedores permite detectar diferencias entre los registros propios y los del proveedor.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. Ese es precisamente su propósito.",
+                "feedbackErr": "La conciliación identifica discrepancias entre los registros de la empresa y los del proveedor."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-de-nomina": {
@@ -140,7 +534,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista de Nómina\n\n1. OBJETIVO\nProcesar la nómina mensual de todos los trabajadores de Copikon Venezuela, garantizando el pago exacto y oportuno de salarios, beneficios y deducciones, en cumplimiento de la LOTTT y demás normativas laborales vigentes.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Calcular y procesar nómina quincenal/mensual.\n• Gestionar ingresos, egresos y cambios de personal.\n• Elaborar planillas de IVSS, FAOV y Banavih.\n• Calcular utilidades, vacaciones y liquidaciones.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Procesamiento de Nómina Mensual\n   Paso 1: Recibir de RRHH el reporte de novedades el día 25 (ingresos, egresos, aumentos, ausencias).\n   Paso 2: Actualizar el sistema de nómina con las novedades.\n   Paso 3: Calcular salarios, horas extras, bonos y beneficios (alimentación, transporte).\n   Paso 4: Aplicar deducciones legales: IVSS, INCES, LPH, préstamos, embargos.\n   Paso 5: Generar el listado de nómina y someterlo a revisión del Coordinador de Contabilidad.\n   Paso 6: Una vez aprobado, procesar transferencias bancarias el último día hábil del mes.\n   Paso 7: Emitir recibos de pago a cada trabajador.\n\n3.2 Ingreso de Personal\n   Paso 1: Recibir expediente del nuevo trabajador de RRHH.\n   Paso 2: Registrar al empleado en el sistema de nómina.\n   Paso 3: Inscribir al trabajador ante el IVSS dentro de los 3 días hábiles de ingreso.\n   Paso 4: Registrar en FAOV y coordinar apertura de cuenta de nómina bancaria.\n\n3.3 Pago de Utilidades y Vacaciones\n   Paso 1: Al cierre del ejercicio, calcular las utilidades según el beneficio anual declarado.\n   Paso 2: Calcular el salario integral de cada trabajador.\n   Paso 3: Para vacaciones, recibir solicitud aprobada por RRHH y calcular el bono vacacional.\n   Paso 4: Procesar el pago y registrar en el sistema.\n\n4. INDICADORES DE GESTIÓN\n• Nómina pagada en fecha (meta: 100%).\n• Errores en recibos de pago (meta: 0%).\n• Planillas IVSS/FAOV presentadas a tiempo (meta: 100%).",
-      "flujo": "<div class=\"flujo-section-title\">Ciclo de Nómina</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recopilación de novedades</div><div class=\"flujo-step-desc\">Recibe de RRHH las novedades del período: ingresos, egresos, ausencias, horas extra y beneficios.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Cálculo de nómina</div><div class=\"flujo-step-desc\">Procesa la nómina: salarios, beneficios, deducciones (SSO, FAOV, INCES) y retenciones de ISLR.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Revisión y aprobación</div><div class=\"flujo-step-desc\">Presenta el resumen al Coordinador de Contabilidad. Aplica correcciones si las hubiere.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Pago</div><div class=\"flujo-step-desc\">Genera archivos de pago para el banco. Coordina con Tesorería el desembolso a empleados.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro contable</div><div class=\"flujo-step-desc\">Registra el asiento de nómina por centros de costo y genera comprobantes individuales.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aportes y reportes</div><div class=\"flujo-step-desc\">Genera reportes para SSO, FAOV, INCES y coordina el pago de contribuciones patronales.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Nómina</span><span class=\"flujo-badge entregable\">💰 Nómina procesada</span><span class=\"flujo-badge entregable\">📄 Recibos de pago</span><span class=\"flujo-badge sistema\">💻 Sistema de nómina / ERP</span>"
+      "flujo": "<div class=\"flujo-section-title\">Ciclo de Nómina</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recopilación de novedades</div><div class=\"flujo-step-desc\">Recibe de RRHH las novedades del período: ingresos, egresos, ausencias, horas extra y beneficios.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Cálculo de nómina</div><div class=\"flujo-step-desc\">Procesa la nómina: salarios, beneficios, deducciones (SSO, FAOV, INCES) y retenciones de ISLR.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Revisión y aprobación</div><div class=\"flujo-step-desc\">Presenta el resumen al Coordinador de Contabilidad. Aplica correcciones si las hubiere.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Pago</div><div class=\"flujo-step-desc\">Genera archivos de pago para el banco. Coordina con Tesorería el desembolso a empleados.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro contable</div><div class=\"flujo-step-desc\">Registra el asiento de nómina por centros de costo y genera comprobantes individuales.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Aportes y reportes</div><div class=\"flujo-step-desc\">Genera reportes para SSO, FAOV, INCES y coordina el pago de contribuciones patronales.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Nómina</span><span class=\"flujo-badge entregable\">💰 Nómina procesada</span><span class=\"flujo-badge entregable\">📄 Recibos de pago</span><span class=\"flujo-badge sistema\">💻 Sistema de nómina / ERP</span>",
+      "cursos": [
+        {
+          "nombre": "Procesamiento de Nómina y Aportes Parafiscales",
+          "tipo": "obligatorio",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Recopilación de Novedades",
+              "contenido": "El proceso comienza recibiendo de RRHH todas las novedades del período: nuevos ingresos, egresos, ausencias, horas extra, beneficios adicionales y deducciones especiales. Sin esta información completa no puede calcularse la nómina correctamente.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué área proporciona las novedades de nómina al Analista?",
+                "opciones": [
+                  "Contabilidad",
+                  "Tesorería",
+                  "Recursos Humanos (RRHH)",
+                  "Gerencia de Administración"
+                ],
+                "correcta": 2,
+                "feedbackOk": "Correcto. RRHH es quien gestiona y envía las novedades de personal.",
+                "feedbackErr": "Las novedades provienen de Recursos Humanos (RRHH)."
+              }
+            },
+            {
+              "titulo": "Cálculo y Aprobación",
+              "contenido": "Procesa la nómina calculando salarios, beneficios, deducciones legales (SSO, FAOV, INCES) y retenciones de ISLR. El resultado se presenta al Coordinador de Contabilidad para revisión y corrección antes de proceder al pago.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "SSO, FAOV e INCES son deducciones que el empleado nunca debe pagar; son solo aporte patronal.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. El SSO, FAOV e INCES tienen tanto aporte del trabajador como aporte patronal.",
+                "feedbackErr": "Estas contribuciones tienen una parte del trabajador y otra parte patronal."
+              }
+            },
+            {
+              "titulo": "Pago y Registro Contable",
+              "contenido": "Una vez aprobada la nómina, genera los archivos de pago para el banco y coordina con Tesorería el desembolso. Luego registra el asiento contable de nómina por centros de costo y genera los comprobantes de pago individuales para cada empleado.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué se genera para cada empleado después de ejecutar el pago de nómina?",
+                "opciones": [
+                  "Un contrato de trabajo",
+                  "Un comprobante de pago individual",
+                  "Una nota de débito bancaria",
+                  "Una orden de compra"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Cada empleado recibe su comprobante de pago.",
+                "feedbackErr": "Se genera un comprobante de pago individual para cada empleado."
+              }
+            },
+            {
+              "titulo": "Aportes y Reportes Legales",
+              "contenido": "El Analista genera los reportes requeridos por organismos como SSO, FAOV e INCES, y coordina el pago de las contribuciones patronales en los plazos establecidos por ley. El incumplimiento puede generar sanciones significativas.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El incumplimiento en el pago de aportes parafiscales puede generar sanciones a la empresa.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. El incumplimiento conlleva multas y sanciones legales.",
+                "feedbackErr": "Las contribuciones parafiscales tienen plazos legales y su incumplimiento genera sanciones."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "coordinador-analisis-y-planificacion-financiera": {
@@ -160,7 +626,85 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Coordinador de Análisis y Planificación Financiera\n\n1. OBJETIVO\nCoordinar la planificación presupuestaria y el análisis financiero de Copikon Venezuela, proporcionando información estratégica para la toma de decisiones de la Gerencia de Administración y el CEO.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Elaborar y dar seguimiento al presupuesto anual.\n• Preparar proyecciones de flujo de caja y análisis de rentabilidad.\n• Supervisar al Analista Financiero en la producción de reportes.\n• Evaluar proyectos de inversión y expansión.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Seguimiento Presupuestario Mensual\n   Paso 1: Al recibir el cierre contable (día 5 hábil), extraer los datos de ejecución por centro de costo.\n   Paso 2: Comparar la ejecución real versus el presupuesto aprobado.\n   Paso 3: Calcular las variaciones absolutas y porcentuales por línea.\n   Paso 4: Solicitar justificación a las gerencias con desviaciones superiores al 5%.\n   Paso 5: Elaborar el informe de seguimiento presupuestario (día 8 hábil).\n\n3.2 Proyección de Flujo de Caja (rolling 13 semanas)\n   Paso 1: Cada lunes, actualizar la proyección de ingresos con los datos de cuentas por cobrar.\n   Paso 2: Actualizar egresos proyectados con la programación de pagos de Tesorería.\n   Paso 3: Identificar semanas con déficit proyectado y alertar al Gerente de Administración.\n   Paso 4: Proponer medidas de optimización (adelantar cobros, diferir pagos, gestionar crédito).\n\n3.3 Elaboración del Presupuesto Anual\n   Paso 1: Distribuir plantillas de planificación a todas las gerencias (octubre).\n   Paso 2: Consolidar las proyecciones recibidas.\n   Paso 3: Modelar escenarios (optimista, base, conservador).\n   Paso 4: Presentar el presupuesto consolidado a la Gerencia de Administración.\n   Paso 5: Incorporar ajustes y preparar versión final para aprobación de la Junta Directiva.\n\n4. INDICADORES DE GESTIÓN\n• Variación presupuestaria mensual promedio (meta: ≤5%).\n• Informe de seguimiento entregado a tiempo (meta: 100%).\n• Precisión del flujo de caja proyectado vs real (meta: ±10%).",
-      "flujo": "<div class=\"flujo-section-title\">Ciclo de Planificación y Análisis Financiero</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recopilación de datos</div><div class=\"flujo-step-desc\">Consolida información financiera de contabilidad, tesorería y demás áreas para el análisis periódico.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Análisis de estados financieros</div><div class=\"flujo-step-desc\">Analiza Balance, Estado de Resultados y flujo de caja. Calcula ratios de liquidez, rentabilidad y endeudamiento.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Elaboración del presupuesto</div><div class=\"flujo-step-desc\">Coordina con áreas la elaboración del presupuesto anual y revisiones trimestrales. Consolida y presenta a Gerencia.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control presupuestario</div><div class=\"flujo-step-desc\">Seguimiento mensual a la ejecución vs. presupuesto. Identifica y explica desviaciones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Proyecciones y escenarios</div><div class=\"flujo-step-desc\">Elabora proyecciones financieras y análisis de escenarios para la toma de decisiones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte a Gerencia</div><div class=\"flujo-step-desc\">Presenta informe ejecutivo de resultados financieros y recomendaciones.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Coordinador Análisis y Planificación</span><span class=\"flujo-badge entregable\">📊 Informe financiero mensual</span><span class=\"flujo-badge entregable\">📋 Presupuesto y proyecciones</span><span class=\"flujo-badge sistema\">💻 Excel / ERP / BI</span>"
+      "flujo": "<div class=\"flujo-section-title\">Ciclo de Planificación y Análisis Financiero</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recopilación de datos</div><div class=\"flujo-step-desc\">Consolida información financiera de contabilidad, tesorería y demás áreas para el análisis periódico.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Análisis de estados financieros</div><div class=\"flujo-step-desc\">Analiza Balance, Estado de Resultados y flujo de caja. Calcula ratios de liquidez, rentabilidad y endeudamiento.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Elaboración del presupuesto</div><div class=\"flujo-step-desc\">Coordina con áreas la elaboración del presupuesto anual y revisiones trimestrales. Consolida y presenta a Gerencia.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control presupuestario</div><div class=\"flujo-step-desc\">Seguimiento mensual a la ejecución vs. presupuesto. Identifica y explica desviaciones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Proyecciones y escenarios</div><div class=\"flujo-step-desc\">Elabora proyecciones financieras y análisis de escenarios para la toma de decisiones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte a Gerencia</div><div class=\"flujo-step-desc\">Presenta informe ejecutivo de resultados financieros y recomendaciones.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Coordinador Análisis y Planificación</span><span class=\"flujo-badge entregable\">📊 Informe financiero mensual</span><span class=\"flujo-badge entregable\">📋 Presupuesto y proyecciones</span><span class=\"flujo-badge sistema\">💻 Excel / ERP / BI</span>",
+      "cursos": [
+        {
+          "nombre": "Planificación Financiera y Control Presupuestario",
+          "tipo": "certificacion",
+          "xp": 120,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Recopilación y Análisis de Datos",
+              "contenido": "El Coordinador consolida información financiera de contabilidad, tesorería y demás áreas para construir el análisis periódico. Analiza el Balance General, Estado de Resultados y flujo de caja, calculando ratios de liquidez, rentabilidad y endeudamiento.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué ratios calcula principalmente el Coordinador de Análisis Financiero?",
+                "opciones": [
+                  "Ratios de producción e inventarios",
+                  "Ratios de liquidez, rentabilidad y endeudamiento",
+                  "Ratios de ventas y comisiones",
+                  "Ratios de asistencia y puntualidad"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Liquidez, rentabilidad y endeudamiento son los ratios financieros clave.",
+                "feedbackErr": "Los ratios financieros principales son liquidez, rentabilidad y endeudamiento."
+              }
+            },
+            {
+              "titulo": "Elaboración del Presupuesto",
+              "contenido": "Coordina con todas las áreas la construcción del presupuesto anual y sus revisiones trimestrales. Consolida los presupuestos individuales y presenta el presupuesto integrado a la Gerencia para su aprobación.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El presupuesto anual se revisa solo una vez al año, al momento de su aprobación.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. Se realizan revisiones trimestrales durante el año.",
+                "feedbackErr": "El presupuesto tiene revisiones trimestrales además de la elaboración anual."
+              }
+            },
+            {
+              "titulo": "Control Presupuestario",
+              "contenido": "Realiza el seguimiento mensual comparando la ejecución real versus el presupuesto aprobado. Identifica, analiza y explica las desviaciones a la Gerencia, proponiendo medidas correctivas cuando es necesario.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Con qué frecuencia se realiza el seguimiento de ejecución presupuestaria?",
+                "opciones": [
+                  "Diariamente",
+                  "Mensualmente",
+                  "Solo al cierre del año",
+                  "Cada vez que lo solicite la Dirección"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. El seguimiento es mensual para detectar desviaciones a tiempo.",
+                "feedbackErr": "El control presupuestario se realiza mensualmente."
+              }
+            },
+            {
+              "titulo": "Proyecciones y Reportes",
+              "contenido": "Elabora proyecciones financieras y análisis de escenarios (optimista, base y pesimista) para apoyar la toma de decisiones estratégicas. Presenta un informe ejecutivo consolidado a la Gerencia de Administración.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Para qué sirven los análisis de escenarios en la planificación financiera?",
+                "opciones": [
+                  "Para calcular el pago de impuestos",
+                  "Para apoyar la toma de decisiones estratégicas",
+                  "Para registrar asientos contables",
+                  "Para pagar a los proveedores"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Los escenarios apoyan la toma de decisiones estratégicas.",
+                "feedbackErr": "Los análisis de escenarios son una herramienta para la toma de decisiones estratégicas."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-financiero": {
@@ -180,7 +724,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista Financiero\n\n1. OBJETIVO\nProducir análisis cuantitativos del desempeño financiero de Copikon Venezuela, apoyando al Coordinador de Planificación Financiera con reportes, modelos y proyecciones que sustenten la toma de decisiones.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Elaborar reportes de KPIs financieros mensuales.\n• Construir modelos de proyección y análisis de rentabilidad.\n• Apoyar en la elaboración y seguimiento del presupuesto.\n• Preparar presentaciones para la Gerencia y el CEO.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Reporte Mensual de KPIs Financieros\n   Paso 1: Al recibir el cierre contable, extraer ingresos, costos, gastos y márgenes.\n   Paso 2: Calcular indicadores: margen bruto, margen EBITDA, ROE, ROA, liquidez corriente, endeudamiento.\n   Paso 3: Comparar con el mes anterior y con el presupuesto.\n   Paso 4: Elaborar dashboard con gráficos de tendencia.\n   Paso 5: Presentar al Coordinador de Planificación Financiera para revisión y envío.\n\n3.2 Análisis de Rentabilidad por Línea de Negocio\n   Paso 1: Solicitar ingresos y costos desagregados por unidad (Mayoreo, Proyectos, Retail, E-commerce).\n   Paso 2: Asignar gastos indirectos según el criterio de distribución aprobado.\n   Paso 3: Calcular el margen de contribución y EBITDA por unidad.\n   Paso 4: Identificar las unidades más y menos rentables.\n   Paso 5: Elaborar el informe trimestral y presentar recomendaciones.\n\n3.3 Soporte en Evaluación de Proyectos\n   Paso 1: Recibir la propuesta con información de inversión e ingresos esperados.\n   Paso 2: Construir el modelo de flujo de caja descontado (DCF).\n   Paso 3: Calcular VPN, TIR y período de recuperación.\n   Paso 4: Sensibilizar el modelo ante cambios en supuestos clave.\n   Paso 5: Presentar conclusiones al Coordinador de Planificación Financiera.\n\n4. INDICADORES DE GESTIÓN\n• Reporte de KPIs entregado en fecha (meta: día 7 hábil de cada mes).\n• Precisión de proyecciones vs resultados reales (meta: ±10%).\n• Número de modelos financieros elaborados por trimestre (meta: ≥3).",
-      "flujo": "<div class=\"flujo-section-title\">Análisis Financiero Periódico</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Extracción de datos</div><div class=\"flujo-step-desc\">Descarga y consolida los estados financieros del sistema contable para el período a analizar.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Análisis de variaciones</div><div class=\"flujo-step-desc\">Compara resultados reales vs. presupuesto y períodos anteriores. Identifica desviaciones significativas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Elaboración de reportes</div><div class=\"flujo-step-desc\">Prepara reportes de análisis, tablas de indicadores y presentaciones para el Coordinador.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Apoyo presupuestario</div><div class=\"flujo-step-desc\">Asiste en elaboración y seguimiento del presupuesto: carga de datos, consolidación y proyecciones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Atención de consultas</div><div class=\"flujo-step-desc\">Responde consultas de otras áreas sobre datos financieros y apoya en preparación para auditorías.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista Financiero</span><span class=\"flujo-badge entregable\">📈 Reporte de variaciones</span><span class=\"flujo-badge entregable\">📊 Tablas de indicadores</span><span class=\"flujo-badge sistema\">💻 Excel / ERP / BI</span>"
+      "flujo": "<div class=\"flujo-section-title\">Análisis Financiero Periódico</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Extracción de datos</div><div class=\"flujo-step-desc\">Descarga y consolida los estados financieros del sistema contable para el período a analizar.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Análisis de variaciones</div><div class=\"flujo-step-desc\">Compara resultados reales vs. presupuesto y períodos anteriores. Identifica desviaciones significativas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Elaboración de reportes</div><div class=\"flujo-step-desc\">Prepara reportes de análisis, tablas de indicadores y presentaciones para el Coordinador.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Apoyo presupuestario</div><div class=\"flujo-step-desc\">Asiste en elaboración y seguimiento del presupuesto: carga de datos, consolidación y proyecciones.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Atención de consultas</div><div class=\"flujo-step-desc\">Responde consultas de otras áreas sobre datos financieros y apoya en preparación para auditorías.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista Financiero</span><span class=\"flujo-badge entregable\">📈 Reporte de variaciones</span><span class=\"flujo-badge entregable\">📊 Tablas de indicadores</span><span class=\"flujo-badge sistema\">💻 Excel / ERP / BI</span>",
+      "cursos": [
+        {
+          "nombre": "Análisis de Variaciones y Soporte Financiero",
+          "tipo": "obligatorio",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Extracción y Análisis de Datos",
+              "contenido": "El Analista Financiero descarga y consolida los estados financieros del sistema contable para el período a analizar. Compara los resultados reales contra el presupuesto y los períodos anteriores, identificando variaciones significativas.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El Analista Financiero compara solo los resultados reales del mes actual, sin considerar períodos anteriores.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. El análisis incluye comparación con presupuesto Y períodos anteriores.",
+                "feedbackErr": "El análisis compara tanto con el presupuesto como con períodos históricos anteriores."
+              }
+            },
+            {
+              "titulo": "Elaboración de Reportes",
+              "contenido": "Prepara los reportes de análisis financiero incluyendo tablas de indicadores, gráficos de variación y presentaciones ejecutivas para el Coordinador de Análisis y Planificación Financiera. La claridad y precisión son esenciales.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿A quién presenta los reportes de análisis el Analista Financiero?",
+                "opciones": [
+                  "Directamente a la Dirección General",
+                  "Al Coordinador de Análisis y Planificación Financiera",
+                  "Al Analista de Tesorería",
+                  "Al Coordinador de Contabilidad"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Los reportes van al Coordinador de Análisis y Planificación.",
+                "feedbackErr": "Los reportes se presentan al Coordinador de Análisis y Planificación Financiera."
+              }
+            },
+            {
+              "titulo": "Apoyo Presupuestario",
+              "contenido": "Asiste al Coordinador en la elaboración y seguimiento del presupuesto: carga los datos en el sistema, consolida las cifras de las distintas áreas y actualiza las proyecciones según la información disponible.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El Analista Financiero tiene rol activo en la consolidación de datos del presupuesto.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. La carga, consolidación y actualización de datos presupuestarios es parte de su rol.",
+                "feedbackErr": "El Analista participa activamente en la consolidación y actualización del presupuesto."
+              }
+            },
+            {
+              "titulo": "Atención de Consultas y Auditorías",
+              "contenido": "Responde consultas de otras áreas sobre datos e indicadores financieros y apoya al Coordinador en la preparación de información para auditorías internas o externas. La disponibilidad y organización de la información es clave.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Cuál es la importancia de la organización de información para el Analista Financiero?",
+                "opciones": [
+                  "Solo facilita su propio trabajo diario",
+                  "Permite responder consultas y apoyar en auditorías eficientemente",
+                  "No tiene mayor impacto en el área",
+                  "Solo sirve para elaborar el presupuesto"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Una información bien organizada es vital para consultas y auditorías.",
+                "feedbackErr": "La organización permite responder consultas y apoyar auditorías de forma eficiente."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "coordinador-de-tesoreria": {
@@ -200,7 +816,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Coordinador de Tesorería\n\n1. OBJETIVO\nGestionar los recursos líquidos de Copikon Venezuela asegurando la disponibilidad de fondos para cumplir con todas las obligaciones operativas, financieras y fiscales de la empresa.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Supervisar el flujo de caja diario y la programación de pagos.\n• Gestionar las relaciones con los bancos y entidades financieras.\n• Supervisar al Analista de Tesorería y al Analista de Riesgo.\n• Controlar el manejo de divisas y obligaciones de deuda.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Gestión Diaria de Caja\n   Paso 1: Revisar al inicio del día el reporte de posición de caja del Analista de Tesorería.\n   Paso 2: Confirmar los pagos programados para el día y verificar disponibilidad.\n   Paso 3: Autorizar las transferencias dentro del límite aprobado.\n   Paso 4: Coordinar con el Gerente de Administración los pagos que superen el límite.\n   Paso 5: Al cierre, revisar el reporte de movimientos y confirmar saldos finales.\n\n3.2 Programación Semanal de Pagos\n   Paso 1: Cada jueves, recibir del Analista de Cuentas por Pagar el listado de facturas a vencer.\n   Paso 2: Cruzar con la proyección de ingresos de la semana siguiente.\n   Paso 3: Definir prioridades (proveedores críticos, obligaciones fiscales, nómina).\n   Paso 4: Presentar la programación al Gerente de Administración para aprobación.\n   Paso 5: Comunicar la programación aprobada al Analista de Tesorería para ejecución.\n\n3.3 Gestión Bancaria\n   Paso 1: Mantener actualizada la matriz de cuentas bancarias (banco, moneda, saldo, límites).\n   Paso 2: Negociar condiciones de crédito, tasas y comisiones con los bancos.\n   Paso 3: Gestionar la apertura/cierre de cuentas cuando sea necesario.\n   Paso 4: Supervisar las conciliaciones bancarias mensuales.\n\n4. INDICADORES DE GESTIÓN\n• Días sin incumplimiento de pagos por falta de liquidez (meta: 0 días).\n• Saldo mínimo de caja operativa (meta: ≥15 días de gastos fijos).\n• Costo financiero promedio de la deuda (seguimiento mensual).",
-      "flujo": "<div class=\"flujo-section-title\">Gestión de Tesorería</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Flujo de caja diario</div><div class=\"flujo-step-desc\">Elabora y actualiza el flujo de caja proyectado consolidando ingresos esperados y obligaciones de pago.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Ejecución de pagos</div><div class=\"flujo-step-desc\">Autoriza y ejecuta los pagos aprobados: proveedores, nómina, tributos, financiamientos y gastos operativos.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Gestión bancaria</div><div class=\"flujo-step-desc\">Administra relaciones con entidades bancarias: cuentas, tasas, créditos y líneas de financiamiento.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control de deuda e inversiones</div><div class=\"flujo-step-desc\">Supervisa el portafolio de inversiones de corto plazo y el cronograma de amortización de deudas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliaciones bancarias</div><div class=\"flujo-step-desc\">Coordina la conciliación de todas las cuentas bancarias con los registros contables.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte de posición de caja</div><div class=\"flujo-step-desc\">Presenta a Gerencia el informe diario/semanal de posición de caja y disponibilidad de fondos.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Coordinador de Tesorería</span><span class=\"flujo-badge entregable\">💵 Flujo de caja diario</span><span class=\"flujo-badge entregable\">✅ Pagos ejecutados</span><span class=\"flujo-badge sistema\">💻 Banca en línea / ERP</span>"
+      "flujo": "<div class=\"flujo-section-title\">Gestión de Tesorería</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Flujo de caja diario</div><div class=\"flujo-step-desc\">Elabora y actualiza el flujo de caja proyectado consolidando ingresos esperados y obligaciones de pago.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Ejecución de pagos</div><div class=\"flujo-step-desc\">Autoriza y ejecuta los pagos aprobados: proveedores, nómina, tributos, financiamientos y gastos operativos.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Gestión bancaria</div><div class=\"flujo-step-desc\">Administra relaciones con entidades bancarias: cuentas, tasas, créditos y líneas de financiamiento.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control de deuda e inversiones</div><div class=\"flujo-step-desc\">Supervisa el portafolio de inversiones de corto plazo y el cronograma de amortización de deudas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliaciones bancarias</div><div class=\"flujo-step-desc\">Coordina la conciliación de todas las cuentas bancarias con los registros contables.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte de posición de caja</div><div class=\"flujo-step-desc\">Presenta a Gerencia el informe diario/semanal de posición de caja y disponibilidad de fondos.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Coordinador de Tesorería</span><span class=\"flujo-badge entregable\">💵 Flujo de caja diario</span><span class=\"flujo-badge entregable\">✅ Pagos ejecutados</span><span class=\"flujo-badge sistema\">💻 Banca en línea / ERP</span>",
+      "cursos": [
+        {
+          "nombre": "Gestión de Tesorería y Flujo de Caja",
+          "tipo": "certificacion",
+          "xp": 120,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Flujo de Caja Diario",
+              "contenido": "El Coordinador de Tesorería elabora y actualiza diariamente el flujo de caja proyectado, consolidando los ingresos esperados y todas las obligaciones de pago del día y los días siguientes. Esta proyección es la base para tomar decisiones de pago.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Con qué frecuencia se actualiza el flujo de caja proyectado?",
+                "opciones": [
+                  "Mensualmente",
+                  "Semanalmente",
+                  "Diariamente",
+                  "Solo cuando hay pagos importantes"
+                ],
+                "correcta": 2,
+                "feedbackOk": "Correcto. El flujo de caja se actualiza cada día.",
+                "feedbackErr": "El flujo de caja es una herramienta de gestión diaria."
+              }
+            },
+            {
+              "titulo": "Ejecución de Pagos",
+              "contenido": "Autoriza y ejecuta los pagos aprobados: proveedores, nómina, tributos, financiamientos y gastos operativos. Cada pago debe contar con la aprobación previa correspondiente para garantizar el control interno.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El Coordinador de Tesorería puede ejecutar cualquier pago sin necesidad de aprobación previa.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. Todo pago requiere aprobación previa como control interno.",
+                "feedbackErr": "Todos los pagos requieren aprobación previa. El control interno es no negociable."
+              }
+            },
+            {
+              "titulo": "Gestión Bancaria",
+              "contenido": "Administra las relaciones con las entidades bancarias: apertura y cierre de cuentas, negociación de tasas de interés, gestión de créditos y administración de líneas de financiamiento. La relación bancaria es estratégica para la empresa.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué actividades incluye la gestión bancaria del Coordinador de Tesorería?",
+                "opciones": [
+                  "Solo ejecutar transferencias electrónicas",
+                  "Negociación de tasas, gestión de créditos y administración de líneas",
+                  "Solo abrir cuentas bancarias",
+                  "Solo pagar servicios públicos"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. La gestión bancaria es integral: tasas, créditos y líneas de financiamiento.",
+                "feedbackErr": "La gestión bancaria incluye negociación de tasas, créditos y líneas de financiamiento."
+              }
+            },
+            {
+              "titulo": "Conciliaciones y Reporte",
+              "contenido": "Coordina las conciliaciones de todas las cuentas bancarias con los registros contables, y presenta a la Gerencia el informe de posición de caja con la disponibilidad de fondos para tomar decisiones informadas.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El informe de posición de caja se presenta a la Gerencia de Administración para apoyar la toma de decisiones.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. El reporte de caja es una herramienta de decisión gerencial.",
+                "feedbackErr": "La Gerencia usa el reporte de posición de caja para tomar decisiones financieras."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-especialista-de-deuda": {
@@ -220,7 +908,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista Especialista de Deuda\n\n1. OBJETIVO\nGestionar y controlar el portafolio de obligaciones financieras de Copikon Venezuela, optimizando el costo de la deuda y asegurando el cumplimiento del calendario de amortizaciones.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Mantener actualizado el registro de créditos y obligaciones financieras.\n• Dar seguimiento al calendario de pagos de capital e intereses.\n• Apoyar en la negociación de nuevas líneas de crédito.\n• Elaborar reportes de estructura de capital.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Seguimiento al Calendario de Deuda\n   Paso 1: Mantener una matriz de todas las obligaciones (banco, monto, saldo, cuota, tasa, vencimiento).\n   Paso 2: Al inicio de cada mes, identificar los vencimientos de capital e intereses del mes.\n   Paso 3: Notificar al Coordinador de Tesorería con 10 días de anticipación.\n   Paso 4: Confirmar la disponibilidad de fondos para el pago.\n   Paso 5: Una vez realizado el pago, actualizar el saldo en la matriz.\n\n3.2 Gestión de Nuevas Líneas de Crédito\n   Paso 1: Recibir la solicitud de financiamiento con el monto y propósito.\n   Paso 2: Preparar el expediente de crédito (estados financieros, flujo de caja proyectado, garantías).\n   Paso 3: Solicitar cotizaciones a mínimo 3 bancos o fuentes de financiamiento.\n   Paso 4: Comparar condiciones (tasa, plazo, garantías, comisiones) y presentar análisis.\n   Paso 5: Una vez aprobado, formalizar la documentación y registrar la nueva obligación.\n\n3.3 Reporte Mensual de Estructura de Deuda\n   Paso 1: Calcular el ratio de endeudamiento (deuda total / patrimonio).\n   Paso 2: Analizar la composición de la deuda (corto vs largo plazo, tasa fija vs variable).\n   Paso 3: Proyectar el servicio de deuda para los próximos 12 meses.\n   Paso 4: Presentar el reporte al Coordinador de Tesorería y al Gerente de Administración.\n\n4. INDICADORES DE GESTIÓN\n• Vencimientos de deuda atendidos en fecha (meta: 100%).\n• Costo promedio ponderado de la deuda (seguimiento mensual).\n• Ratio deuda/patrimonio (meta: ≤1.5x).",
-      "flujo": "<div class=\"flujo-section-title\">Gestión de Deuda Financiera</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Inventario de obligaciones</div><div class=\"flujo-step-desc\">Mantiene actualizado el registro de todos los créditos, préstamos y líneas de crédito vigentes.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control de cronograma</div><div class=\"flujo-step-desc\">Elabora y actualiza el cronograma de amortizaciones e intereses. Alerta sobre vencimientos próximos.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Gestión de pagos</div><div class=\"flujo-step-desc\">Prepara instrucciones de pago de cuotas e intereses. Coordina con Tesorería la ejecución en las fechas establecidas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Negociación y refinanciamiento</div><div class=\"flujo-step-desc\">Apoya en negociaciones de refinanciamiento, nuevos créditos o modificación de condiciones con entidades financieras.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte de posición de deuda</div><div class=\"flujo-step-desc\">Elabora el informe mensual de posición de deuda: saldos, vencimientos y costo financiero.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista Especialista de Deuda</span><span class=\"flujo-badge entregable\">📋 Cronograma de amortizaciones</span><span class=\"flujo-badge entregable\">📊 Informe de posición de deuda</span><span class=\"flujo-badge sistema\">💻 ERP / Banca en línea</span>"
+      "flujo": "<div class=\"flujo-section-title\">Gestión de Deuda Financiera</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Inventario de obligaciones</div><div class=\"flujo-step-desc\">Mantiene actualizado el registro de todos los créditos, préstamos y líneas de crédito vigentes.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control de cronograma</div><div class=\"flujo-step-desc\">Elabora y actualiza el cronograma de amortizaciones e intereses. Alerta sobre vencimientos próximos.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Gestión de pagos</div><div class=\"flujo-step-desc\">Prepara instrucciones de pago de cuotas e intereses. Coordina con Tesorería la ejecución en las fechas establecidas.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Negociación y refinanciamiento</div><div class=\"flujo-step-desc\">Apoya en negociaciones de refinanciamiento, nuevos créditos o modificación de condiciones con entidades financieras.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte de posición de deuda</div><div class=\"flujo-step-desc\">Elabora el informe mensual de posición de deuda: saldos, vencimientos y costo financiero.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista Especialista de Deuda</span><span class=\"flujo-badge entregable\">📋 Cronograma de amortizaciones</span><span class=\"flujo-badge entregable\">📊 Informe de posición de deuda</span><span class=\"flujo-badge sistema\">💻 ERP / Banca en línea</span>",
+      "cursos": [
+        {
+          "nombre": "Control y Gestión de Deuda Financiera",
+          "tipo": "obligatorio",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Inventario de Obligaciones",
+              "contenido": "El Analista mantiene actualizado el registro de todos los créditos, préstamos y líneas de crédito vigentes de la empresa. Este inventario incluye monto original, saldo actual, tasa de interés, plazo y entidad financiera.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué información debe contener el inventario de obligaciones financieras?",
+                "opciones": [
+                  "Solo el monto total de deuda",
+                  "Monto, saldo, tasa, plazo y entidad financiera",
+                  "Solo las fechas de vencimiento",
+                  "Solo los préstamos bancarios"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. El inventario debe ser completo: monto, saldo, tasa, plazo y entidad.",
+                "feedbackErr": "El inventario completo incluye monto, saldo, tasa, plazo y entidad financiera."
+              }
+            },
+            {
+              "titulo": "Cronograma y Alertas",
+              "contenido": "Elabora y mantiene actualizado el cronograma de amortizaciones e intereses para todos los créditos vigentes. Genera alertas al Coordinador cuando se acercan vencimientos de cuotas para garantizar pagos oportunos.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "Las alertas de vencimiento de cuotas ayudan a evitar mora y penalidades por pago tardío.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. Anticipar los vencimientos evita mora y sus consecuencias financieras.",
+                "feedbackErr": "Las alertas oportunas evitan mora, penalidades e impacto negativo en la reputación crediticia."
+              }
+            },
+            {
+              "titulo": "Gestión de Pagos",
+              "contenido": "Prepara las instrucciones de pago de cuotas, intereses y comisiones, y coordina con Tesorería la ejecución en las fechas establecidas en cada contrato de crédito.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Con quién coordina el Analista de Deuda para ejecutar el pago de cuotas?",
+                "opciones": [
+                  "Con el proveedor directamente",
+                  "Con el banco emisor",
+                  "Con el área de Tesorería",
+                  "Con el Analista de Nómina"
+                ],
+                "correcta": 2,
+                "feedbackOk": "Correcto. Tesorería es quien ejecuta materialmente los pagos.",
+                "feedbackErr": "La coordinación para la ejecución de pagos es con el área de Tesorería."
+              }
+            },
+            {
+              "titulo": "Reporte de Posición de Deuda",
+              "contenido": "Elabora mensualmente el informe de posición de deuda que muestra los saldos vigentes por crédito, el calendario de vencimientos próximos, el costo financiero total y el indicador de cobertura del servicio de deuda.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El informe de posición de deuda se elabora solo cuando hay un nuevo crédito.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. El informe se elabora mensualmente de forma rutinaria.",
+                "feedbackErr": "El informe de posición de deuda es mensual, independientemente de si hay nuevos créditos."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-de-tesoreria": {
@@ -240,7 +1000,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista de Tesorería\n\n1. OBJETIVO\nEjecutar las operaciones bancarias diarias de Copikon Venezuela, asegurando el correcto movimiento de fondos, la conciliación bancaria y el reporte de posición de caja en tiempo real.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Procesar transferencias y pagos autorizados.\n• Realizar conciliaciones bancarias diarias y mensuales.\n• Elaborar el reporte diario de posición de caja.\n• Custodiar chequeras y documentos bancarios.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Reporte Diario de Posición de Caja\n   Paso 1: Al inicio del día (8:00 AM), consultar los saldos en línea de todas las cuentas bancarias.\n   Paso 2: Registrar los movimientos del día anterior aún no conciliados.\n   Paso 3: Actualizar la hoja de posición con saldos confirmados y disponibles.\n   Paso 4: Enviar el reporte al Coordinador de Tesorería antes de las 9:00 AM.\n\n3.2 Ejecución de Pagos\n   Paso 1: Recibir la orden de pago autorizada por el Coordinador de Tesorería.\n   Paso 2: Verificar que la orden tenga las firmas de aprobación requeridas.\n   Paso 3: Ingresar la transferencia en el portal bancario.\n   Paso 4: Obtener el comprobante de transferencia.\n   Paso 5: Enviar el comprobante al Analista de Cuentas por Pagar para el cierre de la factura.\n   Paso 6: Registrar el movimiento en la hoja de caja del día.\n\n3.3 Conciliación Bancaria Mensual\n   Paso 1: Al cierre del mes, descargar el estado de cuenta bancario oficial de cada banco.\n   Paso 2: Comparar cada movimiento bancario con el registro contable interno.\n   Paso 3: Identificar partidas en tránsito (cheques emitidos no cobrados, depósitos en tránsito).\n   Paso 4: Registrar los ajustes necesarios con el área de Contabilidad.\n   Paso 5: Emitir el informe de conciliación bancaria para el cierre contable.\n\n4. INDICADORES DE GESTIÓN\n• Reporte de posición de caja entregado antes de las 9:00 AM (meta: 100%).\n• Errores en transferencias (meta: 0).\n• Conciliaciones bancarias completadas en fecha (meta: día 3 hábil).",
-      "flujo": "<div class=\"flujo-section-title\">Operaciones Diarias de Tesorería</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Verificación de saldos</div><div class=\"flujo-step-desc\">Consulta al inicio del día los saldos disponibles en todas las cuentas bancarias de la empresa.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Procesamiento de pagos</div><div class=\"flujo-step-desc\">Ejecuta los pagos aprobados: transferencias, cheques y nómina según instrucciones del Coordinador.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro de movimientos</div><div class=\"flujo-step-desc\">Registra entradas y salidas de efectivo en el sistema contable y actualiza la hoja de control de caja.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliación bancaria</div><div class=\"flujo-step-desc\">Realiza la conciliación diaria y mensual de cada cuenta bancaria contra los registros contables.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Custodia de documentos</div><div class=\"flujo-step-desc\">Archiva comprobantes de pago, cheques cancelados y soportes de las operaciones de tesorería.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Tesorería</span><span class=\"flujo-badge entregable\">🏦 Conciliaciones bancarias</span><span class=\"flujo-badge entregable\">📁 Comprobantes archivados</span><span class=\"flujo-badge sistema\">💻 Banca en línea / ERP</span>"
+      "flujo": "<div class=\"flujo-section-title\">Operaciones Diarias de Tesorería</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Verificación de saldos</div><div class=\"flujo-step-desc\">Consulta al inicio del día los saldos disponibles en todas las cuentas bancarias de la empresa.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Procesamiento de pagos</div><div class=\"flujo-step-desc\">Ejecuta los pagos aprobados: transferencias, cheques y nómina según instrucciones del Coordinador.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Registro de movimientos</div><div class=\"flujo-step-desc\">Registra entradas y salidas de efectivo en el sistema contable y actualiza la hoja de control de caja.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Conciliación bancaria</div><div class=\"flujo-step-desc\">Realiza la conciliación diaria y mensual de cada cuenta bancaria contra los registros contables.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Custodia de documentos</div><div class=\"flujo-step-desc\">Archiva comprobantes de pago, cheques cancelados y soportes de las operaciones de tesorería.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Tesorería</span><span class=\"flujo-badge entregable\">🏦 Conciliaciones bancarias</span><span class=\"flujo-badge entregable\">📁 Comprobantes archivados</span><span class=\"flujo-badge sistema\">💻 Banca en línea / ERP</span>",
+      "cursos": [
+        {
+          "nombre": "Operaciones Diarias de Tesorería",
+          "tipo": "obligatorio",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Verificación de Saldos Diarios",
+              "contenido": "Al inicio de cada jornada, el Analista consulta los saldos disponibles en todas las cuentas bancarias de la empresa. Esta verificación es el punto de partida para planificar los pagos del día.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "La verificación de saldos bancarios al inicio del día es el punto de partida para planificar los pagos.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. No se puede planificar pagos sin conocer la disponibilidad de fondos.",
+                "feedbackErr": "Conocer los saldos disponibles es imprescindible para gestionar los pagos diarios."
+              }
+            },
+            {
+              "titulo": "Procesamiento de Pagos",
+              "contenido": "Ejecuta los pagos aprobados en el sistema bancario: transferencias, emisión de cheques y pago de nómina, siguiendo exactamente las instrucciones del Coordinador de Tesorería. Solo procesa pagos con aprobación documentada.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué requisito debe tener un pago para que el Analista de Tesorería lo procese?",
+                "opciones": [
+                  "Que el proveedor lo solicite directamente",
+                  "Que tenga aprobación documentada del Coordinador",
+                  "Que sea menor a cierto monto",
+                  "Que sea pago de nómina solamente"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Solo se procesan pagos con aprobación documentada.",
+                "feedbackErr": "Todo pago debe tener aprobación documentada antes de ser procesado."
+              }
+            },
+            {
+              "titulo": "Registro y Conciliación",
+              "contenido": "Registra todos los movimientos de entrada y salida en el sistema contable y actualiza la hoja de control de caja. Mensualmente realiza la conciliación de cada cuenta bancaria contra los registros contables.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Con qué frecuencia realiza el Analista la conciliación bancaria completa?",
+                "opciones": [
+                  "Solo cuando hay diferencias",
+                  "Diariamente para todas las cuentas",
+                  "Mensualmente (además del control diario)",
+                  "Una vez al año en el cierre"
+                ],
+                "correcta": 2,
+                "feedbackOk": "Correcto. Hay control diario y conciliación formal mensual.",
+                "feedbackErr": "Se hace seguimiento diario y conciliación formal completa mensualmente."
+              }
+            },
+            {
+              "titulo": "Custodia de Documentos",
+              "contenido": "Custodia y archiva todos los comprobantes de pago, cheques cancelados y soportes de las operaciones de tesorería. Un archivo ordenado es esencial para auditorías y para resolver cualquier reclamo de proveedores.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "La custodia y archivo de comprobantes de pago es responsabilidad del Analista de Tesorería.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. La custodia documental es una función esencial del cargo.",
+                "feedbackErr": "El Analista de Tesorería es responsable del archivo y custodia de todos los comprobantes."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   },
   "analista-de-riesgo": {
@@ -260,7 +1092,79 @@
     "descripcionCargo": "",
     "perfilRol": {
       "manual": "MANUAL DE PROCEDIMIENTO — Analista de Riesgo\n\n1. OBJETIVO\nIdentificar, medir y monitorear los riesgos financieros que enfrenta Copikon Venezuela, proponiendo estrategias de mitigación que protejan la estabilidad económica de la empresa.\n\n2. RESPONSABILIDADES PRINCIPALES\n• Monitorear el riesgo cambiario, crediticio, de liquidez y operacional.\n• Elaborar el reporte mensual de riesgos financieros.\n• Proponer estrategias de cobertura y mitigación.\n• Dar seguimiento a indicadores del entorno macroeconómico.\n\n3. PROCEDIMIENTOS CLAVE\n\n3.1 Monitoreo de Riesgo Cambiario\n   Paso 1: Seguir diariamente la tasa de cambio oficial BCV y las tasas de referencia del mercado.\n   Paso 2: Calcular la exposición cambiaria de la empresa (activos y pasivos en divisas).\n   Paso 3: Estimar el impacto de una variación del tipo de cambio del ±10% en el P&L.\n   Paso 4: Alertar al Coordinador de Tesorería si la exposición supera el límite aprobado.\n   Paso 5: Proponer medidas de cobertura (adelanto de pagos en divisas, ajuste de precios).\n\n3.2 Evaluación de Riesgo Crediticio de Clientes\n   Paso 1: Para clientes nuevos o con solicitud de aumento de línea, recibir la solicitud del área comercial.\n   Paso 2: Revisar el historial de pagos del cliente en el sistema.\n   Paso 3: Solicitar estados financieros o referencias bancarias si aplica.\n   Paso 4: Asignar una calificación de riesgo (A, B, C) y recomendar el límite de crédito.\n   Paso 5: Comunicar la recomendación al Coordinador de Contabilidad y al área comercial.\n\n3.3 Reporte Mensual de Riesgos\n   Paso 1: Recopilar datos de los riesgos monitoreados durante el mes.\n   Paso 2: Actualizar el mapa de riesgos (probabilidad × impacto).\n   Paso 3: Identificar riesgos que hayan escalado versus el mes anterior.\n   Paso 4: Documentar las acciones de mitigación tomadas y su efectividad.\n   Paso 5: Presentar el reporte al Coordinador de Tesorería y al Gerente de Administración.\n\n4. INDICADORES DE GESTIÓN\n• Reportes de riesgo entregados en fecha (meta: 100%).\n• Clientes con mora >60 días sobre total cartera (meta: ≤5%).\n• Pérdidas por riesgo cambiario no anticipado (meta: 0 eventos sin alerta previa).",
-      "flujo": "<div class=\"flujo-section-title\">Gestión de Riesgo Financiero</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Identificación de riesgos</div><div class=\"flujo-step-desc\">Identifica y clasifica riesgos financieros: crédito, liquidez, tipo de cambio, tasas y operacional.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Evaluación y medición</div><div class=\"flujo-step-desc\">Cuantifica la exposición a cada riesgo usando modelos y métricas establecidas (ratios, stress testing).</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Informe de riesgos</div><div class=\"flujo-step-desc\">Prepara el informe periódico con el perfil de exposición y variaciones respecto al período anterior.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Propuesta de mitigación</div><div class=\"flujo-step-desc\">Propone estrategias de mitigación: coberturas, límites de exposición y políticas de crédito.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Seguimiento de indicadores</div><div class=\"flujo-step-desc\">Monitorea los indicadores de riesgo. Alerta al Coordinador ante señales de deterioro o eventos extraordinarios.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte a Gerencia</div><div class=\"flujo-step-desc\">Presenta el mapa de riesgos actualizado y recomendaciones a la Gerencia de Administración.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Riesgo</span><span class=\"flujo-badge entregable\">📊 Informe de riesgos</span><span class=\"flujo-badge entregable\">🗺️ Mapa de riesgos</span><span class=\"flujo-badge sistema\">💻 Excel / ERP / modelos financieros</span>"
+      "flujo": "<div class=\"flujo-section-title\">Gestión de Riesgo Financiero</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Identificación de riesgos</div><div class=\"flujo-step-desc\">Identifica y clasifica riesgos financieros: crédito, liquidez, tipo de cambio, tasas y operacional.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Evaluación y medición</div><div class=\"flujo-step-desc\">Cuantifica la exposición a cada riesgo usando modelos y métricas establecidas (ratios, stress testing).</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Informe de riesgos</div><div class=\"flujo-step-desc\">Prepara el informe periódico con el perfil de exposición y variaciones respecto al período anterior.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Propuesta de mitigación</div><div class=\"flujo-step-desc\">Propone estrategias de mitigación: coberturas, límites de exposición y políticas de crédito.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Seguimiento de indicadores</div><div class=\"flujo-step-desc\">Monitorea los indicadores de riesgo. Alerta al Coordinador ante señales de deterioro o eventos extraordinarios.</div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte a Gerencia</div><div class=\"flujo-step-desc\">Presenta el mapa de riesgos actualizado y recomendaciones a la Gerencia de Administración.</div></div></div><div class=\"flujo-section-title\">Responsable · Entregables</div><span class=\"flujo-badge responsable\">👤 Analista de Riesgo</span><span class=\"flujo-badge entregable\">📊 Informe de riesgos</span><span class=\"flujo-badge entregable\">🗺️ Mapa de riesgos</span><span class=\"flujo-badge sistema\">💻 Excel / ERP / modelos financieros</span>",
+      "cursos": [
+        {
+          "nombre": "Gestión y Medición de Riesgos Financieros",
+          "tipo": "certificacion",
+          "xp": 80,
+          "completado": false,
+          "pasos": [
+            {
+              "titulo": "Identificación y Clasificación de Riesgos",
+              "contenido": "El Analista identifica y clasifica los riesgos financieros relevantes para la empresa: riesgo de crédito (incumplimiento de clientes), riesgo de liquidez (falta de fondos), riesgo de mercado (tipo de cambio, tasas) y riesgo operacional.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Cuáles son los cuatro tipos de riesgo financiero que gestiona el Analista?",
+                "opciones": [
+                  "Legal, laboral, fiscal y ambiental",
+                  "Crédito, liquidez, mercado y operacional",
+                  "Solo riesgo cambiario y de tasas",
+                  "Riesgo de inventario y riesgo de nómina"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Crédito, liquidez, mercado y operacional son los cuatro tipos principales.",
+                "feedbackErr": "Los cuatro tipos son riesgo de crédito, liquidez, mercado y operacional."
+              }
+            },
+            {
+              "titulo": "Evaluación y Medición",
+              "contenido": "Cuantifica la exposición a cada riesgo usando modelos y métricas como el análisis de ratios, el stress testing (pruebas de estrés) y otros indicadores cuantitativos. Esta medición permite priorizar qué riesgos requieren mayor atención.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El stress testing consiste en evaluar cómo se comportaría la empresa ante escenarios financieros adversos.",
+                "correcta": "V",
+                "feedbackOk": "Correcto. El stress testing simula escenarios extremos para medir la resistencia financiera.",
+                "feedbackErr": "El stress testing evalúa la resistencia de la empresa ante escenarios financieros desfavorables."
+              }
+            },
+            {
+              "titulo": "Propuesta de Mitigación",
+              "contenido": "Una vez identificados y medidos los riesgos, el Analista propone estrategias de mitigación: coberturas financieras, límites de exposición por cliente o contraparte, políticas de crédito más conservadoras y condiciones de financiamiento.",
+              "pregunta": {
+                "tipo": "mc",
+                "pregunta": "¿Qué estrategia de mitigación puede aplicarse ante el riesgo de crédito de clientes?",
+                "opciones": [
+                  "Aumentar las tasas de interés bancarias",
+                  "Establecer políticas de crédito más conservadoras y límites de exposición",
+                  "Contratar más personal de tesorería",
+                  "Reducir el presupuesto de nómina"
+                ],
+                "correcta": 1,
+                "feedbackOk": "Correcto. Las políticas crediticias conservadoras mitigan el riesgo de incumplimiento.",
+                "feedbackErr": "Los límites de exposición y políticas de crédito conservadoras son mitigantes del riesgo de crédito."
+              }
+            },
+            {
+              "titulo": "Seguimiento y Reporte",
+              "contenido": "Monitorea continuamente los indicadores de riesgo y genera alertas al Coordinador ante señales de deterioro. Presenta mensualmente el mapa de riesgos actualizado con recomendaciones a la Gerencia de Administración.",
+              "pregunta": {
+                "tipo": "vf",
+                "pregunta": "El mapa de riesgos es un documento estático que se elabora solo una vez al año.",
+                "correcta": "F",
+                "feedbackOk": "Correcto. El mapa de riesgos se actualiza mensualmente.",
+                "feedbackErr": "El mapa de riesgos es dinámico y se actualiza mensualmente según la evolución de los indicadores."
+              }
+            }
+          ]
+        }
+      ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
     }
   }
 }

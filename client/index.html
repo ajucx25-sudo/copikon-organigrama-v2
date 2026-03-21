@@ -854,6 +854,132 @@ footer a:hover { color: var(--color-accent); }
 }
 .edp-curso-del-small:hover { color:#dd4444; }
 
+/* ===== CURSO INTERACTIVO PASO A PASO ===== */
+.ci-card {
+  border:1.5px solid var(--border); border-radius:10px;
+  margin-bottom:10px; overflow:hidden;
+  background:var(--bg-card);
+  transition:border-color 0.2s;
+}
+.ci-card.ci-done { border-color:#2bbfae; }
+.ci-card-header {
+  display:flex; align-items:center; gap:10px;
+  padding:11px 14px; cursor:pointer;
+}
+.ci-card-header:hover { background:rgba(74,127,212,0.05); }
+.ci-badge-tipo {
+  font-size:9.5px; font-weight:700; padding:2px 7px;
+  border-radius:20px; white-space:nowrap; flex-shrink:0;
+}
+.ci-badge-tipo.obligatorio { background:rgba(221,104,116,0.15); color:#dd6874; }
+.ci-badge-tipo.certificacion { background:rgba(180,130,0,0.15); color:#b48200; }
+.ci-titulo { font-size:13px; font-weight:700; color:var(--text-primary); flex:1; line-height:1.3; }
+.ci-meta  { font-size:10.5px; color:var(--text-muted); margin-top:1px; }
+.ci-check {
+  width:22px; height:22px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700;
+}
+.ci-check.done { background:#2bbfae; color:#fff; }
+.ci-check.pend { border:2px solid var(--border); color:transparent; }
+.ci-body { display:none; border-top:1px solid var(--border); }
+.ci-body.open { display:block; }
+/* XP badge en header */
+.ci-xp-badge {
+  font-size:10px; font-weight:700; padding:2px 7px;
+  border-radius:20px; background:rgba(74,127,212,0.13);
+  color:var(--color-primary); flex-shrink:0;
+}
+/* Barra de progreso del curso */
+.ci-progress-bar {
+  height:3px; background:var(--border);
+}
+.ci-progress-fill {
+  height:100%; background:var(--color-primary);
+  transition:width 0.4s ease;
+}
+/* Paso actual */
+.ci-step {
+  padding:14px 16px;
+}
+.ci-step-label {
+  font-size:10px; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.07em; color:var(--text-muted); margin-bottom:6px;
+}
+.ci-step-title {
+  font-size:13.5px; font-weight:800; color:var(--text-primary); margin-bottom:6px;
+}
+.ci-step-body {
+  font-size:12.5px; color:var(--text-secondary); line-height:1.6;
+  background:var(--bg); border-radius:7px; padding:10px 12px;
+  border:1px solid var(--border);
+}
+/* Pregunta */
+.ci-question {
+  padding:0 16px 14px;
+}
+.ci-q-label {
+  font-size:10px; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.07em; color:var(--color-primary); margin-bottom:6px;
+}
+.ci-q-text {
+  font-size:12.5px; font-weight:700; color:var(--text-primary);
+  margin-bottom:10px; line-height:1.4;
+}
+.ci-options { display:flex; flex-direction:column; gap:6px; }
+.ci-opt {
+  display:flex; align-items:center; gap:9px;
+  padding:8px 11px; border-radius:8px;
+  border:1.5px solid var(--border); background:var(--bg);
+  cursor:pointer; transition:all 0.15s;
+  font-size:12px; color:var(--text-primary);
+  text-align:left; width:100%; font-family:var(--font-body);
+}
+.ci-opt:hover:not(:disabled) { border-color:var(--color-primary); color:var(--color-primary); }
+.ci-opt.correct { border-color:#2bbfae; background:rgba(43,191,174,0.1); color:#1a9a8a; font-weight:700; }
+.ci-opt.wrong   { border-color:#dd6874; background:rgba(221,104,116,0.1); color:#dd6874; }
+.ci-opt:disabled { cursor:default; }
+.ci-opt-icon { font-size:14px; flex-shrink:0; }
+/* Feedback */
+.ci-feedback {
+  margin:8px 0 0; padding:8px 11px; border-radius:7px;
+  font-size:12px; font-weight:600; line-height:1.4;
+  display:none;
+}
+.ci-feedback.ok  { background:rgba(43,191,174,0.12); color:#1a9a8a; border:1px solid #2bbfae; }
+.ci-feedback.err { background:rgba(221,104,116,0.12); color:#dd6874; border:1px solid #dd6874; }
+/* Botón siguiente paso */
+.ci-next-btn {
+  display:none; width:100%; margin-top:10px;
+  padding:9px 14px; border-radius:8px;
+  background:var(--color-primary); color:#fff;
+  border:none; font-size:12.5px; font-weight:700;
+  cursor:pointer; transition:opacity 0.15s;
+  font-family:var(--font-body);
+}
+.ci-next-btn:hover { opacity:0.88; }
+/* Pantalla de resultado final */
+.ci-resultado {
+  padding:20px 16px; text-align:center; display:none;
+}
+.ci-resultado.show { display:block; }
+.ci-res-emoji { font-size:40px; margin-bottom:8px; }
+.ci-res-titulo { font-size:15px; font-weight:800; color:var(--text-primary); margin-bottom:4px; }
+.ci-res-sub { font-size:12px; color:var(--text-muted); margin-bottom:14px; }
+.ci-res-xp {
+  display:inline-block; padding:6px 18px; border-radius:20px;
+  background:var(--color-primary); color:#fff;
+  font-size:13px; font-weight:800; margin-bottom:12px;
+}
+.ci-res-retry {
+  display:block; margin:0 auto; padding:7px 20px;
+  border-radius:8px; border:1.5px solid var(--border);
+  background:var(--bg); color:var(--text-primary);
+  font-size:12px; font-weight:600; cursor:pointer;
+  font-family:var(--font-body); transition:all 0.15s;
+}
+.ci-res-retry:hover { border-color:var(--color-primary); color:var(--color-primary); }
+
 /* edit-only: elementos que solo se muestran en modo edición */
 .edp-edit-only { display:none; }
 body.edit-mode-active .edp-edit-only { display:block; }
@@ -3221,6 +3347,273 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// ===== MOTOR DE CURSOS INTERACTIVOS PASO A PASO =====
+// Estado global de cursos en progreso: { [nodeId+cursoIdx]: { paso, correctas, intentos } }
+const ciState = {};
+
+function ciKey(cursoIdx) {
+  return (edpState.nodeId || 'x') + '_' + cursoIdx;
+}
+
+function edpRenderCursosInteractivos() {
+  const cursos = edpState.data.cursos || [];
+  const container = document.getElementById('edp-cursos-interactivos');
+  const empty = document.getElementById('edp-cursos-empty');
+  // XP header
+  const g = edpState.data.gamificacion || {};
+  const xp = g.xp || 0; const nivel = g.nivel || 1;
+  const xpBase = (nivel - 1) * 200; const pct = Math.min(100, Math.round(((xp - xpBase) / 200) * 100));
+  document.getElementById('edp-xp-nivel-num').textContent = nivel;
+  document.getElementById('edp-xp-pts-num').textContent = xp;
+  document.getElementById('edp-xp-bar-fill').style.width = pct + '%';
+  document.getElementById('edp-xp-next-label').textContent = (xp - xpBase) + ' / 200 XP';
+  // Logros
+  const logros = g.logros || [];
+  const loSection = document.getElementById('edp-logros-section');
+  const loWrap = document.getElementById('edp-gami-logros');
+  const EMOJIS = ['🏆','🥇','🎖️','⭐','🏅','🌟','💡','🎯','🔥','📎'];
+  if (logros.length > 0) {
+    loSection.style.display = 'block';
+    loWrap.innerHTML = logros.map((l,i) => `<div class="edp-logro">${EMOJIS[i%EMOJIS.length]} ${l}</div>`).join('');
+  } else { loSection.style.display = 'none'; }
+
+  if (cursos.length === 0) {
+    container.innerHTML = ''; empty.style.display = 'block'; return;
+  }
+  empty.style.display = 'none';
+
+  container.innerHTML = cursos.map((c, i) => {
+    const done = !!(c.completado);
+    const hasSteps = Array.isArray(c.pasos) && c.pasos.length > 0;
+    // Si no tiene pasos interactivos, renderizar tarjeta clásica
+    if (!hasSteps) return ciRenderClassic(c, i, done);
+    return ciRenderCard(c, i, done);
+  }).join('');
+}
+
+function ciRenderClassic(c, i, done) {
+  const TYPE_BADGE = {
+    obligatorio: '<span class="edp-curso-tipo-badge tipo-obligatorio">Obligatorio</span>',
+    recomendado:  '<span class="edp-curso-tipo-badge tipo-recomendado">⭐ Recomendado</span>',
+    certificacion:'<span class="edp-curso-tipo-badge tipo-certificacion">🏅 Certificación</span>'
+  };
+  const badge = TYPE_BADGE[c.tipo] || `<span class="edp-curso-tipo-badge tipo-recomendado">${c.tipo||'Curso'}</span>`;
+  const ytId = getYouTubeId(c.plataforma||'');
+  const hasVideo = !!(ytId||(c.plataforma&&c.plataforma.startsWith('http')));
+  const metaText = c.plataforma&&!c.plataforma.startsWith('http')?c.plataforma:(hasVideo?'🎥 Video disponible':'');
+  const videoSection = hasVideo
+    ? `<div class="edp-curso-video-wrap" id="edp-video-${i}">
+        ${ytId?`<div class="edp-curso-iframe-wrap"><iframe src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" allowfullscreen loading="lazy" title="${c.nombre}"></iframe></div>`
+             :`<div class="edp-curso-no-video">🎥 <a href="${c.plataforma}" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);font-weight:600;">Abrir recurso</a></div>`}
+        <button class="edp-curso-completar-btn" id="edp-completar-btn-${i}" ${done?'disabled':''} onclick="edpCompletarCurso(${i})">${done?'✅ Completado (+XP ganados)':'✅ Marcar como completado'}</button>
+       </div>`
+    : `<div class="edp-curso-video-wrap" id="edp-video-${i}">
+        <div class="edp-curso-no-video">📝 Sin video asignado.</div>
+        <button class="edp-curso-completar-btn" id="edp-completar-btn-${i}" ${done?'disabled':''} onclick="edpCompletarCurso(${i})">${done?'✅ Completado':'✅ Marcar como completado'}</button>
+       </div>`;
+  return `<div class="edp-curso-inter${done?' completed':''}" id="edp-curso-card-${i}">
+    <div class="edp-curso-inter-header" onclick="edpToggleVideo(${i})">
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">${badge}<div class="edp-curso-inter-title">${c.nombre}</div></div>
+        ${metaText?`<div class="edp-curso-inter-meta">${metaText}</div>`:''}
+      </div>
+      <div class="edp-curso-check ${done?'done':'pending'}">${done?'✓':''}</div>
+    </div>
+    ${videoSection}
+  </div>`;
+}
+
+function ciRenderCard(c, i, done) {
+  const tipoBadge = c.tipo==='certificacion'
+    ? '<span class="ci-badge-tipo certificacion">🏅 Certificación</span>'
+    : '<span class="ci-badge-tipo obligatorio">Obligatorio</span>';
+  const totalPasos = c.pasos.length;
+  const xpLabel = `+${c.xp||80} XP`;
+  const st = ciState[ciKey(i)];
+  const pasoActual = (st && !done) ? st.paso : 0;
+  const progPct = done ? 100 : Math.round((pasoActual / totalPasos) * 100);
+
+  return `<div class="ci-card${done?' ci-done':''}" id="ci-card-${i}">
+    <div class="ci-card-header" onclick="ciToggle(${i})">
+      ${tipoBadge}
+      <div style="flex:1;min-width:0;">
+        <div class="ci-titulo">${c.nombre}</div>
+        <div class="ci-meta">${totalPasos} pasos · ${totalPasos} evaluaciones</div>
+      </div>
+      <span class="ci-xp-badge">${xpLabel}</span>
+      <div class="ci-check ${done?'done':'pend'}">${done?'✓':''}</div>
+    </div>
+    <div class="ci-progress-bar"><div class="ci-progress-fill" style="width:${progPct}%;"></div></div>
+    <div class="ci-body" id="ci-body-${i}">
+      ${done ? ciResultadoFinal(c, i, true) : ciRenderPaso(c, i, pasoActual)}
+    </div>
+  </div>`;
+}
+
+function ciRenderPaso(c, i, pasoIdx) {
+  const paso = c.pasos[pasoIdx];
+  if (!paso) return '';
+  const totalPasos = c.pasos.length;
+  const q = paso.pregunta;
+  const isVF = q.tipo === 'vf';
+  let optsHtml = '';
+  if (isVF) {
+    optsHtml = [
+      {txt:'✓ Verdadero', val:'V'},
+      {txt:'✗ Falso',     val:'F'}
+    ].map(o => `<button class="ci-opt" onclick="ciResponder(${i},${pasoIdx},'${o.val}')">
+      <span class="ci-opt-icon">⚪</span>${o.txt}</button>`).join('');
+  } else {
+    optsHtml = (q.opciones||[]).map((op,oi) =>
+      `<button class="ci-opt" onclick="ciResponder(${i},${pasoIdx},${oi})">
+        <span class="ci-opt-icon">⚪</span>${op}</button>`
+    ).join('');
+  }
+  return `
+    <div id="ci-paso-${i}">
+      <div class="ci-step">
+        <div class="ci-step-label">Paso ${pasoIdx+1} de ${totalPasos}</div>
+        <div class="ci-step-title">${paso.titulo}</div>
+        <div class="ci-step-body">${paso.contenido}</div>
+      </div>
+      <div class="ci-question">
+        <div class="ci-q-label">✏️ Evaluación del paso</div>
+        <div class="ci-q-text">${q.pregunta}</div>
+        <div class="ci-options" id="ci-opts-${i}">${optsHtml}</div>
+        <div class="ci-feedback" id="ci-feedback-${i}"></div>
+        <button class="ci-next-btn" id="ci-next-${i}" onclick="ciSiguiente(${i},${pasoIdx})">
+          ${pasoIdx+1 < totalPasos ? '➡️ Siguiente paso' : '🎓 Ver resultado'}
+        </button>
+      </div>
+    </div>`;
+}
+
+function ciResultadoFinal(c, i, yaDone) {
+  const st = ciState[ciKey(i)] || {};
+  const correctas = yaDone ? (c.pasos ? c.pasos.length : 0) : (st.correctas || 0);
+  const total = c.pasos ? c.pasos.length : 0;
+  const pct = total ? Math.round((correctas/total)*100) : 100;
+  const aprobado = yaDone || pct >= 60;
+  return `<div class="ci-resultado show">
+    <div class="ci-res-emoji">${aprobado?'🎓':'😅'}</div>
+    <div class="ci-res-titulo">${aprobado?'¡Curso completado!':'Sigue intentando'}</div>
+    <div class="ci-res-sub">${correctas} de ${total} respuestas correctas (${pct}%)</div>
+    ${aprobado ? `<div class="ci-res-xp">+${c.xp||80} XP ganados</div>` : ''}
+    ${!yaDone ? `<button class="ci-res-retry" onclick="ciReintentar(${i})">🔄 Volver a intentar</button>` : ''}
+  </div>`;
+}
+
+function ciToggle(i) {
+  const body = document.getElementById('ci-body-' + i);
+  if (body) body.classList.toggle('open');
+}
+
+function ciResponder(cursoIdx, pasoIdx, respuesta) {
+  const cursos = edpState.data.cursos || [];
+  const c = cursos[cursoIdx]; if (!c) return;
+  const paso = c.pasos[pasoIdx]; if (!paso) return;
+  const q = paso.pregunta;
+  const key = ciKey(cursoIdx);
+  if (!ciState[key]) ciState[key] = { paso: pasoIdx, correctas: 0 };
+
+  const optsEl = document.getElementById('ci-opts-' + cursoIdx);
+  const feedEl = document.getElementById('ci-feedback-' + cursoIdx);
+  const nextEl = document.getElementById('ci-next-' + cursoIdx);
+  if (!optsEl) return;
+
+  // Deshabilitar todos los botones
+  optsEl.querySelectorAll('button').forEach(b => b.disabled = true);
+
+  let esCorrecta = false;
+  if (q.tipo === 'vf') {
+    esCorrecta = (respuesta === q.correcta);
+    // Marcar visualmente
+    optsEl.querySelectorAll('button').forEach(b => {
+      const val = b.onclick.toString().includes("'V'") ? 'V' : 'F';
+      if (val === q.correcta) b.classList.add('correct');
+      else if (val === respuesta && !esCorrecta) b.classList.add('wrong');
+      b.querySelector('.ci-opt-icon').textContent = val===q.correcta?'✅':(val===respuesta?'❌':'⚪');
+    });
+  } else {
+    esCorrecta = (respuesta === q.correcta);
+    optsEl.querySelectorAll('button').forEach((b, bi) => {
+      if (bi === q.correcta) b.classList.add('correct');
+      else if (bi === respuesta && !esCorrecta) b.classList.add('wrong');
+      b.querySelector('.ci-opt-icon').textContent = bi===q.correcta?'✅':(bi===respuesta?'❌':'⚪');
+    });
+  }
+
+  if (esCorrecta) {
+    ciState[key].correctas = (ciState[key].correctas||0) + 1;
+    feedEl.className = 'ci-feedback ok'; feedEl.style.display='block';
+    feedEl.textContent = '✅ ' + (q.feedbackOk || '¡Correcto! Puedes continuar al siguiente paso.');
+    if (nextEl) nextEl.style.display = 'block';
+  } else {
+    feedEl.className = 'ci-feedback err'; feedEl.style.display='block';
+    feedEl.textContent = '❌ ' + (q.feedbackErr || 'Respuesta incorrecta. Revisa el contenido del paso antes de continuar.');
+    // Permite continuar igual pero con la respuesta marcada incorrecta
+    if (nextEl) nextEl.style.display = 'block';
+  }
+}
+
+function ciSiguiente(cursoIdx, pasoActual) {
+  const cursos = edpState.data.cursos || [];
+  const c = cursos[cursoIdx]; if (!c) return;
+  const key = ciKey(cursoIdx);
+  const siguientePaso = pasoActual + 1;
+
+  if (siguientePaso >= c.pasos.length) {
+    // Completado
+    const st = ciState[key] || {};
+    const total = c.pasos.length;
+    const correctas = st.correctas || 0;
+    const pct = Math.round((correctas/total)*100);
+    if (pct >= 60 && !c.completado) {
+      cursos[cursoIdx].completado = true;
+      edpAddXP(c.xp || 80, 'Curso completado: ' + c.nombre);
+    }
+    // Renderizar resultado en el body
+    const body = document.getElementById('ci-body-' + cursoIdx);
+    if (body) body.innerHTML = ciResultadoFinal(c, cursoIdx, cursos[cursoIdx].completado);
+    // Actualizar card
+    const card = document.getElementById('ci-card-' + cursoIdx);
+    if (card) {
+      const fill = card.querySelector('.ci-progress-fill');
+      if (fill) fill.style.width = '100%';
+      if (cursos[cursoIdx].completado) card.classList.add('ci-done');
+      const chk = card.querySelector('.ci-check');
+      if (chk && cursos[cursoIdx].completado) { chk.className='ci-check done'; chk.textContent='✓'; }
+    }
+    edpPersist();
+  } else {
+    // Siguiente paso
+    ciState[key].paso = siguientePaso;
+    const body = document.getElementById('ci-body-' + cursoIdx);
+    if (body) {
+      body.innerHTML = ciRenderPaso(c, cursoIdx, siguientePaso);
+      // Actualizar barra de progreso
+      const card = document.getElementById('ci-card-' + cursoIdx);
+      if (card) {
+        const fill = card.querySelector('.ci-progress-fill');
+        if (fill) fill.style.width = Math.round(((siguientePaso)/c.pasos.length)*100)+'%';
+      }
+    }
+  }
+}
+
+function ciReintentar(cursoIdx) {
+  const key = ciKey(cursoIdx);
+  ciState[key] = { paso: 0, correctas: 0 };
+  const cursos = edpState.data.cursos || [];
+  const c = cursos[cursoIdx]; if (!c) return;
+  const body = document.getElementById('ci-body-' + cursoIdx);
+  if (body) body.innerHTML = ciRenderPaso(c, cursoIdx, 0);
+  const card = document.getElementById('ci-card-' + cursoIdx);
+  if (card) {
+    const fill = card.querySelector('.ci-progress-fill');
+    if (fill) fill.style.width = '0%';
+  }
+}
 
 </script>
 </body>
