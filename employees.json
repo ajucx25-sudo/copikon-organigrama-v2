@@ -134,7 +134,7 @@
   },
   "coordinador-de-contabilidad": {
     "id": "coordinador-de-contabilidad",
-    "cargo": "Coordinador De Contabilidad",
+    "cargo": "Coordinador de Contabilidad",
     "gerencia": "finanzas",
     "nombre": "",
     "cedula": "",
@@ -155,7 +155,7 @@
           "nombre": "Ciclo Contable Mensual",
           "tipo": "certificacion",
           "xp": 120,
-          "completado": false,
+          "completado": true,
           "pasos": [
             {
               "titulo": "Recepción de Documentos",
@@ -234,11 +234,12 @@
         }
       ],
       "gamificacion": {
-        "xp": 0,
+        "xp": 170,
         "nivel": 1,
-        "cursosComp": 0,
+        "cursosComp": 1,
         "logros": []
-      }
+      },
+      "descripcion": "Coordina el equipo contable asegurando el registro preciso de ingresos, egresos, cuentas por cobrar, cuentas por pagar, nómina y obligaciones fiscales. Verifica la exactitud de los asientos contables, supervisa los cierres mensuales y presenta reportes consolidados a la Gerencia de Contabilidad para la toma de decisiones operativas."
     }
   },
   "analista-de-tributos": {
