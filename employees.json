@@ -20,7 +20,8 @@
         "nivel": 1,
         "cursosComp": 1,
         "logros": []
-      }
+      },
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Coordinador de Almacén Centralizado\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nDirigir las operaciones del almacén centralizado garantizando la correcta recepción, almacenamiento, control de inventario y despacho de mercancías, con altos estándares de exactitud y eficiencia.\n\n2. ALCANCE\nAplica a todas las operaciones del almacén centralizado: recepción, almacenamiento, picking, despacho, devoluciones e inventarios.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Supervisión de Operaciones Diarias\n- Revisar al inicio de cada jornada la programación de recepciones y despachos del día.\n- Asignar tareas al equipo de Analistas de Almacén y Almacenistas.\n- Supervisar la ejecución de las operaciones y resolver incidencias en tiempo real.\n\n3.2 Control de Inventario\n- Revisar diariamente los movimientos de inventario registrados en el sistema.\n- Planificar y ejecutar conteos cíclicos por categoría de producto (semanal/mensual).\n- Coordinar la toma de inventario general periódica.\n- Analizar las diferencias de inventario e investigar sus causas.\n\n3.3 Recepción de Mercancías\n- Supervisar la recepción de mercancías verificando cantidad, calidad y documentación.\n- Aprobar las entradas al sistema una vez confirmada la conformidad.\n- Gestionar rechazos o devoluciones a proveedores cuando aplique.\n\n3.4 Despacho de Mercancías\n- Validar las órdenes de salida antes de autorizar el despacho.\n- Supervisar el proceso de picking y empaque.\n- Firmar y sellar los documentos de despacho.\n\n3.5 Optimización del Almacén\n- Implementar y mantener las metodologías de almacenamiento (5S, FIFO/FEFO).\n- Proponer mejoras en la distribución del espacio y los procesos de almacén.\n- Gestionar el sistema WMS y velar por la integridad de los datos.\n\n3.6 Reportes\n- Elaborar el informe mensual de gestión: exactitud de inventario, productividad y ocupación del almacén.\n\n4. INDICADORES DE GESTIÓN\n- % Exactitud de inventario\n- % Pedidos despachados a tiempo y completos\n- % Ocupación del almacén\n- Tiempo promedio de recepción y despacho\n\n5. DOCUMENTOS RELACIONADOS\n- Órdenes de entrada y salida\n- Reporte de conteos cíclicos\n- Informe mensual de almacén\n- Registro de devoluciones"
     }
   },
   "gerencia-de-administracion": {
@@ -1160,6 +1161,426 @@
           ]
         }
       ],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerencia-de-operaciones": {
+    "id": "gerencia-de-operaciones",
+    "cargo": "Gerencia de Operaciones",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Gerente de Operaciones\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nDirigir, planificar y controlar todas las operaciones de la empresa, garantizando la eficiencia en la cadena logística, el almacenamiento, la estandarización de procesos y el mantenimiento de la infraestructura, alineando la gestión operativa con los objetivos estratégicos.\n\n2. ALCANCE\nAplica a todas las áreas bajo la Gerencia de Operaciones: Logística, Almacén Centralizado, Estandarización y Gestión de Procesos, e Infraestructura y Mantenimiento.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Planificación Operativa Anual\n- Recibir lineamientos estratégicos de la Dirección General.\n- Elaborar el plan operativo anual por área (Logística, Almacén, Estandarización, Infraestructura).\n- Definir presupuesto operativo y someterlo a aprobación de la Dirección.\n- Distribuir objetivos, metas e indicadores a cada Coordinador.\n\n3.2 Supervisión y Seguimiento\n- Reunirse semanalmente con los Coordinadores para revisar el avance de indicadores.\n- Revisar reportes mensuales de gestión de cada área subordinada.\n- Identificar desviaciones y emitir instrucciones correctivas.\n- Documentar las acciones correctivas y hacer seguimiento hasta su cierre.\n\n3.3 Aprobación de Recursos y Decisiones\n- Aprobar solicitudes de recursos materiales y humanos que excedan el nivel de autorización de los Coordinadores.\n- Autorizar contratos con proveedores de servicios logísticos, mantenimiento y almacenaje.\n- Validar el plan de mantenimiento de infraestructura y la programación de flotas.\n\n3.4 Coordinación Intergerencial\n- Coordinar con Administración, Finanzas y Comercialización para alinear la operación con las necesidades del negocio.\n- Participar en el Comité de Gerencia con reporte de resultados operativos.\n\n3.5 Reporte a Dirección\n- Preparar y presentar mensualmente el informe ejecutivo de operaciones a la Dirección General.\n- Incluir: indicadores clave (KPIs), avance presupuestario, riesgos operativos y plan de mejora.\n\n4. INDICADORES DE GESTIÓN\n- % Cumplimiento del plan operativo mensual\n- Costo operativo real vs. presupuesto\n- Nivel de servicio logístico (entregas a tiempo)\n- % Exactitud de inventario\n- % Cumplimiento del plan de mantenimiento\n\n5. DOCUMENTOS RELACIONADOS\n- Plan Operativo Anual\n- Reportes mensuales de gestión por área\n- Presupuesto operativo aprobado\n- Actas de reunión de coordinación",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-de-logistica": {
+    "id": "coordinador-de-logistica",
+    "cargo": "Coordinador de Logística",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Coordinador de Logística\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nCoordinar y supervisar las operaciones logísticas nacionales e internacionales, asegurando el transporte eficiente de mercancías, la gestión de flotas y el cumplimiento de los tiempos de entrega establecidos.\n\n2. ALCANCE\nAplica a las operaciones de Logística Internacional, Logística Nacional y Gestión de Flotas y Equipos.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Planificación Logística\n- Recibir el plan de despachos y requerimientos de Comercialización y Almacén.\n- Programar las rutas de distribución nacional e internacional con los analistas a cargo.\n- Asignar transportistas y recursos de flota según la demanda.\n- Confirmar disponibilidad de vehículos y equipos antes de cada operación.\n\n3.2 Coordinación de Operaciones Internacionales\n- Supervisar la gestión de importaciones y exportaciones junto al Analista de Logística Internacional.\n- Validar la documentación aduanera antes del embarque o nacionalización.\n- Coordinar con agentes aduanales, navieras y agentes de carga.\n- Hacer seguimiento hasta la entrega final y confirmar recepción.\n\n3.3 Coordinación de Distribución Nacional\n- Supervisar la programación de despachos nacionales con el Analista de Logística Nacional.\n- Monitorear las entregas en tiempo real y gestionar incidencias en tránsito.\n- Validar la documentación de despacho (guías, remisiones, órdenes de entrega).\n\n3.4 Gestión de Flotas y Equipos\n- Supervisar el programa de mantenimiento preventivo con el Analista de Flotas.\n- Aprobar intervenciones correctivas de alto costo o prioridad.\n- Controlar la disponibilidad de la flota y reportar al Gerente de Operaciones.\n\n3.5 Control y Reporte\n- Elaborar el informe semanal de indicadores logísticos (entregas a tiempo, costo por flete, disponibilidad de flota).\n- Reportar al Gerente de Operaciones las incidencias relevantes y las acciones tomadas.\n\n4. INDICADORES DE GESTIÓN\n- % Entregas a tiempo (nacional e internacional)\n- Costo de flete por unidad/kilómetro\n- % Disponibilidad de flota operativa\n- Tiempo promedio de nacionalización de importaciones\n\n5. DOCUMENTOS RELACIONADOS\n- Plan semanal de despachos\n- Documentos de importación/exportación\n- Reportes de seguimiento de entregas\n- Registro de mantenimiento de flota",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-logistica-internacional": {
+    "id": "analista-logistica-internacional",
+    "cargo": "Analista Logística Internacional",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Logística Internacional\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nGestionar y dar seguimiento a las operaciones de importación y exportación, asegurando el cumplimiento de los procedimientos aduaneros, los tiempos de tránsito y las condiciones contractuales con proveedores y clientes internacionales.\n\n2. ALCANCE\nAplica a todas las operaciones de comercio exterior de la empresa: importaciones de insumos/mercancías y exportaciones de productos.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Inicio de la Operación Internacional\n- Recibir la orden de importación o exportación aprobada por el Coordinador.\n- Verificar las condiciones Incoterm pactadas con el proveedor o cliente.\n- Contratar el agente de carga y/o agente aduanal correspondiente.\n- Solicitar y revisar la documentación: factura comercial, packing list, bill of lading / airwaybill, certificado de origen.\n\n3.2 Seguimiento en Tránsito\n- Registrar el embarque en el sistema logístico.\n- Hacer seguimiento al estado del embarque (en tránsito, en puerto, en aduana).\n- Notificar al Coordinador cualquier retraso o incidencia que afecte los tiempos estimados.\n\n3.3 Proceso Aduanero\n- Coordinar con el agente aduanal la presentación de documentos ante el SENIAT u organismo competente.\n- Gestionar los pagos de aranceles, impuestos y tasas de desaduanaje.\n- Confirmar la liberación de la mercancía y coordinar el transporte hasta el destino final.\n\n3.4 Cierre y Registro\n- Verificar la recepción conforme de la mercancía.\n- Registrar los costos totales de la operación (flete, seguro, aranceles, agencia).\n- Archivar toda la documentación del embarque en el expediente correspondiente.\n- Actualizar la base de datos de proveedores internacionales con las condiciones negociadas.\n\n4. INDICADORES DE GESTIÓN\n- Tiempo promedio de nacionalización (días)\n- % Operaciones sin incidencias documentarias\n- Costo total de importación vs. presupuesto\n\n5. DOCUMENTOS RELACIONADOS\n- Orden de importación/exportación\n- Documentos de embarque (BL, AWB, factura, packing list)\n- Declaración aduanera\n- Expediente por operación",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-logistica-nacional": {
+    "id": "analista-logistica-nacional",
+    "cargo": "Analista Logística Nacional",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Logística Nacional\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nPlanificar, coordinar y dar seguimiento a las operaciones de distribución y transporte dentro del territorio nacional, garantizando la entrega oportuna de mercancías con el menor costo posible.\n\n2. ALCANCE\nAplica a todos los despachos y entregas nacionales de la empresa en sus distintas regiones.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Recepción de Órdenes de Despacho\n- Recibir diariamente las órdenes de despacho aprobadas por Almacén o Comercialización.\n- Verificar la disponibilidad de la mercancía en almacén antes de programar el transporte.\n- Clasificar los despachos por región, urgencia y volumen.\n\n3.2 Programación de Rutas\n- Diseñar las rutas de distribución optimizando tiempos y costos.\n- Asignar el transportista y unidad vehicular correspondiente a cada ruta.\n- Coordinar la hora de carga con el equipo de almacén.\n- Confirmar disponibilidad del conductor y el vehículo.\n\n3.3 Despacho y Seguimiento\n- Generar y entregar al conductor los documentos de despacho: guía de transporte, remisión y orden de entrega.\n- Hacer seguimiento en tiempo real del estado de las entregas.\n- Gestionar incidencias en tránsito: retrasos, cambios de destino, rechazos.\n- Confirmar la recepción conforme con el cliente o destinatario.\n\n3.4 Cierre y Reporte\n- Registrar el resultado de cada entrega en el sistema logístico.\n- Gestionar devoluciones y reclamos vinculados a entregas incompletas o dañadas.\n- Elaborar el reporte diario de despachos y presentarlo al Coordinador.\n\n4. INDICADORES DE GESTIÓN\n- % Entregas completadas a tiempo\n- % Entregas sin incidencias\n- Costo de flete por entrega\n- Tiempo promedio de entrega por región\n\n5. DOCUMENTOS RELACIONADOS\n- Orden de despacho\n- Guía de transporte y remisión\n- Reporte diario de entregas\n- Registro de incidencias y devoluciones",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-gestion-de-flotas-y-equipos": {
+    "id": "analista-gestion-de-flotas-y-equipos",
+    "cargo": "Analista Gestión de Flotas y Equipos",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Gestión de Flotas y Equipos\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nAdministrar y controlar la flota vehicular y los equipos de la empresa, asegurando su disponibilidad, buen estado operativo y el cumplimiento del programa de mantenimiento preventivo y correctivo.\n\n2. ALCANCE\nAplica a todos los vehículos y equipos operativos registrados en el inventario de flotas de la empresa.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Control de Flota Diario\n- Verificar al inicio de cada jornada el estado operativo de los vehículos programados para el día.\n- Registrar cualquier novedad reportada por los conductores (fallas, daños, irregularidades).\n- Actualizar el tablero de disponibilidad de flota.\n\n3.2 Programa de Mantenimiento Preventivo\n- Elaborar y mantener actualizado el calendario de mantenimiento preventivo de cada unidad (según kilometraje y tiempo).\n- Coordinar con el taller o proveedor la ejecución del mantenimiento en las fechas programadas.\n- Verificar que el mantenimiento fue ejecutado correctamente y archivar la orden de servicio.\n\n3.3 Gestión de Mantenimiento Correctivo\n- Recibir el reporte de falla del conductor o supervisor.\n- Evaluar la gravedad y urgencia de la reparación.\n- Solicitar cotizaciones a proveedores autorizados y presentarlas al Coordinador para aprobación.\n- Coordinar el traslado del vehículo al taller y hacer seguimiento hasta la entrega.\n\n3.4 Gestión Documental de Flota\n- Mantener actualizados los documentos legales de cada vehículo: póliza de seguro, permiso de circulación, revisión técnica.\n- Alertar con anticipación sobre vencimientos de documentos.\n- Controlar el consumo de combustible por unidad y detectar desviaciones.\n\n3.5 Reportes\n- Elaborar el informe mensual de disponibilidad de flota, costos de mantenimiento e indicadores de eficiencia.\n- Proponer al Coordinador la renovación o baja de unidades según análisis costo-beneficio.\n\n4. INDICADORES DE GESTIÓN\n- % Disponibilidad de flota operativa\n- Costo de mantenimiento por unidad/mes\n- Consumo de combustible por kilómetro\n- % Cumplimiento del plan de mantenimiento preventivo\n\n5. DOCUMENTOS RELACIONADOS\n- Programa de mantenimiento preventivo\n- Órdenes de servicio de taller\n- Registro de combustible y kilometraje\n- Expediente documental por vehículo",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-de-almacen": {
+    "id": "analista-de-almacen",
+    "cargo": "Analista de Almacen",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Almacén\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nEjecutar y controlar las operaciones de recepción, almacenamiento, despacho y control de inventario dentro del almacén centralizado, garantizando la exactitud de las existencias y el cumplimiento de los procedimientos.\n\n2. ALCANCE\nAplica a las operaciones cotidianas del almacén: entradas, salidas, movimientos internos y conteos de inventario.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Recepción de Mercancías\n- Recibir la mercancía entrante y cotejar contra la orden de compra y guía de despacho del proveedor.\n- Verificar cantidades, condiciones físicas y fechas de vencimiento cuando aplique.\n- Registrar la entrada en el sistema de gestión de almacén (WMS).\n- Reportar al Coordinador cualquier discrepancia o daño detectado.\n\n3.2 Almacenamiento\n- Ubicar los productos en las posiciones asignadas según los criterios FIFO/FEFO.\n- Etiquetar correctamente cada posición y lote.\n- Mantener el orden y la limpieza del área asignada.\n\n3.3 Preparación de Pedidos (Picking)\n- Recibir la orden de salida validada por el Coordinador.\n- Seleccionar los productos de las posiciones indicadas respetando FIFO/FEFO.\n- Verificar cantidades y condiciones antes de empacar.\n- Generar el documento de despacho y entregarlo al Almacenista para su ejecución física.\n\n3.4 Control de Inventario\n- Participar en los conteos cíclicos programados por el Coordinador.\n- Registrar las diferencias identificadas y reportarlas con soporte documental.\n- Apoyar en la toma de inventario general.\n\n3.5 Devoluciones\n- Recibir y procesar las devoluciones de clientes o rechazos a proveedores.\n- Registrar el movimiento en el sistema y notificar al Coordinador.\n\n4. INDICADORES DE GESTIÓN\n- % Exactitud de registros de entrada y salida\n- % Pedidos preparados sin errores\n- Tiempo promedio de recepción por orden\n\n5. DOCUMENTOS RELACIONADOS\n- Orden de compra / guía de despacho proveedor\n- Orden de salida\n- Registro de conteos cíclicos\n- Reporte de diferencias de inventario",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "almacenista": {
+    "id": "almacenista",
+    "cargo": "Almacenista",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Almacenista\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nEjecutar las actividades físicas de recepción, manipulación, almacenamiento y despacho de mercancías dentro del almacén, garantizando el correcto manejo de los productos y el cumplimiento de las normas de seguridad.\n\n2. ALCANCE\nAplica a todas las operaciones físicas del almacén: descarga, ubicación, picking, carga y despacho de mercancías.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Recepción Física\n- Participar en la descarga de la mercancía entrante junto al Analista de Almacén.\n- Contar físicamente las unidades recibidas y reportar cualquier diferencia o daño visible.\n- Trasladar la mercancía al área de verificación o directamente a las posiciones asignadas.\n\n3.2 Almacenamiento Físico\n- Ubicar los productos en las posiciones indicadas por el Analista de Almacén.\n- Operar equipos de manejo de materiales (transpaletas, apiladores) cuando aplique, respetando las normas de seguridad.\n- Mantener el orden, limpieza y señalización del área de trabajo.\n\n3.3 Preparación y Despacho\n- Ejecutar el picking físico de los productos indicados en la orden preparada por el Analista.\n- Embalar y etiquetar los pedidos según las instrucciones recibidas.\n- Cargar los vehículos de transporte verificando que el pedido corresponde al documento de despacho.\n- Entregar el documento firmado de recepción al Analista de Almacén.\n\n3.4 Apoyo en Inventarios\n- Participar en los conteos físicos de inventario programados.\n- Reportar al Analista cualquier producto dañado, vencido o mal ubicado que detecte durante sus operaciones.\n\n3.5 Seguridad e Higiene\n- Usar en todo momento el equipo de protección personal (EPP) requerido.\n- Reportar de inmediato cualquier condición insegura al Analista o Coordinador.\n\n4. INDICADORES DE GESTIÓN\n- % Unidades despachadas sin errores físicos\n- Cumplimiento de normas de seguridad (incidentes registrados)\n\n5. DOCUMENTOS RELACIONADOS\n- Orden de salida / picking list\n- Documento de despacho firmado\n- Reporte de incidentes de seguridad",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-estandarizacion-y-gestion-de-procesos": {
+    "id": "coordinador-estandarizacion-y-gestion-de-procesos",
+    "cargo": "Coordinador Estandarización y Gestión de Procesos",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Coordinador de Estandarización y Gestión de Procesos\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nLiderar el diseño, documentación, implementación y mejora continua de los procesos operativos de la empresa, asegurando su estandarización en todas las regiones para incrementar la eficiencia y reducir la variabilidad.\n\n2. ALCANCE\nAplica a todos los procesos operativos de la empresa a nivel nacional, con cobertura en las regiones Caracas, Aragua-Carabobo y Lara-Portuguesa-Yaracuy.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Levantamiento y Mapeo de Procesos\n- Identificar los procesos operativos a documentar o actualizar.\n- Coordinar con las áreas involucradas el levantamiento de información.\n- Elaborar los diagramas de flujo y mapas de proceso usando herramientas de modelado (Bizagi, Visio o similar).\n- Validar los mapas con los responsables de cada proceso.\n\n3.2 Documentación de Estándares\n- Redactar los manuales de procedimientos, instructivos y estándares operativos.\n- Someter los documentos a revisión del Gerente de Operaciones para aprobación.\n- Publicar los documentos aprobados en el sistema de gestión documental.\n\n3.3 Implementación Regional\n- Coordinar con los Analistas de Estandarización de cada región la implementación de los estándares aprobados.\n- Realizar visitas de acompañamiento para verificar la correcta aplicación.\n- Capacitar al personal en los nuevos procedimientos.\n\n3.4 Auditorías de Cumplimiento\n- Planificar auditorías periódicas de cumplimiento de estándares en todas las regiones.\n- Analizar los hallazgos y clasificar las no conformidades.\n- Emitir planes de acción correctiva y hacer seguimiento hasta su cierre.\n\n3.5 Mejora Continua\n- Identificar oportunidades de mejora a partir de indicadores, auditorías y sugerencias del personal.\n- Liderar proyectos de mejora usando metodologías Lean, Six Sigma o BPM.\n- Reportar avances al Gerente de Operaciones.\n\n4. INDICADORES DE GESTIÓN\n- % Procesos documentados vs. total identificado\n- % Cumplimiento de estándares en auditorías regionales\n- Número de mejoras implementadas por período\n\n5. DOCUMENTOS RELACIONADOS\n- Manuales de procedimientos\n- Diagramas de proceso\n- Informes de auditoría\n- Planes de acción correctiva",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-estandarizacion-lara-port-yar": {
+    "id": "analista-estandarizacion-lara-port-yar",
+    "cargo": "Analista Estandarización Lara-Port-Yar",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Estandarización — Región Lara, Portuguesa y Yaracuy\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nImplementar, supervisar y mantener los estándares operativos en la región Lara, Portuguesa y Yaracuy, garantizando la homogeneidad y calidad de los procesos en el área asignada.\n\n2. ALCANCE\nAplica a todas las operaciones y unidades de la empresa ubicadas en la región Lara, Portuguesa y Yaracuy.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Implementación de Estándares\n- Recibir del Coordinador de Estandarización los procedimientos y estándares aprobados.\n- Planificar la implementación en cada unidad operativa de la región.\n- Capacitar al personal operativo en los nuevos estándares.\n- Confirmar al Coordinador la implementación completada por unidad.\n\n3.2 Seguimiento y Verificación\n- Realizar visitas periódicas a las unidades de la región para verificar el cumplimiento de los estándares.\n- Aplicar las listas de verificación (checklists) definidas por la Coordinación.\n- Registrar los hallazgos positivos y las no conformidades detectadas.\n\n3.3 Reporte de No Conformidades\n- Documentar las desviaciones encontradas con evidencia fotográfica o documental.\n- Notificar al Coordinador de Estandarización dentro de las 24 horas siguientes a la visita.\n- Hacer seguimiento a las acciones correctivas implementadas por las unidades.\n\n3.4 Levantamiento de Particularidades Regionales\n- Identificar condiciones particulares de la región que requieran adaptaciones en los estándares.\n- Documentar y elevar al Coordinador las propuestas de ajuste con su justificación.\n\n3.5 Reportes\n- Elaborar el informe mensual de cumplimiento de estándares en la región y presentarlo al Coordinador.\n\n4. INDICADORES DE GESTIÓN\n- % Cumplimiento de estándares en visitas de verificación\n- Número de no conformidades detectadas y cerradas por período\n- % Cobertura de capacitaciones ejecutadas\n\n5. DOCUMENTOS RELACIONADOS\n- Estándares y manuales de procedimientos vigentes\n- Listas de verificación (checklists)\n- Informes de visita regional\n- Registro de capacitaciones",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-estandarizacion-aragua-carabobo": {
+    "id": "analista-estandarizacion-aragua-carabobo",
+    "cargo": "Analista Estandarización Aragua-Carabobo",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Estandarización — Región Aragua y Carabobo\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nImplementar, supervisar y mantener los estándares operativos en la región Aragua y Carabobo, asegurando la correcta aplicación de los lineamientos corporativos y la mejora continua de los procesos.\n\n2. ALCANCE\nAplica a todas las operaciones y unidades de la empresa en la región Aragua y Carabobo.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Implementación de Estándares\n- Recibir los procedimientos y estándares aprobados del Coordinador de Estandarización.\n- Planificar y ejecutar la implementación en las unidades operativas de la región.\n- Capacitar al personal de la región en los estándares vigentes.\n- Reportar al Coordinador la culminación de cada implementación.\n\n3.2 Auditorías de Cumplimiento\n- Programar y ejecutar visitas de auditoría a las unidades de la región.\n- Aplicar los instrumentos de verificación definidos por la Coordinación.\n- Documentar hallazgos y clasificar no conformidades por criticidad.\n\n3.3 Gestión de No Conformidades\n- Notificar al Coordinador las no conformidades detectadas con evidencia.\n- Acordar con los responsables de cada unidad las acciones correctivas y plazos.\n- Verificar el cierre efectivo de las no conformidades en la visita siguiente.\n\n3.4 Particularidades Regionales\n- Identificar y documentar las condiciones específicas de la región que puedan requerir adaptaciones normativas.\n- Elevar propuestas fundamentadas al Coordinador para su evaluación.\n\n3.5 Reporte Mensual\n- Consolidar los resultados de las auditorías y verificaciones del mes.\n- Presentar el informe mensual de cumplimiento al Coordinador de Estandarización.\n\n4. INDICADORES DE GESTIÓN\n- % Cumplimiento de estándares por unidad auditada\n- % No conformidades cerradas en el plazo acordado\n- % Personal capacitado en estándares vigentes\n\n5. DOCUMENTOS RELACIONADOS\n- Manuales y estándares operativos vigentes\n- Checklists de auditoría\n- Informes de visita\n- Registro de no conformidades y acciones correctivas",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-estandarizacion-caracas": {
+    "id": "analista-estandarizacion-caracas",
+    "cargo": "Analista Estandarización Caracas",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Estandarización — Región Caracas\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nImplementar y dar seguimiento a los estándares operativos en las operaciones de Caracas, asegurando el cumplimiento de los procedimientos corporativos y apoyando la mejora continua.\n\n2. ALCANCE\nAplica a todas las operaciones y unidades de la empresa ubicadas en la región Caracas y área metropolitana.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Implementación de Estándares\n- Recibir del Coordinador los procedimientos y estándares aprobados a implementar.\n- Planificar la implementación en cada unidad operativa de Caracas.\n- Ejecutar las sesiones de capacitación al personal operativo.\n- Confirmar al Coordinador la implementación por unidad.\n\n3.2 Verificación de Cumplimiento\n- Realizar visitas de verificación periódicas a las unidades de Caracas.\n- Aplicar las listas de verificación y registrar los hallazgos.\n- Identificar brechas entre el estándar definido y la práctica real.\n\n3.3 Gestión de Desviaciones\n- Documentar las no conformidades con soporte fotográfico o documental.\n- Reportar al Coordinador en el plazo establecido.\n- Hacer seguimiento a las acciones correctivas hasta su cierre verificado.\n\n3.4 Actualización Documental\n- Mantener actualizados los registros de implementación y auditorías de su región.\n- Archivar los checklists completados y los informes de visita.\n\n3.5 Reporte Mensual\n- Elaborar el informe mensual de cumplimiento de la región Caracas y presentarlo al Coordinador.\n\n4. INDICADORES DE GESTIÓN\n- % Cumplimiento de estándares (Caracas)\n- Número de no conformidades abiertas y cerradas\n- % Personal capacitado en estándares vigentes\n\n5. DOCUMENTOS RELACIONADOS\n- Estándares y procedimientos operativos vigentes\n- Checklists de verificación\n- Informes mensuales de cumplimiento\n- Registro de capacitaciones ejecutadas",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-infraestructura-y-mantenimiento": {
+    "id": "coordinador-infraestructura-y-mantenimiento",
+    "cargo": "Coordinador Infraestructura y Mantenimiento",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Coordinador de Infraestructura y Mantenimiento\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nPlanificar, coordinar y supervisar las actividades de mantenimiento preventivo y correctivo de la infraestructura, instalaciones y equipos de la empresa en todas las regiones, garantizando su disponibilidad y buen estado operativo.\n\n2. ALCANCE\nAplica a todas las instalaciones e infraestructura de la empresa a nivel nacional: Caracas, Aragua-Carabobo y Lara-Portuguesa-Yaracuy.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Plan de Mantenimiento Preventivo\n- Elaborar anualmente el plan de mantenimiento preventivo de todas las instalaciones.\n- Clasificar las instalaciones por criticidad y definir la frecuencia de mantenimiento.\n- Coordinar con los Analistas regionales la ejecución del plan en sus respectivas áreas.\n- Hacer seguimiento mensual al cumplimiento del plan y registrar las desviaciones.\n\n3.2 Gestión de Mantenimiento Correctivo\n- Recibir las solicitudes de intervención correctiva de los Analistas regionales.\n- Evaluar la prioridad y alcance de cada intervención.\n- Solicitar cotizaciones a proveedores y gestionar la aprobación presupuestaria con el Gerente.\n- Asignar la intervención al Analista o proveedor correspondiente y hacer seguimiento hasta el cierre.\n\n3.3 Gestión de Proveedores\n- Mantener actualizado el directorio de proveedores de mantenimiento aprobados.\n- Gestionar contratos de servicio de mantenimiento y velar por su cumplimiento.\n- Evaluar el desempeño de los proveedores periódicamente.\n\n3.4 Control Presupuestario\n- Administrar el presupuesto de mantenimiento e infraestructura.\n- Controlar los gastos vs. presupuesto y reportar desviaciones al Gerente de Operaciones.\n- Gestionar el inventario de materiales y repuestos críticos.\n\n3.5 Proyectos de Infraestructura\n- Liderar proyectos de adecuación, remodelación o ampliación de instalaciones.\n- Coordinar con arquitectos, ingenieros y contratistas la ejecución de las obras.\n- Supervisar el avance, calidad y cumplimiento de los plazos de cada proyecto.\n\n4. INDICADORES DE GESTIÓN\n- % Cumplimiento del plan de mantenimiento preventivo\n- Tiempo promedio de respuesta a solicitudes correctivas\n- Ejecución presupuestaria de mantenimiento\n- Número de proyectos de infraestructura completados a tiempo\n\n5. DOCUMENTOS RELACIONADOS\n- Plan anual de mantenimiento preventivo\n- Solicitudes de mantenimiento correctivo\n- Contratos de proveedores de servicio\n- Informes de avance de proyectos",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-infraestructura-aragua-carabobo": {
+    "id": "analista-infraestructura-aragua-carabobo",
+    "cargo": "Analista Infraestructura Aragua-Carabobo",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Infraestructura — Región Aragua y Carabobo\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nEjecutar y supervisar las actividades de mantenimiento preventivo y correctivo de las instalaciones e infraestructura en la región Aragua y Carabobo, asegurando la disponibilidad y el buen estado de los espacios físicos y equipos.\n\n2. ALCANCE\nAplica a todas las instalaciones de la empresa en la región Aragua y Carabobo.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Ejecución del Plan de Mantenimiento Preventivo\n- Recibir del Coordinador el plan de mantenimiento asignado a la región.\n- Programar las intervenciones con los contratistas o técnicos disponibles.\n- Supervisar la ejecución de cada mantenimiento y verificar la calidad del trabajo.\n- Archivar las órdenes de servicio completadas.\n\n3.2 Atención de Mantenimiento Correctivo\n- Recibir y registrar las solicitudes de intervención correctiva de las unidades de la región.\n- Evaluar la urgencia y el alcance del problema.\n- Notificar al Coordinador con el diagnóstico y la propuesta de solución.\n- Coordinar la intervención del técnico o contratista asignado.\n- Verificar la solución y cerrar la solicitud en el sistema.\n\n3.3 Inspecciones Periódicas\n- Realizar inspecciones técnicas programadas de las instalaciones de la región.\n- Documentar el estado de cada instalación usando los formatos establecidos.\n- Reportar al Coordinador las condiciones que requieran intervención preventiva o correctiva.\n\n3.4 Gestión de Materiales\n- Solicitar al Coordinador los materiales y repuestos necesarios para las intervenciones.\n- Controlar el inventario de materiales en su región.\n\n3.5 Seguridad en los Trabajos\n- Garantizar que todos los trabajos de mantenimiento se ejecuten cumpliendo las normas de seguridad industrial.\n- Reportar incidentes de seguridad al Coordinador.\n\n4. INDICADORES DE GESTIÓN\n- % Mantenimientos preventivos ejecutados vs. programados\n- Tiempo promedio de atención a solicitudes correctivas\n- Número de incidentes de seguridad en trabajos de mantenimiento\n\n5. DOCUMENTOS RELACIONADOS\n- Plan de mantenimiento preventivo regional\n- Solicitudes de mantenimiento correctivo\n- Informes de inspección\n- Órdenes de servicio",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-infraestructura-lara-port-yar": {
+    "id": "analista-infraestructura-lara-port-yar",
+    "cargo": "Analista Infraestructura Lara-Port-Yar",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Infraestructura — Región Lara, Portuguesa y Yaracuy\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nEjecutar y controlar las actividades de mantenimiento preventivo y correctivo de las instalaciones e infraestructura en la región Lara, Portuguesa y Yaracuy, garantizando la operatividad y conservación de los espacios físicos y equipos asignados.\n\n2. ALCANCE\nAplica a todas las instalaciones de la empresa en la región Lara, Portuguesa y Yaracuy.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Ejecución del Plan Preventivo\n- Recibir el plan de mantenimiento asignado por el Coordinador.\n- Coordinar con técnicos y proveedores la ejecución de los mantenimientos programados.\n- Supervisar y verificar la calidad de cada intervención ejecutada.\n- Registrar y archivar las órdenes de servicio completadas.\n\n3.2 Mantenimiento Correctivo\n- Recibir y registrar las solicitudes de intervención de las unidades de la región.\n- Diagnosticar el problema e informar al Coordinador con la propuesta de solución.\n- Gestionar la intervención con el técnico o contratista asignado.\n- Verificar la solución y cerrar la solicitud.\n\n3.3 Inspecciones Técnicas\n- Ejecutar inspecciones periódicas de las instalaciones de la región.\n- Documentar el estado técnico de cada instalación con los formatos estándar.\n- Elevar al Coordinador las observaciones que requieran atención.\n\n3.4 Gestión de Recursos\n- Controlar el inventario de materiales y repuestos disponibles en la región.\n- Solicitar reposición al Coordinador cuando los niveles lleguen al mínimo establecido.\n\n3.5 Seguridad Industrial\n- Velar por el cumplimiento de las normas de seguridad e higiene en todos los trabajos.\n- Reportar inmediatamente cualquier incidente al Coordinador.\n\n4. INDICADORES DE GESTIÓN\n- % Mantenimientos preventivos ejecutados vs. programados\n- Tiempo de respuesta a solicitudes correctivas\n- % Instalaciones en estado operativo óptimo\n\n5. DOCUMENTOS RELACIONADOS\n- Plan de mantenimiento preventivo regional\n- Solicitudes y órdenes de mantenimiento correctivo\n- Informes de inspección técnica\n- Registro de materiales y repuestos",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-infraestructura-caracas": {
+    "id": "analista-infraestructura-caracas",
+    "cargo": "Analista Infraestructura Caracas",
+    "gerencia": "operaciones",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Analista de Infraestructura — Región Caracas\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nEjecutar y supervisar las actividades de mantenimiento preventivo y correctivo de las instalaciones e infraestructura de la empresa en Caracas, asegurando la disponibilidad operativa y el correcto estado de los espacios físicos y equipos.\n\n2. ALCANCE\nAplica a todas las instalaciones de la empresa en Caracas y el área metropolitana.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Ejecución del Plan de Mantenimiento Preventivo\n- Recibir el plan de mantenimiento asignado por el Coordinador para Caracas.\n- Programar con técnicos y contratistas las intervenciones preventivas.\n- Supervisar la ejecución y verificar la calidad de los trabajos realizados.\n- Registrar y archivar las órdenes de servicio completadas.\n\n3.2 Atención de Solicitudes Correctivas\n- Recibir, registrar y priorizar las solicitudes de intervención correctiva en Caracas.\n- Diagnosticar el problema y comunicar al Coordinador la propuesta de solución.\n- Coordinar y supervisar la intervención del técnico o contratista.\n- Confirmar la solución y cerrar la solicitud.\n\n3.3 Inspecciones de Instalaciones\n- Realizar inspecciones técnicas periódicas de las instalaciones de Caracas.\n- Documentar el estado de cada instalación y registrar novedades.\n- Reportar al Coordinador las condiciones que requieran atención.\n\n3.4 Apoyo en Proyectos\n- Apoyar al Coordinador en la supervisión de proyectos de adecuación o mejora en instalaciones de Caracas.\n- Coordinar el acceso de contratistas y garantizar el cumplimiento de las normas de seguridad durante las obras.\n\n3.5 Control de Materiales y Seguridad\n- Gestionar el inventario de materiales de mantenimiento disponibles en Caracas.\n- Garantizar que todos los trabajos se realicen con el equipo de protección personal adecuado.\n- Reportar incidentes de seguridad al Coordinador inmediatamente.\n\n4. INDICADORES DE GESTIÓN\n- % Mantenimientos preventivos ejecutados vs. programados (Caracas)\n- Tiempo promedio de atención a solicitudes correctivas\n- Número de incidentes de seguridad\n\n5. DOCUMENTOS RELACIONADOS\n- Plan de mantenimiento preventivo (Caracas)\n- Solicitudes y órdenes de mantenimiento\n- Informes de inspección\n- Registro de proyectos de infraestructura",
+      "flujo": "",
+      "cursos": [],
       "gamificacion": {
         "xp": 0,
         "nivel": 1,
