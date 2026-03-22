@@ -4117,13 +4117,17 @@ function edpPrint(campo) {
 </body>
 </html>`;
 
-  const win = window.open('', '_blank', 'width=900,height=700');
-  if (!win) {
-    alert('Por favor permite las ventanas emergentes para poder imprimir.');
-    return;
-  }
-  win.document.write(html);
-  win.document.close();
+  // Crear Blob y abrir como URL (funciona dentro de iframes sin popups)
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 2000);
 }
 
 function epoRenderFlujo(html) {
