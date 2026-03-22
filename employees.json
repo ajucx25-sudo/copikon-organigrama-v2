@@ -2597,5 +2597,845 @@
         "logros": []
       }
     }
+  },
+  "gerencia-tiendas-retail-copikon": {
+    "id": "gerencia-tiendas-retail-copikon",
+    "cargo": "Gerencia Tiendas Retail Copikon",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerencia Tiendas Retail Copikon**\n\n**Propósito del cargo**\nDirigir y supervisar la operación integral de todas las tiendas Copikon a nivel nacional, garantizando el cumplimiento de los estándares de servicio, imagen de marca, rentabilidad y experiencia de compra en cada punto de venta.\n\n**Responsabilidades principales**\n- Diseñar e implementar la estrategia de operación retail a nivel nacional.\n- Supervisar a los gerentes regionales y de tienda en el cumplimiento de metas de ventas y operación.\n- Garantizar la coherencia de la experiencia de marca en todos los puntos de venta.\n- Controlar los presupuestos operativos y de ventas de la red de tiendas.\n- Definir los estándares de atención al cliente, visual merchandising y operación de tienda.\n- Coordinar con Compras, Logística y Marketing el abastecimiento y las campañas en tienda.\n- Analizar el desempeño de ventas por tienda y región, tomando decisiones correctivas.\n- Reportar resultados de la red retail al CEO y Gerencia de Comercialización.\n\n**Competencias requeridas**\n- Visión estratégica del negocio retail y orientación a resultados\n- Liderazgo de equipos comerciales y gerentes de tienda\n- Conocimiento de gestión de punto de venta, merchandising y experiencia de cliente\n- Análisis financiero y control de presupuesto de tiendas\n- Habilidades de negociación y coordinación con proveedores y aliados comerciales\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o Ingeniería Comercial\n- Postgrado en Retail Management o áreas afines (deseable)\n- Mínimo 6 años de experiencia en operaciones retail o gestión de cadenas de tiendas",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerencia-tienda-region-1-lara-port-yar": {
+    "id": "gerencia-tienda-region-1-lara-port-yar",
+    "cargo": "Gerencia Tienda Región 1 (Lara-Port-Yar)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerencia Tienda Región 1 (Lara-Port-Yar)**\n\n**Propósito del cargo**\nSupervisar y coordinar la operación de las tiendas Copikon en su región, asegurando el cumplimiento de los estándares operativos, metas de ventas y experiencia de cliente en cada punto de venta bajo su responsabilidad.\n\n**Responsabilidades principales**\n- Supervisar a los gerentes de tienda de la región en la operación diaria.\n- Velar por el cumplimiento de los estándares de atención, imagen y operación en todas las tiendas de la región.\n- Analizar el desempeño de ventas por tienda e identificar oportunidades de mejora.\n- Coordinar con Logística y Compras el abastecimiento oportuno de las tiendas.\n- Gestionar los conflictos operativos o de personal que escalen los gerentes de tienda.\n- Implementar las campañas comerciales y de marketing en las tiendas de la región.\n- Controlar los gastos operativos regionales dentro del presupuesto asignado.\n- Reportar resultados de la región a la Gerencia de Tiendas Retail.\n\n**Competencias requeridas**\n- Liderazgo de múltiples tiendas y equipos de venta\n- Conocimiento de operación retail y gestión de puntos de venta\n- Análisis de indicadores comerciales y toma de decisiones operativas\n- Habilidades de comunicación y coordinación con equipos remotos\n- Orientación al cliente y capacidad de resolución de problemas en campo\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín\n- Mínimo 4 años de experiencia en gestión de tiendas o retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerencia-tienda-region-2-aragua-carabobo": {
+    "id": "gerencia-tienda-region-2-aragua-carabobo",
+    "cargo": "Gerencia Tienda Región 2 (Aragua-Carabobo)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerencia Tienda Región 2 (Aragua-Carabobo)**\n\n**Propósito del cargo**\nSupervisar y coordinar la operación de las tiendas Copikon en su región, asegurando el cumplimiento de los estándares operativos, metas de ventas y experiencia de cliente en cada punto de venta bajo su responsabilidad.\n\n**Responsabilidades principales**\n- Supervisar a los gerentes de tienda de la región en la operación diaria.\n- Velar por el cumplimiento de los estándares de atención, imagen y operación en todas las tiendas de la región.\n- Analizar el desempeño de ventas por tienda e identificar oportunidades de mejora.\n- Coordinar con Logística y Compras el abastecimiento oportuno de las tiendas.\n- Gestionar los conflictos operativos o de personal que escalen los gerentes de tienda.\n- Implementar las campañas comerciales y de marketing en las tiendas de la región.\n- Controlar los gastos operativos regionales dentro del presupuesto asignado.\n- Reportar resultados de la región a la Gerencia de Tiendas Retail.\n\n**Competencias requeridas**\n- Liderazgo de múltiples tiendas y equipos de venta\n- Conocimiento de operación retail y gestión de puntos de venta\n- Análisis de indicadores comerciales y toma de decisiones operativas\n- Habilidades de comunicación y coordinación con equipos remotos\n- Orientación al cliente y capacidad de resolución de problemas en campo\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín\n- Mínimo 4 años de experiencia en gestión de tiendas o retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerencia-tienda-region-3-caracas": {
+    "id": "gerencia-tienda-region-3-caracas",
+    "cargo": "Gerencia Tienda Región 3 (Caracas)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerencia Tienda Región 3 (Caracas)**\n\n**Propósito del cargo**\nSupervisar y coordinar la operación de las tiendas Copikon en su región, asegurando el cumplimiento de los estándares operativos, metas de ventas y experiencia de cliente en cada punto de venta bajo su responsabilidad.\n\n**Responsabilidades principales**\n- Supervisar a los gerentes de tienda de la región en la operación diaria.\n- Velar por el cumplimiento de los estándares de atención, imagen y operación en todas las tiendas de la región.\n- Analizar el desempeño de ventas por tienda e identificar oportunidades de mejora.\n- Coordinar con Logística y Compras el abastecimiento oportuno de las tiendas.\n- Gestionar los conflictos operativos o de personal que escalen los gerentes de tienda.\n- Implementar las campañas comerciales y de marketing en las tiendas de la región.\n- Controlar los gastos operativos regionales dentro del presupuesto asignado.\n- Reportar resultados de la región a la Gerencia de Tiendas Retail.\n\n**Competencias requeridas**\n- Liderazgo de múltiples tiendas y equipos de venta\n- Conocimiento de operación retail y gestión de puntos de venta\n- Análisis de indicadores comerciales y toma de decisiones operativas\n- Habilidades de comunicación y coordinación con equipos remotos\n- Orientación al cliente y capacidad de resolución de problemas en campo\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín\n- Mínimo 4 años de experiencia en gestión de tiendas o retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerente-tienda-copikon-zona-3-lara": {
+    "id": "gerente-tienda-copikon-zona-3-lara",
+    "cargo": "Gerente Tienda Copikon Zona 3 Lara",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerente Tienda Copikon Zona 3 Lara**\n\n**Propósito del cargo**\nDirigir la operación integral de la tienda, garantizando el cumplimiento de las metas de ventas, los estándares de servicio al cliente, el control del inventario y la gestión eficiente del equipo humano y los recursos del punto de venta.\n\n**Responsabilidades principales**\n- Dirigir y motivar al equipo de la tienda para el cumplimiento de metas de ventas y servicio.\n- Garantizar la correcta apertura y cierre de la tienda según los procedimientos establecidos.\n- Supervisar el inventario, el correcto surtido y la presentación visual de productos.\n- Controlar la caja y los procesos de facturación y cobro de la tienda.\n- Resolver incidencias con clientes, gestionar devoluciones y garantías.\n- Coordinar con el Coordinador Comercial las acciones de venta y atención al cliente.\n- Mantener la tienda en óptimas condiciones de imagen, limpieza y seguridad.\n- Reportar resultados diarios y semanales de ventas, inventario y operación a la Gerencia Regional.\n\n**Competencias requeridas**\n- Liderazgo de equipos de venta en punto de venta\n- Conocimiento de operación de tienda: caja, inventario, visual merchandising\n- Orientación al cliente y capacidad de resolución de conflictos\n- Habilidades organizativas y gestión del tiempo\n- Manejo de sistemas de punto de venta (POS)\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín (o técnico superior con experiencia)\n- Mínimo 3 años de experiencia en gestión de tiendas retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerente-tienda-copikon-atrium-lara": {
+    "id": "gerente-tienda-copikon-atrium-lara",
+    "cargo": "Gerente Tienda Copikon Atrium Lara",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerente Tienda Copikon Atrium Lara**\n\n**Propósito del cargo**\nDirigir la operación integral de la tienda, garantizando el cumplimiento de las metas de ventas, los estándares de servicio al cliente, el control del inventario y la gestión eficiente del equipo humano y los recursos del punto de venta.\n\n**Responsabilidades principales**\n- Dirigir y motivar al equipo de la tienda para el cumplimiento de metas de ventas y servicio.\n- Garantizar la correcta apertura y cierre de la tienda según los procedimientos establecidos.\n- Supervisar el inventario, el correcto surtido y la presentación visual de productos.\n- Controlar la caja y los procesos de facturación y cobro de la tienda.\n- Resolver incidencias con clientes, gestionar devoluciones y garantías.\n- Coordinar con el Coordinador Comercial las acciones de venta y atención al cliente.\n- Mantener la tienda en óptimas condiciones de imagen, limpieza y seguridad.\n- Reportar resultados diarios y semanales de ventas, inventario y operación a la Gerencia Regional.\n\n**Competencias requeridas**\n- Liderazgo de equipos de venta en punto de venta\n- Conocimiento de operación de tienda: caja, inventario, visual merchandising\n- Orientación al cliente y capacidad de resolución de conflictos\n- Habilidades organizativas y gestión del tiempo\n- Manejo de sistemas de punto de venta (POS)\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín (o técnico superior con experiencia)\n- Mínimo 3 años de experiencia en gestión de tiendas retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerente-tienda-copikon-av-venezuela": {
+    "id": "gerente-tienda-copikon-av-venezuela",
+    "cargo": "Gerente Tienda Copikon Av Venezuela",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerente Tienda Copikon Av Venezuela**\n\n**Propósito del cargo**\nDirigir la operación integral de la tienda, garantizando el cumplimiento de las metas de ventas, los estándares de servicio al cliente, el control del inventario y la gestión eficiente del equipo humano y los recursos del punto de venta.\n\n**Responsabilidades principales**\n- Dirigir y motivar al equipo de la tienda para el cumplimiento de metas de ventas y servicio.\n- Garantizar la correcta apertura y cierre de la tienda según los procedimientos establecidos.\n- Supervisar el inventario, el correcto surtido y la presentación visual de productos.\n- Controlar la caja y los procesos de facturación y cobro de la tienda.\n- Resolver incidencias con clientes, gestionar devoluciones y garantías.\n- Coordinar con el Coordinador Comercial las acciones de venta y atención al cliente.\n- Mantener la tienda en óptimas condiciones de imagen, limpieza y seguridad.\n- Reportar resultados diarios y semanales de ventas, inventario y operación a la Gerencia Regional.\n\n**Competencias requeridas**\n- Liderazgo de equipos de venta en punto de venta\n- Conocimiento de operación de tienda: caja, inventario, visual merchandising\n- Orientación al cliente y capacidad de resolución de conflictos\n- Habilidades organizativas y gestión del tiempo\n- Manejo de sistemas de punto de venta (POS)\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín (o técnico superior con experiencia)\n- Mínimo 3 años de experiencia en gestión de tiendas retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerente-tienda-copikon-valencia": {
+    "id": "gerente-tienda-copikon-valencia",
+    "cargo": "Gerente Tienda Copikon Valencia",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerente Tienda Copikon Valencia**\n\n**Propósito del cargo**\nDirigir la operación integral de la tienda, garantizando el cumplimiento de las metas de ventas, los estándares de servicio al cliente, el control del inventario y la gestión eficiente del equipo humano y los recursos del punto de venta.\n\n**Responsabilidades principales**\n- Dirigir y motivar al equipo de la tienda para el cumplimiento de metas de ventas y servicio.\n- Garantizar la correcta apertura y cierre de la tienda según los procedimientos establecidos.\n- Supervisar el inventario, el correcto surtido y la presentación visual de productos.\n- Controlar la caja y los procesos de facturación y cobro de la tienda.\n- Resolver incidencias con clientes, gestionar devoluciones y garantías.\n- Coordinar con el Coordinador Comercial las acciones de venta y atención al cliente.\n- Mantener la tienda en óptimas condiciones de imagen, limpieza y seguridad.\n- Reportar resultados diarios y semanales de ventas, inventario y operación a la Gerencia Regional.\n\n**Competencias requeridas**\n- Liderazgo de equipos de venta en punto de venta\n- Conocimiento de operación de tienda: caja, inventario, visual merchandising\n- Orientación al cliente y capacidad de resolución de conflictos\n- Habilidades organizativas y gestión del tiempo\n- Manejo de sistemas de punto de venta (POS)\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín (o técnico superior con experiencia)\n- Mínimo 3 años de experiencia en gestión de tiendas retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "gerente-tienda-copikon-maracay": {
+    "id": "gerente-tienda-copikon-maracay",
+    "cargo": "Gerente Tienda Copikon Maracay",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerente Tienda Copikon Maracay**\n\n**Propósito del cargo**\nDirigir la operación integral de la tienda, garantizando el cumplimiento de las metas de ventas, los estándares de servicio al cliente, el control del inventario y la gestión eficiente del equipo humano y los recursos del punto de venta.\n\n**Responsabilidades principales**\n- Dirigir y motivar al equipo de la tienda para el cumplimiento de metas de ventas y servicio.\n- Garantizar la correcta apertura y cierre de la tienda según los procedimientos establecidos.\n- Supervisar el inventario, el correcto surtido y la presentación visual de productos.\n- Controlar la caja y los procesos de facturación y cobro de la tienda.\n- Resolver incidencias con clientes, gestionar devoluciones y garantías.\n- Coordinar con el Coordinador Comercial las acciones de venta y atención al cliente.\n- Mantener la tienda en óptimas condiciones de imagen, limpieza y seguridad.\n- Reportar resultados diarios y semanales de ventas, inventario y operación a la Gerencia Regional.\n\n**Competencias requeridas**\n- Liderazgo de equipos de venta en punto de venta\n- Conocimiento de operación de tienda: caja, inventario, visual merchandising\n- Orientación al cliente y capacidad de resolución de conflictos\n- Habilidades organizativas y gestión del tiempo\n- Manejo de sistemas de punto de venta (POS)\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín (o técnico superior con experiencia)\n- Mínimo 3 años de experiencia en gestión de tiendas retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "auxiliar-administrativo-z3": {
+    "id": "auxiliar-administrativo-z3",
+    "cargo": "Auxiliar Administrativo (Z3)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Auxiliar Administrativo (Z3)**\n\n**Propósito del cargo**\nBrindar soporte administrativo y operativo a la tienda, gestionando los procesos de facturación, control de documentos, pagos de servicios y apoyo al Gerente de Tienda en las tareas administrativas diarias.\n\n**Responsabilidades principales**\n- Gestionar la documentación administrativa de la tienda: facturas, órdenes de compra, contratos de servicios.\n- Apoyar en el control y conciliación de caja en coordinación con el Analista de Caja.\n- Procesar pagos de servicios, proveedores locales y gastos operativos de la tienda.\n- Mantener organizados los archivos físicos y digitales de la tienda.\n- Coordinar con el área de Recursos Humanos las novedades de nómina del personal de la tienda.\n- Apoyar en la gestión de requerimientos de logística, mantenimiento y servicios generales de la tienda.\n- Atender requerimientos administrativos del Gerente de Tienda.\n\n**Competencias requeridas**\n- Organización y manejo de documentación administrativa\n- Conocimiento básico de contabilidad y facturación\n- Manejo de herramientas ofimáticas (Word, Excel)\n- Atención al detalle y responsabilidad en el manejo de documentos\n- Comunicación efectiva con proveedores y áreas internas\n\n**Formación y experiencia**\n- Técnico Superior Universitario o Licenciatura en Administración o carrera afín\n- Mínimo 1 año de experiencia en cargos administrativos",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "auxiliar-administrativo-atrium": {
+    "id": "auxiliar-administrativo-atrium",
+    "cargo": "Auxiliar Administrativo (Atrium)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Auxiliar Administrativo (Atrium)**\n\n**Propósito del cargo**\nBrindar soporte administrativo y operativo a la tienda, gestionando los procesos de facturación, control de documentos, pagos de servicios y apoyo al Gerente de Tienda en las tareas administrativas diarias.\n\n**Responsabilidades principales**\n- Gestionar la documentación administrativa de la tienda: facturas, órdenes de compra, contratos de servicios.\n- Apoyar en el control y conciliación de caja en coordinación con el Analista de Caja.\n- Procesar pagos de servicios, proveedores locales y gastos operativos de la tienda.\n- Mantener organizados los archivos físicos y digitales de la tienda.\n- Coordinar con el área de Recursos Humanos las novedades de nómina del personal de la tienda.\n- Apoyar en la gestión de requerimientos de logística, mantenimiento y servicios generales de la tienda.\n- Atender requerimientos administrativos del Gerente de Tienda.\n\n**Competencias requeridas**\n- Organización y manejo de documentación administrativa\n- Conocimiento básico de contabilidad y facturación\n- Manejo de herramientas ofimáticas (Word, Excel)\n- Atención al detalle y responsabilidad en el manejo de documentos\n- Comunicación efectiva con proveedores y áreas internas\n\n**Formación y experiencia**\n- Técnico Superior Universitario o Licenciatura en Administración o carrera afín\n- Mínimo 1 año de experiencia en cargos administrativos",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "auxiliar-administrativo-av-venezuela": {
+    "id": "auxiliar-administrativo-av-venezuela",
+    "cargo": "Auxiliar Administrativo (Av Venezuela)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Auxiliar Administrativo (Av Venezuela)**\n\n**Propósito del cargo**\nBrindar soporte administrativo y operativo a la tienda, gestionando los procesos de facturación, control de documentos, pagos de servicios y apoyo al Gerente de Tienda en las tareas administrativas diarias.\n\n**Responsabilidades principales**\n- Gestionar la documentación administrativa de la tienda: facturas, órdenes de compra, contratos de servicios.\n- Apoyar en el control y conciliación de caja en coordinación con el Analista de Caja.\n- Procesar pagos de servicios, proveedores locales y gastos operativos de la tienda.\n- Mantener organizados los archivos físicos y digitales de la tienda.\n- Coordinar con el área de Recursos Humanos las novedades de nómina del personal de la tienda.\n- Apoyar en la gestión de requerimientos de logística, mantenimiento y servicios generales de la tienda.\n- Atender requerimientos administrativos del Gerente de Tienda.\n\n**Competencias requeridas**\n- Organización y manejo de documentación administrativa\n- Conocimiento básico de contabilidad y facturación\n- Manejo de herramientas ofimáticas (Word, Excel)\n- Atención al detalle y responsabilidad en el manejo de documentos\n- Comunicación efectiva con proveedores y áreas internas\n\n**Formación y experiencia**\n- Técnico Superior Universitario o Licenciatura en Administración o carrera afín\n- Mínimo 1 año de experiencia en cargos administrativos",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "auxiliar-administrativo-caracas": {
+    "id": "auxiliar-administrativo-caracas",
+    "cargo": "Auxiliar Administrativo (Caracas)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Auxiliar Administrativo (Caracas)**\n\n**Propósito del cargo**\nBrindar soporte administrativo y operativo a la tienda, gestionando los procesos de facturación, control de documentos, pagos de servicios y apoyo al Gerente de Tienda en las tareas administrativas diarias.\n\n**Responsabilidades principales**\n- Gestionar la documentación administrativa de la tienda: facturas, órdenes de compra, contratos de servicios.\n- Apoyar en el control y conciliación de caja en coordinación con el Analista de Caja.\n- Procesar pagos de servicios, proveedores locales y gastos operativos de la tienda.\n- Mantener organizados los archivos físicos y digitales de la tienda.\n- Coordinar con el área de Recursos Humanos las novedades de nómina del personal de la tienda.\n- Apoyar en la gestión de requerimientos de logística, mantenimiento y servicios generales de la tienda.\n- Atender requerimientos administrativos del Gerente de Tienda.\n\n**Competencias requeridas**\n- Organización y manejo de documentación administrativa\n- Conocimiento básico de contabilidad y facturación\n- Manejo de herramientas ofimáticas (Word, Excel)\n- Atención al detalle y responsabilidad en el manejo de documentos\n- Comunicación efectiva con proveedores y áreas internas\n\n**Formación y experiencia**\n- Técnico Superior Universitario o Licenciatura en Administración o carrera afín\n- Mínimo 1 año de experiencia en cargos administrativos",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "auxiliar-administrativo-valencia": {
+    "id": "auxiliar-administrativo-valencia",
+    "cargo": "Auxiliar Administrativo Valencia",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Auxiliar Administrativo Valencia**\n\n**Propósito del cargo**\nBrindar soporte administrativo y operativo a la tienda, gestionando los procesos de facturación, control de documentos, pagos de servicios y apoyo al Gerente de Tienda en las tareas administrativas diarias.\n\n**Responsabilidades principales**\n- Gestionar la documentación administrativa de la tienda: facturas, órdenes de compra, contratos de servicios.\n- Apoyar en el control y conciliación de caja en coordinación con el Analista de Caja.\n- Procesar pagos de servicios, proveedores locales y gastos operativos de la tienda.\n- Mantener organizados los archivos físicos y digitales de la tienda.\n- Coordinar con el área de Recursos Humanos las novedades de nómina del personal de la tienda.\n- Apoyar en la gestión de requerimientos de logística, mantenimiento y servicios generales de la tienda.\n- Atender requerimientos administrativos del Gerente de Tienda.\n\n**Competencias requeridas**\n- Organización y manejo de documentación administrativa\n- Conocimiento básico de contabilidad y facturación\n- Manejo de herramientas ofimáticas (Word, Excel)\n- Atención al detalle y responsabilidad en el manejo de documentos\n- Comunicación efectiva con proveedores y áreas internas\n\n**Formación y experiencia**\n- Técnico Superior Universitario o Licenciatura en Administración o carrera afín\n- Mínimo 1 año de experiencia en cargos administrativos",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "auxiliar-administrativo-maracay": {
+    "id": "auxiliar-administrativo-maracay",
+    "cargo": "Auxiliar Administrativo Maracay",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Auxiliar Administrativo Maracay**\n\n**Propósito del cargo**\nBrindar soporte administrativo y operativo a la tienda, gestionando los procesos de facturación, control de documentos, pagos de servicios y apoyo al Gerente de Tienda en las tareas administrativas diarias.\n\n**Responsabilidades principales**\n- Gestionar la documentación administrativa de la tienda: facturas, órdenes de compra, contratos de servicios.\n- Apoyar en el control y conciliación de caja en coordinación con el Analista de Caja.\n- Procesar pagos de servicios, proveedores locales y gastos operativos de la tienda.\n- Mantener organizados los archivos físicos y digitales de la tienda.\n- Coordinar con el área de Recursos Humanos las novedades de nómina del personal de la tienda.\n- Apoyar en la gestión de requerimientos de logística, mantenimiento y servicios generales de la tienda.\n- Atender requerimientos administrativos del Gerente de Tienda.\n\n**Competencias requeridas**\n- Organización y manejo de documentación administrativa\n- Conocimiento básico de contabilidad y facturación\n- Manejo de herramientas ofimáticas (Word, Excel)\n- Atención al detalle y responsabilidad en el manejo de documentos\n- Comunicación efectiva con proveedores y áreas internas\n\n**Formación y experiencia**\n- Técnico Superior Universitario o Licenciatura en Administración o carrera afín\n- Mínimo 1 año de experiencia en cargos administrativos",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-caja": {
+    "id": "analista-caja",
+    "cargo": "Analista de Caja",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista de Caja**\n\n**Propósito del cargo**\nGestionar eficientemente los procesos de cobro, facturación y control de caja en la tienda, garantizando la exactitud de las transacciones, la satisfacción del cliente en el proceso de pago y el correcto cierre y cuadre de caja diario.\n\n**Responsabilidades principales**\n- Atender a los clientes en el proceso de cobro con rapidez y cortesía.\n- Procesar pagos en efectivo, punto de venta, transferencia y otras modalidades disponibles.\n- Emitir facturas, notas de entrega y documentos fiscales requeridos.\n- Realizar el cuadre de caja al cierre del turno y reportar cualquier diferencia al Gerente.\n- Verificar la autenticidad de los billetes recibidos.\n- Gestionar devoluciones y cambios según los procedimientos establecidos.\n- Mantener el área de caja ordenada y segura en todo momento.\n- Reportar incidencias o irregularidades al Gerente de Tienda.\n\n**Competencias requeridas**\n- Honestidad y responsabilidad en el manejo de efectivo\n- Rapidez y precisión en operaciones de cobro\n- Conocimiento de sistemas POS y medios de pago electrónicos\n- Atención al cliente y manejo de situaciones de presión\n- Habilidades básicas de aritmética y conteo de efectivo\n\n**Formación y experiencia**\n- Bachiller o Técnico en Administración, Contabilidad o carrera afín\n- Mínimo 1 año de experiencia en cargos de caja o atención al cliente",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "mantenimiento-infraestructura-seguridad": {
+    "id": "mantenimiento-infraestructura-seguridad",
+    "cargo": "Mantenimiento, Infraestructura y Seguridad",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Mantenimiento, Infraestructura y Seguridad**\n\n**Propósito del cargo**\nMantener las instalaciones, equipos e infraestructura de la tienda en óptimas condiciones de operación, asegurando la seguridad física del local, el personal y los clientes, y ejecutando los trabajos de mantenimiento preventivo y correctivo requeridos.\n\n**Responsabilidades principales**\n- Ejecutar el mantenimiento preventivo y correctivo de las instalaciones eléctricas, de plomería y equipos de la tienda.\n- Velar por la seguridad física del local: accesos, alarmas, cámaras y protocolo ante incidentes.\n- Reportar al Gerente de Tienda cualquier falla, daño o riesgo de seguridad detectado.\n- Coordinar con proveedores externos las reparaciones que superen su capacidad técnica.\n- Mantener el orden y aseo de las áreas de servicio, depósito y accesos internos.\n- Controlar el inventario de materiales y herramientas de mantenimiento asignadas.\n- Apoyar en la instalación de materiales de exhibición, señalética y equipos de la tienda.\n\n**Competencias requeridas**\n- Conocimientos técnicos en electricidad, plomería y mantenimiento general\n- Responsabilidad y proactividad en la detección y resolución de fallas\n- Conocimiento básico de protocolos de seguridad física\n- Capacidad de trabajo bajo supervisión y seguimiento de instrucciones\n- Disponibilidad para atender emergencias fuera del horario regular\n\n**Formación y experiencia**\n- Técnico en electricidad, mantenimiento industrial o carrera afín\n- Mínimo 1 año de experiencia en mantenimiento de locales comerciales",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "mensajero": {
+    "id": "mensajero",
+    "cargo": "Mensajero",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Mensajero**\n\n**Propósito del cargo**\nEjecutar las diligencias, trámites y traslados externos requeridos por la tienda y la administración, garantizando la entrega oportuna y segura de documentos, pagos y materiales, y apoyando en las actividades logísticas del punto de venta.\n\n**Responsabilidades principales**\n- Realizar depósitos bancarios, pagos a proveedores y trámites institucionales asignados.\n- Trasladar documentos, correspondencia y materiales entre la tienda y otras oficinas o entidades.\n- Hacer diligencias ante organismos públicos, bancos y proveedores según necesidad.\n- Apoyar en la recepción y traslado de mercancía dentro del local.\n- Reportar al Auxiliar Administrativo o Gerente de Tienda el resultado de cada diligencia.\n- Mantener en buen estado el vehículo o medio de transporte asignado si aplica.\n- Custodiar responsablemente los documentos y valores asignados durante las diligencias.\n\n**Competencias requeridas**\n- Responsabilidad y honestidad en el manejo de documentos y valores\n- Conocimiento de la ciudad y zonas de operación\n- Organización para gestionar múltiples diligencias en el día\n- Puntualidad y cumplimiento de instrucciones\n- Licencia de conducir vigente (si aplica)\n\n**Formación y experiencia**\n- Bachiller\n- Mínimo 1 año de experiencia en cargos similares",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-inventario-almacen-retail-z3": {
+    "id": "analista-inventario-almacen-retail-z3",
+    "cargo": "Analista Inventario Almacén Retail (Z3)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista Inventario Almacén Retail (Z3)**\n\n**Propósito del cargo**\nGestionar y controlar el inventario de la tienda, asegurando la disponibilidad y correcta rotación de los productos, el orden del almacén interno y la exactitud de los registros de stock en el sistema.\n\n**Responsabilidades principales**\n- Controlar el inventario de la tienda mediante conteos cíclicos y verificación en sistema.\n- Registrar las entradas y salidas de mercancía en el sistema POS o ERP de la tienda.\n- Coordinar con Logística las solicitudes de reposición de productos con quiebre de stock.\n- Organizar y mantener el almacén interno de la tienda en orden y con acceso seguro.\n- Alertar al Gerente de Tienda sobre productos con baja rotación, vencimiento próximo o quiebre de stock.\n- Realizar inventarios generales periódicos en coordinación con el Gerente y Administración.\n- Gestionar las devoluciones de mercancía a Logística o Almacén Central.\n- Reportar el estado del inventario al Gerente de Tienda semanalmente.\n\n**Competencias requeridas**\n- Conocimiento de gestión de inventarios y manejo de almacén\n- Atención al detalle y precisión en el conteo y registro de productos\n- Manejo de sistemas POS y herramientas de control de inventario\n- Organización y capacidad de trabajo físico en almacén\n- Responsabilidad en la custodia de mercancía\n\n**Formación y experiencia**\n- Técnico o Licenciatura en Administración, Logística o carrera afín\n- Mínimo 1 año de experiencia en control de inventario o almacén",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-inventario-almacen-retail-atrium": {
+    "id": "analista-inventario-almacen-retail-atrium",
+    "cargo": "Analista Inventario Almacén Retail (Atrium)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista Inventario Almacén Retail (Atrium)**\n\n**Propósito del cargo**\nGestionar y controlar el inventario de la tienda, asegurando la disponibilidad y correcta rotación de los productos, el orden del almacén interno y la exactitud de los registros de stock en el sistema.\n\n**Responsabilidades principales**\n- Controlar el inventario de la tienda mediante conteos cíclicos y verificación en sistema.\n- Registrar las entradas y salidas de mercancía en el sistema POS o ERP de la tienda.\n- Coordinar con Logística las solicitudes de reposición de productos con quiebre de stock.\n- Organizar y mantener el almacén interno de la tienda en orden y con acceso seguro.\n- Alertar al Gerente de Tienda sobre productos con baja rotación, vencimiento próximo o quiebre de stock.\n- Realizar inventarios generales periódicos en coordinación con el Gerente y Administración.\n- Gestionar las devoluciones de mercancía a Logística o Almacén Central.\n- Reportar el estado del inventario al Gerente de Tienda semanalmente.\n\n**Competencias requeridas**\n- Conocimiento de gestión de inventarios y manejo de almacén\n- Atención al detalle y precisión en el conteo y registro de productos\n- Manejo de sistemas POS y herramientas de control de inventario\n- Organización y capacidad de trabajo físico en almacén\n- Responsabilidad en la custodia de mercancía\n\n**Formación y experiencia**\n- Técnico o Licenciatura en Administración, Logística o carrera afín\n- Mínimo 1 año de experiencia en control de inventario o almacén",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-inventario-almacen-retail": {
+    "id": "analista-inventario-almacen-retail",
+    "cargo": "Analista Inventario Almacén Retail",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista Inventario Almacén Retail**\n\n**Propósito del cargo**\nGestionar y controlar el inventario de la tienda, asegurando la disponibilidad y correcta rotación de los productos, el orden del almacén interno y la exactitud de los registros de stock en el sistema.\n\n**Responsabilidades principales**\n- Controlar el inventario de la tienda mediante conteos cíclicos y verificación en sistema.\n- Registrar las entradas y salidas de mercancía en el sistema POS o ERP de la tienda.\n- Coordinar con Logística las solicitudes de reposición de productos con quiebre de stock.\n- Organizar y mantener el almacén interno de la tienda en orden y con acceso seguro.\n- Alertar al Gerente de Tienda sobre productos con baja rotación, vencimiento próximo o quiebre de stock.\n- Realizar inventarios generales periódicos en coordinación con el Gerente y Administración.\n- Gestionar las devoluciones de mercancía a Logística o Almacén Central.\n- Reportar el estado del inventario al Gerente de Tienda semanalmente.\n\n**Competencias requeridas**\n- Conocimiento de gestión de inventarios y manejo de almacén\n- Atención al detalle y precisión en el conteo y registro de productos\n- Manejo de sistemas POS y herramientas de control de inventario\n- Organización y capacidad de trabajo físico en almacén\n- Responsabilidad en la custodia de mercancía\n\n**Formación y experiencia**\n- Técnico o Licenciatura en Administración, Logística o carrera afín\n- Mínimo 1 año de experiencia en control de inventario o almacén",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-inventario-almacen-retail-caracas": {
+    "id": "analista-inventario-almacen-retail-caracas",
+    "cargo": "Analista Inventario Almacén Retail (Caracas)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista Inventario Almacén Retail (Caracas)**\n\n**Propósito del cargo**\nGestionar y controlar el inventario de la tienda, asegurando la disponibilidad y correcta rotación de los productos, el orden del almacén interno y la exactitud de los registros de stock en el sistema.\n\n**Responsabilidades principales**\n- Controlar el inventario de la tienda mediante conteos cíclicos y verificación en sistema.\n- Registrar las entradas y salidas de mercancía en el sistema POS o ERP de la tienda.\n- Coordinar con Logística las solicitudes de reposición de productos con quiebre de stock.\n- Organizar y mantener el almacén interno de la tienda en orden y con acceso seguro.\n- Alertar al Gerente de Tienda sobre productos con baja rotación, vencimiento próximo o quiebre de stock.\n- Realizar inventarios generales periódicos en coordinación con el Gerente y Administración.\n- Gestionar las devoluciones de mercancía a Logística o Almacén Central.\n- Reportar el estado del inventario al Gerente de Tienda semanalmente.\n\n**Competencias requeridas**\n- Conocimiento de gestión de inventarios y manejo de almacén\n- Atención al detalle y precisión en el conteo y registro de productos\n- Manejo de sistemas POS y herramientas de control de inventario\n- Organización y capacidad de trabajo físico en almacén\n- Responsabilidad en la custodia de mercancía\n\n**Formación y experiencia**\n- Técnico o Licenciatura en Administración, Logística o carrera afín\n- Mínimo 1 año de experiencia en control de inventario o almacén",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-comercial-tienda-retail-z3": {
+    "id": "coordinador-comercial-tienda-retail-z3",
+    "cargo": "Coordinador Comercial Tienda Retail (Z3)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador Comercial Tienda Retail (Z3)**\n\n**Propósito del cargo**\nCoordinar y liderar al equipo de vendedores integrales de la tienda, asegurando el cumplimiento de las metas de ventas, la excelente atención al cliente y la correcta ejecución del proceso comercial en el punto de venta.\n\n**Responsabilidades principales**\n- Coordinar y motivar al equipo de vendedores integrales para el logro de las metas de ventas.\n- Hacer seguimiento diario al desempeño individual de cada vendedor y retroalimentar oportunamente.\n- Garantizar la excelente atención al cliente en todas las etapas del proceso de compra.\n- Apoyar en la resolución de situaciones complejas con clientes que superen la capacidad del vendedor.\n- Supervisar la correcta exhibición y reposición de productos en sala de ventas.\n- Implementar las técnicas de venta y protocolos de atención definidos por la Gerencia.\n- Reportar resultados de ventas diarios al Gerente de Tienda con análisis de variaciones.\n- Participar en la capacitación continua del equipo de vendedores.\n\n**Competencias requeridas**\n- Liderazgo de equipos comerciales en punto de venta\n- Técnicas de venta y atención al cliente de alto nivel\n- Orientación al logro y capacidad de motivar equipos\n- Conocimiento del catálogo de productos de la tienda\n- Manejo de sistemas POS y herramientas de seguimiento de ventas\n\n**Formación y experiencia**\n- Técnico Superior o Licenciatura en Administración, Mercadeo o carrera afín\n- Mínimo 2 años de experiencia en ventas retail o coordinación de equipos comerciales",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-comercial-tienda-retail-atrium": {
+    "id": "coordinador-comercial-tienda-retail-atrium",
+    "cargo": "Coordinador Comercial Tienda Retail (Atrium)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador Comercial Tienda Retail (Atrium)**\n\n**Propósito del cargo**\nCoordinar y liderar al equipo de vendedores integrales de la tienda, asegurando el cumplimiento de las metas de ventas, la excelente atención al cliente y la correcta ejecución del proceso comercial en el punto de venta.\n\n**Responsabilidades principales**\n- Coordinar y motivar al equipo de vendedores integrales para el logro de las metas de ventas.\n- Hacer seguimiento diario al desempeño individual de cada vendedor y retroalimentar oportunamente.\n- Garantizar la excelente atención al cliente en todas las etapas del proceso de compra.\n- Apoyar en la resolución de situaciones complejas con clientes que superen la capacidad del vendedor.\n- Supervisar la correcta exhibición y reposición de productos en sala de ventas.\n- Implementar las técnicas de venta y protocolos de atención definidos por la Gerencia.\n- Reportar resultados de ventas diarios al Gerente de Tienda con análisis de variaciones.\n- Participar en la capacitación continua del equipo de vendedores.\n\n**Competencias requeridas**\n- Liderazgo de equipos comerciales en punto de venta\n- Técnicas de venta y atención al cliente de alto nivel\n- Orientación al logro y capacidad de motivar equipos\n- Conocimiento del catálogo de productos de la tienda\n- Manejo de sistemas POS y herramientas de seguimiento de ventas\n\n**Formación y experiencia**\n- Técnico Superior o Licenciatura en Administración, Mercadeo o carrera afín\n- Mínimo 2 años de experiencia en ventas retail o coordinación de equipos comerciales",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-comercial-tienda-retail": {
+    "id": "coordinador-comercial-tienda-retail",
+    "cargo": "Coordinador Comercial Tienda Retail",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador Comercial Tienda Retail**\n\n**Propósito del cargo**\nCoordinar y liderar al equipo de vendedores integrales de la tienda, asegurando el cumplimiento de las metas de ventas, la excelente atención al cliente y la correcta ejecución del proceso comercial en el punto de venta.\n\n**Responsabilidades principales**\n- Coordinar y motivar al equipo de vendedores integrales para el logro de las metas de ventas.\n- Hacer seguimiento diario al desempeño individual de cada vendedor y retroalimentar oportunamente.\n- Garantizar la excelente atención al cliente en todas las etapas del proceso de compra.\n- Apoyar en la resolución de situaciones complejas con clientes que superen la capacidad del vendedor.\n- Supervisar la correcta exhibición y reposición de productos en sala de ventas.\n- Implementar las técnicas de venta y protocolos de atención definidos por la Gerencia.\n- Reportar resultados de ventas diarios al Gerente de Tienda con análisis de variaciones.\n- Participar en la capacitación continua del equipo de vendedores.\n\n**Competencias requeridas**\n- Liderazgo de equipos comerciales en punto de venta\n- Técnicas de venta y atención al cliente de alto nivel\n- Orientación al logro y capacidad de motivar equipos\n- Conocimiento del catálogo de productos de la tienda\n- Manejo de sistemas POS y herramientas de seguimiento de ventas\n\n**Formación y experiencia**\n- Técnico Superior o Licenciatura en Administración, Mercadeo o carrera afín\n- Mínimo 2 años de experiencia en ventas retail o coordinación de equipos comerciales",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coord-comercial-tienda-retail-caracas": {
+    "id": "coord-comercial-tienda-retail-caracas",
+    "cargo": "Coordinador Comercial Tienda Retail (Caracas)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador Comercial Tienda Retail (Caracas)**\n\n**Propósito del cargo**\nCoordinar y liderar al equipo de vendedores integrales de la tienda, asegurando el cumplimiento de las metas de ventas, la excelente atención al cliente y la correcta ejecución del proceso comercial en el punto de venta.\n\n**Responsabilidades principales**\n- Coordinar y motivar al equipo de vendedores integrales para el logro de las metas de ventas.\n- Hacer seguimiento diario al desempeño individual de cada vendedor y retroalimentar oportunamente.\n- Garantizar la excelente atención al cliente en todas las etapas del proceso de compra.\n- Apoyar en la resolución de situaciones complejas con clientes que superen la capacidad del vendedor.\n- Supervisar la correcta exhibición y reposición de productos en sala de ventas.\n- Implementar las técnicas de venta y protocolos de atención definidos por la Gerencia.\n- Reportar resultados de ventas diarios al Gerente de Tienda con análisis de variaciones.\n- Participar en la capacitación continua del equipo de vendedores.\n\n**Competencias requeridas**\n- Liderazgo de equipos comerciales en punto de venta\n- Técnicas de venta y atención al cliente de alto nivel\n- Orientación al logro y capacidad de motivar equipos\n- Conocimiento del catálogo de productos de la tienda\n- Manejo de sistemas POS y herramientas de seguimiento de ventas\n\n**Formación y experiencia**\n- Técnico Superior o Licenciatura en Administración, Mercadeo o carrera afín\n- Mínimo 2 años de experiencia en ventas retail o coordinación de equipos comerciales",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "vendedores-integrales-z3": {
+    "id": "vendedores-integrales-z3",
+    "cargo": "Vendedores Integrales (Z3)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Vendedores Integrales (Z3)**\n\n**Propósito del cargo**\nBrindar una atención de excelencia a los clientes de la tienda, asesorando en la selección de productos, ejecutando el proceso de venta integral desde el saludo hasta el cierre y postventa, para garantizar la satisfacción del cliente y el cumplimiento de las metas de ventas.\n\n**Responsabilidades principales**\n- Recibir y atender a los clientes con cortesía, entusiasmo y conocimiento del producto.\n- Asesorar al cliente en la selección de productos según sus necesidades y presupuesto.\n- Ejecutar el proceso de venta completo: demostración, cotización, cierre y acompañamiento al cobro.\n- Cumplir con las metas individuales de ventas asignadas por el Coordinador Comercial.\n- Mantener el área de exhibición ordenada, con precios actualizados y productos bien presentados.\n- Gestionar devoluciones y reclamos de primer nivel según los protocolos establecidos.\n- Registrar las ventas en el sistema POS correctamente.\n- Reportar al Coordinador Comercial cualquier novedad con clientes o productos.\n\n**Competencias requeridas**\n- Vocación de servicio y atención al cliente\n- Técnicas básicas de venta y cierre\n- Conocimiento del catálogo de productos de la tienda\n- Comunicación efectiva y empatía con el cliente\n- Manejo básico de sistemas POS\n\n**Formación y experiencia**\n- Bachiller o Técnico en Ventas, Mercadeo o carrera afín\n- Mínimo 1 año de experiencia en ventas o atención al cliente en retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "vendedores-integrales-atrium": {
+    "id": "vendedores-integrales-atrium",
+    "cargo": "Vendedores Integrales (Atrium)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Vendedores Integrales (Atrium)**\n\n**Propósito del cargo**\nBrindar una atención de excelencia a los clientes de la tienda, asesorando en la selección de productos, ejecutando el proceso de venta integral desde el saludo hasta el cierre y postventa, para garantizar la satisfacción del cliente y el cumplimiento de las metas de ventas.\n\n**Responsabilidades principales**\n- Recibir y atender a los clientes con cortesía, entusiasmo y conocimiento del producto.\n- Asesorar al cliente en la selección de productos según sus necesidades y presupuesto.\n- Ejecutar el proceso de venta completo: demostración, cotización, cierre y acompañamiento al cobro.\n- Cumplir con las metas individuales de ventas asignadas por el Coordinador Comercial.\n- Mantener el área de exhibición ordenada, con precios actualizados y productos bien presentados.\n- Gestionar devoluciones y reclamos de primer nivel según los protocolos establecidos.\n- Registrar las ventas en el sistema POS correctamente.\n- Reportar al Coordinador Comercial cualquier novedad con clientes o productos.\n\n**Competencias requeridas**\n- Vocación de servicio y atención al cliente\n- Técnicas básicas de venta y cierre\n- Conocimiento del catálogo de productos de la tienda\n- Comunicación efectiva y empatía con el cliente\n- Manejo básico de sistemas POS\n\n**Formación y experiencia**\n- Bachiller o Técnico en Ventas, Mercadeo o carrera afín\n- Mínimo 1 año de experiencia en ventas o atención al cliente en retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "vendedores-integrales": {
+    "id": "vendedores-integrales",
+    "cargo": "Vendedores Integrales",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Vendedores Integrales**\n\n**Propósito del cargo**\nBrindar una atención de excelencia a los clientes de la tienda, asesorando en la selección de productos, ejecutando el proceso de venta integral desde el saludo hasta el cierre y postventa, para garantizar la satisfacción del cliente y el cumplimiento de las metas de ventas.\n\n**Responsabilidades principales**\n- Recibir y atender a los clientes con cortesía, entusiasmo y conocimiento del producto.\n- Asesorar al cliente en la selección de productos según sus necesidades y presupuesto.\n- Ejecutar el proceso de venta completo: demostración, cotización, cierre y acompañamiento al cobro.\n- Cumplir con las metas individuales de ventas asignadas por el Coordinador Comercial.\n- Mantener el área de exhibición ordenada, con precios actualizados y productos bien presentados.\n- Gestionar devoluciones y reclamos de primer nivel según los protocolos establecidos.\n- Registrar las ventas en el sistema POS correctamente.\n- Reportar al Coordinador Comercial cualquier novedad con clientes o productos.\n\n**Competencias requeridas**\n- Vocación de servicio y atención al cliente\n- Técnicas básicas de venta y cierre\n- Conocimiento del catálogo de productos de la tienda\n- Comunicación efectiva y empatía con el cliente\n- Manejo básico de sistemas POS\n\n**Formación y experiencia**\n- Bachiller o Técnico en Ventas, Mercadeo o carrera afín\n- Mínimo 1 año de experiencia en ventas o atención al cliente en retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "vendedores-integrales-caracas": {
+    "id": "vendedores-integrales-caracas",
+    "cargo": "Vendedores Integrales (Caracas)",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Vendedores Integrales (Caracas)**\n\n**Propósito del cargo**\nBrindar una atención de excelencia a los clientes de la tienda, asesorando en la selección de productos, ejecutando el proceso de venta integral desde el saludo hasta el cierre y postventa, para garantizar la satisfacción del cliente y el cumplimiento de las metas de ventas.\n\n**Responsabilidades principales**\n- Recibir y atender a los clientes con cortesía, entusiasmo y conocimiento del producto.\n- Asesorar al cliente en la selección de productos según sus necesidades y presupuesto.\n- Ejecutar el proceso de venta completo: demostración, cotización, cierre y acompañamiento al cobro.\n- Cumplir con las metas individuales de ventas asignadas por el Coordinador Comercial.\n- Mantener el área de exhibición ordenada, con precios actualizados y productos bien presentados.\n- Gestionar devoluciones y reclamos de primer nivel según los protocolos establecidos.\n- Registrar las ventas en el sistema POS correctamente.\n- Reportar al Coordinador Comercial cualquier novedad con clientes o productos.\n\n**Competencias requeridas**\n- Vocación de servicio y atención al cliente\n- Técnicas básicas de venta y cierre\n- Conocimiento del catálogo de productos de la tienda\n- Comunicación efectiva y empatía con el cliente\n- Manejo básico de sistemas POS\n\n**Formación y experiencia**\n- Bachiller o Técnico en Ventas, Mercadeo o carrera afín\n- Mínimo 1 año de experiencia en ventas o atención al cliente en retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
   }
 }
