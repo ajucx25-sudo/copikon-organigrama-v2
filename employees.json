@@ -2401,5 +2401,201 @@
         "logros": []
       }
     }
+  },
+  "gerencia-de-compras": {
+    "id": "gerencia-de-compras",
+    "cargo": "Gerencia de Compras",
+    "gerencia": "compras",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerencia de Compras**\n\n**Propósito del cargo**\nDirigir y optimizar la gestión de adquisiciones de Copikon Venezuela, asegurando el abastecimiento oportuno de productos, materiales y servicios en las mejores condiciones de precio, calidad y plazo, alineado con los objetivos operacionales y financieros de la empresa.\n\n**Responsabilidades principales**\n- Diseñar y ejecutar la estrategia de compras nacionales e internacionales de la empresa.\n- Supervisar las áreas de Compras Stock, Compras Internacionales y Compras de Proyectos/Servicios.\n- Negociar con proveedores estratégicos las condiciones de precio, crédito y entrega.\n- Aprobar órdenes de compra que superen los límites de los coordinadores.\n- Gestionar y desarrollar el portafolio de proveedores nacionales e internacionales.\n- Garantizar el cumplimiento de los niveles de inventario y disponibilidad de productos.\n- Controlar el presupuesto de compras y optimizar los costos de adquisición.\n- Presentar reportes de gestión de compras a la Gerencia de Administración y al CEO.\n\n**Competencias requeridas**\n- Visión estratégica en gestión de compras y cadena de suministro\n- Habilidades de negociación con proveedores nacionales e internacionales\n- Conocimiento de comercio exterior, aduanas y logística internacional\n- Capacidad analítica para evaluar costos y condiciones de compra\n- Liderazgo de equipos técnicos y gestión de relaciones comerciales\n\n**Formación y experiencia**\n- Licenciatura en Administración, Ingeniería Industrial, Comercio Exterior o carrera afín\n- Postgrado en Supply Chain, Logística o Comercio Internacional (deseable)\n- Mínimo 6 años de experiencia en compras o cadena de suministro",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-de-compras-stock": {
+    "id": "coordinador-de-compras-stock",
+    "cargo": "Coordinador de Compras Stock",
+    "gerencia": "compras",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador de Compras Stock**\n\n**Propósito del cargo**\nGestionar y coordinar las compras de productos para inventario (stock), asegurando la disponibilidad continua de mercancía en los niveles óptimos, minimizando quiebres de stock y excesos de inventario, mediante la planificación eficiente de órdenes de compra nacionales e internacionales.\n\n**Responsabilidades principales**\n- Planificar y ejecutar las órdenes de compra de productos de stock según la demanda y niveles mínimos.\n- Coordinar a los analistas de compras nacionales e internacionales en la gestión de sus categorías.\n- Negociar condiciones de compra con proveedores dentro de los parámetros aprobados.\n- Mantener actualizado el portafolio de proveedores de stock con evaluaciones periódicas.\n- Monitorear los niveles de inventario y alertar sobre quiebres o excesos de stock.\n- Gestionar las importaciones de productos de stock en coordinación con Logística.\n- Elaborar el plan de compras mensual y trimestral por categoría.\n- Reportar el estado de las compras y el inventario a la Gerencia de Compras.\n\n**Competencias requeridas**\n- Planificación de inventarios y gestión de stock (EOQ, punto de reorden)\n- Conocimiento de proveedores nacionales e internacionales del sector\n- Habilidades de negociación y evaluación de condiciones comerciales\n- Manejo de ERP y herramientas de planificación de compras\n- Orientación al análisis y toma de decisiones basada en datos\n\n**Formación y experiencia**\n- Licenciatura en Administración, Ingeniería Industrial o carrera afín\n- Mínimo 3 años de experiencia en compras o gestión de inventarios",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-compras-nacionales": {
+    "id": "analista-compras-nacionales",
+    "cargo": "Analista de Compras Nacionales",
+    "gerencia": "compras",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista de Compras Nacionales**\n\n**Propósito del cargo**\nEjecutar el proceso de compras de productos y materiales a proveedores nacionales, asegurando la obtención de las mejores condiciones comerciales, el cumplimiento de los plazos de entrega y la correcta gestión documental de cada orden de compra.\n\n**Responsabilidades principales**\n- Emitir y dar seguimiento a las órdenes de compra a proveedores nacionales.\n- Cotizar con múltiples proveedores y elaborar cuadros comparativos para la toma de decisión.\n- Negociar precios, condiciones de crédito y plazos de entrega con proveedores nacionales.\n- Coordinar con Logística y Almacén la recepción oportuna de las compras.\n- Mantener actualizada la base de datos de proveedores nacionales con evaluaciones de desempeño.\n- Gestionar las incidencias con proveedores: retrasos, productos defectuosos o faltantes.\n- Verificar la correcta facturación y documentación de cada compra para su pago.\n- Reportar el estado de las órdenes de compra al Coordinador de Compras Stock.\n\n**Competencias requeridas**\n- Conocimiento del mercado de proveedores nacionales del sector\n- Habilidades de negociación y comunicación efectiva con proveedores\n- Atención al detalle en gestión documental y órdenes de compra\n- Manejo de ERP y Excel avanzado\n- Capacidad de análisis de cotizaciones y evaluación de proveedores\n\n**Formación y experiencia**\n- Licenciatura en Administración, Ingeniería Industrial o carrera afín\n- Mínimo 2 años de experiencia en compras nacionales o abastecimiento",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-compras-internacionales-norte-america": {
+    "id": "analista-compras-internacionales-norte-america",
+    "cargo": "Analista Compras Internacionales (Norte América)",
+    "gerencia": "compras",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista de Compras Internacionales (Norte América)**\n\n**Propósito del cargo**\nGestionar las compras de productos e insumos provenientes de proveedores de Norte América (Estados Unidos, Canadá, México), coordinando el proceso completo desde la negociación hasta la recepción en almacén, incluyendo la gestión aduanal y logística internacional.\n\n**Responsabilidades principales**\n- Identificar, evaluar y mantener relaciones con proveedores en Norte América.\n- Negociar precios, condiciones de pago (carta de crédito, wire transfer) y tiempos de entrega.\n- Emitir órdenes de compra internacionales y coordinar el embarque con el proveedor.\n- Gestionar la documentación de importación: factura comercial, packing list, BL, certificados.\n- Coordinar con el Analista de Logística Internacional el proceso aduanal y la nacionalización.\n- Hacer seguimiento al estatus de cada importación hasta la recepción en almacén.\n- Evaluar el desempeño de proveedores de la región por calidad, precio y cumplimiento.\n- Reportar el estado de importaciones y proyectar tiempos de llegada al Coordinador.\n\n**Competencias requeridas**\n- Conocimiento de comercio exterior y procesos de importación desde Norte América\n- Inglés avanzado (lectura, escritura y negociación)\n- Manejo de Incoterms, cartas de crédito y medios de pago internacionales\n- Habilidades de negociación intercultural\n- Dominio de ERP y herramientas de seguimiento de importaciones\n\n**Formación y experiencia**\n- Licenciatura en Comercio Exterior, Administración o Ingeniería Industrial\n- Mínimo 2 años de experiencia en compras internacionales o comercio exterior",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-compras-internacionales-asia": {
+    "id": "analista-compras-internacionales-asia",
+    "cargo": "Analista Compras Internacionales (Asia)",
+    "gerencia": "compras",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista de Compras Internacionales (Asia)**\n\n**Propósito del cargo**\nGestionar las compras de productos e insumos provenientes de proveedores asiáticos (principalmente China, pero también Corea, Taiwán, India), coordinando el ciclo completo de importación desde la negociación hasta la recepción en almacén.\n\n**Responsabilidades principales**\n- Identificar, evaluar y mantener relaciones con proveedores en Asia, principalmente China.\n- Negociar precios FOB/CIF, condiciones de pago (T/T, carta de crédito) y tiempos de producción y embarque.\n- Emitir órdenes de compra y coordinar el proceso de producción y embarque con el proveedor.\n- Gestionar la documentación de importación: factura, packing list, BL, certificados de origen.\n- Supervisar el control de calidad previo al embarque cuando aplique (inspección en origen).\n- Coordinar con Logística Internacional el proceso aduanal y la nacionalización.\n- Monitorear el estatus de cada importación hasta la recepción en almacén.\n- Evaluar proveedores asiáticos por calidad, precio, tiempo de respuesta y cumplimiento.\n\n**Competencias requeridas**\n- Conocimiento del mercado asiático de proveedores y procesos de importación desde Asia\n- Inglés avanzado (negociación con proveedores asiáticos en inglés)\n- Manejo de Incoterms, cartas de crédito y medios de pago internacionales\n- Paciencia y habilidades de negociación intercultural (contexto asiático)\n- Dominio de ERP, Alibaba/Made-in-China y herramientas de sourcing\n\n**Formación y experiencia**\n- Licenciatura en Comercio Exterior, Administración o Ingeniería Industrial\n- Mínimo 2 años de experiencia en importaciones desde Asia\n- Mandarín básico (deseable)",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinadoer-compras-proyectos-servicios-mantenimiento": {
+    "id": "coordinadoer-compras-proyectos-servicios-mantenimiento",
+    "cargo": "Coordinador Compras PSM",
+    "gerencia": "compras",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador de Compras — Proyectos, Servicios y Mantenimiento**\n\n**Propósito del cargo**\nCoordinar y gestionar las adquisiciones de bienes, servicios y contrataciones requeridas para proyectos, mantenimiento e infraestructura de la empresa, asegurando la selección de proveedores idóneos, los mejores costos y el cumplimiento de los plazos establecidos.\n\n**Responsabilidades principales**\n- Gestionar las compras de servicios, materiales y equipos para proyectos de la empresa.\n- Coordinar al Analista PSM en la ejecución de las compras del área.\n- Elaborar y gestionar licitaciones, cotizaciones comparativas y contratos de servicios.\n- Evaluar y seleccionar proveedores de servicios, mantenimiento y proyectos especiales.\n- Coordinar con las áreas demandantes (Operaciones, Infraestructura, Proyectos) los requerimientos.\n- Negociar contratos de mantenimiento y servicios recurrentes con proveedores.\n- Controlar el presupuesto de compras de proyectos y servicios.\n- Reportar el estado de las adquisiciones y contratos a la Gerencia de Compras.\n\n**Competencias requeridas**\n- Conocimiento de gestión de contratos y compras de servicios\n- Habilidades de negociación y evaluación de proveedores de servicios\n- Capacidad de análisis técnico-económico de propuestas\n- Manejo de ERP y herramientas de gestión de contratos\n- Orientación al detalle y cumplimiento de plazos\n\n**Formación y experiencia**\n- Licenciatura en Administración, Ingeniería Industrial o carrera afín\n- Mínimo 3 años de experiencia en compras de servicios, proyectos o mantenimiento",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "analista-psm": {
+    "id": "analista-psm",
+    "cargo": "Analista PSM",
+    "gerencia": "compras",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Analista PSM (Proyectos, Servicios y Mantenimiento)**\n\n**Propósito del cargo**\nEjecutar el proceso de compras de materiales, equipos y servicios requeridos para proyectos, mantenimiento e infraestructura, gestionando las cotizaciones, órdenes de compra y seguimiento hasta la entrega, en coordinación con las áreas solicitantes.\n\n**Responsabilidades principales**\n- Recibir y procesar las solicitudes de compra de proyectos, servicios y mantenimiento.\n- Cotizar con proveedores calificados y elaborar cuadros comparativos de propuestas.\n- Emitir órdenes de compra y contratos de servicio aprobados por el Coordinador.\n- Hacer seguimiento a los proveedores hasta la entrega o ejecución del servicio.\n- Coordinar con las áreas solicitantes (Operaciones, Infraestructura, Proyectos) la recepción conforme.\n- Gestionar la documentación de cada compra para la aprobación del pago por Administración.\n- Mantener actualizada la base de datos de proveedores de servicios y mantenimiento.\n- Reportar el estado de las órdenes de compra al Coordinador PSM.\n\n**Competencias requeridas**\n- Conocimiento de procesos de compras y gestión de proveedores de servicios\n- Capacidad de análisis y comparación de propuestas técnico-económicas\n- Atención al detalle y seguimiento riguroso de órdenes de compra\n- Manejo de ERP y Excel avanzado\n- Comunicación efectiva con áreas internas y proveedores\n\n**Formación y experiencia**\n- Licenciatura en Administración, Ingeniería Industrial o carrera afín\n- Mínimo 2 años de experiencia en compras de servicios o administración de contratos",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
   }
 }
