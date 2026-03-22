@@ -717,6 +717,179 @@ footer a:hover { color: var(--color-accent); }
 }
 .edp-textarea:focus { border-color: var(--color-primary); }
 .edp-text-actions { display: flex; justify-content: flex-end; gap: 7px; margin-top: 8px; }
+
+/* ===== CARDS MODERNAS — Descripción, Manual, Flujo ===== */
+.rc-section {
+  border-radius: 11px;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.18s;
+}
+.rc-section:hover { box-shadow: 0 2px 12px rgba(74,127,212,0.10); }
+.rc-section-header {
+  display: flex; align-items: center; gap: 9px;
+  padding: 10px 13px;
+  border-bottom: 1.5px solid var(--border);
+  background: linear-gradient(90deg, rgba(74,127,212,0.07) 0%, transparent 100%);
+}
+.rc-section-icon {
+  width: 28px; height: 28px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+  background: rgba(74,127,212,0.12);
+}
+.rc-section-title {
+  font-size: 11px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--color-primary);
+}
+.rc-section-body {
+  padding: 10px 13px 12px;
+}
+.rc-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.rc-bullets li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 12.5px; color: var(--text-secondary); line-height: 1.55;
+}
+.rc-bullets li::before {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0; margin-top: 6px;
+}
+.rc-text {
+  font-size: 12.5px; color: var(--text-secondary);
+  line-height: 1.65;
+}
+/* Colores por tipo de sección */
+.rc-section.rc-tipo-proposito .rc-section-icon { background: rgba(74,127,212,0.14); }
+.rc-section.rc-tipo-proposito .rc-section-header { background: linear-gradient(90deg, rgba(74,127,212,0.08) 0%, transparent 100%); }
+.rc-section.rc-tipo-resp .rc-section-icon { background: rgba(43,191,174,0.14); }
+.rc-section.rc-tipo-resp .rc-section-header { background: linear-gradient(90deg, rgba(43,191,174,0.07) 0%, transparent 100%); }
+.rc-section.rc-tipo-resp .rc-section-title { color: #2bbfae; }
+.rc-section.rc-tipo-comp .rc-section-icon { background: rgba(232,160,32,0.14); }
+.rc-section.rc-tipo-comp .rc-section-header { background: linear-gradient(90deg, rgba(232,160,32,0.07) 0%, transparent 100%); }
+.rc-section.rc-tipo-comp .rc-section-title { color: #c87d00; }
+.rc-section.rc-tipo-form .rc-section-icon { background: rgba(160,106,212,0.14); }
+.rc-section.rc-tipo-form .rc-section-header { background: linear-gradient(90deg, rgba(160,106,212,0.07) 0%, transparent 100%); }
+.rc-section.rc-tipo-form .rc-section-title { color: #a06ad4; }
+.rc-section.rc-tipo-kpi .rc-section-icon { background: rgba(221,104,116,0.14); }
+.rc-section.rc-tipo-kpi .rc-section-header { background: linear-gradient(90deg, rgba(221,104,116,0.07) 0%, transparent 100%); }
+.rc-section.rc-tipo-kpi .rc-section-title { color: #dd6874; }
+.rc-section.rc-tipo-doc .rc-section-icon { background: rgba(91,143,249,0.14); }
+.rc-section.rc-tipo-doc .rc-section-header { background: linear-gradient(90deg, rgba(91,143,249,0.07) 0%, transparent 100%); }
+.rc-section.rc-tipo-doc .rc-section-title { color: #5b8ff9; }
+.rc-section.rc-tipo-neutral .rc-section-icon { background: rgba(107,122,153,0.14); }
+.rc-section.rc-tipo-neutral .rc-section-header { background: linear-gradient(90deg, rgba(107,122,153,0.06) 0%, transparent 100%); }
+.rc-section.rc-tipo-neutral .rc-section-title { color: var(--text-secondary); }
+/* Manual: steps numerados */
+.rc-step-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+}
+.rc-step-item:last-child { border-bottom: none; }
+.rc-step-num {
+  min-width: 22px; height: 22px; border-radius: 6px;
+  background: var(--color-primary); color: #fff;
+  font-size: 10px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.rc-step-body { flex: 1; }
+.rc-step-title {
+  font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px;
+}
+.rc-step-desc { font-size: 11.5px; color: var(--text-secondary); line-height: 1.5; }
+/* Chips KPI */
+.rc-kpi-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.rc-kpi-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10.5px; font-weight: 600; padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(221,104,116,0.10); color: #dd6874;
+  border: 1px solid rgba(221,104,116,0.20);
+}
+.rc-doc-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10.5px; font-weight: 600; padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(91,143,249,0.10); color: #5b8ff9;
+  border: 1px solid rgba(91,143,249,0.20);
+}
+/* Flujo mejorado */
+.flujo-step {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 11px 13px; margin-bottom: 0;
+  border-radius: 0;
+  background: transparent;
+  border-left: none;
+  border-bottom: 1px solid var(--border);
+}
+.flujo-step:last-child { border-bottom: none; }
+.flujo-step-num {
+  min-width: 26px; height: 26px; border-radius: 8px;
+  background: var(--color-primary); color: #fff;
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+  box-shadow: 0 2px 6px rgba(74,127,212,0.25);
+}
+.flujo-step-title {
+  font-size: 12.5px; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 3px;
+}
+.flujo-step-desc {
+  font-size: 12px; color: var(--text-secondary); line-height: 1.55;
+}
+.flujo-section-title {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--color-primary);
+  margin: 12px 13px 0;
+  padding: 5px 8px;
+  background: rgba(74,127,212,0.07);
+  border-radius: 6px;
+}
+.flujo-arrow {
+  text-align: center; color: var(--color-primary);
+  font-size: 14px; margin: 0 13px; line-height: 1;
+  padding: 2px 0;
+  opacity: 0.35;
+}
+.flujo-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 700; padding: 2px 8px;
+  border-radius: 20px; margin-right: 4px; margin-top: 5px;
+  border: 1px solid transparent;
+}
+.flujo-badge.responsable { background: rgba(74,127,212,0.12); color: #4a7fd4; border-color: rgba(74,127,212,0.20); }
+.flujo-badge.entregable  { background: rgba(60,179,113,0.12); color: #3cb371; border-color: rgba(60,179,113,0.20); }
+.flujo-badge.sistema     { background: rgba(232,160,32,0.12); color: #c87d00; border-color: rgba(232,160,32,0.20); }
+/* Contenedor del flujo como card */
+.flujo-card-wrap {
+  border: 1.5px solid var(--border);
+  border-radius: 11px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.flujo-card-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 13px;
+  border-bottom: 1.5px solid var(--border);
+  background: linear-gradient(90deg, rgba(74,127,212,0.07) 0%, transparent 100%);
+}
+.flujo-card-header-icon {
+  width: 26px; height: 26px; border-radius: 7px;
+  background: rgba(74,127,212,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+.flujo-card-header-title {
+  font-size: 11px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--color-primary);
+}
+/* Overrides para .edp-text-content cuando tiene cards */
+.edp-text-content.rc-rendered { white-space: normal; font-size: unset; line-height: unset; }
 /* Cursos */
 .edp-cursos-grid { display: flex; flex-direction: column; gap: 8px; }
 .edp-curso-card {
@@ -3054,13 +3227,162 @@ function edpSwitchTab(tabId) {
   if (btn) btn.classList.add('active');
 }
 
+/* ===== Helpers de render visual ===== */
+function rcEscape(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function rcBullets(lines) {
+  if (!lines.length) return '';
+  const lis = lines.map(l => `<li>${rcEscape(l.replace(/^[-–—]\ */,'').trim())}</li>`).join('');
+  return `<ul class="rc-bullets">${lis}</ul>`;
+}
+function rcSectionMap() {
+  return [
+    { keys: ['propósito del cargo','proposito del cargo','misión','mision','propósito','proposito'], tipo:'proposito', icon:'🎯' },
+    { keys: ['responsabilidades principales','responsabilidades','funciones principales','funciones'], tipo:'resp', icon:'📋' },
+    { keys: ['relaciones clave','relaciones internas y externas','coordinación','coordinacion'], tipo:'neutral', icon:'🤝' },
+    { keys: ['competencias requeridas','competencias','habilidades'], tipo:'comp', icon:'⭐' },
+    { keys: ['formación y experiencia','formacion y experiencia','requisitos académicos','perfil académico','formación'], tipo:'form', icon:'🎓' },
+    { keys: ['kpis del cargo','kpi','indicadores clave','indicadores de desempeño'], tipo:'kpi', icon:'📊' },
+    { keys: ['documentos y sistemas','documentos','sistemas utilizados'], tipo:'doc', icon:'🗂️' },
+    { keys: ['objetivo','alcance','procedimientos','pasos'], tipo:'proposito', icon:'🎯' },
+  ];
+}
+function rcGetTipo(titulo) {
+  const t = titulo.toLowerCase();
+  for (const s of rcSectionMap()) {
+    if (s.keys.some(k => t.includes(k))) return { tipo: s.tipo, icon: s.icon };
+  }
+  return { tipo: 'neutral', icon: '📌' };
+}
+function rcRenderDescripcion(txt) {
+  const lines = txt.split('\n');
+  let html = '';
+  let secTitle = '', secTipo = 'neutral', secIcon = '📌', secLines = [];
+  function flushSection() {
+    if (!secTitle && !secLines.length) return;
+    const { tipo, icon } = secTitle ? rcGetTipo(secTitle) : { tipo: secTipo, icon: secIcon };
+    let bodyHtml = '';
+    const bullets = secLines.filter(l => /^[-–—]/.test(l.trim()));
+    const texts = secLines.filter(l => !/^[-–—]/.test(l.trim()) && l.trim());
+    if (bullets.length) bodyHtml += rcBullets(bullets);
+    if (texts.length) bodyHtml += `<p class="rc-text">${texts.map(rcEscape).join('<br>')}</p>`;
+    if (!bodyHtml) return;
+    html += `<div class="rc-section rc-tipo-${tipo}">
+      <div class="rc-section-header">
+        <div class="rc-section-icon">${icon}</div>
+        <div class="rc-section-title">${rcEscape(secTitle || 'Información')}</div>
+      </div>
+      <div class="rc-section-body">${bodyHtml}</div>
+    </div>`;
+  }
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) continue;
+    // Detectar títulos: **Texto** o líneas en mayúsculas/negrita
+    const titleMatch = line.match(/^\*\*(.+?)\*\*$/);
+    if (titleMatch) {
+      flushSection();
+      secTitle = titleMatch[1].replace(/^\*\*|\*\*$/g,'');
+      secLines = [];
+    } else {
+      secLines.push(raw);
+    }
+  }
+  flushSection();
+  return html || `<p class="rc-text">${rcEscape(txt)}</p>`;
+}
+function rcRenderManual(txt) {
+  const lines = txt.split('\n');
+  let html = '';
+  let secTitle = '', secTipo = 'neutral', secIcon = '📌', secLines = [];
+  function flushSection() {
+    if (!secTitle && !secLines.length) return;
+    const { tipo, icon } = secTitle ? rcGetTipo(secTitle) : { tipo: secTipo, icon: secIcon };
+    // Detectar si es sección de KPI → chips
+    const isKpi = secTitle.toLowerCase().includes('kpi') || secTitle.toLowerCase().includes('indicadores');
+    const isDoc = secTitle.toLowerCase().includes('document') || secTitle.toLowerCase().includes('sistemas');
+    let bodyHtml = '';
+    const bullets = secLines.filter(l => /^[-–—•]/.test(l.trim()));
+    const numbered = secLines.filter(l => /^\d+[.)]\ /.test(l.trim()));
+    const texts = secLines.filter(l => !/^[-–—•]/.test(l.trim()) && !/^\d+[.)]\ /.test(l.trim()) && l.trim());
+    if (isKpi && bullets.length) {
+      const chips = bullets.map(l => `<span class="rc-kpi-chip">📊 ${rcEscape(l.replace(/^[-–—•]\ */,'').trim())}</span>`).join('');
+      bodyHtml += `<div class="rc-kpi-wrap">${chips}</div>`;
+    } else if (isDoc && bullets.length) {
+      const chips = bullets.map(l => `<span class="rc-doc-chip">📄 ${rcEscape(l.replace(/^[-–—•]\ */,'').trim())}</span>`).join('');
+      bodyHtml += `<div class="rc-kpi-wrap">${chips}</div>`;
+    } else if (numbered.length) {
+      let stepN = 0;
+      const stepsHtml = numbered.map(l => {
+        stepN++;
+        const txt2 = l.replace(/^\d+[.)]\ */,'').trim();
+        // Puede tener sublinea descriptiva
+        return `<div class="rc-step-item"><div class="rc-step-num">${stepN}</div><div class="rc-step-body"><div class="rc-step-title">${rcEscape(txt2)}</div></div></div>`;
+      }).join('');
+      bodyHtml += stepsHtml;
+    } else if (bullets.length) {
+      bodyHtml += rcBullets(bullets);
+    }
+    if (texts.length) bodyHtml += `<p class="rc-text">${texts.map(rcEscape).join('<br>')}</p>`;
+    if (!bodyHtml) return;
+    html += `<div class="rc-section rc-tipo-${tipo}">
+      <div class="rc-section-header">
+        <div class="rc-section-icon">${icon}</div>
+        <div class="rc-section-title">${rcEscape(secTitle)}</div>
+      </div>
+      <div class="rc-section-body">${bodyHtml}</div>
+    </div>`;
+  }
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) continue;
+    // Títulos numerados: "1. OBJETIVO", "3.1 Subsección", "MANUAL DE PROCEDIMIENTO"
+    const numTitle = line.match(/^(\d+(?:\.\d+)?)\.\s+(.+)$/);
+    const boldTitle = line.match(/^\*\*(.+?)\*\*$/);
+    const capsTitle = line.match(/^([A-ZÀ-ÜÑ][A-ZÀ-ÜÑ \d&:/ÓÍÚÉÁÜ,-]{4,})$/);
+    if (numTitle) {
+      flushSection();
+      secTitle = numTitle[2].trim();
+      secLines = [];
+    } else if (boldTitle) {
+      flushSection();
+      secTitle = boldTitle[1];
+      secLines = [];
+    } else if (capsTitle && !line.startsWith('-')) {
+      flushSection();
+      secTitle = line;
+      secLines = [];
+    } else {
+      secLines.push(raw);
+    }
+  }
+  flushSection();
+  return html || `<p class="rc-text">${rcEscape(txt)}</p>`;
+}
+function rcRenderFlujo(html) {
+  // El flujo ya viene en HTML con clases flujo-*
+  // Envolverlo en una card container
+  if (!html) return '';
+  return `<div class="flujo-card-wrap">
+    <div class="flujo-card-header">
+      <div class="flujo-card-header-icon">🔄</div>
+      <div class="flujo-card-header-title">Diagrama de Flujo</div>
+    </div>
+    <div>${html}</div>
+  </div>`;
+}
+/* ===== Fin helpers ===== */
+
 function edpRenderAll() {
   const d = edpState.data;
   // Descripción
   const descTxt = document.getElementById('edp-desc-texto');
   const descEmp = document.getElementById('edp-desc-empty');
   if (d.descripcion) {
-    descTxt.textContent = d.descripcion; descTxt.style.display = 'block'; descEmp.style.display = 'none';
+    descTxt.innerHTML = rcRenderDescripcion(d.descripcion);
+    descTxt.classList.add('rc-rendered');
+    descTxt.style.display = 'block'; descEmp.style.display = 'none';
   } else {
     descTxt.style.display = 'none'; descEmp.style.display = 'block';
   }
@@ -3068,7 +3390,9 @@ function edpRenderAll() {
   const manTxt = document.getElementById('edp-manual-texto');
   const manEmp = document.getElementById('edp-manual-empty');
   if (d.manual) {
-    manTxt.textContent = d.manual; manTxt.style.display = 'block'; manEmp.style.display = 'none';
+    manTxt.innerHTML = rcRenderManual(d.manual);
+    manTxt.classList.add('rc-rendered');
+    manTxt.style.display = 'block'; manEmp.style.display = 'none';
   } else {
     manTxt.style.display = 'none'; manEmp.style.display = 'block';
   }
@@ -3076,7 +3400,9 @@ function edpRenderAll() {
   const fluTxt = document.getElementById('edp-flujo-texto');
   const fluEmp = document.getElementById('edp-flujo-empty');
   if (d.flujo) {
-    fluTxt.innerHTML = d.flujo; fluTxt.style.display = 'block'; fluEmp.style.display = 'none';
+    fluTxt.innerHTML = rcRenderFlujo(d.flujo);
+    fluTxt.classList.add('rc-rendered');
+    fluTxt.style.display = 'block'; fluEmp.style.display = 'none';
   } else {
     fluTxt.style.display = 'none'; fluEmp.style.display = 'block';
   }
