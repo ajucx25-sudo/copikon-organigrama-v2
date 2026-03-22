@@ -4025,40 +4025,113 @@ function edpPrint(campo) {
   const tipoLabels = { descripcion: 'Descripción del Cargo', manual: 'Manual de Procedimiento', flujo: 'Flujo de Procesos' };
   const tipoLabel = tipoLabels[campo] || campo;
 
-  // Generar HTML de contenido según tipo
-  let bodyHtml = '';
-  if (campo === 'flujo') {
-    // El flujo ya es HTML — usarlo directamente sin el wrapper card
-    bodyHtml = `<div style="font-family:inherit;">${contenido}</div>`;
-  } else if (campo === 'descripcion') {
-    bodyHtml = epoBuildFromText(contenido);
-  } else {
-    bodyHtml = epoBuildFromText(contenido);
-  }
+  const bodyHtml = campo === 'flujo'
+    ? epoRenderFlujo(contenido)
+    : epoBuildFromText(contenido);
 
-  const overlay = document.getElementById('edp-print-overlay');
-  overlay.innerHTML = `
-    <button class="epo-close" onclick="document.getElementById('edp-print-overlay').style.display='none'">✕ Cerrar</button>
-    <div class="epo-header">
-      <div class="epo-title-block">
-        <div class="epo-cargo">${rcEscape(cargo)}</div>
-        <div class="epo-gerencia">${rcEscape(gerencia)}</div>
-      </div>
-      <div class="epo-meta">
-        <div style="font-weight:700;color:#1a3a6b;margin-bottom:3px;">Copikon Venezuela</div>
-        <div>Impreso el ${fecha}</div>
-      </div>
+  const html = `<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${cargo} — ${tipoLabel}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #222;
+    padding: 32px 40px; max-width: 860px; margin: 0 auto; }
+  .epo-header { display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 16px; border-bottom: 3px solid #1a3a6b; margin-bottom: 20px; }
+  .epo-cargo { font-size: 22px; font-weight: 800; color: #1a3a6b; margin-bottom: 3px; }
+  .epo-gerencia { font-size: 11px; font-weight: 700; color: #6b7a99;
+    text-transform: uppercase; letter-spacing: 0.07em; }
+  .epo-meta { font-size: 11px; color: #6b7a99; text-align: right; }
+  .epo-meta strong { color: #1a3a6b; display: block; margin-bottom: 2px; font-size: 12px; }
+  .epo-tipo { font-size: 12px; font-weight: 800; color: #1a3a6b; text-transform: uppercase;
+    letter-spacing: 0.07em; margin-bottom: 18px; }
+  .epo-section { margin-bottom: 12px; border: 1px solid #dde3f0; border-radius: 8px; overflow: hidden; }
+  .epo-section-header { background: #eef2fb; padding: 8px 12px; font-size: 11px;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: #1a3a6b;
+    display: flex; align-items: center; gap: 7px; }
+  .epo-section-body { padding: 10px 14px; font-size: 12.5px; color: #333; line-height: 1.7; }
+  .epo-bullets { list-style: none; padding: 0; margin: 0; }
+  .epo-bullets li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 5px; font-size: 12.5px; }
+  .epo-bullets li::before { content: ''; width: 5px; height: 5px; border-radius: 50%;
+    background: #1a3a6b; flex-shrink: 0; margin-top: 7px; }
+  .epo-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .epo-chip { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px;
+    background: #eef2fb; color: #1a3a6b; border: 1px solid #c8d4f0; }
+  .epo-step { display: flex; align-items: flex-start; gap: 10px;
+    padding: 6px 0; border-bottom: 1px solid #eee; }
+  .epo-step:last-child { border-bottom: none; }
+  .epo-step-num { min-width: 22px; height: 22px; border-radius: 5px;
+    background: #1a3a6b; color: #fff; font-size: 10px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top:1px; }
+  .epo-step-title { font-size: 12.5px; font-weight: 600; color: #1a3a6b; }
+  /* Flujo */
+  .flujo-section-title { font-size: 10.5px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.07em; color: #1a3a6b; background: #eef2fb;
+    padding: 5px 10px; border-radius: 5px; margin: 10px 0 4px; display: block; }
+  .flujo-step { display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 10px; border-bottom: 1px solid #eee; }
+  .flujo-step:last-child { border-bottom: none; }
+  .flujo-step-num { min-width: 24px; height: 24px; border-radius: 6px;
+    background: #1a3a6b; color: #fff; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .flujo-step-title { font-size: 12.5px; font-weight: 700; color: #1a3a6b; margin-bottom: 2px; }
+  .flujo-step-desc { font-size: 11.5px; color: #555; line-height: 1.5; }
+  .flujo-arrow { text-align: center; color: #aaa; font-size: 13px; padding: 2px 0; }
+  .flujo-badge { display: inline-flex; align-items: center; font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px; margin: 3px 3px 0 0; }
+  .flujo-badge.responsable { background: #dce9ff; color: #1a3a6b; }
+  .flujo-badge.entregable  { background: #d6f0e3; color: #1e7a47; }
+  .flujo-badge.sistema     { background: #fef3d6; color: #a06000; }
+  .flujo-card-wrap { border: 1px solid #dde3f0; border-radius: 8px; overflow: hidden; }
+  .flujo-card-header { background: #eef2fb; padding: 8px 12px; display:flex; gap:8px; align-items:center;
+    font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: #1a3a6b; }
+  .epo-footer { margin-top: 28px; padding-top: 12px; border-top: 1px solid #dde3f0;
+    font-size: 10.5px; color: #9aa3b5; display: flex; justify-content: space-between; }
+  @media print {
+    body { padding: 20px 24px; }
+    @page { margin: 15mm 12mm; }
+  }
+</style>
+</head>
+<body>
+  <div class="epo-header">
+    <div>
+      <div class="epo-cargo">${cargo}</div>
+      <div class="epo-gerencia">${gerencia}</div>
     </div>
-    <div class="epo-tipo">${rcEscape(tipoLabel)}</div>
-    <div class="epo-body">${bodyHtml}</div>
-    <div class="epo-footer">
-      <span>Copikon Venezuela · Organigrama Corporativo 2026</span>
-      <span>${rcEscape(cargo)} · ${rcEscape(gerencia)}</span>
+    <div class="epo-meta">
+      <strong>Copikon Venezuela</strong>
+      Impreso el ${fecha}
     </div>
-  `;
-  overlay.style.display = 'block';
-  // Dar tiempo al DOM y luego imprimir
-  setTimeout(() => window.print(), 200);
+  </div>
+  <div class="epo-tipo">${tipoLabel}</div>
+  <div class="epo-body">${bodyHtml}</div>
+  <div class="epo-footer">
+    <span>Copikon Venezuela · Organigrama Corporativo 2026</span>
+    <span>${cargo} · ${gerencia}</span>
+  </div>
+  <script>window.onload = function() { window.print(); }<\/script>
+</body>
+</html>`;
+
+  const win = window.open('', '_blank', 'width=900,height=700');
+  if (!win) {
+    alert('Por favor permite las ventanas emergentes para poder imprimir.');
+    return;
+  }
+  win.document.write(html);
+  win.document.close();
+}
+
+function epoRenderFlujo(html) {
+  // Retornar el HTML del flujo directamente (ya tiene clases flujo-*)
+  return `<div class="flujo-card-wrap">
+    <div class="flujo-card-header">🔄 Diagrama de Flujo</div>
+    <div>${html}</div>
+  </div>`;
 }
 
 function epoBuildFromText(txt) {
