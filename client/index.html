@@ -1356,11 +1356,36 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
     <button class="header-btn" id="export-html-btn" title="Compartir como link">🔗</button>
     <!-- Directorio -->
     <button class="header-btn" id="directorio-btn" title="Directorio de empleados">👥</button>
+    <!-- Mi Portal -->
+    <button class="header-btn" id="mi-portal-btn" title="Mi Portal — doble click en tu cargo"
+      style="background:var(--color-primary);color:#fff;border-color:var(--color-primary);font-size:11px;font-weight:700;width:auto;padding:0 10px;gap:4px;"
+      onclick="document.getElementById('mi-portal-hint').style.display = document.getElementById('mi-portal-hint').style.display === 'none' ? 'flex' : 'none'">
+      📊 Mi Portal
+    </button>
     <!-- Print -->
     <button class="header-btn header-btn-print" id="print-btn" title="Imprimir organigrama">🖨️</button>
     <!-- Dark mode -->
     <button class="header-btn" data-theme-toggle title="Cambiar tema">🌙</button>
   </header>
+
+  <!-- ===== HINT MI PORTAL ===== -->
+  <div id="mi-portal-hint" style="display:none;position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:600;
+    background:var(--color-primary);color:#fff;border-radius:14px;padding:18px 24px;
+    box-shadow:0 8px 32px rgba(26,58,107,0.35);max-width:360px;width:90%;flex-direction:column;gap:10px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:15px;font-weight:800;">📊 Cómo acceder a Mi Portal</span>
+      <button onclick="this.closest('#mi-portal-hint').style.display='none'"
+        style="background:rgba(255,255,255,0.2);border:none;color:#fff;border-radius:50%;width:26px;height:26px;cursor:pointer;font-size:14px;">✕</button>
+    </div>
+    <div style="font-size:13px;line-height:1.6;opacity:0.92;">
+      <strong>1.</strong> Busca tu cargo en el organigrama<br>
+      <strong>2.</strong> Haz <strong>doble click</strong> en tu nodo<br>
+      <strong>3.</strong> Ve a la pestaña <strong>📊 Mi Portal</strong>
+    </div>
+    <div style="font-size:11px;opacity:0.7;border-top:1px solid rgba(255,255,255,0.2);padding-top:8px;">
+      🔍 Usa el buscador arriba para encontrar tu cargo rápido
+    </div>
+  </div>
 
   <!-- ===== PANEL DIRECTORIO ===== -->
   <div id="directorio-panel" style="
