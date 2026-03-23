@@ -745,12 +745,25 @@ print('ok')
 
 
   // ── AUTH PORTAL DEL EMPLEADO ──────────────────────
-  const PORTAL_USERS_FILE = path.join(process.cwd(), "portal-users.json");
+  // Busca portal-users.json en varias ubicaciones posibles
+  const PORTAL_USERS_FILE = (() => {
+    const candidates = [
+      path.join(process.cwd(), "portal-users.json"),
+      path.join(__dirname, "..", "portal-users.json"),
+      path.join(__dirname, "portal-users.json"),
+    ];
+    for (const c of candidates) { if (fs.existsSync(c)) return c; }
+    return candidates[0]; // fallback aunque no exista aún
+  })();
   function loadPortalUsers(): Record<string, any> {
-    try { return JSON.parse(fs.readFileSync(PORTAL_USERS_FILE,"utf-8")); } catch { return {}; }
+    try { return JSON.parse(fs.readFileSync(PORTAL_USERS_FILE,"utf-8")); }
+    catch {
+      // Fallback hard-coded: usuario admin por defecto
+      return { admin: { username:"admin", password:"copikon2026", cargoId:"ceo", cargo:"CEO", gerencia:"root", nombre:"Administrador", role:"admin" } };
+    }
   }
   function savePortalUsers(d: Record<string, any>) {
-    fs.writeFileSync(PORTAL_USERS_FILE, JSON.stringify(d, null, 2), "utf-8");
+    try { fs.writeFileSync(PORTAL_USERS_FILE, JSON.stringify(d, null, 2), "utf-8"); } catch {}
   }
 
   // Login del portal
