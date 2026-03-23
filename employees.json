@@ -3625,5 +3625,173 @@
     "perfilRol": {
       "descripcion": ""
     }
+  },
+  "gerencia-tecnica-de-proyectos": {
+    "id": "gerencia-tecnica-de-proyectos",
+    "cargo": "Gerencia Técnica de Proyectos",
+    "gerencia": "proyectos",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerencia Técnica de Proyectos**\n\n**Propósito del cargo**\nDirigir y coordinar la ejecución de los proyectos técnicos de Copikon Venezuela, liderando las áreas de generación eléctrica, pantallas outdoor, CCTV y redes, desde la ingeniería y diseño hasta la instalación y entrega al cliente, garantizando calidad, cumplimiento de plazos y satisfacción del cliente.\n\n**Responsabilidades principales**\n- Diseñar y ejecutar la estrategia de operaciones de proyectos técnicos de la empresa.\n- Supervisar a los coordinadores de proyectos de Generación Eléctrica (BAIFA) y de Pantallas Outdoor/CCTV/Redes.\n- Coordinar con el Ingeniero de Diseño la elaboración de planos, cálculos y BOM de cada proyecto.\n- Aprobar las propuestas técnicas y presupuestos de proyectos antes de su presentación al cliente.\n- Garantizar el cumplimiento de los estándares de calidad técnica e instalación en todos los proyectos.\n- Gestionar los recursos humanos y materiales necesarios para la ejecución de proyectos.\n- Coordinar con las áreas de Comercial y Compras el suministro oportuno de equipos y materiales.\n- Presentar reportes de avance y estado de proyectos a la Dirección General.\n- Gestionar la relación técnica con proveedores y fabricantes de las líneas de producto (BAIFA, pantallas, CCTV, redes).\n\n**Competencias requeridas**\n- Conocimiento técnico profundo en generación eléctrica, sistemas de pantallas outdoor, CCTV y redes\n- Liderazgo de equipos técnicos multidisciplinarios\n- Gestión de proyectos de ingeniería (PMI/PMBOK o metodologías similares)\n- Capacidad de elaboración y revisión de propuestas técnicas y BOM\n- Orientación a la calidad y resolución de problemas técnicos complejos\n- Habilidades de comunicación con clientes y proveedores técnicos\n\n**Formación y experiencia**\n- Licenciatura o Ingeniería en Electricidad, Electrónica, Telecomunicaciones o carrera afín\n- Mínimo 6 años de experiencia en gestión de proyectos técnicos de instalación\n- Certificaciones en gestión de proyectos (PMP, Prince2 o similar, deseable)",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "ingeniero-de-diseno-arquitectos-calculos-planos-bom": {
+    "id": "ingeniero-de-diseno-arquitectos-calculos-planos-bom",
+    "cargo": "Ingeniero de Diseño / Arquitectos (Cálculos, Planos, BOM)",
+    "gerencia": "proyectos",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Ingeniero de Diseño / Arquitectos (Cálculos, Planos, BOM)**\n\n**Propósito del cargo**\nElaborar los diseños técnicos, cálculos de ingeniería, planos y listas de materiales (BOM) requeridos para la planificación y ejecución de los proyectos técnicos de Copikon Venezuela, garantizando que las soluciones propuestas sean viables, seguras y cumplan con las especificaciones del cliente y las normas técnicas aplicables.\n\n**Responsabilidades principales**\n- Elaborar cálculos técnicos de ingeniería para proyectos de generación eléctrica, instalaciones eléctricas, CCTV, redes y pantallas outdoor.\n- Diseñar y producir planos técnicos (eléctricos, civiles, de instalación) para cada proyecto.\n- Preparar las listas de materiales (BOM) detalladas necesarias para la ejecución de cada proyecto.\n- Visitar los sitios de instalación para levantamiento de información y diagnóstico técnico.\n- Apoyar al equipo comercial con la elaboración de propuestas técnicas y memorias descriptivas.\n- Revisar y validar que los materiales y equipos adquiridos correspondan al diseño aprobado.\n- Coordinar con los coordinadores de proyectos la transferencia del diseño al equipo de instalación.\n- Documentar los proyectos ejecutados con planos as-built y memorias de cálculo.\n\n**Competencias requeridas**\n- Dominio de herramientas de diseño (AutoCAD, ETAP, HelioScope u otras según especialidad)\n- Conocimiento de normas eléctricas venezolanas (COVENIN) y estándares internacionales\n- Capacidad de elaborar BOM precisas y memorias descriptivas de proyectos\n- Atención al detalle y rigor técnico en cálculos y diseños\n- Habilidad para trabajar con múltiples proyectos simultáneamente\n\n**Formación y experiencia**\n- Ingeniería Eléctrica, Electrónica, Civil o Arquitectura según especialidad\n- Mínimo 3 años de experiencia en diseño técnico de instalaciones\n- Manejo avanzado de AutoCAD y herramientas de cálculo eléctrico",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-proyectos-generacion-electrica-baifa": {
+    "id": "coordinador-proyectos-generacion-electrica-baifa",
+    "cargo": "Coordinador Proyectos Generación Eléctrica BAIFA",
+    "gerencia": "proyectos",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador de Proyectos — Generación Eléctrica BAIFA**\n\n**Propósito del cargo**\nCoordinar y supervisar la ejecución de los proyectos de generación eléctrica de la línea BAIFA (generadores, UPS, plantas eléctricas), garantizando la correcta instalación, puesta en marcha y entrega de los equipos al cliente en tiempo, forma y con los estándares de calidad requeridos.\n\n**Responsabilidades principales**\n- Planificar y coordinar la ejecución de los proyectos de instalación de generadores y equipos BAIFA.\n- Supervisar al equipo de Técnicos Instaladores Senior y Junior asignados a cada proyecto.\n- Coordinar con el Ingeniero de Diseño los planos, cálculos y BOM de cada proyecto de generación.\n- Gestionar el cronograma de cada proyecto garantizando el cumplimiento de los plazos acordados con el cliente.\n- Supervisar las pruebas de arranque, carga y puesta en marcha de los equipos instalados.\n- Coordinar con Compras el suministro oportuno de materiales, equipos y repuestos BAIFA.\n- Atender y resolver incidencias técnicas durante la instalación y el período de garantía.\n- Elaborar los reportes de avance y actas de entrega de cada proyecto.\n- Capacitar al cliente en la operación y mantenimiento básico de los equipos instalados.\n\n**Competencias requeridas**\n- Conocimiento técnico de generadores eléctricos, UPS y sistemas de generación BAIFA\n- Capacidad de supervisión de equipos de instalación en campo\n- Gestión de proyectos técnicos y cumplimiento de cronogramas\n- Lectura e interpretación de planos eléctricos y diagramas unifilares\n- Orientación al cliente y resolución de problemas técnicos en campo\n\n**Formación y experiencia**\n- Ingeniería Eléctrica, Electrónica o Técnico Superior en Electricidad\n- Mínimo 3 años de experiencia en instalación y mantenimiento de generadores eléctricos\n- Conocimiento de la línea BAIFA o equipos similares de generación",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "coordinador-proyectos-pantallas-outdoor-cctv-redes": {
+    "id": "coordinador-proyectos-pantallas-outdoor-cctv-redes",
+    "cargo": "Coordinador Proyectos Pantallas Outdoor, CCTV, Redes",
+    "gerencia": "proyectos",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Coordinador de Proyectos — Pantallas Outdoor, CCTV y Redes**\n\n**Propósito del cargo**\nCoordinar y supervisar la ejecución de los proyectos de instalación de pantallas LED outdoor, sistemas de videovigilancia CCTV y redes de comunicación, garantizando la correcta instalación, configuración y entrega al cliente con los estándares de calidad y los plazos acordados.\n\n**Responsabilidades principales**\n- Planificar y coordinar la ejecución de proyectos de instalación de pantallas outdoor LED, CCTV y redes.\n- Supervisar al equipo de Técnicos Instaladores Senior y Junior en las actividades de campo.\n- Coordinar con el Ingeniero de Diseño los planos, esquemas de red y BOM de cada proyecto.\n- Gestionar el cronograma de instalación y garantizar el cumplimiento de plazos con el cliente.\n- Supervisar la configuración, pruebas y puesta en marcha de pantallas LED, cámaras y sistemas de red.\n- Coordinar con Compras el suministro oportuno de equipos, materiales y cableado estructurado.\n- Gestionar la relación técnica con el cliente durante la ejecución y el período post-entrega.\n- Elaborar actas de entrega, manuales de usuario y reportes de proyectos ejecutados.\n- Resolver incidencias técnicas en campo durante la instalación y la garantía.\n\n**Competencias requeridas**\n- Conocimiento técnico en pantallas LED outdoor, sistemas CCTV (IP y analógico) y redes LAN/WAN\n- Capacidad de supervisión de equipos de instalación en campo\n- Configuración de switches, NVR/DVR, cámaras IP y sistemas de monitoreo\n- Lectura de planos eléctricos y esquemas de cableado estructurado\n- Gestión de proyectos y orientación al cliente\n\n**Formación y experiencia**\n- Ingeniería en Telecomunicaciones, Electrónica o Sistemas, o Técnico Superior afín\n- Mínimo 3 años de experiencia en instalación de CCTV, redes o pantallas LED\n- Certificaciones en redes (CCNA o equivalente, deseable)",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "tecnico-instaladores-senior": {
+    "id": "tecnico-instaladores-senior",
+    "cargo": "Técnico Instalador Senior",
+    "gerencia": "proyectos",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Técnico Instalador Senior**\n\n**Propósito del cargo**\nEjecutar con autonomía las instalaciones técnicas de los proyectos de Copikon Venezuela (generadores BAIFA, pantallas outdoor, CCTV o redes), liderando al técnico junior durante las actividades de campo y garantizando la calidad técnica y la seguridad de las instalaciones.\n\n**Responsabilidades principales**\n- Ejecutar la instalación, configuración y puesta en marcha de equipos técnicos según el proyecto asignado.\n- Liderar y orientar al Técnico Instalador Junior durante las actividades de campo.\n- Interpretar planos eléctricos, esquemas de instalación y BOM del proyecto.\n- Garantizar que la instalación cumpla con las normas de seguridad eléctrica y los estándares de calidad de Copikon.\n- Realizar pruebas de funcionamiento y diagnóstico de fallas durante la instalación.\n- Reportar al Coordinador de Proyecto el avance diario y cualquier novedad técnica o de seguridad.\n- Apoyar en la capacitación básica del cliente sobre el uso de los equipos instalados.\n- Mantener en buen estado las herramientas y equipos de trabajo asignados.\n\n**Competencias requeridas**\n- Dominio técnico en la especialidad del proyecto (electricidad, redes, CCTV o pantallas LED)\n- Capacidad de liderazgo de técnicos junior en campo\n- Interpretación de planos y esquemas técnicos\n- Conocimiento de normas de seguridad eléctrica y trabajo en altura\n- Diagnóstico y resolución de fallas técnicas\n\n**Formación y experiencia**\n- Técnico Superior en Electricidad, Electrónica, Telecomunicaciones o carrera afín\n- Mínimo 3 años de experiencia en instalaciones técnicas\n- Certificación en trabajo en altura o seguridad eléctrica (deseable)",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "tecnico-instaladores-junior": {
+    "id": "tecnico-instaladores-junior",
+    "cargo": "Técnico Instalador Junior",
+    "gerencia": "proyectos",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Técnico Instalador Junior**\n\n**Propósito del cargo**\nApoyar la ejecución de las instalaciones técnicas de los proyectos de Copikon Venezuela bajo la supervisión del Técnico Senior, realizando actividades de instalación, cableado, montaje y pruebas básicas con responsabilidad y orientación al aprendizaje continuo.\n\n**Responsabilidades principales**\n- Ejecutar actividades de instalación, cableado, montaje y fijación de equipos bajo la dirección del Técnico Senior.\n- Preparar materiales, herramientas y equipos necesarios para cada jornada de trabajo.\n- Apoyar en las pruebas básicas de funcionamiento de los equipos instalados.\n- Mantener el orden y la limpieza en el área de trabajo y al finalizar cada instalación.\n- Seguir estrictamente las normas de seguridad indicadas por el Técnico Senior y el Coordinador.\n- Reportar al Técnico Senior cualquier novedad, daño o dificultad encontrada durante la instalación.\n- Custodiar las herramientas y materiales asignados para cada proyecto.\n- Desarrollar sus capacidades técnicas bajo la mentoría del Técnico Senior.\n\n**Competencias requeridas**\n- Conocimientos básicos en electricidad, electrónica o telecomunicaciones según especialidad\n- Disposición al aprendizaje y trabajo en campo\n- Responsabilidad en el manejo de herramientas y materiales\n- Capacidad de trabajo en equipo y seguimiento de instrucciones\n- Resistencia física para trabajo en campo y en altura\n\n**Formación y experiencia**\n- Técnico Superior o estudiante avanzado en Electricidad, Electrónica o Telecomunicaciones\n- Mínimo 1 año de experiencia en instalaciones técnicas o prácticas relacionadas",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
   }
 }
