@@ -1,0 +1,618 @@
+{
+  "name": "Junta Directiva",
+  "gerencia": "root",
+  "children": [
+    {
+      "name": "CEO",
+      "gerencia": "root",
+      "children": [
+        {
+          "name": "Auditor Externo",
+          "gerencia": "staff"
+        },
+        {
+          "name": "Asesor Externo",
+          "gerencia": "staff"
+        },
+        {
+          "name": "Gerencia de Comercialización",
+          "gerencia": "comercializacion",
+          "children": [
+            {
+              "name": "Coordinador Comercial Mayor",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista Comercial Mayor Lara-Port-Yar",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Mayor Lara-Port-Yar",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Mayor Aragua-Carabobo",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Mayor Aragua-Carabobo",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Caracas",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Mayor Caracas",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Comercial Proyectos",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista Comercial Proyectos Lara-Port-Yar",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Técnico Proyectos Lara-Port-Yar",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Proyectos Aragua-Carabobo",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Técnico Proyectos Aragua-Carabobo",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Proyectos Caracas",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Tecnico Proyectos Caracas",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Comercial E-commerce",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista Mercado Libre/Web/IG/TikTok/Market Place",
+                  "gerencia": "comercializacion"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador de Marketing",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista Digital",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Analista de Contenidos",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Disenador Grafico",
+                  "gerencia": "comercializacion"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador de Branding",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista Branding Lara-Port-Yar",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Analista Branding Aragua-Carabobo",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Analista Branding Caracas",
+                  "gerencia": "comercializacion"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador de Atención al Cliente",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista ATC Lara-Port-Yar (Pre-Venta / Post-Venta)",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Analista ATC Aragua-Carabobo (Pre-Venta / Post-Venta)",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Analista ATC Caracas (Pre-Venta / Post-Venta)",
+                  "gerencia": "comercializacion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gerencia de Operaciones",
+          "gerencia": "operaciones",
+          "children": [
+            {
+              "name": "Coordinador de Logística",
+              "gerencia": "operaciones",
+              "children": [
+                {
+                  "name": "Analista Logística Internacional",
+                  "gerencia": "operaciones"
+                },
+                {
+                  "name": "Analista Logística Nacional",
+                  "gerencia": "operaciones"
+                },
+                {
+                  "name": "Analista Gestión de Flotas y Equipos",
+                  "gerencia": "operaciones"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Almacen Centralizado (Analisis de Inventario y Gestion de Almacen)",
+              "gerencia": "operaciones",
+              "children": [
+                {
+                  "name": "Analista de Almacen",
+                  "gerencia": "operaciones"
+                },
+                {
+                  "name": "Almacenista",
+                  "gerencia": "operaciones"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Estandarización y Gestión de Procesos",
+              "gerencia": "operaciones",
+              "children": [
+                {
+                  "name": "Analista Estandarización Lara-Port-Yar",
+                  "gerencia": "operaciones"
+                },
+                {
+                  "name": "Analista Estandarización Aragua-Carabobo",
+                  "gerencia": "operaciones"
+                },
+                {
+                  "name": "Analista Estandarización Caracas",
+                  "gerencia": "operaciones"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Infraestructura y Mantenimiento",
+              "gerencia": "operaciones",
+              "children": [
+                {
+                  "name": "Analista Infraestructura Aragua-Carabobo",
+                  "gerencia": "operaciones"
+                },
+                {
+                  "name": "Analista Infraestructura Lara-Port-Yar",
+                  "gerencia": "operaciones"
+                },
+                {
+                  "name": "Analista Infraestructura Caracas",
+                  "gerencia": "operaciones"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gerencia de Administracion",
+          "gerencia": "finanzas",
+          "children": [
+            {
+              "name": "Coordinador de Contabilidad",
+              "gerencia": "finanzas",
+              "children": [
+                {
+                  "name": "Analista de Tributos",
+                  "gerencia": "finanzas"
+                },
+                {
+                  "name": "Analista Cuentas por Cobrar",
+                  "gerencia": "finanzas"
+                },
+                {
+                  "name": "Analista Cuentas Por Pagar",
+                  "gerencia": "finanzas"
+                },
+                {
+                  "name": "Analista de Nomina",
+                  "gerencia": "finanzas"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Análisis y Planificación Financiera",
+              "gerencia": "finanzas",
+              "children": [
+                {
+                  "name": "Analista Financiero",
+                  "gerencia": "finanzas"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador de Tesorería",
+              "gerencia": "finanzas",
+              "children": [
+                {
+                  "name": "Analista Especialista de Deuda",
+                  "gerencia": "finanzas"
+                },
+                {
+                  "name": "Analista de Tesoreria",
+                  "gerencia": "finanzas"
+                },
+                {
+                  "name": "Analista de Riesgo",
+                  "gerencia": "finanzas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gerencia de Compras",
+          "gerencia": "compras",
+          "children": [
+            {
+              "name": "Coordinador de Compras Stock",
+              "gerencia": "compras",
+              "children": [
+                {
+                  "name": "Analista Compras Nacionales",
+                  "gerencia": "compras"
+                },
+                {
+                  "name": "Analista Compras Internacionales (Norte América)",
+                  "gerencia": "compras"
+                },
+                {
+                  "name": "Analista Compras Internacionales (Asia)",
+                  "gerencia": "compras"
+                }
+              ]
+            },
+            {
+              "name": "Coordinadoer Compras Proyectos/Servicios/Mantenimiento",
+              "gerencia": "compras",
+              "children": [
+                {
+                  "name": "Analista PSM",
+                  "gerencia": "compras"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gerencia Tiendas Retail Copikon",
+          "gerencia": "retail",
+          "children": [
+            {
+              "name": "Gerencia Tienda Región 1 (Lara-Port-Yar)",
+              "gerencia": "retail",
+              "children": [
+                {
+                  "name": "Gerente Tienda Copikon Zona 3 Lara",
+                  "gerencia": "retail",
+                  "children": [
+                    {
+                      "name": "Auxiliar Administrativo (Z3)",
+                      "gerencia": "retail",
+                      "children": [
+                        {
+                          "name": "Analista Caja",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mantenimiento-Infraestructura-Seguridad",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mensajero",
+                          "gerencia": "retail"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Analista Inventario Almacén Retail (Z3)",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Coordinador Comercial Tienda Retail (Z3)",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Vendedores Integrales (Z3)",
+                      "gerencia": "retail"
+                    }
+                  ]
+                },
+                {
+                  "name": "Gerente Tienda Copikon Atrium Lara",
+                  "gerencia": "retail",
+                  "children": [
+                    {
+                      "name": "Auxiliar Administrativo (Atrium)",
+                      "gerencia": "retail",
+                      "children": [
+                        {
+                          "name": "Analista Caja",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mantenimiento-Infraestructura-Seguridad",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mensajero",
+                          "gerencia": "retail"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Analista Inventario Almacén Retail (Atrium)",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Coordinador Comercial Tienda Retail (Atrium)",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Vendedores Integrales (Atrium)",
+                      "gerencia": "retail"
+                    }
+                  ]
+                },
+                {
+                  "name": "Gerente Tienda Copikon Av Venezuela",
+                  "gerencia": "retail",
+                  "children": [
+                    {
+                      "name": "Auxiliar Administrativo (Av Venezuela)",
+                      "gerencia": "retail",
+                      "children": [
+                        {
+                          "name": "Analista Caja",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mantenimiento-Infraestructura-Seguridad",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mensajero",
+                          "gerencia": "retail"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Analista Inventario Almacén Retail",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Coordinador Comercial Tienda Retail",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Vendedores Integrales",
+                      "gerencia": "retail"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Gerencia Tienda Región 3 (Caracas)",
+              "gerencia": "retail",
+              "children": [
+                {
+                  "name": "Auxiliar Administrativo (Caracas)",
+                  "gerencia": "retail",
+                  "children": [
+                    {
+                      "name": "Analista Caja",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Mantenimiento-Infraestructura-Seguridad",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Mensajero",
+                      "gerencia": "retail"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Inventario Almacén Retail (Caracas)",
+                  "gerencia": "retail"
+                },
+                {
+                  "name": "Coord. Comercial Tienda Retail (Caracas)",
+                  "gerencia": "retail"
+                },
+                {
+                  "name": "Vendedores Integrales (Caracas)",
+                  "gerencia": "retail"
+                }
+              ]
+            },
+            {
+              "name": "Gerencia Tienda Region 2 (Aragua-Carabobo)",
+              "gerencia": "retail",
+              "children": [
+                {
+                  "name": "Gerente Tienda Copikon Valencia",
+                  "gerencia": "retail",
+                  "children": [
+                    {
+                      "name": "Auxiliar Administrativo Valencia",
+                      "gerencia": "retail",
+                      "children": [
+                        {
+                          "name": "Analista Caja",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mantenimiento-Infraestructura-Seguridad",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mensajero",
+                          "gerencia": "retail"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Analista Inventario Almacén Retail",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Coordinador Comercial Tienda Retail",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Vendedores Integrales",
+                      "gerencia": "retail"
+                    }
+                  ]
+                },
+                {
+                  "name": "Gerente Tienda Copikon  Maracay",
+                  "gerencia": "retail",
+                  "children": [
+                    {
+                      "name": "Auxiliar Administrativo Maracay",
+                      "gerencia": "retail",
+                      "children": [
+                        {
+                          "name": "Analista Caja",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mantenimiento-Infraestructura-Seguridad",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mensajero",
+                          "gerencia": "retail"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Analista Inventario Almacén Retail",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Coordinador Comercial Tienda Retail",
+                      "gerencia": "retail"
+                    },
+                    {
+                      "name": "Vendedores Integrales",
+                      "gerencia": "retail"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gerencia IT",
+          "gerencia": "it",
+          "children": [
+            {
+              "name": "Coordinador IT",
+              "gerencia": "it",
+              "children": [
+                {
+                  "name": "Analista Redes, Equipos,",
+                  "gerencia": "it"
+                },
+                {
+                  "name": "Analista Programador ERP, Software, Aplicaciones",
+                  "gerencia": "it"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gerencia Técnica de Proyectos",
+          "gerencia": "proyectos",
+          "children": [
+            {
+              "name": "Ingeniero de Diseno / Arquitectos (Calculos/Planos/BOM)",
+              "gerencia": "proyectos"
+            },
+            {
+              "name": "Coordinador Proyectos Generacion Electrica Baifa",
+              "gerencia": "proyectos",
+              "children": [
+                {
+                  "name": "Tecnico Instaladores Senior",
+                  "gerencia": "proyectos"
+                },
+                {
+                  "name": "Tecnico Instaladores Junior",
+                  "gerencia": "proyectos"
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Proyectos Pantallas Outdoor, CCTV, Redes",
+              "gerencia": "proyectos",
+              "children": [
+                {
+                  "name": "Tecnico Instaladores Senior",
+                  "gerencia": "proyectos"
+                },
+                {
+                  "name": "Tecnico Instaladores Junior",
+                  "gerencia": "proyectos"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
