@@ -730,6 +730,19 @@ print('ok')
     });
   })();
 
+
+  // ── Grupos de WhatsApp ────────────────────────────────
+  const WA_GROUPS_FILE = path.join(__dirname, "..", "wa-groups.json");
+  function loadWaGroups(): Record<string,string> {
+    try { return JSON.parse(fs.readFileSync(WA_GROUPS_FILE,"utf-8")); } catch { return {}; }
+  }
+  app.get("/api/wa-groups", (_req, res) => res.json(loadWaGroups()));
+  app.post("/api/wa-groups", (req, res) => {
+    const data = req.body || {};
+    fs.writeFileSync(WA_GROUPS_FILE, JSON.stringify(data, null, 2), "utf-8");
+    res.json({ ok: true });
+  });
+
   return server;
 }
 
