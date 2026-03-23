@@ -2755,19 +2755,28 @@ async function adminCargarUsuarios() {
     const users = await res.json();
     const el = document.getElementById('au-list');
     if (!users.length) { el.innerHTML = '<div style="font-style:italic;">No hay usuarios registrados.</div>'; return; }
-    el.innerHTML = `<table style="width:100%;font-size:11.5px;border-collapse:collapse;">
-      <tr style="font-weight:700;border-bottom:1px solid var(--border);">
-        <td style="padding:5px 4px;">Usuario</td>
-        <td>Nombre</td>
-        <td>Cargo</td>
-        <td></td>
+    const roleLabel = r => r==='admin' ? '🔴 Admin' : r==='editor' ? '✏️ Editor' : '👤 Empleado';
+    const gerColor = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
+    el.innerHTML = `<table style="width:100%;font-size:11px;border-collapse:collapse;">
+      <tr style="font-weight:700;border-bottom:2px solid var(--border);color:var(--text-muted);text-transform:uppercase;font-size:10px;letter-spacing:.04em;">
+        <td style="padding:6px 4px;">Usuario</td>
+        <td style="padding:6px 4px;">Nombre</td>
+        <td style="padding:6px 4px;">Cargo</td>
+        <td style="padding:6px 4px;">Gerencia</td>
+        <td style="padding:6px 4px;">Rol</td>
+        <td style="padding:6px 4px;"></td>
       </tr>
-      ${users.map(u => `<tr style="border-bottom:1px solid var(--border);">
-        <td style="padding:5px 4px;font-weight:700;">${u.username}</td>
-        <td>${u.nombre||'-'}</td>
-        <td style="color:var(--text-muted);">${u.cargo||u.cargoId}</td>
-        <td><button onclick="adminEliminar('${u.username}')" style="font-size:10px;background:none;border:none;color:#dd4444;cursor:pointer;">✕</button></td>
-      </tr>`).join('')}
+      ${users.map(u => {
+        const gc = gerColor[u.gerencia] || '#888';
+        return `<tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:5px 4px;font-weight:700;">${u.username}</td>
+          <td style="padding:5px 4px;">${u.nombre||'-'}</td>
+          <td style="padding:5px 4px;color:var(--text-muted);">${u.cargo||u.cargoId}</td>
+          <td style="padding:5px 4px;"><span style="display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:700;color:#fff;background:${gc};">${u.gerencia||'-'}</span></td>
+          <td style="padding:5px 4px;">${roleLabel(u.role)}</td>
+          <td style="padding:5px 4px;"><button onclick="adminEliminar('${u.username}')" style="font-size:11px;background:none;border:none;color:#dd4444;cursor:pointer;">✕</button></td>
+        </tr>`;
+      }).join('')}
     </table>`;
   } catch { document.getElementById('au-list').textContent = 'Error al cargar.'; }
 }
@@ -2781,6 +2790,7 @@ async function adminCrearUsuario() {
     cargoId:  document.getElementById('au-cargoid').value.trim(),
     cargo:    document.getElementById('au-cargo').value.trim(),
     gerencia: document.getElementById('au-gerencia').value.trim(),
+    role:     document.getElementById('au-role').value,
   };
   const msg = document.getElementById('au-msg');
   if (!u.username || !u.password || !u.cargoId) { msg.style.display='block'; msg.style.color='#dd4444'; msg.textContent='Faltan campos obligatorios'; return; }
@@ -2792,6 +2802,7 @@ async function adminCrearUsuario() {
     if (!res.ok) throw new Error(d.error);
     msg.style.display='block'; msg.style.color='#2bbfae'; msg.textContent='✔ Usuario creado: ' + u.username;
     ['au-username','au-password','au-nombre','au-cargoid','au-cargo','au-gerencia'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
+    const roleEl=document.getElementById('au-role'); if(roleEl) roleEl.value='empleado';
     await adminCargarUsuarios();
   } catch(e) { msg.style.display='block'; msg.style.color='#dd4444'; msg.textContent='Error: '+e.message; }
 }
@@ -4850,12 +4861,21 @@ function epoFlujo(html) {
           <label class="edp-field-label">Cargo (ID)</label>
           <input class="edp-input" id="au-cargoid" placeholder="coordinador-de-logistica">
         </div>
+        <div>
+          <label class="edp-field-label">Cargo (nombre)</label>
+          <input class="edp-input" id="au-cargo" placeholder="Coordinador de Logística">
+        </div>
+        <div>
+          <label class="edp-field-label">Gerencia</label>
+          <input class="edp-input" id="au-gerencia" placeholder="operaciones">
+        </div>
         <div style="grid-column:1/-1;">
-          <label class="edp-field-label">Cargo (nombre) y gerencia</label>
-          <div style="display:flex;gap:8px;">
-            <input class="edp-input" id="au-cargo" placeholder="Coordinador de Logística" style="flex:2;">
-            <input class="edp-input" id="au-gerencia" placeholder="operaciones" style="flex:1;">
-          </div>
+          <label class="edp-field-label">Rol</label>
+          <select class="edp-input" id="au-role" style="cursor:pointer;">
+            <option value="empleado">👤 Empleado</option>
+            <option value="editor">✏️ Editor</option>
+            <option value="admin">🔴 Admin</option>
+          </select>
         </div>
       </div>
       <button onclick="adminCrearUsuario()" style="width:100%;margin-top:10px;padding:9px;border-radius:8px;border:none;background:var(--color-primary);color:#fff;font-weight:700;font-size:12.5px;cursor:pointer;">➕ Crear usuario</button>
