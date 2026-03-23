@@ -785,12 +785,23 @@ print('ok')
 
   // Crear/actualizar usuario del portal (solo admin)
   app.post("/api/portal/users", (req, res) => {
-    const { adminKey, username, password, cargoId, cargo, gerencia, nombre } = req.body;
+    const { adminKey, username, password, cargoId, cargo, gerencia, nombre, role } = req.body;
     if (adminKey !== "copikon2026admin") return res.status(403).json({ error: "No autorizado" });
     if (!username || !password || !cargoId) return res.status(400).json({ error: "Faltan campos" });
     const users = loadPortalUsers();
-    users[username] = { username, password, cargoId, cargo: cargo || "", gerencia: gerencia || "", nombre: nombre || "", role: "empleado" };
+    users[username] = { username, password, cargoId, cargo: cargo || "", gerencia: gerencia || "", nombre: nombre || "", role: role || "empleado" };
     savePortalUsers(users);
+    // Sincronizar nombre en employees.json si se proporcionó nombre
+    if (nombre && nombre.trim() && cargoId) {
+      try {
+        const EMPLOYEES_FILE = path.join(process.cwd(), "employees.json");
+        const empData = JSON.parse(fs.readFileSync(EMPLOYEES_FILE, "utf-8"));
+        if (empData[cargoId]) {
+          empData[cargoId].nombre = nombre.trim();
+          fs.writeFileSync(EMPLOYEES_FILE, JSON.stringify(empData, null, 2), "utf-8");
+        }
+      } catch {}
+    }
     res.json({ ok: true });
   });
 
