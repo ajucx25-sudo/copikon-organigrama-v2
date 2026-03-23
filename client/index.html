@@ -2885,36 +2885,44 @@ async function adminAbrirModal() {
   await adminCargarUsuarios();
 }
 
+function adminRenderUsuarios(users) {
+  const el = document.getElementById('au-list');
+  if (!users.length) { el.innerHTML = '<div style="font-style:italic;color:var(--text-muted);">No hay usuarios registrados.</div>'; return; }
+  const roleLabel = r => r==='admin' ? '🔴 Admin' : r==='editor' ? '✏️ Editor' : '👤 Empleado';
+  const gerColor = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
+  el.innerHTML = `<table style="width:100%;font-size:11px;border-collapse:collapse;">
+    <tr style="font-weight:700;border-bottom:2px solid var(--border);color:var(--text-muted);text-transform:uppercase;font-size:10px;letter-spacing:.04em;">
+      <td style="padding:6px 4px;">Usuario</td><td style="padding:6px 4px;">Nombre</td>
+      <td style="padding:6px 4px;">Cargo</td><td style="padding:6px 4px;">Gerencia</td>
+      <td style="padding:6px 4px;">Rol</td><td style="padding:6px 4px;"></td>
+    </tr>
+    ${users.map(u => {
+      const gc = gerColor[u.gerencia] || '#888';
+      return `<tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:5px 4px;font-weight:700;">${u.username}</td>
+        <td style="padding:5px 4px;">${u.nombre||'-'}</td>
+        <td style="padding:5px 4px;color:var(--text-muted);">${u.cargo||u.cargoId||'-'}</td>
+        <td style="padding:5px 4px;"><span style="display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:700;color:#fff;background:${gc};">${u.gerencia||'-'}</span></td>
+        <td style="padding:5px 4px;">${roleLabel(u.role)}</td>
+        <td style="padding:5px 4px;"><button onclick="adminEliminar('${u.username}')" title="Eliminar usuario" style="font-size:14px;background:none;border:none;color:#dd4444;cursor:pointer;padding:2px 6px;border-radius:6px;" onmouseover="this.style.background='#fef2f2'" onmouseout="this.style.background='none'">✕</button></td>
+      </tr>`;
+    }).join('')}
+  </table>`;
+}
+
 async function adminCargarUsuarios() {
+  // Siempre usar window.__PORTAL_USERS__ como fuente primaria (funciona offline)
+  const localUsers = window.__PORTAL_USERS__ || {};
+  const list = Object.values(localUsers).map(({password: _, ...u}) => u);
+  adminRenderUsuarios(list);
+  // También intentar sincronizar con el servidor
   try {
     const res = await fetch((window.API_BASE||'') + '/api/portal/users');
-    const users = await res.json();
-    const el = document.getElementById('au-list');
-    if (!users.length) { el.innerHTML = '<div style="font-style:italic;">No hay usuarios registrados.</div>'; return; }
-    const roleLabel = r => r==='admin' ? '🔴 Admin' : r==='editor' ? '✏️ Editor' : '👤 Empleado';
-    const gerColor = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
-    el.innerHTML = `<table style="width:100%;font-size:11px;border-collapse:collapse;">
-      <tr style="font-weight:700;border-bottom:2px solid var(--border);color:var(--text-muted);text-transform:uppercase;font-size:10px;letter-spacing:.04em;">
-        <td style="padding:6px 4px;">Usuario</td>
-        <td style="padding:6px 4px;">Nombre</td>
-        <td style="padding:6px 4px;">Cargo</td>
-        <td style="padding:6px 4px;">Gerencia</td>
-        <td style="padding:6px 4px;">Rol</td>
-        <td style="padding:6px 4px;"></td>
-      </tr>
-      ${users.map(u => {
-        const gc = gerColor[u.gerencia] || '#888';
-        return `<tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:5px 4px;font-weight:700;">${u.username}</td>
-          <td style="padding:5px 4px;">${u.nombre||'-'}</td>
-          <td style="padding:5px 4px;color:var(--text-muted);">${u.cargo||u.cargoId}</td>
-          <td style="padding:5px 4px;"><span style="display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:700;color:#fff;background:${gc};">${u.gerencia||'-'}</span></td>
-          <td style="padding:5px 4px;">${roleLabel(u.role)}</td>
-          <td style="padding:5px 4px;"><button onclick="adminEliminar('${u.username}')" style="font-size:11px;background:none;border:none;color:#dd4444;cursor:pointer;">✕</button></td>
-        </tr>`;
-      }).join('')}
-    </table>`;
-  } catch { document.getElementById('au-list').textContent = 'Error al cargar.'; }
+    if (res.ok) {
+      const serverUsers = await res.json();
+      if (serverUsers.length > 0) adminRenderUsuarios(serverUsers);
+    }
+  } catch {}
 }
 
 async function adminCrearUsuario() {
@@ -2945,11 +2953,18 @@ async function adminCrearUsuario() {
 }
 
 async function adminEliminar(username) {
-  if (!confirm('Eliminar usuario ' + username + '?')) return;
-  await fetch((window.API_BASE||'') + '/api/portal/users/' + username, {
-    method: 'DELETE', headers: {'Content-Type':'application/json'}, body: JSON.stringify({adminKey:'copikon2026admin'})
-  });
+  if (!confirm('¿Eliminar el usuario "' + username + '"? Esta acción no se puede deshacer.')) return;
+  // Eliminar de memoria inmediatamente
+  if (window.__PORTAL_USERS__ && window.__PORTAL_USERS__[username]) {
+    delete window.__PORTAL_USERS__[username];
+  }
+  // Actualizar tabla de inmediato
   await adminCargarUsuarios();
+  // Intentar eliminar en el servidor
+  fetch((window.API_BASE||'') + '/api/portal/users/' + username, {
+    method: 'DELETE', headers: {'Content-Type':'application/json'}, body: JSON.stringify({adminKey:'copikon2026admin'})
+  }).catch(()=>{});
+  showToast('Usuario "' + username + '" eliminado', '#dd4444');
 }
 
 // Iniciar login al cargar la app
