@@ -536,6 +536,66 @@ footer a:hover { color: var(--color-accent); }
 .login-error { font-size: 12px; color: #dd4444; text-align: center; margin-top: 10px; display: none; }
 .login-skip { font-size: 11px; color: rgba(255,255,255,0.6); text-align: center; margin-top: 18px; cursor: pointer; }
 .login-skip:hover { color: #fff; }
+/* ===== CARGO PICKER CUSTOM ===== */
+.cpicker-wrap { position: relative; }
+.cpicker-input-row {
+  display: flex; align-items: center; gap: 0;
+  border: 1.5px solid var(--border); border-radius: 9px;
+  background: var(--bg); overflow: hidden;
+  transition: border-color .15s;
+}
+.cpicker-input-row:focus-within { border-color: var(--color-primary); }
+.cpicker-search {
+  flex: 1; padding: 9px 12px;
+  border: none; background: transparent;
+  font-size: 12.5px; color: var(--text);
+  font-family: inherit; outline: none;
+}
+.cpicker-search::placeholder { color: var(--text-muted); }
+.cpicker-badge {
+  padding: 3px 9px; margin: 5px 7px 5px 0;
+  border-radius: 20px; font-size: 10px; font-weight: 700;
+  color: #fff; white-space: nowrap; flex-shrink: 0;
+}
+.cpicker-clear {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-size: 15px; padding: 0 8px 0 0;
+  line-height: 1; flex-shrink: 0;
+}
+.cpicker-clear:hover { color: #dd4444; }
+.cpicker-dropdown {
+  display: none; position: absolute; left: 0; right: 0; top: calc(100% + 4px);
+  background: var(--bg-card); border: 1.5px solid var(--border);
+  border-radius: 11px; box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  z-index: 9999; max-height: 260px; overflow-y: auto;
+}
+.cpicker-dropdown.open { display: block; }
+.cpicker-group-header {
+  padding: 7px 12px 4px;
+  font-size: 10px; font-weight: 800; letter-spacing: .07em;
+  text-transform: uppercase; color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  position: sticky; top: 0; z-index: 1;
+}
+.cpicker-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 14px; cursor: pointer;
+  font-size: 12px; color: var(--text);
+  transition: background .12s;
+}
+.cpicker-item:hover, .cpicker-item.focused { background: var(--bg); }
+.cpicker-item-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  flex-shrink: 0; margin-left: 0;
+}
+.cpicker-item-name { flex: 1; }
+.cpicker-item-ger {
+  font-size: 10px; color: var(--text-muted); white-space: nowrap;
+}
+.cpicker-empty {
+  padding: 14px; text-align: center;
+  font-size: 12px; color: var(--text-muted);
+}
 /* Admin: crear usuarios */
 #portal-admin-modal {
   display: none; position: fixed; inset: 0; z-index: 9500;
@@ -2746,80 +2806,105 @@ function portalAbrirMiFicha() {
 // ===== ADMIN: GESTIONAR USUARIOS =====
 const gerenciaNombre = {'root':'Dirección General','comercializacion':'Comercialización','operaciones':'Operaciones','finanzas':'Finanzas / Administración','retail':'Retail','it':'IT','proyectos':'Proyectos','compras':'Compras','staff':'Staff'};
 
+// ===== CARGO PICKER CUSTOM =====
+const cpGC = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
+let cpItems = [];
+let cpSelected = null;
+
 function auCargarCargos() {
-  const sel = document.getElementById('au-cargo-select');
-  sel.innerHTML = '<option value="">-- Selecciona un cargo --</option>';
+  cpItems = [];
   const empMap = window.__EMPLOYEES_DATA__ || {};
-  const gc = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
-
-  // Recorrer org jerárquicamente, agrupar por gerencia manteniendo orden jerárquico
-  const grupos = {}; // gerencia -> [{id, cargo, depth, gerencia}]
+  const grupos = {};
   const ordenGer = [];
-
   function walk(node, depth) {
     const nid = generateNodeId(node.name || '');
     const emp = empMap[nid];
     if (emp && emp.cargo && nid) {
       const g = emp.gerencia || 'otros';
       if (!grupos[g]) { grupos[g] = []; ordenGer.push(g); }
-      // Indentación: primer nivel de cada gerencia sin guiones, subordinados con —
-      const localDepth = depth <= 2 ? 0 : depth - 2; // gerencia=depth 2 -> 0, sus hijos -> 1,2...
-      const prefix = localDepth === 0 ? '' : ('  '.repeat(localDepth) + '— ');
-      grupos[g].push({ id: nid, cargo: emp.cargo, prefix, gerencia: g });
+      const localDepth = Math.max(0, depth - 2);
+      grupos[g].push({ id: nid, cargo: emp.cargo, gerencia: g, depth: localDepth });
     }
     (node.children || []).forEach(c => walk(c, depth + 1));
   }
   walk(orgData, 0);
-
-  ordenGer.forEach(g => {
-    const grp = document.createElement('optgroup');
-    grp.label = gerenciaNombre[g] || g.charAt(0).toUpperCase()+g.slice(1);
-    grupos[g].forEach(e => {
-      const opt = document.createElement('option');
-      opt.value = e.id;
-      opt.textContent = e.prefix + e.cargo;
-      opt.dataset.gerencia = e.gerencia;
-      opt.dataset.cargo = e.cargo;
-      sel.appendChild(opt);
-    });
-    sel.appendChild(grp); // Firefox necesita agregar el optgroup después de las options... hacerlo al revés
-  });
-
-  // Reconstruir correctamente: optgroup primero, options dentro
-  sel.innerHTML = '<option value="">-- Selecciona un cargo --</option>';
-  ordenGer.forEach(g => {
-    const grp = document.createElement('optgroup');
-    grp.label = (gerenciaNombre[g] || g.charAt(0).toUpperCase()+g.slice(1)).toUpperCase();
-    grupos[g].forEach(e => {
-      const opt = document.createElement('option');
-      opt.value = e.id;
-      opt.textContent = e.prefix + e.cargo;
-      opt.dataset.gerencia = e.gerencia;
-      opt.dataset.cargo = e.cargo;
-      grp.appendChild(opt);
-    });
-    sel.appendChild(grp);
-  });
+  ordenGer.forEach(g => grupos[g].forEach(e => cpItems.push(e)));
+  cpickerRenderDropdown(cpItems);
 }
 
-function auSeleccionarCargo(sel) {
-  const opt = sel.options[sel.selectedIndex];
-  if (!opt.value) {
-    document.getElementById('au-cargoid').value = '';
-    document.getElementById('au-cargo').value = '';
-    document.getElementById('au-gerencia').value = '';
-    document.getElementById('au-cargo-info').style.display = 'none';
-    return;
+function cpickerRenderDropdown(items) {
+  const dd = document.getElementById('au-cpicker-dropdown');
+  if (!items.length) {
+    dd.innerHTML = '<div class="cpicker-empty">Sin resultados</div>'; return;
   }
-  const g = opt.dataset.gerencia;
-  const gc = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
-  document.getElementById('au-cargoid').value = opt.value;
-  document.getElementById('au-cargo').value = opt.dataset.cargo;
-  document.getElementById('au-gerencia').value = g;
-  const info = document.getElementById('au-cargo-info');
-  info.style.display = 'block';
-  document.getElementById('au-cargo-info-text').innerHTML =
-    `ID: <b>${opt.value}</b> &nbsp;·&nbsp; Gerencia: <span style="display:inline-block;padding:1px 7px;border-radius:10px;font-weight:700;color:#fff;background:${gc[g]||'#888'}">${gerenciaNombre[g]||g}</span>`;
+  let html = ''; let lastGer = null;
+  items.forEach(e => {
+    if (e.gerencia !== lastGer) {
+      const bg = cpGC[e.gerencia] || '#888';
+      html += `<div class="cpicker-group-header" style="background:${bg}">${(gerenciaNombre[e.gerencia]||e.gerencia).toUpperCase()}</div>`;
+      lastGer = e.gerencia;
+    }
+    const pad = e.depth * 14;
+    const dot = e.depth > 0 ? `<span class="cpicker-item-dot" style="background:${cpGC[e.gerencia]||'#888'};opacity:${Math.min(1,0.4+e.depth*0.25)};"></span>` : '';
+    const nameStyle = e.depth === 0 ? 'font-weight:700;' : '';
+    html += `<div class="cpicker-item" data-id="${e.id}" data-cargo="${e.cargo.replace(/"/g,'&quot;')}" data-ger="${e.gerencia}" onclick="cpickerSelect(this)" style="padding-left:${14+pad}px">${dot}<span class="cpicker-item-name" style="${nameStyle}">${e.cargo}</span></div>`;
+  });
+  dd.innerHTML = html;
+}
+
+function cpickerOpen() {
+  document.getElementById('au-cpicker-dropdown').classList.add('open');
+  cpickerFilter(document.getElementById('au-cpicker-search').value);
+  setTimeout(() => document.addEventListener('click', cpickerOutside, {once:true}), 50);
+}
+
+function cpickerOutside(e) {
+  const wrap = document.getElementById('au-cpicker');
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById('au-cpicker-dropdown').classList.remove('open');
+  } else {
+    setTimeout(() => document.addEventListener('click', cpickerOutside, {once:true}), 50);
+  }
+}
+
+function cpickerFilter(q) {
+  const dd = document.getElementById('au-cpicker-dropdown');
+  dd.classList.add('open');
+  if (!q.trim()) { cpickerRenderDropdown(cpItems); return; }
+  const ql = q.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const filtered = cpItems.filter(e => {
+    const c = e.cargo.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+    const g = (gerenciaNombre[e.gerencia]||e.gerencia).toLowerCase();
+    return c.includes(ql) || g.includes(ql);
+  });
+  cpickerRenderDropdown(filtered);
+}
+
+function cpickerSelect(el) {
+  const id = el.dataset.id, cargo = el.dataset.cargo, ger = el.dataset.ger;
+  cpSelected = { id, cargo, gerencia: ger };
+  document.getElementById('au-cargoid').value = id;
+  document.getElementById('au-cargo').value = cargo;
+  document.getElementById('au-gerencia').value = ger;
+  const search = document.getElementById('au-cpicker-search');
+  search.value = cargo;
+  const badge = document.getElementById('au-cpicker-badge');
+  badge.style.display = 'inline-block';
+  badge.style.background = cpGC[ger] || '#888';
+  badge.textContent = (gerenciaNombre[ger] || ger).toUpperCase();
+  document.getElementById('au-cpicker-clear').style.display = 'inline';
+  document.getElementById('au-cpicker-dropdown').classList.remove('open');
+}
+
+function cpickerLimpiar() {
+  cpSelected = null;
+  document.getElementById('au-cargoid').value = '';
+  document.getElementById('au-cargo').value = '';
+  document.getElementById('au-gerencia').value = '';
+  document.getElementById('au-cpicker-search').value = '';
+  document.getElementById('au-cpicker-badge').style.display = 'none';
+  document.getElementById('au-cpicker-clear').style.display = 'none';
+  cpickerRenderDropdown(cpItems);
 }
 
 async function adminAbrirModal() {
@@ -2880,10 +2965,9 @@ async function adminCrearUsuario() {
     const d = await res.json();
     if (!res.ok) throw new Error(d.error);
     msg.style.display='block'; msg.style.color='#2bbfae'; msg.textContent='✔ Usuario creado: ' + u.username;
-    ['au-username','au-password','au-nombre','au-cargoid','au-cargo','au-gerencia'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
+    ['au-username','au-password','au-nombre'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
     const roleEl=document.getElementById('au-role'); if(roleEl) roleEl.value='empleado';
-    const selEl=document.getElementById('au-cargo-select'); if(selEl) selEl.value='';
-    const infoEl=document.getElementById('au-cargo-info'); if(infoEl) infoEl.style.display='none';
+    cpickerLimpiar();
     await adminCargarUsuarios();
   } catch(e) { msg.style.display='block'; msg.style.color='#dd4444'; msg.textContent='Error: '+e.message; }
 }
@@ -4940,15 +5024,17 @@ function epoFlujo(html) {
         </div>
         <div style="grid-column:1/-1;">
           <label class="edp-field-label">Cargo</label>
-          <select class="edp-input" id="au-cargo-select" style="cursor:pointer;" onchange="auSeleccionarCargo(this)">
-            <option value="">-- Selecciona un cargo --</option>
-          </select>
+          <div class="cpicker-wrap" id="au-cpicker">
+            <div class="cpicker-input-row">
+              <input class="cpicker-search" id="au-cpicker-search" placeholder="Buscar cargo..." autocomplete="off" onfocus="cpickerOpen()" oninput="cpickerFilter(this.value)">
+              <span class="cpicker-badge" id="au-cpicker-badge" style="display:none;"></span>
+              <button class="cpicker-clear" id="au-cpicker-clear" style="display:none;" onclick="cpickerLimpiar()" type="button">&times;</button>
+            </div>
+            <div class="cpicker-dropdown" id="au-cpicker-dropdown"></div>
+          </div>
           <input type="hidden" id="au-cargoid">
           <input type="hidden" id="au-cargo">
           <input type="hidden" id="au-gerencia">
-          <div id="au-cargo-info" style="margin-top:6px;font-size:11px;color:var(--text-muted);display:none;">
-            <span id="au-cargo-info-text"></span>
-          </div>
         </div>
         <div style="grid-column:1/-1;">
           <label class="edp-field-label">Rol</label>
