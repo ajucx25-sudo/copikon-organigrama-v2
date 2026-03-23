@@ -743,6 +743,55 @@ print('ok')
     res.json({ ok: true });
   });
 
+
+  // ── AUTH PORTAL DEL EMPLEADO ──────────────────────
+  const PORTAL_USERS_FILE = path.join(process.cwd(), "portal-users.json");
+  function loadPortalUsers(): Record<string, any> {
+    try { return JSON.parse(fs.readFileSync(PORTAL_USERS_FILE,"utf-8")); } catch { return {}; }
+  }
+  function savePortalUsers(d: Record<string, any>) {
+    fs.writeFileSync(PORTAL_USERS_FILE, JSON.stringify(d, null, 2), "utf-8");
+  }
+
+  // Login del portal
+  app.post("/api/portal/login", (req, res) => {
+    const { username, password } = req.body;
+    if (!username || !password) return res.status(400).json({ error: "Faltan credenciales" });
+    const users = loadPortalUsers();
+    const user = users[username];
+    if (!user || user.password !== password) return res.status(401).json({ error: "Usuario o contraseña incorrectos" });
+    const { password: _, ...safe } = user;
+    res.json(safe);
+  });
+
+  // Crear/actualizar usuario del portal (solo admin)
+  app.post("/api/portal/users", (req, res) => {
+    const { adminKey, username, password, cargoId, cargo, gerencia, nombre } = req.body;
+    if (adminKey !== "copikon2026admin") return res.status(403).json({ error: "No autorizado" });
+    if (!username || !password || !cargoId) return res.status(400).json({ error: "Faltan campos" });
+    const users = loadPortalUsers();
+    users[username] = { username, password, cargoId, cargo: cargo || "", gerencia: gerencia || "", nombre: nombre || "", role: "empleado" };
+    savePortalUsers(users);
+    res.json({ ok: true });
+  });
+
+  // Listar usuarios del portal (solo admin)
+  app.get("/api/portal/users", (req, res) => {
+    const users = loadPortalUsers();
+    const safe = Object.values(users).map(({ password: _, ...u }: any) => u);
+    res.json(safe);
+  });
+
+  // Eliminar usuario del portal
+  app.delete("/api/portal/users/:username", (req, res) => {
+    const { adminKey } = req.body;
+    if (adminKey !== "copikon2026admin") return res.status(403).json({ error: "No autorizado" });
+    const users = loadPortalUsers();
+    delete users[req.params.username];
+    savePortalUsers(users);
+    res.json({ ok: true });
+  });
+
   return server;
 }
 
