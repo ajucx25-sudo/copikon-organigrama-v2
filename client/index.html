@@ -3290,6 +3290,14 @@ async function saveEmpleado() {
     const color = colorMap[selectedNode.data.gerencia] || '#1a3a6b';
     showDetailEmpleado(selectedNode.data.name, selectedNode.data.gerencia, color);
   }
+  // Actualizar __EMPLOYEES_DATA__ en memoria para que los nodos lo lean al redibujar
+  if (window.__EMPLOYEES_DATA__) {
+    window.__EMPLOYEES_DATA__[id] = directorioState.employees[id];
+  }
+  // Redibujar el árbol SVG para reflejar cambios en titular e ícono WA
+  if (typeof update === 'function' && typeof root !== 'undefined') {
+    update(root);
+  }
   setTimeout(() => { document.getElementById('emp-saved-msg').style.display = 'none'; }, 3000);
   btn.textContent = '💾 Guardar';
   btn.disabled = false;
