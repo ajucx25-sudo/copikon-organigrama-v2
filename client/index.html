@@ -470,6 +470,136 @@ footer a:hover { color: var(--color-accent); }
 .undo-toast button:hover { opacity: 0.85; }
 
 /* ===== PRINT STYLES ===== */
+/* ===== RESPONSIVE MÓVIL ===== */
+@media (max-width: 600px) {
+  #emp-detail-panel { width: 100vw; border-left: none; }
+  .edp-tabs-bar { gap: 0; }
+  .edp-tab-btn { font-size: 9.5px; padding: 7px 5px; }
+  .edp-pane { padding: 10px 12px 16px; }
+  header { padding: 6px 12px; gap: 8px; }
+  .header-btn { width: 32px; height: 32px; font-size: 13px; }
+  .stats { display: none; }
+  .controls-bar { flex-wrap: wrap; gap: 6px; padding: 6px 10px; }
+  .view-controls { display: none; }
+  .filter-chips { gap: 4px; }
+  .chip { font-size: 10px; padding: 4px 8px; }
+  /* Portal del empleado en móvil */
+  .edp-gami-stats { grid-template-columns: 1fr 1fr; }
+  .portal-hero { padding: 16px 14px; }
+  .portal-stat-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== PORTAL DEL EMPLEADO ===== */
+.portal-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2a5298 100%);
+  padding: 20px 18px 16px;
+  color: #fff;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+.portal-hero-cargo {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.07em; opacity: 0.75; margin-bottom: 4px;
+}
+.portal-hero-nombre {
+  font-size: 18px; font-weight: 800; margin-bottom: 2px; line-height: 1.2;
+}
+.portal-hero-gerencia {
+  font-size: 11px; opacity: 0.75;
+}
+.portal-stat-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 10px; margin-bottom: 14px;
+}
+.portal-stat-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.portal-stat-val {
+  font-size: 26px; font-weight: 800;
+  color: var(--color-primary); line-height: 1;
+  font-family: var(--font-display);
+}
+.portal-stat-lbl {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--text-muted); margin-top: 3px;
+}
+.portal-nivel-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(90deg, #f0a050, #e8a020);
+  color: #fff; font-size: 11px; font-weight: 800;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px;
+}
+.portal-progress-wrap {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.portal-progress-label {
+  display: flex; justify-content: space-between;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-secondary); margin-bottom: 7px;
+}
+.portal-xp-bar-bg {
+  background: var(--border); border-radius: 8px; height: 10px; overflow: hidden;
+}
+.portal-xp-bar-fill {
+  height: 100%; border-radius: 8px;
+  background: linear-gradient(90deg, var(--color-primary), #2bbfae);
+  transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+.portal-logros-wrap {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;
+}
+.portal-logro {
+  display: flex; align-items: center; gap: 5px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 20px; padding: 4px 10px;
+  font-size: 11px; font-weight: 600; color: var(--text-primary);
+}
+.portal-cursos-resumen {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+.portal-curso-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+}
+.portal-curso-item:last-child { border-bottom: none; }
+.portal-curso-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+}
+.portal-curso-check {
+  width: 18px; height: 18px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; flex-shrink: 0; margin-left: auto;
+}
+.portal-xp-btns {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6px; margin-top: 4px;
+}
+.portal-xp-btn {
+  padding: 8px 6px; border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--bg); color: var(--text-primary);
+  cursor: pointer; font-size: 11px; font-weight: 700;
+  transition: all 0.15s; font-family: var(--font-body);
+  text-align: center;
+}
+.portal-xp-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
 @media print {
   html, body { overflow: visible !important; height: auto !important; }
   #app { height: auto !important; }
@@ -556,7 +686,7 @@ footer a:hover { color: var(--color-accent); }
 #emp-detail-panel {
   position: fixed;
   top: 0; right: 0; bottom: 0;
-  width: 480px; max-width: 98vw;
+  width: 480px; max-width: 100vw;
   background: var(--bg-card);
   border-left: 2px solid var(--border);
   box-shadow: -8px 0 40px rgba(0,0,0,0.22);
@@ -1315,7 +1445,7 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
       <button class="edp-tab-btn" data-edp-tab="edp-pane-manual">📄 Manual</button>
       <button class="edp-tab-btn" data-edp-tab="edp-pane-flujo">🔄 Flujo</button>
       <button class="edp-tab-btn" data-edp-tab="edp-pane-cursos">🎓 Cursos</button>
-      <button class="edp-tab-btn" data-edp-tab="edp-pane-gami">🏆 Gamificación</button>
+      <button class="edp-tab-btn" data-edp-tab="edp-pane-gami">📊 Mi Portal</button>
     </div>
 
     <!-- Cuerpo -->
@@ -1529,31 +1659,67 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
 
       <!-- PESTAÑA: Gamificación -->
       <div class="edp-pane" id="edp-pane-gami">
-        <div class="edp-section-label">Progreso y Gamificación</div>
-        <div class="edp-gami-stats">
-          <div class="edp-gami-stat"><div class="edp-gami-val" id="edp-gami-xp">0</div><div class="edp-gami-lbl">Puntos XP</div></div>
-          <div class="edp-gami-stat"><div class="edp-gami-val" id="edp-gami-nivel">1</div><div class="edp-gami-lbl">Nivel</div></div>
-          <div class="edp-gami-stat"><div class="edp-gami-val" id="edp-gami-cursos">0</div><div class="edp-gami-lbl">Cursos completados</div></div>
-          <div class="edp-gami-stat"><div class="edp-gami-val" id="edp-gami-logros-cnt">0</div><div class="edp-gami-lbl">Logros</div></div>
+        <!-- Hero del empleado -->
+        <div class="portal-hero" id="portal-hero">
+          <div class="portal-hero-cargo" id="portal-hero-cargo">Mi Cargo</div>
+          <div class="portal-hero-nombre" id="portal-hero-nombre">Bienvenido</div>
+          <div class="portal-hero-gerencia" id="portal-hero-gerencia">Copikon Venezuela</div>
+          <div style="margin-top:10px;">
+            <span class="portal-nivel-badge" id="portal-nivel-badge">★ Nivel 1</span>
+          </div>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:10.5px;font-weight:600;color:var(--text-muted);">
-          <span>Progreso al siguiente nivel</span>
-          <span id="edp-gami-pct">0%</span>
+
+        <!-- Stats -->
+        <div class="portal-stat-grid">
+          <div class="portal-stat-card">
+            <div class="portal-stat-val" id="portal-xp">0</div>
+            <div class="portal-stat-lbl">Puntos XP</div>
+          </div>
+          <div class="portal-stat-card">
+            <div class="portal-stat-val" id="portal-cursos-comp">0</div>
+            <div class="portal-stat-lbl">Cursos completados</div>
+          </div>
+          <div class="portal-stat-card">
+            <div class="portal-stat-val" id="portal-cursos-total">0</div>
+            <div class="portal-stat-lbl">Cursos asignados</div>
+          </div>
+          <div class="portal-stat-card">
+            <div class="portal-stat-val" id="portal-logros-cnt">0</div>
+            <div class="portal-stat-lbl">Logros</div>
+          </div>
         </div>
-        <div class="edp-progress-bar-wrap">
-          <div class="edp-progress-bar" id="edp-gami-bar" style="width:0%;"></div>
+
+        <!-- Barra de progreso -->
+        <div class="portal-progress-wrap">
+          <div class="portal-progress-label">
+            <span>Progreso al siguiente nivel</span>
+            <span id="portal-pct">0%</span>
+          </div>
+          <div class="portal-xp-bar-bg">
+            <div class="portal-xp-bar-fill" id="portal-xp-bar" style="width:0%;"></div>
+          </div>
         </div>
-        <div class="edp-section-label" style="margin-top:4px;">Logros desbloqueados</div>
-        <div class="edp-logros-wrap" id="edp-gami-logros-full">
-          <div style="font-size:11.5px;color:var(--text-muted);font-style:italic;">¡Comienza sumando XP!</div>
+
+        <!-- Cursos resumidos -->
+        <div class="edp-section-label">Mis cursos</div>
+        <div class="portal-cursos-resumen" id="portal-cursos-list">
+          <div style="font-size:11.5px;color:var(--text-muted);font-style:italic;padding:6px 0;">Sin cursos asignados. Ve a la pestaña Cursos para comenzar.</div>
         </div>
+
+        <!-- Logros -->
+        <div class="edp-section-label">Logros desbloqueados</div>
+        <div class="portal-logros-wrap" id="portal-logros">
+          <div style="font-size:11.5px;color:var(--text-muted);font-style:italic;">¡Completa cursos para desbloquear logros!</div>
+        </div>
+
+        <!-- Registrar actividad -->
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);">
-          <div class="edp-section-label">Registrar actividad</div>
-          <div class="edp-xp-btns">
-            <button class="edp-xp-btn" onclick="edpAddXP(50,'Curso completado')">🎓 +50 XP Curso</button>
-            <button class="edp-xp-btn" onclick="edpAddXP(100,'Certificación obtenida')">🏅 +100 XP Cert.</button>
-            <button class="edp-xp-btn" onclick="edpAddXP(25,'Evaluación aprobada')">✅ +25 XP Eval.</button>
-            <button class="edp-xp-btn" onclick="edpAddXP(200,'Meta trimestral')">🎯 +200 XP Meta</button>
+          <div class="edp-section-label">Registrar actividad manual</div>
+          <div class="portal-xp-btns">
+            <button class="portal-xp-btn" onclick="edpAddXP(50,'Curso completado')">🎓 +50 XP Curso</button>
+            <button class="portal-xp-btn" onclick="edpAddXP(100,'Certificación')">🏅 +100 XP Cert.</button>
+            <button class="portal-xp-btn" onclick="edpAddXP(25,'Evaluación aprobada')">✅ +25 XP Eval.</button>
+            <button class="portal-xp-btn" onclick="edpAddXP(200,'Meta trimestral')">🎯 +200 XP Meta</button>
           </div>
         </div>
       </div>
@@ -3786,18 +3952,68 @@ function edpRenderGami() {
   const nivel = g.nivel || 1;
   const cursosComp = g.cursosComp || 0;
   const logros = g.logros || [];
-  document.getElementById('edp-gami-xp').textContent = xp;
-  document.getElementById('edp-gami-nivel').textContent = nivel;
-  document.getElementById('edp-gami-cursos').textContent = cursosComp;
-  document.getElementById('edp-gami-logros-cnt').textContent = logros.length;
-  const pct = Math.min(100, Math.round(((xp - (nivel-1)*200) / 200) * 100));
-  document.getElementById('edp-gami-pct').textContent = pct + '%';
-  document.getElementById('edp-gami-bar').style.width = pct + '%';
-  const loEl = document.getElementById('edp-gami-logros-full');
+  const cursos = edpState.data.cursos || [];
+  const cursosTotal = cursos.length;
+  const xpNivel = 200;
+  const xpEnNivel = xp - (nivel - 1) * xpNivel;
+  const pct = Math.min(100, Math.round((xpEnNivel / xpNivel) * 100));
   const EMOJIS = ['🏆','🥇','🎖️','⭐','🏅','🌟','💡','🎯','🔥','💎'];
-  if (loEl) loEl.innerHTML = logros.length === 0
-    ? '<div style="font-size:11.5px;color:var(--text-muted);font-style:italic;">¡Comienza sumando XP!</div>'
-    : logros.map((l,i) => `<div class="edp-logro">${EMOJIS[i%EMOJIS.length]} ${l}</div>`).join('');
+  const COLORES = ['#6b7a99','#3cb371','#4a7fd4','#a06ad4','#e8a020','#dd6874','#2bbfae','#f0a050','#5b8ff9','#1a3a6b'];
+  const colorNivel = COLORES[(nivel - 1) % COLORES.length];
+
+  // Datos del empleado
+  const id = edpState.nodeId;
+  const emp = (directorioState && directorioState.employees && id) ? (directorioState.employees[id] || {}) : {};
+  const empNombre = emp.nombre || '';
+  const cargo = (edpState && edpState.cargo) ? edpState.cargo : 'Mi Cargo';
+  const gerLabel = edpState.gerencia ? edpState.gerencia.charAt(0).toUpperCase() + edpState.gerencia.slice(1) : 'Staff';
+
+  // Hero
+  const setEl = (id2, val) => { const el = document.getElementById(id2); if (el) el.textContent = val; };
+  setEl('portal-hero-cargo', cargo);
+  setEl('portal-hero-nombre', empNombre || 'Tu nombre aquí');
+  setEl('portal-hero-gerencia', 'Copikon Venezuela · ' + gerLabel);
+  const heroEl = document.getElementById('portal-hero');
+  if (heroEl) heroEl.style.background = `linear-gradient(135deg, ${colorNivel} 0%, ${colorNivel}cc 100%)`;
+  setEl('portal-nivel-badge', '★ Nivel ' + nivel);
+
+  // Stats
+  setEl('portal-xp', xp);
+  setEl('portal-cursos-comp', cursosComp);
+  setEl('portal-cursos-total', cursosTotal);
+  setEl('portal-logros-cnt', logros.length);
+  setEl('portal-pct', pct + '%');
+  const bar = document.getElementById('portal-xp-bar');
+  if (bar) bar.style.width = pct + '%';
+
+  // Cursos
+  const cListEl = document.getElementById('portal-cursos-list');
+  if (cListEl) {
+    if (!cursos.length) {
+      cListEl.innerHTML = '<div style="font-size:11.5px;color:var(--text-muted);font-style:italic;padding:6px 0;">Sin cursos asignados. Ve a la pestaña 🎓 Cursos.</div>';
+    } else {
+      cListEl.innerHTML = cursos.map(c => {
+        const done = c.completado;
+        const col = done ? '#2bbfae' : 'var(--color-primary)';
+        return `<div class="portal-curso-item">
+          <div class="portal-curso-icon" style="background:${col}22;color:${col};">${done ? '✓' : '📚'}</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:12px;font-weight:700;color:var(--text-primary);">${c.nombre || 'Curso'}</div>
+            <div style="font-size:10.5px;color:var(--text-muted);">${c.xp || 0} XP · ${c.tipo || 'obligatorio'}</div>
+          </div>
+          <div class="portal-curso-check" style="background:${done ? '#2bbfae' : 'var(--border)'};color:${done ? '#fff' : 'var(--text-muted)'};">${done ? '✓' : '→'}</div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  // Logros
+  const logrosEl = document.getElementById('portal-logros');
+  if (logrosEl) {
+    logrosEl.innerHTML = logros.length === 0
+      ? '<div style="font-size:11.5px;color:var(--text-muted);font-style:italic;">¡Completa cursos para desbloquear logros!</div>'
+      : logros.map((l,i) => `<div class="portal-logro">${EMOJIS[i%EMOJIS.length]} ${l}</div>`).join('');
+  }
 }
 
 function edpAddXP(cantidad, motivo) {
