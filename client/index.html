@@ -4045,7 +4045,7 @@ let waGroups = {}; // { gerenciaId: url }
 
 function waGroupsLoad() {
   // Cargar desde /api/org (que ya persiste en el servidor)
-  fetch('/api/org')
+  fetch((window.API_BASE||'') + '/api/org')
     .then(r => r.ok ? r.json() : null)
     .then(d => {
       if (d && d.__waGroups) {
@@ -4107,11 +4107,11 @@ function waGroupsSave() {
   });
   waGroups = newGroups;
   // Guardar en org-data.json junto con el organigrama
-  fetch('/api/org')
+  fetch((window.API_BASE||'') + '/api/org')
     .then(r => r.json())
     .then(org => {
       org.__waGroups = newGroups;
-      return fetch('/api/org', {
+      return fetch((window.API_BASE||'') + '/api/org', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(org)
