@@ -879,9 +879,39 @@ print('ok')
     });
 
     app.get("/api/intranet/auth/users", (_req, res) => {
-      const users = loadPortalUsers();
-      const list = Object.values(users).map(({ password: _, ...u }: any) => u);
-      res.json(list);
+      const portalUsers = loadPortalUsers();
+      // Incluir todos los empleados del organigrama como contactos
+      const empFile = path.join(process.cwd(), "employees.json");
+      let allEmployees: any[] = [];
+      try {
+        const empData = JSON.parse(fs.readFileSync(empFile, "utf-8"));
+        allEmployees = Object.values(empData);
+      } catch {}
+      // Combinar: usuarios con cuenta + empleados sin cuenta (usando cargoId como username)
+      const result: any[] = [];
+      const seen = new Set<string>();
+      // Primero los que tienen cuenta
+      Object.values(portalUsers).forEach((u: any) => {
+        const { password: _, ...safe } = u;
+        result.push({ ...safe, hasAccount: true });
+        seen.add(u.username);
+        if (u.cargoId) seen.add(u.cargoId);
+      });
+      // Luego todos los empleados sin cuenta
+      allEmployees.forEach((e: any) => {
+        if (seen.has(e.id)) return;
+        result.push({
+          username: e.id,
+          nombre: e.nombre || '',
+          cargo: e.cargo || '',
+          cargoId: e.id,
+          gerencia: e.gerencia || '',
+          role: 'empleado',
+          hasAccount: false
+        });
+        seen.add(e.id);
+      });
+      res.json(result);
     });
 
     // ── Chat 1a1 ──────────────────────────────────────────
