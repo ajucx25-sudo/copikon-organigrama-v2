@@ -3437,5 +3437,33 @@
         "logros": []
       }
     }
+  },
+  "gerente-tienda-copikon-caracas": {
+    "id": "gerente-tienda-copikon-caracas",
+    "cargo": "Gerente Tienda Copikon Caracas",
+    "gerencia": "retail",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "**Gerente Tienda Copikon Caracas**\n\n**Propósito del cargo**\nDirigir la operación integral de la tienda Copikon en Caracas, garantizando el cumplimiento de las metas de ventas, los estándares de servicio al cliente, el control del inventario y la gestión eficiente del equipo humano y los recursos del punto de venta.\n\n**Responsabilidades principales**\n- Dirigir y motivar al equipo de la tienda para el cumplimiento de metas de ventas y servicio.\n- Garantizar la correcta apertura y cierre de la tienda según los procedimientos establecidos.\n- Supervisar el inventario, el correcto surtido y la presentación visual de productos.\n- Controlar la caja y los procesos de facturación y cobro de la tienda.\n- Resolver incidencias con clientes, gestionar devoluciones y garantías.\n- Coordinar con el Coordinador Comercial las acciones de venta y atención al cliente.\n- Mantener la tienda en óptimas condiciones de imagen, limpieza y seguridad.\n- Reportar resultados diarios y semanales de ventas, inventario y operación al Coordinador Tienda Región 3.\n\n**Competencias requeridas**\n- Liderazgo de equipos de venta en punto de venta\n- Conocimiento de operación de tienda: caja, inventario, visual merchandising\n- Orientación al cliente y capacidad de resolución de conflictos\n- Habilidades organizativas y gestión del tiempo\n- Manejo de sistemas de punto de venta (POS)\n\n**Formación y experiencia**\n- Licenciatura en Administración, Mercadeo o carrera afín (o técnico superior con experiencia)\n- Mínimo 3 años de experiencia en gestión de tiendas retail",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
   }
 }

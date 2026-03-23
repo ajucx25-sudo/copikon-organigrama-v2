@@ -325,7 +325,7 @@
           "gerencia": "retail",
           "children": [
             {
-              "name": "Gerencia Tienda Región 1 (Lara-Port-Yar)",
+              "name": "Coordinador Tienda Región 1 (Lara-Port-Yar)",
               "gerencia": "retail",
               "children": [
                 {
@@ -439,43 +439,49 @@
               ]
             },
             {
-              "name": "Gerencia Tienda Región 3 (Caracas)",
+              "name": "Coordinador Tienda Región 3 (Caracas)",
               "gerencia": "retail",
               "children": [
                 {
-                  "name": "Auxiliar Administrativo (Caracas)",
+                  "name": "Gerente Tienda Copikon Caracas",
                   "gerencia": "retail",
                   "children": [
                     {
-                      "name": "Analista Caja",
+                      "name": "Auxiliar Administrativo (Caracas)",
+                      "gerencia": "retail",
+                      "children": [
+                        {
+                          "name": "Analista Caja",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mantenimiento-Infraestructura-Seguridad",
+                          "gerencia": "retail"
+                        },
+                        {
+                          "name": "Mensajero",
+                          "gerencia": "retail"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Analista Inventario Almacén Retail (Caracas)",
                       "gerencia": "retail"
                     },
                     {
-                      "name": "Mantenimiento-Infraestructura-Seguridad",
+                      "name": "Coord. Comercial Tienda Retail (Caracas)",
                       "gerencia": "retail"
                     },
                     {
-                      "name": "Mensajero",
+                      "name": "Vendedores Integrales (Caracas)",
                       "gerencia": "retail"
                     }
                   ]
-                },
-                {
-                  "name": "Analista Inventario Almacén Retail (Caracas)",
-                  "gerencia": "retail"
-                },
-                {
-                  "name": "Coord. Comercial Tienda Retail (Caracas)",
-                  "gerencia": "retail"
-                },
-                {
-                  "name": "Vendedores Integrales (Caracas)",
-                  "gerencia": "retail"
                 }
               ]
             },
             {
-              "name": "Gerencia Tienda Region 2 (Aragua-Carabobo)",
+              "name": "Coordinador Tienda Region 2 (Aragua-Carabobo)",
               "gerencia": "retail",
               "children": [
                 {
