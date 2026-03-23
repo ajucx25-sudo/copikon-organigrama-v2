@@ -2744,8 +2744,63 @@ function portalAbrirMiFicha() {
 }
 
 // ===== ADMIN: GESTIONAR USUARIOS =====
+const gerenciaNombre = {'root':'Dirección General','comercializacion':'Comercialización','operaciones':'Operaciones','finanzas':'Finanzas / Administración','retail':'Retail','it':'IT','proyectos':'Proyectos','compras':'Compras','staff':'Staff'};
+
+async function auCargarCargos() {
+  try {
+    const res = await fetch((window.API_BASE||'') + '/api/employees');
+    const data = await res.json();
+    const employees = Array.isArray(data) ? data : Object.values(data);
+    // Agrupar por gerencia y ordenar
+    const grupos = {};
+    employees.forEach(e => {
+      const g = e.gerencia || 'otros';
+      if (!grupos[g]) grupos[g] = [];
+      grupos[g].push(e);
+    });
+    const sel = document.getElementById('au-cargo-select');
+    sel.innerHTML = '<option value="">-- Selecciona un cargo --</option>';
+    const orden = ['root','comercializacion','operaciones','finanzas','compras','retail','it','proyectos','staff'];
+    orden.forEach(g => {
+      if (!grupos[g]) return;
+      const grp = document.createElement('optgroup');
+      grp.label = gerenciaNombre[g] || g.charAt(0).toUpperCase()+g.slice(1);
+      grupos[g].sort((a,b) => a.cargo.localeCompare(b.cargo)).forEach(e => {
+        const opt = document.createElement('option');
+        opt.value = e.id;
+        opt.textContent = e.cargo;
+        opt.dataset.gerencia = e.gerencia;
+        opt.dataset.cargo = e.cargo;
+        grp.appendChild(opt);
+      });
+      sel.appendChild(grp);
+    });
+  } catch(e) { console.error('Error cargando cargos:', e); }
+}
+
+function auSeleccionarCargo(sel) {
+  const opt = sel.options[sel.selectedIndex];
+  if (!opt.value) {
+    document.getElementById('au-cargoid').value = '';
+    document.getElementById('au-cargo').value = '';
+    document.getElementById('au-gerencia').value = '';
+    document.getElementById('au-cargo-info').style.display = 'none';
+    return;
+  }
+  const g = opt.dataset.gerencia;
+  const gc = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
+  document.getElementById('au-cargoid').value = opt.value;
+  document.getElementById('au-cargo').value = opt.dataset.cargo;
+  document.getElementById('au-gerencia').value = g;
+  const info = document.getElementById('au-cargo-info');
+  info.style.display = 'block';
+  document.getElementById('au-cargo-info-text').innerHTML =
+    `ID: <b>${opt.value}</b> &nbsp;·&nbsp; Gerencia: <span style="display:inline-block;padding:1px 7px;border-radius:10px;font-weight:700;color:#fff;background:${gc[g]||'#888'}">${gerenciaNombre[g]||g}</span>`;
+}
+
 async function adminAbrirModal() {
   document.getElementById('portal-admin-modal').classList.add('active');
+  await auCargarCargos();
   await adminCargarUsuarios();
 }
 
@@ -2803,6 +2858,8 @@ async function adminCrearUsuario() {
     msg.style.display='block'; msg.style.color='#2bbfae'; msg.textContent='✔ Usuario creado: ' + u.username;
     ['au-username','au-password','au-nombre','au-cargoid','au-cargo','au-gerencia'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
     const roleEl=document.getElementById('au-role'); if(roleEl) roleEl.value='empleado';
+    const selEl=document.getElementById('au-cargo-select'); if(selEl) selEl.value='';
+    const infoEl=document.getElementById('au-cargo-info'); if(infoEl) infoEl.style.display='none';
     await adminCargarUsuarios();
   } catch(e) { msg.style.display='block'; msg.style.color='#dd4444'; msg.textContent='Error: '+e.message; }
 }
@@ -4857,17 +4914,17 @@ function epoFlujo(html) {
           <label class="edp-field-label">Nombre completo</label>
           <input class="edp-input" id="au-nombre" placeholder="Juan García">
         </div>
-        <div>
-          <label class="edp-field-label">Cargo (ID)</label>
-          <input class="edp-input" id="au-cargoid" placeholder="coordinador-de-logistica">
-        </div>
-        <div>
-          <label class="edp-field-label">Cargo (nombre)</label>
-          <input class="edp-input" id="au-cargo" placeholder="Coordinador de Logística">
-        </div>
-        <div>
-          <label class="edp-field-label">Gerencia</label>
-          <input class="edp-input" id="au-gerencia" placeholder="operaciones">
+        <div style="grid-column:1/-1;">
+          <label class="edp-field-label">Cargo</label>
+          <select class="edp-input" id="au-cargo-select" style="cursor:pointer;" onchange="auSeleccionarCargo(this)">
+            <option value="">-- Selecciona un cargo --</option>
+          </select>
+          <input type="hidden" id="au-cargoid">
+          <input type="hidden" id="au-cargo">
+          <input type="hidden" id="au-gerencia">
+          <div id="au-cargo-info" style="margin-top:6px;font-size:11px;color:var(--text-muted);display:none;">
+            <span id="au-cargo-info-text"></span>
+          </div>
         </div>
         <div style="grid-column:1/-1;">
           <label class="edp-field-label">Rol</label>
