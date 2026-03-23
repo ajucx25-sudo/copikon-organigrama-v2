@@ -175,6 +175,10 @@
                 {
                   "name": "Analista Gestión de Flotas y Equipos",
                   "gerencia": "operaciones"
+                },
+                {
+                  "name": "Analista de Abastecimiento",
+                  "gerencia": "operaciones"
                 }
               ]
             },
@@ -573,7 +577,7 @@
                   "gerencia": "it"
                 },
                 {
-                  "name": "Analista Programador ERP, Software, Aplicaciones",
+                  "name": "Analista Programador ERP, Software, Aplicaciones, IA",
                   "gerencia": "it"
                 }
               ]
@@ -620,5 +624,8 @@
         }
       ]
     }
-  ]
+  ],
+  "__waGroups": {
+    "root": "https://chat.whatsapp.com/ECiwQHXPEYK724337ZJF1H?mode=gi_t"
+  }
 }

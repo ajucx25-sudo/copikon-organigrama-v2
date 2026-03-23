@@ -6,7 +6,7 @@
     "nombre": "Kora",
     "cedula": "",
     "fechaIngreso": "",
-    "telefono": "",
+    "telefono": "04168548124",
     "email": "",
     "estadoCivil": "",
     "nivelAcademico": "",
@@ -14,7 +14,7 @@
     "cantidadHijos": "",
     "notas": "",
     "perfilRol": {
-      "descripcion": "",
+      "descripcion": "**Coordinador de Almacén Centralizado — Análisis de Inventario y Gestión de Almacén**\n\n**Propósito del cargo**\nDirigir las operaciones del almacén centralizado, garantizando la correcta recepción, almacenamiento, control de inventario y despacho de mercancías, con altos estándares de exactitud, orden y eficiencia en la gestión de existencias.\n\n**Responsabilidades principales**\n- Supervisar las operaciones diarias del almacén: recepción, ubicación, picking, despacho y devoluciones.\n- Controlar los niveles de inventario, realizando análisis periódicos de rotación, obsolescencia y diferencias de stock.\n- Coordinar y ejecutar conteos físicos cíclicos y tomas de inventario general.\n- Garantizar la correcta aplicación de los procedimientos de almacenamiento y el orden del espacio físico.\n- Supervisar al equipo de analistas y almacenistas, asignando responsabilidades y evaluando desempeño.\n- Implementar mejoras en los procesos de gestión de almacén (WMS, metodologías 5S, FIFO/FEFO).\n- Coordinar con logística, compras y comercialización para asegurar disponibilidad de productos.\n- Elaborar reportes de gestión: exactitud de inventario, ocupación del almacén y productividad del equipo.\n\n**Competencias requeridas**\n- Gestión de almacenes y control de inventarios\n- Liderazgo y supervisión de equipos operativos\n- Manejo de sistemas WMS y herramientas de gestión de stock\n- Pensamiento analítico y atención al detalle\n- Orientación a la mejora continua\n\n**Formación y experiencia**\n- Ingeniería Industrial, Administración o Logística\n- Mínimo 3 años de experiencia en coordinación de almacenes",
       "gamificacion": {
         "xp": 50,
         "nivel": 1,
@@ -23,7 +23,8 @@
       },
       "manual": "MANUAL DE PROCEDIMIENTO\nCargo: Coordinador de Almacén Centralizado\nGerencia: Operaciones\nVersión: 1.0\n\n1. OBJETIVO\nDirigir las operaciones del almacén centralizado garantizando la correcta recepción, almacenamiento, control de inventario y despacho de mercancías, con altos estándares de exactitud y eficiencia.\n\n2. ALCANCE\nAplica a todas las operaciones del almacén centralizado: recepción, almacenamiento, picking, despacho, devoluciones e inventarios.\n\n3. PROCEDIMIENTOS PRINCIPALES\n\n3.1 Supervisión de Operaciones Diarias\n- Revisar al inicio de cada jornada la programación de recepciones y despachos del día.\n- Asignar tareas al equipo de Analistas de Almacén y Almacenistas.\n- Supervisar la ejecución de las operaciones y resolver incidencias en tiempo real.\n\n3.2 Control de Inventario\n- Revisar diariamente los movimientos de inventario registrados en el sistema.\n- Planificar y ejecutar conteos cíclicos por categoría de producto (semanal/mensual).\n- Coordinar la toma de inventario general periódica.\n- Analizar las diferencias de inventario e investigar sus causas.\n\n3.3 Recepción de Mercancías\n- Supervisar la recepción de mercancías verificando cantidad, calidad y documentación.\n- Aprobar las entradas al sistema una vez confirmada la conformidad.\n- Gestionar rechazos o devoluciones a proveedores cuando aplique.\n\n3.4 Despacho de Mercancías\n- Validar las órdenes de salida antes de autorizar el despacho.\n- Supervisar el proceso de picking y empaque.\n- Firmar y sellar los documentos de despacho.\n\n3.5 Optimización del Almacén\n- Implementar y mantener las metodologías de almacenamiento (5S, FIFO/FEFO).\n- Proponer mejoras en la distribución del espacio y los procesos de almacén.\n- Gestionar el sistema WMS y velar por la integridad de los datos.\n\n3.6 Reportes\n- Elaborar el informe mensual de gestión: exactitud de inventario, productividad y ocupación del almacén.\n\n4. INDICADORES DE GESTIÓN\n- % Exactitud de inventario\n- % Pedidos despachados a tiempo y completos\n- % Ocupación del almacén\n- Tiempo promedio de recepción y despacho\n\n5. DOCUMENTOS RELACIONADOS\n- Órdenes de entrada y salida\n- Reporte de conteos cíclicos\n- Informe mensual de almacén\n- Registro de devoluciones",
       "flujo": "<div class=\"flujo-section-title\">Ciclo de Gestión de Almacén</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">1</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Recepción de mercancía</div><div class=\"flujo-step-desc\">Supervisa la recepción de productos: verifica cantidades, condiciones y documentos contra la orden de compra.</div><div style=\"margin-top:5px;\"><span class=\"flujo-badge responsable\">Coord. Almacén</span><span class=\"flujo-badge entregable\">Acta de Recepción</span></div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">2</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Almacenamiento y ubicación</div><div class=\"flujo-step-desc\">Asigna ubicación en almacén según categoría y rotación. Supervisa el correcto almacenamiento.</div><div style=\"margin-top:5px;\"><span class=\"flujo-badge responsable\">Coord. Almacén</span><span class=\"flujo-badge sistema\">WMS · ERP</span></div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">3</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Control de inventario</div><div class=\"flujo-step-desc\">Realiza conteos cíclicos y auditorías de inventario. Concilia con el sistema ERP.</div><div style=\"margin-top:5px;\"><span class=\"flujo-badge responsable\">Coord. Almacén</span><span class=\"flujo-badge sistema\">WMS · ERP</span></div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">4</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Preparación de despachos (picking)</div><div class=\"flujo-step-desc\">Coordina con Logística el picking y empaque de pedidos según órdenes de despacho.</div><div style=\"margin-top:5px;\"><span class=\"flujo-badge responsable\">Coord. Almacén</span><span class=\"flujo-badge entregable\">Orden de Despacho Preparada</span></div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">5</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Gestión de devoluciones</div><div class=\"flujo-step-desc\">Recepciona y procesa devoluciones. Clasifica entre reingreso al inventario o merma.</div><div style=\"margin-top:5px;\"><span class=\"flujo-badge responsable\">Coord. Almacén</span><span class=\"flujo-badge sistema\">ERP</span></div></div></div><div class=\"flujo-arrow\">↓</div><div class=\"flujo-step\"><div class=\"flujo-step-num\">6</div><div class=\"flujo-step-body\"><div class=\"flujo-step-title\">Reporte de inventario</div><div class=\"flujo-step-desc\">Presenta informe semanal de niveles de inventario, rotación y alertas de stock al Gerente de Operaciones.</div><div style=\"margin-top:5px;\"><span class=\"flujo-badge responsable\">Coord. Almacén</span><span class=\"flujo-badge entregable\">Reporte de Inventario</span></div></div></div>"
-    }
+    },
+    "descripcionCargo": "**Coordinador de Almacén Centralizado — Análisis de Inventario y Gestión de Almacén**\n\n**Propósito del cargo**\nDirigir las operaciones del almacén centralizado, garantizando la correcta recepción, almacenamiento, control de inventario y despacho de mercancías, con altos estándares de exactitud, orden y eficiencia en la gestión de existencias.\n\n**Responsabilidades principales**\n- Supervisar las operaciones diarias del almacén: recepción, ubicación, picking, despacho y devoluciones.\n- Controlar los niveles de inventario, realizando análisis periódicos de rotación, obsolescencia y diferencias de stock.\n- Coordinar y ejecutar conteos físicos cíclicos y tomas de inventario general.\n- Garantizar la correcta aplicación de los procedimientos de almacenamiento y el orden del espacio físico.\n- Supervisar al equipo de analistas y almacenistas, asignando responsabilidades y evaluando desempeño.\n- Implementar mejoras en los procesos de gestión de almacén (WMS, metodologías 5S, FIFO/FEFO).\n- Coordinar con logística, compras y comercialización para asegurar disponibilidad de productos.\n- Elaborar reportes de gestión: exactitud de inventario, ocupación del almacén y productividad del equipo.\n\n**Competencias requeridas**\n- Gestión de almacenes y control de inventarios\n- Liderazgo y supervisión de equipos operativos\n- Manejo de sistemas WMS y herramientas de gestión de stock\n- Pensamiento analítico y atención al detalle\n- Orientación a la mejora continua\n\n**Formación y experiencia**\n- Ingeniería Industrial, Administración o Logística\n- Mínimo 3 años de experiencia en coordinación de almacenes"
   },
   "gerencia-de-administracion": {
     "id": "gerencia-de-administracion",
@@ -3604,6 +3605,25 @@
         "cursosComp": 0,
         "logros": []
       }
+    }
+  },
+  "ceo": {
+    "id": "ceo",
+    "cargo": "CEO",
+    "gerencia": "root",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": ""
     }
   }
 }
