@@ -622,5 +622,116 @@ print('ok')
     res.send(fs.readFileSync(shareFile, "utf-8"));
   });
 
+
+  // ── CHAT INTERNO (JSON storage) ──────────────────────
+  (() => {
+    const CHAT_USERS_FILE = path.join(__dirname, "..", "chat-users.json");
+    const CHAT_MSGS_FILE  = path.join(__dirname, "..", "chat-messages.json");
+
+    function loadCU(): any[] { try { return JSON.parse(fs.readFileSync(CHAT_USERS_FILE,"utf-8")); } catch { return []; } }
+    function saveCU(d: any[]) { fs.writeFileSync(CHAT_USERS_FILE, JSON.stringify(d,null,2),"utf-8"); }
+    function loadCM(): any[] { try { return JSON.parse(fs.readFileSync(CHAT_MSGS_FILE,"utf-8")); } catch { return []; } }
+    function saveCM(d: any[]) { fs.writeFileSync(CHAT_MSGS_FILE, JSON.stringify(d,null,2),"utf-8"); }
+    function nextId(arr: any[]): number { return arr.length ? Math.max(...arr.map((x:any)=>x.id||0))+1 : 1; }
+
+    const sseClients: Map<number, any[]> = new Map();
+    function broadcastChat(toId: number, data: object) {
+      (sseClients.get(toId)||[]).forEach((res:any) => { try { res.write(`data: ${JSON.stringify(data)}\n\n`); } catch {} });
+    }
+
+    app.post("/api/chat/register", (req, res) => {
+      const { username, password, nombre, cargo, gerencia, cargoId } = req.body;
+      if (!username||!password||!nombre||!cargo||!gerencia) return res.status(400).json({error:"Faltan campos"});
+      const users = loadCU();
+      if (users.find((u:any)=>u.username===username)) return res.status(409).json({error:"El usuario ya existe"});
+      const user = { id:nextId(users), username, password, nombre, cargo, gerencia, cargoId:cargoId||"", online:false, lastSeen:null, createdAt:new Date().toISOString() };
+      users.push(user); saveCU(users);
+      const { password:_, ...safe } = user;
+      res.json(safe);
+    });
+
+    app.post("/api/chat/login", (req, res) => {
+      const { username, password } = req.body;
+      const users = loadCU();
+      const user = users.find((u:any)=>u.username===username);
+      if (!user||user.password!==password) return res.status(401).json({error:"Usuario o contraseña incorrectos"});
+      user.online=true; user.lastSeen=new Date().toISOString(); saveCU(users);
+      const { password:_, ...safe } = user;
+      res.json(safe);
+    });
+
+    app.post("/api/chat/logout", (req, res) => {
+      const { userId } = req.body;
+      if (userId) { const users=loadCU(); const u=users.find((x:any)=>x.id===Number(userId)); if(u){u.online=false;u.lastSeen=new Date().toISOString();saveCU(users);} }
+      res.json({ok:true});
+    });
+
+    app.get("/api/chat/users", (_req, res) => {
+      res.json(loadCU().map(({password:_,...u}:any)=>u));
+    });
+
+    app.get("/api/chat/messages/:uid1/:uid2", (req, res) => {
+      const u1=Number(req.params.uid1), u2=Number(req.params.uid2);
+      const msgs = loadCM();
+      const conv = msgs.filter((m:any)=>(m.fromId===u1&&m.toId===u2)||(m.fromId===u2&&m.toId===u1));
+      // mark read
+      let dirty=false;
+      msgs.forEach((m:any)=>{ if(m.fromId===u2&&m.toId===u1&&!m.read){m.read=true;dirty=true;} });
+      if(dirty) saveCM(msgs);
+      res.json(conv);
+    });
+
+    app.post("/api/chat/messages", (req, res) => {
+      const { fromId, toId, content } = req.body;
+      if (!fromId||!toId||!content) return res.status(400).json({error:"Faltan campos"});
+      const msgs = loadCM();
+      const msg = { id:nextId(msgs), fromId:Number(fromId), toId:Number(toId), content, createdAt:new Date().toISOString(), read:false };
+      msgs.push(msg); saveCM(msgs);
+      broadcastChat(Number(toId), {type:"message",message:msg});
+      broadcastChat(Number(fromId), {type:"message_sent",message:msg});
+      res.json(msg);
+    });
+
+    app.get("/api/chat/unread/:userId", (req, res) => {
+      const uid=Number(req.params.userId);
+      const counts:Record<number,number>={};
+      loadCM().filter((m:any)=>m.toId===uid&&!m.read).forEach((m:any)=>{ counts[m.fromId]=(counts[m.fromId]||0)+1; });
+      res.json(counts);
+    });
+
+    app.post("/api/chat/read", (req, res) => {
+      const { fromId, toId } = req.body;
+      const msgs=loadCM(); let dirty=false;
+      msgs.forEach((m:any)=>{ if(m.fromId===Number(fromId)&&m.toId===Number(toId)&&!m.read){m.read=true;dirty=true;} });
+      if(dirty) saveCM(msgs);
+      broadcastChat(Number(fromId),{type:"read",byId:toId});
+      res.json({ok:true});
+    });
+
+    app.get("/api/chat/sse/:userId", (req, res) => {
+      const userId=Number(req.params.userId);
+      res.setHeader("Content-Type","text/event-stream");
+      res.setHeader("Cache-Control","no-cache");
+      res.setHeader("Connection","keep-alive");
+      res.flushHeaders();
+      if(!sseClients.has(userId)) sseClients.set(userId,[]);
+      sseClients.get(userId)!.push(res);
+      const users=loadCU(); const u=users.find((x:any)=>x.id===userId);
+      if(u){u.online=true;u.lastSeen=new Date().toISOString();saveCU(users);}
+      const hb=setInterval(()=>{ try{res.write(": hb\n\n");}catch{} },25000);
+      req.on("close",()=>{
+        clearInterval(hb);
+        sseClients.set(userId,(sseClients.get(userId)||[]).filter((r:any)=>r!==res));
+        if(!(sseClients.get(userId)||[]).length){
+          const us=loadCU(); const uu=us.find((x:any)=>x.id===userId);
+          if(uu){uu.online=false;uu.lastSeen=new Date().toISOString();saveCU(us);}
+        }
+      });
+    });
+  })();
+
   return server;
 }
+
+// ═══════════════════════════════════════════════════════
+// CHAT INTERNO — rutas integradas en el mismo servidor
