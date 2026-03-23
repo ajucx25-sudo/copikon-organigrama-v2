@@ -887,17 +887,25 @@ print('ok')
         const empData = JSON.parse(fs.readFileSync(empFile, "utf-8"));
         allEmployees = Object.values(empData);
       } catch {}
-      // Combinar: usuarios con cuenta + empleados sin cuenta (usando cargoId como username)
+      // Mapa de employees por id para fusión de datos
+      const empMap: Record<string,any> = {};
+      allEmployees.forEach((e: any) => { empMap[e.id] = e; });
+
       const result: any[] = [];
       const seen = new Set<string>();
-      // Primero los que tienen cuenta
+
+      // Usuarios con cuenta — nombre siempre viene de employees.json si existe
       Object.values(portalUsers).forEach((u: any) => {
         const { password: _, ...safe } = u;
-        result.push({ ...safe, hasAccount: true });
+        const empData = empMap[u.cargoId] || {};
+        // El nombre de employees.json tiene prioridad si está relleno
+        const nombre = (empData.nombre && empData.nombre.trim()) ? empData.nombre : (u.nombre || '');
+        result.push({ ...safe, nombre, hasAccount: true });
         seen.add(u.username);
         if (u.cargoId) seen.add(u.cargoId);
       });
-      // Luego todos los empleados sin cuenta
+
+      // Todos los empleados sin cuenta
       allEmployees.forEach((e: any) => {
         if (seen.has(e.id)) return;
         result.push({
