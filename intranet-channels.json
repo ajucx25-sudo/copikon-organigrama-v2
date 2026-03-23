@@ -1,0 +1,50 @@
+[
+  {
+    "id": "general",
+    "name": "General",
+    "gerencia": "general",
+    "desc": "Canal para toda la empresa"
+  },
+  {
+    "id": "comercializacion",
+    "name": "Comercialización",
+    "gerencia": "comercializacion",
+    "desc": "Equipo comercial"
+  },
+  {
+    "id": "operaciones",
+    "name": "Operaciones",
+    "gerencia": "operaciones",
+    "desc": "Equipo de operaciones"
+  },
+  {
+    "id": "finanzas",
+    "name": "Finanzas",
+    "gerencia": "finanzas",
+    "desc": "Equipo financiero"
+  },
+  {
+    "id": "compras",
+    "name": "Compras",
+    "gerencia": "compras",
+    "desc": "Equipo de compras"
+  },
+  {
+    "id": "retail",
+    "name": "Retail",
+    "gerencia": "retail",
+    "desc": "Tiendas Retail Copikon"
+  },
+  {
+    "id": "it",
+    "name": "IT",
+    "gerencia": "it",
+    "desc": "Equipo de tecnología"
+  },
+  {
+    "id": "proyectos",
+    "name": "Proyectos",
+    "gerencia": "proyectos",
+    "desc": "Gerencia técnica de proyectos"
+  }
+]
