@@ -2911,18 +2911,26 @@ function adminRenderUsuarios(users) {
 }
 
 async function adminCargarUsuarios() {
-  // Siempre usar window.__PORTAL_USERS__ como fuente primaria (funciona offline)
-  const localUsers = window.__PORTAL_USERS__ || {};
-  const list = Object.values(localUsers).map(({password: _, ...u}) => u);
-  adminRenderUsuarios(list);
-  // También intentar sincronizar con el servidor
   try {
+    // Intentar desde el servidor primero (fuente de verdad)
     const res = await fetch((window.API_BASE||'') + '/api/portal/users');
     if (res.ok) {
       const serverUsers = await res.json();
-      if (serverUsers.length > 0) adminRenderUsuarios(serverUsers);
+      // Sincronizar window.__PORTAL_USERS__ con el servidor
+      if (window.__PORTAL_USERS__) {
+        // Quitar los que el servidor ya no tiene
+        Object.keys(window.__PORTAL_USERS__).forEach(k => {
+          if (!serverUsers.find(u => u.username === k)) delete window.__PORTAL_USERS__[k];
+        });
+      }
+      adminRenderUsuarios(serverUsers);
+      return;
     }
   } catch {}
+  // Fallback: usar memoria local
+  const localUsers = window.__PORTAL_USERS__ || {};
+  const list = Object.values(localUsers).map(({password: _, ...u}) => u);
+  adminRenderUsuarios(list);
 }
 
 async function adminCrearUsuario() {
@@ -2953,18 +2961,29 @@ async function adminCrearUsuario() {
 }
 
 async function adminEliminar(username) {
-  if (!confirm('¿Eliminar el usuario "' + username + '"? Esta acción no se puede deshacer.')) return;
-  // Eliminar de memoria inmediatamente
-  if (window.__PORTAL_USERS__ && window.__PORTAL_USERS__[username]) {
-    delete window.__PORTAL_USERS__[username];
+  if (!confirm('¿Eliminar el usuario "' + username + '"?')) return;
+  const btn = event.target;
+  btn.disabled = true; btn.textContent = '...';
+  try {
+    const res = await fetch((window.API_BASE||'') + '/api/portal/users/' + username, {
+      method: 'DELETE', headers: {'Content-Type':'application/json'}, body: JSON.stringify({adminKey:'copikon2026admin'})
+    });
+    if (res.ok) {
+      // Eliminar de window.__PORTAL_USERS__ para que la tabla se actualice
+      if (window.__PORTAL_USERS__) delete window.__PORTAL_USERS__[username];
+      await adminCargarUsuarios();
+      showToast('Usuario "' + username + '" eliminado', '#dd4444');
+    } else {
+      const d = await res.json().catch(()=>({}));
+      showToast('Error: ' + (d.error || 'No se pudo eliminar'), '#dd4444');
+      btn.disabled = false; btn.textContent = '✕';
+    }
+  } catch(e) {
+    // Sin servidor: eliminar solo de memoria
+    if (window.__PORTAL_USERS__) delete window.__PORTAL_USERS__[username];
+    await adminCargarUsuarios();
+    showToast('Usuario "' + username + '" eliminado (solo esta sesión)', '#f0a050');
   }
-  // Actualizar tabla de inmediato
-  await adminCargarUsuarios();
-  // Intentar eliminar en el servidor
-  fetch((window.API_BASE||'') + '/api/portal/users/' + username, {
-    method: 'DELETE', headers: {'Content-Type':'application/json'}, body: JSON.stringify({adminKey:'copikon2026admin'})
-  }).catch(()=>{});
-  showToast('Usuario "' + username + '" eliminado', '#dd4444');
 }
 
 // Iniciar login al cargar la app
