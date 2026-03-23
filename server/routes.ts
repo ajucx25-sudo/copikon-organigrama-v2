@@ -745,21 +745,27 @@ print('ok')
 
 
   // ── AUTH PORTAL DEL EMPLEADO ──────────────────────
-  // Busca portal-users.json en varias ubicaciones posibles
+  // Usuarios hardcoded como base — siempre disponibles
+  const HARDCODED_USERS: Record<string, any> = {
+    admin: { username:"admin", password:"copikon2026", cargoId:"ceo", cargo:"CEO", gerencia:"root", nombre:"Administrador", role:"admin" }
+  };
   const PORTAL_USERS_FILE = (() => {
     const candidates = [
       path.join(process.cwd(), "portal-users.json"),
       path.join(__dirname, "..", "portal-users.json"),
+      path.join(__dirname, "..", "public", "portal-users.json"),
       path.join(__dirname, "portal-users.json"),
     ];
     for (const c of candidates) { if (fs.existsSync(c)) return c; }
-    return candidates[0]; // fallback aunque no exista aún
+    return candidates[0];
   })();
   function loadPortalUsers(): Record<string, any> {
-    try { return JSON.parse(fs.readFileSync(PORTAL_USERS_FILE,"utf-8")); }
-    catch {
-      // Fallback hard-coded: usuario admin por defecto
-      return { admin: { username:"admin", password:"copikon2026", cargoId:"ceo", cargo:"CEO", gerencia:"root", nombre:"Administrador", role:"admin" } };
+    try {
+      const data = JSON.parse(fs.readFileSync(PORTAL_USERS_FILE, "utf-8"));
+      // Siempre fusionar con hardcoded para garantizar que admin exista
+      return { ...HARDCODED_USERS, ...data };
+    } catch {
+      return { ...HARDCODED_USERS };
     }
   }
   function savePortalUsers(d: Record<string, any>) {
