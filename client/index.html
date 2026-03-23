@@ -2699,7 +2699,7 @@ function buildRoot(data) {
 }
 
 /* ===== LOGIN PORTAL ===== */
-let portalUser = null; // usuario logueado
+window.portalUser = null; // usuario logueado
 
 function portalInit() {
   // Mostrar pantalla de login al abrir
@@ -2725,7 +2725,7 @@ async function portalLogin() {
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Error');
-    portalUser = data;
+    window.portalUser = data;
     document.getElementById('portal-login-overlay').classList.remove('active');
     // Si es admin, mostrar botón de gestión de usuarios
     if (data.role === 'admin') {
@@ -2751,27 +2751,27 @@ function portalSkipLogin() {
 }
 
 function portalAbrirMiFicha() {
-  if (!portalUser || !portalUser.cargoId) return;
+  if (!window.portalUser || !window.portalUser.cargoId) return;
   // Buscar el nodo del cargo del empleado y hacer doble click
-  const cargoId = portalUser.cargoId;
+  const cargoId = window.portalUser.cargoId;
   // Intentar abrir el edp panel directamente
-  const cargo = portalUser.cargo || cargoId.replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase());
-  const gerencia = portalUser.gerencia || 'staff';
+  const cargo = window.portalUser.cargo || cargoId.replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase());
+  const gerencia = window.portalUser.gerencia || 'staff';
   const color = colorMap[gerencia] || '#1a3a6b';
   openEdpPanel(cargoId, cargo, gerencia, color);
   // Navegar a Mi Portal directamente
   setTimeout(() => {
     edpSwitchTab('edp-pane-gami');
     // Actualizar nombre del empleado en la ficha si lo tiene el usuario
-    if (portalUser.nombre && directorioState && directorioState.employees) {
+    if (window.portalUser.nombre && directorioState && directorioState.employees) {
       const emp = directorioState.employees[cargoId] || {};
       if (!emp.nombre) {
         // Pre-llenar el nombre del empleado
         const nombreInput = document.getElementById('emp-nombre');
-        if (nombreInput && !nombreInput.value) nombreInput.value = portalUser.nombre;
+        if (nombreInput && !nombreInput.value) nombreInput.value = window.portalUser.nombre;
       }
     }
-    showToast('👋 Bienvenido, ' + (portalUser.nombre || portalUser.username) + '!', '#2bbfae');
+    showToast('👋 Bienvenido, ' + (window.portalUser.nombre || window.portalUser.username) + '!', '#2bbfae');
   }, 300);
 }
 
