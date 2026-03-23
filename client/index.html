@@ -2746,36 +2746,60 @@ function portalAbrirMiFicha() {
 // ===== ADMIN: GESTIONAR USUARIOS =====
 const gerenciaNombre = {'root':'Dirección General','comercializacion':'Comercialización','operaciones':'Operaciones','finanzas':'Finanzas / Administración','retail':'Retail','it':'IT','proyectos':'Proyectos','compras':'Compras','staff':'Staff'};
 
-async function auCargarCargos() {
-  try {
-    const res = await fetch((window.API_BASE||'') + '/api/employees');
-    const data = await res.json();
-    const employees = Array.isArray(data) ? data : Object.values(data);
-    // Agrupar por gerencia y ordenar
-    const grupos = {};
-    employees.forEach(e => {
-      const g = e.gerencia || 'otros';
-      if (!grupos[g]) grupos[g] = [];
-      grupos[g].push(e);
+function auCargarCargos() {
+  const sel = document.getElementById('au-cargo-select');
+  sel.innerHTML = '<option value="">-- Selecciona un cargo --</option>';
+  const empMap = window.__EMPLOYEES_DATA__ || {};
+  const gc = {'root':'#1a3a6b','comercializacion':'#4a7fd4','operaciones':'#e8a020','finanzas':'#3cb371','retail':'#a06ad4','it':'#5b8ff9','proyectos':'#dd6874','compras':'#f0a050','staff':'#6b7a99'};
+
+  // Recorrer org jerárquicamente, agrupar por gerencia manteniendo orden jerárquico
+  const grupos = {}; // gerencia -> [{id, cargo, depth, gerencia}]
+  const ordenGer = [];
+
+  function walk(node, depth) {
+    const nid = generateNodeId(node.name || '');
+    const emp = empMap[nid];
+    if (emp && emp.cargo && nid) {
+      const g = emp.gerencia || 'otros';
+      if (!grupos[g]) { grupos[g] = []; ordenGer.push(g); }
+      // Indentación: primer nivel de cada gerencia sin guiones, subordinados con —
+      const localDepth = depth <= 2 ? 0 : depth - 2; // gerencia=depth 2 -> 0, sus hijos -> 1,2...
+      const prefix = localDepth === 0 ? '' : ('  '.repeat(localDepth) + '— ');
+      grupos[g].push({ id: nid, cargo: emp.cargo, prefix, gerencia: g });
+    }
+    (node.children || []).forEach(c => walk(c, depth + 1));
+  }
+  walk(orgData, 0);
+
+  ordenGer.forEach(g => {
+    const grp = document.createElement('optgroup');
+    grp.label = gerenciaNombre[g] || g.charAt(0).toUpperCase()+g.slice(1);
+    grupos[g].forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = e.prefix + e.cargo;
+      opt.dataset.gerencia = e.gerencia;
+      opt.dataset.cargo = e.cargo;
+      sel.appendChild(opt);
     });
-    const sel = document.getElementById('au-cargo-select');
-    sel.innerHTML = '<option value="">-- Selecciona un cargo --</option>';
-    const orden = ['root','comercializacion','operaciones','finanzas','compras','retail','it','proyectos','staff'];
-    orden.forEach(g => {
-      if (!grupos[g]) return;
-      const grp = document.createElement('optgroup');
-      grp.label = gerenciaNombre[g] || g.charAt(0).toUpperCase()+g.slice(1);
-      grupos[g].sort((a,b) => a.cargo.localeCompare(b.cargo)).forEach(e => {
-        const opt = document.createElement('option');
-        opt.value = e.id;
-        opt.textContent = e.cargo;
-        opt.dataset.gerencia = e.gerencia;
-        opt.dataset.cargo = e.cargo;
-        grp.appendChild(opt);
-      });
-      sel.appendChild(grp);
+    sel.appendChild(grp); // Firefox necesita agregar el optgroup después de las options... hacerlo al revés
+  });
+
+  // Reconstruir correctamente: optgroup primero, options dentro
+  sel.innerHTML = '<option value="">-- Selecciona un cargo --</option>';
+  ordenGer.forEach(g => {
+    const grp = document.createElement('optgroup');
+    grp.label = (gerenciaNombre[g] || g.charAt(0).toUpperCase()+g.slice(1)).toUpperCase();
+    grupos[g].forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = e.prefix + e.cargo;
+      opt.dataset.gerencia = e.gerencia;
+      opt.dataset.cargo = e.cargo;
+      grp.appendChild(opt);
     });
-  } catch(e) { console.error('Error cargando cargos:', e); }
+    sel.appendChild(grp);
+  });
 }
 
 function auSeleccionarCargo(sel) {
@@ -2800,7 +2824,7 @@ function auSeleccionarCargo(sel) {
 
 async function adminAbrirModal() {
   document.getElementById('portal-admin-modal').classList.add('active');
-  await auCargarCargos();
+  auCargarCargos();
   await adminCargarUsuarios();
 }
 
