@@ -1581,13 +1581,6 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:1px;">Titular</div>
         <div id="edp-titular-nombre" style="font-size:12.5px;font-weight:700;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sin titular</div>
       </div>
-      <a id="edp-titular-wa" href="#" target="_blank" rel="noopener"
-        style="display:none;align-items:center;gap:5px;padding:5px 10px;
-        background:#25d366;color:#fff;border-radius:8px;font-size:11px;
-        font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
     </div>
 
     <!-- Pestañas -->
@@ -1624,16 +1617,6 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
           <div>
             <label class="edp-field-label">Teléfono</label>
             <input id="emp-telefono" type="text" class="edp-input" placeholder="0412-000-0000"
-              oninput="waUpdateDirectBtn(this.value)">
-          </div>
-          <div id="edp-wa-direct-wrap" class="full" style="display:none;">
-            <a id="edp-wa-direct-btn" href="#" target="_blank" rel="noopener"
-              style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;
-              background:#25d366;color:#fff;border-radius:8px;font-size:11.5px;
-              font-weight:700;text-decoration:none;width:100%;justify-content:center;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Abrir WhatsApp directo
-            </a>
           </div>
           <div>
             <label class="edp-field-label">Email</label>
@@ -1906,29 +1889,8 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
     </div>
   </div>
 
-  <!-- Grupos de WhatsApp por gerencia -->
-  <div id="wa-groups-bar" style="display:none;align-items:center;gap:6px;padding:6px 16px 0;flex-wrap:wrap;">
-    <span style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;">💬 Grupos WA:</span>
-    <div id="wa-groups-list" style="display:flex;gap:5px;flex-wrap:wrap;"></div>
-    <button id="wa-groups-config-btn" onclick="waGroupsOpenConfig()"
-      style="font-size:10px;padding:3px 8px;border-radius:6px;border:1px dashed var(--border);
-      background:transparent;color:var(--text-muted);cursor:pointer;white-space:nowrap;">
-      + Configurar grupos
-    </button>
-  </div>
 
   <!-- Modal configurar grupos WA -->
-  <div id="wa-modal" style="display:none;position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;">
-    <div style="background:var(--bg-card);border-radius:14px;padding:22px 24px;width:440px;max-width:95vw;max-height:85vh;overflow-y:auto;box-shadow:0 8px 40px rgba(0,0,0,0.25);">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-        <h3 style="font-size:15px;font-weight:800;margin:0;">💬 Grupos de WhatsApp</h3>
-        <button onclick="waGroupsCloseConfig()" style="background:none;border:none;font-size:18px;cursor:pointer;color:var(--text-muted);">&times;</button>
-      </div>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Pega el link de invitación de cada grupo (desde WhatsApp → Grupo → Link de invitación).</p>
-      <div id="wa-modal-fields"></div>
-      <button onclick="waGroupsSave()" style="width:100%;margin-top:14px;padding:9px;border-radius:8px;border:none;background:var(--color-primary);color:#fff;font-weight:700;font-size:13px;cursor:pointer;">💾 Guardar grupos</button>
-    </div>
-  </div>
 
   <!-- Print-only elements -->
   <span class="print-title">Organigrama General — Copikon Venezuela</span>
@@ -1995,18 +1957,6 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
           <div id="detail-emp-nivelacad-row"><span style="color:var(--text-muted,#7a8399);">🎓 Nivel acad.</span><br><span id="detail-emp-nivelacad" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
           <div id="detail-emp-hijos-row" style="grid-column:1/-1;"><span style="color:var(--text-muted,#7a8399);">👶 Hijos</span><br><span id="detail-emp-hijos" style="color:var(--text-primary,#1a2238);font-weight:600;"></span></div>
           <div id="detail-emp-notas-row" style="grid-column:1/-1;display:none;"><span style="color:var(--text-muted,#7a8399);">📝 Notas</span><br><span id="detail-emp-notas" style="color:var(--text-primary,#1a2238);"></span></div>
-        </div>
-        <!-- Botón WhatsApp directo -->
-        <div id="detail-emp-wa-row" style="margin-top:10px;display:none;">
-          <a id="detail-emp-wa-btn" href="#" target="_blank" rel="noopener"
-            style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;
-            background:#25d366;color:#fff;border-radius:8px;font-size:12px;
-            font-weight:700;text-decoration:none;transition:opacity 0.15s;">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            WhatsApp directo
-          </a>
         </div>
 
       </div>
@@ -2148,7 +2098,6 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
         <div id="share-updating-note" style="display:none;font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;">⏳ Actualizando con datos más recientes...</div>
         <a href="https://ajucx25-sudo.github.io/copikon-organigrama-v2/" target="_blank"
           style="font-size:0.8rem;color:var(--color-accent);">Abrir organigrama ↗</a>
-        <p style="font-size:0.75rem;color:var(--text-muted);margin:10px 0 0;">Abre en cualquier navegador — WhatsApp, móvil, PC — sin necesidad de cuenta.</p>
       </div>
 
       <!-- Error state -->
@@ -2578,23 +2527,7 @@ function update(source) {
     .attr('font-family','Satoshi,sans-serif').attr('text-anchor','middle')
     .attr('dominant-baseline','central').attr('font-size','9px').attr('font-weight','600')
     .attr('opacity','0.85').attr('pointer-events','none');
-  // Ícono WhatsApp SVG en el nodo
-  const waIcon = nodeEnter.append('g').attr('class','node-wa-dot').style('cursor','pointer')
-    .on('click', function(event, d) {
-      event.stopPropagation();
-      const id = generateNodeId(d.data.name);
-      const emp = (window.__EMPLOYEES_DATA__ && window.__EMPLOYEES_DATA__[id]) || {};
-      if (!emp.telefono) return;
-      let num = emp.telefono.replace(/[^0-9+]/g,'');
-      if (num.startsWith('0')) num = '+58' + num.slice(1);
-      window.open('https://wa.me/' + num.replace('+',''), '_blank');
-    });
-  // Fondo circular verde
-  waIcon.append('circle').attr('r', 11).attr('fill','#25d366').attr('stroke','rgba(255,255,255,0.7)').attr('stroke-width',1.5);
-  waIcon.append('path')
-    .attr('fill','#ffffff')
-    .attr('transform','translate(-7.5,-7.5) scale(0.625)')
-    .attr('d','M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z');
+
   nodeEnter.append('circle').attr('class','toggle-indicator').attr('r',8).attr('stroke-width',1.5)
     .style('cursor','pointer')
     .on('click', function(event,d) {
@@ -2679,22 +2612,7 @@ function update(source) {
       return nombre.length > maxChars ? nombre.slice(0, maxChars-1) + '…' : nombre;
     });
 
-  // Ícono WA (ahora es un grupo <g>)
-  nodeUpdate.select('.node-wa-dot')
-    .attr('transform', d => {
-      const id = generateNodeId(d.data.name);
-      const emp = (window.__EMPLOYEES_DATA__ && window.__EMPLOYEES_DATA__[id]) || {};
-      if (!emp.telefono) return 'translate(9999,9999)';
-      const size = getNodeSize(d);
-      const cy = emp.nombre ? 7 : 0;
-      // Posicionar en el lado izquierdo del nodo, no cerca del toggle
-      return `translate(${-size.w/2 + 11},${cy})`;
-    })
-    .style('display', d => {
-      const id = generateNodeId(d.data.name);
-      const emp = (window.__EMPLOYEES_DATA__ && window.__EMPLOYEES_DATA__[id]) || {};
-      return emp.telefono ? 'block' : 'none';
-    });
+
 
   nodeUpdate.select('.toggle-indicator')
     .attr('cx', d => getNodeSize(d).w/2 + 2).attr('cy', 0)
@@ -3077,7 +2995,6 @@ function showDetailEmpleado(cargo, gerencia, color) {
     }
     document.getElementById('detail-emp-fecha').textContent = fechaDisplay || '—';
     document.getElementById('detail-emp-tel').textContent = emp.telefono || '—';
-    waUpdateDirectBtn(emp.telefono);
     document.getElementById('detail-emp-email').textContent = emp.email || '—';
     // Estado civil
     document.getElementById('detail-emp-estadocivil').textContent = emp.estadoCivil || '—';
@@ -3925,7 +3842,6 @@ function openEdpPanel(nodeId, cargo, gerencia, color) {
   document.getElementById('emp-fecha').value = emp.fechaIngreso || '';
   document.getElementById('emp-telefono').value = emp.telefono || '';
   document.getElementById('emp-email').value = emp.email || '';
-  waUpdateDirectBtn(emp.telefono, emp.nombre);
   document.getElementById('emp-estadocivil').value = emp.estadoCivil || '';
   document.getElementById('emp-nivelacademico').value = emp.nivelAcademico || '';
   const th = emp.tieneHijos || '';
@@ -4749,147 +4665,6 @@ function ciReintentar(cursoIdx) {
 }
 
 
-/* ===== WHATSAPP ===== */
-const WA_GERENCIAS = [
-  { id:'root',        label:'Dirección General', color:'#1a3a6b' },
-  { id:'comercializacion', label:'Comercialización', color:'#4a7fd4' },
-  { id:'operaciones', label:'Operaciones',   color:'#e8a020' },
-  { id:'finanzas',    label:'Administración', color:'#3cb371' },
-  { id:'retail',      label:'Retail',        color:'#a06ad4' },
-  { id:'it',          label:'IT',            color:'#5b8ff9' },
-  { id:'proyectos',   label:'Proyectos',     color:'#dd6874' },
-  { id:'compras',     label:'Compras',       color:'#f0a050' },
-];
-
-// Cargar grupos guardados (en memoria del servidor via API)
-let waGroups = {}; // { gerenciaId: url }
-
-function waGroupsLoad() {
-  // Cargar desde /api/org (que ya persiste en el servidor)
-  fetch((window.API_BASE||'') + '/api/org')
-    .then(r => r.ok ? r.json() : null)
-    .then(d => {
-      if (d && d.__waGroups) {
-        waGroups = d.__waGroups;
-        waGroupsRender();
-      }
-    })
-    .catch(() => {});
-}
-
-function waGroupsRender() {
-  const list = document.getElementById('wa-groups-list');
-  if (!list) return;
-  list.innerHTML = '';
-  WA_GERENCIAS.forEach(g => {
-    const url = waGroups[g.id];
-    if (!url) return;
-    const a = document.createElement('a');
-    a.href = url;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.title = 'Unirse al grupo de ' + g.label;
-    a.style.cssText = `display:inline-flex;align-items:center;gap:4px;padding:3px 9px;
-      border-radius:20px;font-size:10.5px;font-weight:700;text-decoration:none;
-      color:#fff;background:${g.color};`;
-    a.innerHTML = `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> ${g.label}`;
-    list.appendChild(a);
-  });
-}
-
-function waGroupsOpenConfig() {
-  const fields = document.getElementById('wa-modal-fields');
-  fields.innerHTML = WA_GERENCIAS.map(g => `
-    <div style="margin-bottom:10px;">
-      <label style="font-size:11px;font-weight:700;color:${g.color};display:block;margin-bottom:4px;">
-        ● ${g.label}
-      </label>
-      <input id="wa-inp-${g.id}" type="url"
-        placeholder="https://chat.whatsapp.com/..."
-        value="${waGroups[g.id]||''}"
-        style="width:100%;padding:7px 10px;border-radius:7px;border:1.5px solid var(--border);
-        background:var(--bg);color:var(--text-primary);font-size:12px;box-sizing:border-box;"
-      />
-    </div>
-  `).join('');
-  const modal = document.getElementById('wa-modal');
-  modal.style.display = 'flex';
-}
-
-function waGroupsCloseConfig() {
-  document.getElementById('wa-modal').style.display = 'none';
-}
-
-function waGroupsSave() {
-  const newGroups = {};
-  WA_GERENCIAS.forEach(g => {
-    const val = document.getElementById('wa-inp-'+g.id)?.value?.trim();
-    if (val) newGroups[g.id] = val;
-  });
-  waGroups = newGroups;
-  // Guardar en org-data.json junto con el organigrama
-  fetch((window.API_BASE||'') + '/api/org')
-    .then(r => r.json())
-    .then(org => {
-      org.__waGroups = newGroups;
-      return fetch((window.API_BASE||'') + '/api/org', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(org)
-      });
-    })
-    .catch(() => {});
-  waGroupsRender();
-  waGroupsCloseConfig();
-  // Mostrar confirmación
-  const bar = document.getElementById('wa-groups-config-btn');
-  if (bar) {
-    const orig = bar.textContent;
-    bar.textContent = '✔ Guardado';
-    bar.style.color = '#2bbfae';
-    setTimeout(() => { bar.textContent = orig; bar.style.color = ''; }, 2000);
-  }
-}
-
-// Actualizar botón WA directo cuando se carga el perfil
-function waUpdateDirectBtn(telefono, nombre) {
-  const tel = (telefono || '').trim();
-  const hasNumber = tel && tel !== '—' && tel.replace(/[^0-9]/g,'').length >= 7;
-  const hasNombre = !!(nombre && nombre.trim());
-  // Calcular URL de WhatsApp
-  let waUrl = '#';
-  if (hasNumber) {
-    let num = tel.replace(/[^0-9+]/g,'');
-    if (num.startsWith('0')) num = '+58' + num.slice(1);
-    waUrl = 'https://wa.me/' + num.replace('+','');
-  }
-  // ── Barra de titular visible en el header del panel ──
-  const titularBar    = document.getElementById('edp-titular-bar');
-  const titularNombre = document.getElementById('edp-titular-nombre');
-  const titularWa     = document.getElementById('edp-titular-wa');
-  if (titularBar) {
-    if (hasNombre || hasNumber) {
-      titularBar.style.display = 'flex';
-      if (titularNombre) titularNombre.textContent = nombre || 'Sin titular';
-      if (titularWa) {
-        titularWa.href = waUrl;
-        titularWa.style.display = hasNumber ? 'inline-flex' : 'none';
-      }
-    } else {
-      titularBar.style.display = 'none';
-    }
-  }
-  // ── Botón en la pestaña Datos ──
-  const edpWrap = document.getElementById('edp-wa-direct-wrap');
-  const edpBtn  = document.getElementById('edp-wa-direct-btn');
-  if (edpWrap && edpBtn) {
-    edpBtn.href = waUrl;
-    edpWrap.style.display = hasNumber ? 'block' : 'none';
-  }
-}
-
-// Inicializar al cargar
-document.addEventListener('DOMContentLoaded', () => waGroupsLoad());
 
 /* ===== IMPRIMIR ===== */
 function edpPrint(campo) {
