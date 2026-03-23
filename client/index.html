@@ -4043,12 +4043,17 @@ const WA_GERENCIAS = [
 // Cargar grupos guardados (en memoria del servidor via API)
 let waGroups = {}; // { gerenciaId: url }
 
-async function waGroupsLoad() {
-  try {
-    const r = await fetch('/api/wa-groups');
-    if (r.ok) waGroups = await r.json();
-  } catch {}
-  waGroupsRender();
+function waGroupsLoad() {
+  // Cargar desde /api/org (que ya persiste en el servidor)
+  fetch('/api/org')
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (d && d.__waGroups) {
+        waGroups = d.__waGroups;
+        waGroupsRender();
+      }
+    })
+    .catch(() => {});
 }
 
 function waGroupsRender() {
@@ -4094,22 +4099,35 @@ function waGroupsCloseConfig() {
   document.getElementById('wa-modal').style.display = 'none';
 }
 
-async function waGroupsSave() {
+function waGroupsSave() {
   const newGroups = {};
   WA_GERENCIAS.forEach(g => {
     const val = document.getElementById('wa-inp-'+g.id)?.value?.trim();
     if (val) newGroups[g.id] = val;
   });
   waGroups = newGroups;
-  try {
-    await fetch('/api/wa-groups', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(waGroups)
-    });
-  } catch {}
+  // Guardar en org-data.json junto con el organigrama
+  fetch('/api/org')
+    .then(r => r.json())
+    .then(org => {
+      org.__waGroups = newGroups;
+      return fetch('/api/org', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(org)
+      });
+    })
+    .catch(() => {});
   waGroupsRender();
   waGroupsCloseConfig();
+  // Mostrar confirmación
+  const bar = document.getElementById('wa-groups-config-btn');
+  if (bar) {
+    const orig = bar.textContent;
+    bar.textContent = '✔ Guardado';
+    bar.style.color = '#2bbfae';
+    setTimeout(() => { bar.textContent = orig; bar.style.color = ''; }, 2000);
+  }
 }
 
 // Actualizar botón WA directo cuando se carga el perfil
