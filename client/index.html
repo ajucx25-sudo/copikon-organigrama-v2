@@ -1480,7 +1480,7 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
     <!-- Intranet -->
     <button class="header-btn" id="intranet-btn" title="Intranet — Chat y Proyectos"
       style="background:#2bbfae;color:#fff;border-color:#2bbfae;font-size:11px;font-weight:700;width:auto;padding:0 10px;gap:4px;"
-      onclick="window.open('./intranet/', '_blank')">
+      onclick="(function(){ const base = (typeof '__PORT_5000__' !== 'undefined' && !('__PORT_5000__').startsWith('__')) ? '__PORT_5000__' : ''; window.location.href = base + '/intranet/'; })()">
       💬 Intranet
     </button>
     <!-- Mi Portal -->
