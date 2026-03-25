@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "mn3ldkhd",
+    "convId": "Yenni__admin",
+    "from": "admin",
+    "to": "Yenni",
+    "text": "Hola Yenni, ¿cómo estás?",
+    "ts": 1774297410155,
+    "read": false
+  }
+]

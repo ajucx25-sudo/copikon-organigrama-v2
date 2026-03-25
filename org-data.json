@@ -153,6 +153,60 @@
                   "gerencia": "comercializacion"
                 }
               ]
+            },
+            {
+              "name": "Coordinador Comercial Renta Impresora-Gestion Documental",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista Comercial Renta Impresora Gestion Documento Lara-Portuguesa-Yaracuy",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Renta Impresora Gestion Documento Lara-Portuguesa-Yaracuy",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Renta Impresora Gestion Documento Aragua-Carabobo",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Renta Impresora Gestion Documento Aragua-Carabobo",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Renta Impresora Gestion Documento Caracas",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Renta Impresora Gestion Documentos Caracas",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Coordinador Comercial Backorder",
+              "gerencia": "comercializacion",
+              "children": [
+                {
+                  "name": "Analista Comercial Backorder Lara-Portuguesa-Yaracuy",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Analista Comercial Backorder Aragua-Carabobo",
+                  "gerencia": "comercializacion"
+                },
+                {
+                  "name": "Analista Comercial Backorder Caracas",
+                  "gerencia": "comercializacion"
+                }
+              ]
             }
           ]
         },

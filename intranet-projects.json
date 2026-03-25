@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "mn3ldkhe",
+    "name": "Proyecto Test",
+    "desc": "",
+    "color": "#4a7fd4",
+    "owner": "admin",
+    "members": [],
+    "createdAt": 1774443685012,
+    "tasks": []
+  }
+]
