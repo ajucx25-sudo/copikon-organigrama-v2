@@ -57,7 +57,38 @@
             {
               "name": "Coordinador Comercial Proyectos",
               "gerencia": "comercializacion",
-              "children": []
+              "children": [
+                {
+                  "name": "Analista Comercial Proyectos (Caracas)",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Técnico Proyectos (Caracas)",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Proyectos (Aragua, Carabobo)",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Técnico Proyectos (Aragua, Carabobo)",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                },
+                {
+                  "name": "Analista Comercial Proyectos (Lara, Port, Yar)",
+                  "gerencia": "comercializacion",
+                  "children": [
+                    {
+                      "name": "Vendedor Técnico Proyectos (Lara, Port, Yar)",
+                      "gerencia": "comercializacion"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "name": "Coordinador Comercial E-commerce",
@@ -560,20 +591,6 @@
             {
               "name": "Ingeniero de Diseno / Arquitectos (Calculos/Planos/BOM)",
               "gerencia": "proyectos"
-            },
-            {
-              "name": "Coordinador Proyectos Generacion Electrica Baifa",
-              "gerencia": "proyectos",
-              "children": [
-                {
-                  "name": "Tecnico Instaladores Senior",
-                  "gerencia": "proyectos"
-                },
-                {
-                  "name": "Tecnico Instaladores Junior",
-                  "gerencia": "proyectos"
-                }
-              ]
             },
             {
               "name": "Coordinador Proyectos Pantallas Outdoor, CCTV, Redes",
