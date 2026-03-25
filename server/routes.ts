@@ -1012,39 +1012,48 @@ print('ok')
       });
     });
 
-    // ── Projects ───────────────────────────────────────────
+    // ── Projects — guardados en org-data.json bajo __intranetProjects ─────
+    function loadProjects(): any[] {
+      const org = loadData(); // usa el mismo loadData() que el organigrama
+      return org.__intranetProjects || [];
+    }
+    function saveProjects(projects: any[]) {
+      const org = loadData();
+      org.__intranetProjects = projects;
+      saveData(org); // usa el mismo saveData() que persiste org-data.json
+    }
+
     app.get("/api/intranet/projects", (_req, res) => {
-      res.json(readJSON(INTRANET_PROJ_FILE, []));
+      res.json(loadProjects());
     });
 
     app.post("/api/intranet/projects", (req, res) => {
       const { name, desc, color, owner, members } = req.body;
       if (!name?.trim()) return res.status(400).json({ error: "Nombre requerido" });
-      const projects: any[] = readJSON(INTRANET_PROJ_FILE, []);
+      const projects = loadProjects();
       const proj = { id: nextId(), name: name.trim(), desc: desc || "", color: color || "#4a7fd4",
         owner, members: members || [], createdAt: Date.now(), tasks: [] };
       projects.push(proj);
-      writeJSON(INTRANET_PROJ_FILE, projects);
+      saveProjects(projects);
       res.json(proj);
     });
 
     app.put("/api/intranet/projects/:id", (req, res) => {
-      const projects: any[] = readJSON(INTRANET_PROJ_FILE, []);
+      const projects = loadProjects();
       const idx = projects.findIndex((p: any) => p.id === req.params.id);
       if (idx === -1) return res.status(404).json({ error: "No encontrado" });
       projects[idx] = { ...projects[idx], ...req.body, id: req.params.id };
-      writeJSON(INTRANET_PROJ_FILE, projects);
+      saveProjects(projects);
       res.json(projects[idx]);
     });
 
     app.delete("/api/intranet/projects/:id", (req, res) => {
-      const projects: any[] = readJSON(INTRANET_PROJ_FILE, []).filter((p: any) => p.id !== req.params.id);
-      writeJSON(INTRANET_PROJ_FILE, projects);
+      saveProjects(loadProjects().filter((p: any) => p.id !== req.params.id));
       res.json({ ok: true });
     });
 
     app.get("/api/intranet/projects/:id/tasks", (req, res) => {
-      const proj = readJSON(INTRANET_PROJ_FILE, []).find((p: any) => p.id === req.params.id);
+      const proj = loadProjects().find((p: any) => p.id === req.params.id);
       if (!proj) return res.status(404).json({ error: "No encontrado" });
       res.json(proj.tasks || []);
     });
@@ -1052,7 +1061,7 @@ print('ok')
     app.post("/api/intranet/projects/:id/tasks", (req, res) => {
       const { title, desc, assignee, priority, dueDate, status } = req.body;
       if (!title?.trim()) return res.status(400).json({ error: "Título requerido" });
-      const projects: any[] = readJSON(INTRANET_PROJ_FILE, []);
+      const projects = loadProjects();
       const proj = projects.find((p: any) => p.id === req.params.id);
       if (!proj) return res.status(404).json({ error: "No encontrado" });
       const task = { id: nextId(), title: title.trim(), desc: desc || "",
@@ -1060,42 +1069,42 @@ print('ok')
         dueDate: dueDate || null, status: status || "pendiente",
         createdAt: Date.now(), comments: [] };
       proj.tasks = [...(proj.tasks || []), task];
-      writeJSON(INTRANET_PROJ_FILE, projects);
+      saveProjects(projects);
       if (assignee) sseNotify(assignee, "task_assigned", { task, projectId: req.params.id, projectName: proj.name });
       res.json(task);
     });
 
     app.put("/api/intranet/projects/:projId/tasks/:taskId", (req, res) => {
-      const projects: any[] = readJSON(INTRANET_PROJ_FILE, []);
+      const projects = loadProjects();
       const proj = projects.find((p: any) => p.id === req.params.projId);
       if (!proj) return res.status(404).json({ error: "No encontrado" });
       const ti = (proj.tasks || []).findIndex((t: any) => t.id === req.params.taskId);
       if (ti === -1) return res.status(404).json({ error: "No encontrado" });
       proj.tasks[ti] = { ...proj.tasks[ti], ...req.body, id: req.params.taskId };
-      writeJSON(INTRANET_PROJ_FILE, projects);
+      saveProjects(projects);
       res.json(proj.tasks[ti]);
     });
 
     app.delete("/api/intranet/projects/:projId/tasks/:taskId", (req, res) => {
-      const projects: any[] = readJSON(INTRANET_PROJ_FILE, []);
+      const projects = loadProjects();
       const proj = projects.find((p: any) => p.id === req.params.projId);
       if (!proj) return res.status(404).json({ error: "No encontrado" });
       proj.tasks = (proj.tasks || []).filter((t: any) => t.id !== req.params.taskId);
-      writeJSON(INTRANET_PROJ_FILE, projects);
+      saveProjects(projects);
       res.json({ ok: true });
     });
 
     app.post("/api/intranet/projects/:projId/tasks/:taskId/comments", (req, res) => {
       const { from, text } = req.body;
       if (!text?.trim()) return res.status(400).json({ error: "Texto requerido" });
-      const projects: any[] = readJSON(INTRANET_PROJ_FILE, []);
+      const projects = loadProjects();
       const proj = projects.find((p: any) => p.id === req.params.projId);
       if (!proj) return res.status(404).json({ error: "No encontrado" });
       const task = (proj.tasks || []).find((t: any) => t.id === req.params.taskId);
       if (!task) return res.status(404).json({ error: "No encontrado" });
       const comment = { id: nextId(), from, text: text.trim(), ts: Date.now() };
       task.comments = [...(task.comments || []), comment];
-      writeJSON(INTRANET_PROJ_FILE, projects);
+      saveProjects(projects);
       res.json(comment);
     });
 
