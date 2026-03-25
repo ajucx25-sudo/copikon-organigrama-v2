@@ -2545,10 +2545,17 @@ function update(source) {
   const node = g.selectAll('.node').data(nodes, d => d._id);
   const nodeEnter = node.enter().append('g').attr('class','node')
     .attr('transform', d => `translate(${source.y0||source.y},${source.x0||source.x})`)
-    .style('cursor','pointer')
+    .style('cursor', d => d.data.tipo === 'division' ? 'default' : 'pointer')
     .on('click', function(event, d) {
       event.stopPropagation();
       if (editMode) { openCtxMenu(event, d); return; }
+      // Las divisiones solo expanden/colapsan, no abren ficha de cargo
+      if (d.data.tipo === 'division') {
+        if (d.children) { d._children = d.children; d.children = null; }
+        else if (d._children) { d.children = d._children; d._children = null; }
+        update(d);
+        return;
+      }
       if (d.children) { d._children = d.children; d.children = null; }
       else if (d._children) { d.children = d._children; d._children = null; }
       showDetail(d);
@@ -2557,6 +2564,8 @@ function update(source) {
     .on('dblclick', function(event, d) {
       event.stopPropagation();
       if (editMode) return;
+      // Las divisiones no abren ficha de empleado
+      if (d.data.tipo === 'division') return;
       // Doble clic: abrir ficha del empleado para este nodo
       const cargo = d.data ? d.data.name : (d.name || '');
       const id = generateNodeId(cargo);
