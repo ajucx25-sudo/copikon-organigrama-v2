@@ -3793,5 +3793,61 @@
         "logros": []
       }
     }
+  },
+  "division-generacion-electrica-copikon-generators": {
+    "id": "division-generacion-electrica-copikon-generators",
+    "cargo": "División Generación Eléctrica Copikon Generators",
+    "gerencia": "comercializacion",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
+  },
+  "division-tecnologia": {
+    "id": "division-tecnologia",
+    "cargo": "División Tecnología",
+    "gerencia": "comercializacion",
+    "nombre": "",
+    "cedula": "",
+    "fechaIngreso": "",
+    "telefono": "",
+    "email": "",
+    "estadoCivil": "",
+    "nivelAcademico": "",
+    "tieneHijos": "",
+    "cantidadHijos": "",
+    "notas": "",
+    "descripcionCargo": "",
+    "perfilRol": {
+      "descripcion": "",
+      "manual": "",
+      "flujo": "",
+      "cursos": [],
+      "gamificacion": {
+        "xp": 0,
+        "nivel": 1,
+        "cursosComp": 0,
+        "logros": []
+      }
+    }
   }
 }

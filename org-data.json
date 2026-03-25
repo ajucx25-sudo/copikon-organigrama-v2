@@ -59,34 +59,14 @@
               "gerencia": "comercializacion",
               "children": [
                 {
-                  "name": "Analista Comercial Proyectos Lara-Port-Yar",
+                  "name": "División Generación Eléctrica Copikon Generators",
                   "gerencia": "comercializacion",
-                  "children": [
-                    {
-                      "name": "Vendedor Técnico Proyectos Lara-Port-Yar",
-                      "gerencia": "comercializacion"
-                    }
-                  ]
+                  "children": []
                 },
                 {
-                  "name": "Analista Comercial Proyectos Aragua-Carabobo",
+                  "name": "División Tecnología",
                   "gerencia": "comercializacion",
-                  "children": [
-                    {
-                      "name": "Vendedor Técnico Proyectos Aragua-Carabobo",
-                      "gerencia": "comercializacion"
-                    }
-                  ]
-                },
-                {
-                  "name": "Analista Comercial Proyectos Caracas",
-                  "gerencia": "comercializacion",
-                  "children": [
-                    {
-                      "name": "Vendedor Tecnico Proyectos Caracas",
-                      "gerencia": "comercializacion"
-                    }
-                  ]
+                  "children": []
                 }
               ]
             },
