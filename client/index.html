@@ -2458,10 +2458,14 @@ function truncateText(t, maxLen) {
 function getNodeSize(d) {
   const n = d.data.name;
   const len = n.length;
+  // Nodos de tipo division: más anchos y con altura fija de etiqueta
+  if (d.data.tipo === 'division') {
+    return { w: Math.max(200, Math.min(300, len * 7.8)), h: 32 };
+  }
   const id = generateNodeId(n);
   const emp = (window.__EMPLOYEES_DATA__ && window.__EMPLOYEES_DATA__[id]) || {};
   const hasTitular = !!(emp.nombre && emp.nombre.trim());
-  const extra = hasTitular ? 16 : 0; // espacio extra para mostrar el titular
+  const extra = hasTitular ? 16 : 0;
   if (n.toLowerCase().includes('gerencia') || d.depth <= 1) {
     return { w: Math.max(220, Math.min(280, len * 8.5)), h: 46 + extra };
   }
@@ -2597,6 +2601,10 @@ function update(source) {
     .attr('x', d => -getNodeSize(d).w/2).attr('y', d => -getNodeSize(d).h/2)
     .attr('width', d => getNodeSize(d).w).attr('height', d => getNodeSize(d).h)
     .attr('fill', d => {
+      // Divisiones: fondo transparente (solo borde)
+      if (d.data.tipo === 'division') {
+        return document.documentElement.getAttribute('data-theme')==='dark' ? '#1e2a40' : '#f0f5ff';
+      }
       const color = colorMap[d.data.gerencia] || '#1a3a6b';
       const isMatch = searchTerm && normalize(d.data.name).includes(normalize(searchTerm));
       if (isMatch) return color;
@@ -2605,7 +2613,14 @@ function update(source) {
       }
       return color;
     })
+    .attr('rx', d => d.data.tipo === 'division' ? 16 : 6)
+    .attr('ry', d => d.data.tipo === 'division' ? 16 : 6)
     .attr('stroke', d => {
+      if (d.data.tipo === 'division') {
+        const color = colorMap[d.data.gerencia] || '#4a7fd4';
+        const isMatch = searchTerm && normalize(d.data.name).includes(normalize(searchTerm));
+        return isMatch ? '#ff4060' : color;
+      }
       const isMatch = searchTerm && normalize(d.data.name).includes(normalize(searchTerm));
       if (isMatch) return '#ff4060';
       if (selectedNode && d._id === selectedNode._id) return colorMap[d.data.gerencia] || '#1a3a6b';
@@ -2613,13 +2628,16 @@ function update(source) {
       return document.documentElement.getAttribute('data-theme')==='dark' ? 'rgba(255,255,255,0.08)' : 'rgba(26,58,107,0.08)';
     })
     .attr('stroke-width', d => {
+      if (d.data.tipo === 'division') return 2;
       const isMatch = searchTerm && normalize(d.data.name).includes(normalize(searchTerm));
       if (isMatch || (selectedNode && d._id === selectedNode._id)) return 3;
       return editMode ? 1.5 : 1;
     })
+    .style('stroke-dasharray', d => d.data.tipo === 'division' ? '6,3' : null)
     .style('filter', d => {
       const isMatch = searchTerm && normalize(d.data.name).includes(normalize(searchTerm));
       if (isMatch) return 'drop-shadow(0 0 8px rgba(255,64,96,0.4))';
+      if (d.data.tipo === 'division') return 'none';
       return 'drop-shadow(0 1px 3px rgba(0,0,0,0.08))';
     });
 
@@ -2631,7 +2649,14 @@ function update(source) {
       const emp = (window.__EMPLOYEES_DATA__ && window.__EMPLOYEES_DATA__[id]) || {};
       return emp.nombre ? -8 : 0; // subir si hay titular
     })
+    .attr('font-size', d => d.data.tipo === 'division' ? '11px' : (getNodeSize(d).h >= 44 ? '11.5px' : getNodeSize(d).h >= 40 ? '11px' : '10.5px'))
+    .attr('font-weight', d => d.data.tipo === 'division' ? '700' : (d.depth <= 2 ? '700' : '500'))
     .attr('fill', d => {
+      // Divisiones: texto en color de la gerencia
+      if (d.data.tipo === 'division') {
+        const color = colorMap[d.data.gerencia] || '#4a7fd4';
+        return document.documentElement.getAttribute('data-theme')==='dark' ? '#a0b8f0' : color;
+      }
       const color = colorMap[d.data.gerencia] || '#1a3a6b';
       if (activeFilter !== 'all' && d.data.gerencia !== activeFilter && d.data.gerencia !== 'root') {
         return document.documentElement.getAttribute('data-theme')==='dark' ? '#4a5270' : '#8a8fa8';
