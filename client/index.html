@@ -1480,7 +1480,7 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
     <!-- Intranet -->
     <button class="header-btn" id="intranet-btn" title="Intranet — Chat y Proyectos"
       style="background:#2bbfae;color:#fff;border-color:#2bbfae;font-size:11px;font-weight:700;width:auto;padding:0 10px;gap:4px;"
-      onclick="(function(){ const base = (window.API_BASE||''); const fixedBase = (base && !base.startsWith('/') && !base.startsWith('http')) ? '/'+base : base; const u = window.portalUser ? encodeURIComponent(JSON.stringify(window.portalUser)) : ''; window.location.href = fixedBase + '/intranet/?apibase=' + encodeURIComponent(fixedBase) + (u ? '&user=' + u : ''); })()">
+      onclick="(function(){ const base = (window.API_BASE||''); const u = window.portalUser ? encodeURIComponent(JSON.stringify(window.portalUser)) : ''; window.location.href = base + '/intranet/?apibase=' + encodeURIComponent(base) + (u ? '&user=' + u : ''); })()">
       💬 Intranet
     </button>
     <!-- Mi Portal -->
@@ -2752,20 +2752,23 @@ async function portalLogin() {
   errEl.style.display = 'none';
   if (!username || !password) { errEl.textContent = 'Completa usuario y contraseña'; errEl.style.display = 'block'; return; }
   btn.disabled = true; btn.textContent = 'Verificando...';
-  try {
-    let data;
+  async function doLogin() {
     try {
       const res = await fetch((window.API_BASE||'') + '/api/portal/login', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
       });
-      data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Error');
-    } catch(e) {
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'Error');
+      return d;
+    } catch(_) {
       const u = (window.__PORTAL_USERS__||{})[username];
       if (!u || u.password !== password) throw new Error(u ? 'Contraseña incorrecta' : 'Usuario no encontrado');
-      data = { username: u.username||username, cargoId: u.cargoId||'', cargo: u.cargo||'', gerencia: u.gerencia||'staff', nombre: u.nombre||username, role: u.role||'viewer' };
+      return { username: u.username||username, cargoId: u.cargoId||'', cargo: u.cargo||'', gerencia: u.gerencia||'staff', nombre: u.nombre||username, role: u.role||'viewer' };
     }
+  }
+  try {
+    const data = await doLogin();
     window.portalUser = data;
     document.getElementById('portal-login-overlay').classList.remove('active');
     // Si es admin, mostrar botón de gestión de usuarios
