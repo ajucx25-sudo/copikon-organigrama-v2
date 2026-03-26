@@ -1059,15 +1059,20 @@ print('ok')
     });
 
     app.post("/api/intranet/projects/:id/tasks", (req, res) => {
-      const { title, desc, assignee, priority, dueDate, status } = req.body;
+      const { title, desc, assignee, priority, dueDate, startDate, duration, status, percent, hoursEstimated, labels, checklist, subtasks } = req.body;
       if (!title?.trim()) return res.status(400).json({ error: "Título requerido" });
       const projects = loadProjects();
       const proj = projects.find((p: any) => p.id === req.params.id);
       if (!proj) return res.status(404).json({ error: "No encontrado" });
-      const task = { id: nextId(), title: title.trim(), desc: desc || "",
+      const task = {
+        id: nextId(), title: title.trim(), desc: desc || "",
         assignee: assignee || null, priority: priority || "media",
-        dueDate: dueDate || null, status: status || "pendiente",
-        createdAt: Date.now(), comments: [] };
+        startDate: startDate || null, dueDate: dueDate || null, duration: duration || null,
+        status: status || "pendiente", percent: percent || 0,
+        hoursEstimated: hoursEstimated || null, hoursActual: 0,
+        labels: labels || [], checklist: checklist || [], subtasks: subtasks || [],
+        createdAt: Date.now(), comments: []
+      };
       proj.tasks = [...(proj.tasks || []), task];
       saveProjects(projects);
       if (assignee) sseNotify(assignee, "task_assigned", { task, projectId: req.params.id, projectName: proj.name });
