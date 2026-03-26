@@ -62,6 +62,22 @@ async function buildAll() {
   await writeFile(htmlPath, htmlContent, "utf-8");
   console.log(`injected ${Object.keys(employeesData).length} employee records, ${Object.keys(cargoDescriptions).length} cargo descriptions`);
 
+  // Inyectar proyectos en el HTML de la intranet
+  const intranetHtmlPath = "dist/public/intranet/index.html";
+  try {
+    let intranetHtml = await readFile(intranetHtmlPath, "utf-8");
+    // Leer proyectos del org-data.json
+    let intranetProjects: any[] = [];
+    try {
+      const orgData = JSON.parse(await readFile("org-data.json", "utf-8"));
+      intranetProjects = orgData.__intranetProjects || [];
+    } catch {}
+    const intranetInjection = `<script>window.__INTRANET_PROJECTS__ = ${JSON.stringify(intranetProjects)};</script>`;
+    intranetHtml = intranetHtml.replace('</head>', intranetInjection + '</head>');
+    await writeFile(intranetHtmlPath, intranetHtml, "utf-8");
+    console.log(`injected ${intranetProjects.length} intranet projects into intranet/index.html`);
+  } catch(e) { console.warn("No se pudo inyectar proyectos en intranet:", e); }
+
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
   const allDeps = [
