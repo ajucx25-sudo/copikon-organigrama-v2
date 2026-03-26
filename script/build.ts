@@ -56,49 +56,14 @@ async function buildAll() {
   } catch(e) {
     cargoDescriptions = {};
   }
-  let htmlContent = await readFile(htmlPath, "utf-8");
-  // Leer portal-users.json para inyectar en el organigrama (login offline)
+  // Leer portal-users para login offline
   let portalUsers: any = {};
   try { portalUsers = JSON.parse(await readFile("portal-users.json", "utf-8")); } catch {}
-
-  // Para el organigrama: inyectar solo datos de titular (nombre, cédula, contacto)
-  // El perfilRol (manual, flujo, descripcion, cursos) se carga bajo demanda desde el servidor
-  // Esto reduce el HTML de ~1.2MB a ~50KB
-  const employeesSlim: any = {};
-  for (const [id, emp] of Object.entries(employeesData as any)) {
-    const e = emp as any;
-    employeesSlim[id] = {
-      id: e.id, cargo: e.cargo, gerencia: e.gerencia,
-      nombre: e.nombre, cedula: e.cedula, telefono: e.telefono,
-      email: e.email, fechaIngreso: e.fechaIngreso,
-      estadoCivil: e.estadoCivil, nivelAcademico: e.nivelAcademico,
-      tieneHijos: e.tieneHijos, cantidadHijos: e.cantidadHijos,
-      notas: e.notas,
-      // Solo gamificación (pequeña) para el portal
-      perfilRol: e.perfilRol ? { gamificacion: e.perfilRol.gamificacion } : undefined
-    };
-  }
-
-  const injection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(employeesSlim)};window.__CARGO_DESCRIPTIONS__ = ${JSON.stringify(cargoDescriptions)};window.__PORTAL_USERS__ = ${JSON.stringify(portalUsers)};</script>`;
+  let htmlContent = await readFile(htmlPath, "utf-8");
+  const injection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(employeesData)};window.__CARGO_DESCRIPTIONS__ = ${JSON.stringify(cargoDescriptions)};window.__PORTAL_USERS__ = ${JSON.stringify(portalUsers)};</script>`;
   htmlContent = htmlContent.replace('</head>', injection + '</head>');
   await writeFile(htmlPath, htmlContent, "utf-8");
-  console.log(`injected ${Object.keys(employeesSlim).length} employee records (slim), ${Object.keys(portalUsers).length} portal users`);
-
-  // Inyectar proyectos en el HTML de la intranet
-  const intranetHtmlPath = "dist/public/intranet/index.html";
-  try {
-    let intranetHtml = await readFile(intranetHtmlPath, "utf-8");
-    // Leer proyectos del org-data.json
-    let intranetProjects: any[] = [];
-    try {
-      const orgData = JSON.parse(await readFile("org-data.json", "utf-8"));
-      intranetProjects = orgData.__intranetProjects || [];
-    } catch {}
-    const intranetInjection = `<script>window.__INTRANET_PROJECTS__ = ${JSON.stringify(intranetProjects)};</script>`;
-    intranetHtml = intranetHtml.replace('</head>', intranetInjection + '</head>');
-    await writeFile(intranetHtmlPath, intranetHtml, "utf-8");
-    console.log(`injected ${intranetProjects.length} intranet projects into intranet/index.html`);
-  } catch(e) { console.warn("No se pudo inyectar proyectos en intranet:", e); }
+  console.log(`injected ${Object.keys(employeesData).length} employee records, ${Object.keys(portalUsers).length} portal users`);
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
