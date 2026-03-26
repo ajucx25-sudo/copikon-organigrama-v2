@@ -23,8 +23,25 @@
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script>
-// API base URL — replaced at deploy time by __PORT_5000__ proxy
-window.API_BASE = (typeof "__PORT_5000__" !== "undefined" && !("__PORT_5000__").startsWith("__")) ? "__PORT_5000__" : "";
+// API base URL — se detecta dinámicamente desde window.location
+// El proxy de Perplexity sirve el sitio en una URL como:
+// https://sites.pplx.app/sites/proxy/<JWT>/web/direct-files/.../copikon-organigrama-v2/dist/public/
+// Las llamadas al servidor van a /port/5000/... relativas a la raíz del sitio
+// Detectamos la base correcta mirando el pathname
+(function() {
+  const loc = window.location;
+  // En sites.pplx.app el proxy reescribe /port/5000 como path del mismo origen
+  // Solo necesitamos la raíz del sitio (sin /intranet/ ni otros subdirectorios)
+  // Para llamadas desde el organigrama (raíz): API_BASE = ""
+  // Para llamadas desde la intranet (/intranet/): API_BASE necesita subir un nivel
+  window.API_BASE = "";
+  // Calcular la URL absoluta del servidor para pasarla a la intranet
+  // origin + pathname hasta el directorio raíz del sitio (antes de /intranet/)
+  const pathParts = loc.pathname.split('/');
+  const intranetIdx = pathParts.indexOf('intranet');
+  const basePath = intranetIdx > -1 ? pathParts.slice(0, intranetIdx).join('/') : loc.pathname.replace(/\/[^/]*$/, '');
+  window.SITE_BASE = loc.origin + basePath;
+})();
 </script>
 <style>
 /* ===== VARIABLES ===== */
@@ -1480,7 +1497,7 @@ body:not(.edit-mode-active) .edp-perfil-edit-btn { display:none; }
     <!-- Intranet -->
     <button class="header-btn" id="intranet-btn" title="Intranet — Chat y Proyectos"
       style="background:#2bbfae;color:#fff;border-color:#2bbfae;font-size:11px;font-weight:700;width:auto;padding:0 10px;gap:4px;"
-      onclick="(function(){ const base = (window.API_BASE||''); const u = window.portalUser ? encodeURIComponent(JSON.stringify(window.portalUser)) : ''; window.location.href = base + '/intranet/?apibase=' + encodeURIComponent(base) + (u ? '&user=' + u : ''); })()">
+      onclick="(function(){ const base = (window.SITE_BASE||window.API_BASE||''); const u = window.portalUser ? encodeURIComponent(JSON.stringify(window.portalUser)) : ''; window.location.href = base + '/intranet/?apibase=' + encodeURIComponent(base) + (u ? '&user=' + u : ''); })()">
       💬 Intranet
     </button>
     <!-- Mi Portal -->
