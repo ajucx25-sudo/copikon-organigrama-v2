@@ -664,5 +664,39 @@
         }
       ]
     }
+  ],
+  "__intranetProjects": [
+    {
+      "id": "mn6ctfhx",
+      "name": "Test",
+      "desc": "",
+      "color": "#00b8b0",
+      "owner": "admin",
+      "members": [],
+      "createdAt": 1774534153396,
+      "tasks": [
+        {
+          "id": "mn6ctfhy",
+          "title": "Tarea de prueba",
+          "desc": "",
+          "assignee": null,
+          "priority": "media",
+          "dueDate": null,
+          "status": "pendiente",
+          "createdAt": 1774534181238,
+          "comments": []
+        }
+      ]
+    },
+    {
+      "id": "mn6ctfhz",
+      "name": "Proyecto Debug",
+      "desc": "test",
+      "color": "#dd6874",
+      "owner": "admin",
+      "members": [],
+      "createdAt": 1774542148272,
+      "tasks": []
+    }
   ]
 }
