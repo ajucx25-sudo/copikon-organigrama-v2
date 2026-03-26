@@ -23,24 +23,17 @@
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script>
-// API base URL — se detecta dinámicamente desde window.location
-// El proxy de Perplexity sirve el sitio en una URL como:
-// https://sites.pplx.app/sites/proxy/<JWT>/web/direct-files/.../copikon-organigrama-v2/dist/public/
-// Las llamadas al servidor van a /port/5000/... relativas a la raíz del sitio
-// Detectamos la base correcta mirando el pathname
+// API base URL — vacío para llamadas relativas desde el organigrama
+// SITE_BASE: URL absoluta de la raíz del sitio, para pasar a la intranet
+window.API_BASE = "";
 (function() {
-  const loc = window.location;
-  // En sites.pplx.app el proxy reescribe /port/5000 como path del mismo origen
-  // Solo necesitamos la raíz del sitio (sin /intranet/ ni otros subdirectorios)
-  // Para llamadas desde el organigrama (raíz): API_BASE = ""
-  // Para llamadas desde la intranet (/intranet/): API_BASE necesita subir un nivel
-  window.API_BASE = "";
-  // Calcular la URL absoluta del servidor para pasarla a la intranet
-  // origin + pathname hasta el directorio raíz del sitio (antes de /intranet/)
-  const pathParts = loc.pathname.split('/');
-  const intranetIdx = pathParts.indexOf('intranet');
-  const basePath = intranetIdx > -1 ? pathParts.slice(0, intranetIdx).join('/') : loc.pathname.replace(/\/[^/]*$/, '');
-  window.SITE_BASE = loc.origin + basePath;
+  var loc = window.location;
+  var pathname = loc.pathname;
+  var siteRoot = pathname.endsWith('/') ? pathname : pathname.substring(0, pathname.lastIndexOf('/') + 1);
+  if (siteRoot.includes('/intranet/')) {
+    siteRoot = siteRoot.substring(0, siteRoot.indexOf('/intranet/') + 1);
+  }
+  window.SITE_BASE = loc.origin + siteRoot.replace(/\/$/, '');
 })();
 </script>
 <style>
@@ -2769,16 +2762,29 @@ async function portalLogin() {
   errEl.style.display = 'none';
   if (!username || !password) { errEl.textContent = 'Completa usuario y contraseña'; errEl.style.display = 'block'; return; }
   btn.disabled = true; btn.textContent = 'Verificando...';
-  try {
+  // Intentar login en servidor, con fallback offline a window.__PORTAL_USERS__
+  async function tryServerLogin() {
     const res = await fetch((window.API_BASE||'') + '/api/portal/login', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Error');
+    if (!res.ok) throw new Error(data.error || 'Credenciales incorrectas');
+    return data;
+  }
+  function tryOfflineLogin() {
+    const users = window.__PORTAL_USERS__ || {};
+    const u = users[username];
+    if (!u) throw new Error('Usuario no encontrado');
+    if (u.password !== password) throw new Error('Contraseña incorrecta');
+    return { username: u.username||username, cargoId: u.cargoId||'', cargo: u.cargo||'', gerencia: u.gerencia||'staff', nombre: u.nombre||username, role: u.role||'viewer' };
+  }
+  try {
+    let data;
+    try { data = await tryServerLogin(); }
+    catch(serverErr) { data = tryOfflineLogin(); }
     window.portalUser = data;
     document.getElementById('portal-login-overlay').classList.remove('active');
-    // Si es admin, mostrar botón de gestión de usuarios
     if (data.role === 'admin') {
       const adminBtn = document.createElement('button');
       adminBtn.className = 'header-btn';
@@ -2788,7 +2794,6 @@ async function portalLogin() {
       adminBtn.onclick = adminAbrirModal;
       document.querySelector('header').insertBefore(adminBtn, document.getElementById('mi-portal-btn'));
     }
-    // Abrir directamente la ficha del cargo del empleado
     setTimeout(() => portalAbrirMiFicha(), 800);
   } catch(e) {
     errEl.textContent = e.message || 'Error al ingresar';

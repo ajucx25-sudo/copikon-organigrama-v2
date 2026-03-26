@@ -57,10 +57,13 @@ async function buildAll() {
     cargoDescriptions = {};
   }
   let htmlContent = await readFile(htmlPath, "utf-8");
-  const injection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(employeesData)};window.__CARGO_DESCRIPTIONS__ = ${JSON.stringify(cargoDescriptions)};</script>`;
+  // Leer portal-users.json para inyectar en el organigrama (login offline)
+  let portalUsers: any = {};
+  try { portalUsers = JSON.parse(await readFile("portal-users.json", "utf-8")); } catch {}
+  const injection = `<script>window.__EMPLOYEES_DATA__ = ${JSON.stringify(employeesData)};window.__CARGO_DESCRIPTIONS__ = ${JSON.stringify(cargoDescriptions)};window.__PORTAL_USERS__ = ${JSON.stringify(portalUsers)};</script>`;
   htmlContent = htmlContent.replace('</head>', injection + '</head>');
   await writeFile(htmlPath, htmlContent, "utf-8");
-  console.log(`injected ${Object.keys(employeesData).length} employee records, ${Object.keys(cargoDescriptions).length} cargo descriptions`);
+  console.log(`injected ${Object.keys(employeesData).length} employee records, ${Object.keys(portalUsers).length} portal users`);
 
   // Inyectar proyectos en el HTML de la intranet
   const intranetHtmlPath = "dist/public/intranet/index.html";
