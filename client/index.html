@@ -25,7 +25,11 @@
 <script>
 // API base URL — replaced at deploy time by __PORT_5000__ proxy
 window.API_BASE = (typeof "__PORT_5000__" !== "undefined" && !("__PORT_5000__").startsWith("__")) ? "__PORT_5000__" : "";
-// SITE_BASE: URL absoluta de la raíz del sitio para pasar a la intranet
+// Normalizar API_BASE: deploy_website pone "port/5000" sin slash inicial
+if (window.API_BASE && !window.API_BASE.startsWith('/') && !window.API_BASE.startsWith('http')) {
+  window.API_BASE = '/' + window.API_BASE;
+}
+// SITE_BASE: URL absoluta de la raíz del sitio para pasar como apibase a la intranet
 (function(){
   var loc = window.location;
   var siteRoot = loc.pathname.endsWith('/') ? loc.pathname : loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
